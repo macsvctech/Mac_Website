@@ -2,30 +2,17 @@
   "pageTitle": "03_ARENA // COMPETITIONS, SIMULATIONS & CONCLAVES",
   "sysRef": "ARENA_DISPATCH_v27.4",
   "radar": {
-    "headerTitle": "> NEXT_OPERATION_RADAR // LIVE STATUS",
     "isLive": true,
     "eventTitle": "MARKOPOLIS '27: THE CORPORATE WARFARE CONCLAVE",
     "subBadge": "[UPCOMING FLAGSHIP SIMULATION]",
     "statusBadge": "[ ● REGISTRATION OPEN ]",
-    "standbyBadge": "[ STANDBY ]",
     "date": "MARCH 2027",
-    "dateLabel": "/// DATE: ",
     "targetDate": "2027-03-15T09:00:00",
     "venue": "SVC MAIN AUDITORIUM",
-    "venueLabel": "/// VENUE: ",
     "prizePool": "INR 75,000+",
-    "prizePoolLabel": "/// PRIZE POOL: ",
-    "countdownLabels": {
-      "days": "DAYS",
-      "hours": "HRS",
-      "mins": "MINS",
-      "secs": "SECS"
-    },
     "registrationUrl": "https://unstop.com",
     "registrationCtaText": "REGISTER ON UNSTOP ->",
     "posterImage": "/uploads/images/arena/markopolis.jpg",
-    "teaserVideoUrl": "",
-    "rulebookPdfUrl": "/uploads/documents/markopolis-27-rulebook.pdf",
     "standbyMessage": "/// RADAR STANDBY // NO ACTIVE RADAR PINGS DETECTED ///"
   },
   "flagshipSection": {
@@ -36,11 +23,26 @@
     "title": "THE EVIDENCE WALL // VISUAL ARCHIVE",
     "tagline": "/// ARCHIVAL SPECIMEN REPOSITORY",
     "categories": [
-      { "id": "ALL", "label": "[ ALL EVIDENCE (6) ]" },
-      { "id": "MARKOPOLIS", "label": "[ MARKOPOLIS ]" },
-      { "id": "ZEAL", "label": "[ ZEAL FEST ]" },
-      { "id": "SPEAKERS", "label": "[ SPEAKER SESSIONS ]" },
-      { "id": "BTS", "label": "[ MAC CAMP & BTS ]" }
+      {
+        "id": "ALL",
+        "label": "[ ALL EVIDENCE (6) ]"
+      },
+      {
+        "id": "MARKOPOLIS",
+        "label": "[ MARKOPOLIS ]"
+      },
+      {
+        "id": "ZEAL",
+        "label": "[ ZEAL FEST ]"
+      },
+      {
+        "id": "SPEAKERS",
+        "label": "[ SPEAKER SESSIONS ]"
+      },
+      {
+        "id": "BTS",
+        "label": "[ MAC CAMP & BTS ]"
+      }
     ],
     "loadMoreText": "[ LOAD MORE EVIDENCE (18 REMAINING) + ]"
   }
