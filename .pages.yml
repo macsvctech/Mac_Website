@@ -1240,6 +1240,27 @@ content:
         type: string
       - name: station
         type: string
+      - name: contactButtonText
+        label: Officer Contact Button Text
+        type: string
+      - name: linkedinButtonText
+        label: Officer LinkedIn Button Text
+        type: string
+      - name: cadreRosterHeading
+        label: Cadre Table Heading
+        type: string
+      - name: tableHeaders
+        label: Directory Table Column Headers
+        type: object
+        fields:
+          - name: col1
+            type: string
+          - name: col2
+            type: string
+          - name: col3
+            type: string
+          - name: col4
+            type: string
       - name: sectionCommand
         label: Command Header
         type: object
@@ -1296,39 +1317,42 @@ content:
         list: true
         fields:
           - name: id
-            label: Dept Identifier (events, growth, pr, tech)
+            label: Dept ID (dept-1, dept-2, dept-3, dept-4)
+            type: string
+          - name: num
+            label: Two-Digit Index (01, 02, 03, 04)
+            type: string
+          - name: tabLabel
+            label: Interactive Tab Label
             type: string
           - name: name
-            label: Department Name
+            label: Department Full Name
             type: string
-          - name: code
-            label: Department Code
+          - name: tagline
+            label: Department Mandate Tagline
             type: string
-          - name: color
-            label: Accent Theme
-            type: select
-            options:
-              values: [yellow, cyan, red, white]
-          - name: icon
-            label: Material Symbol Icon Name
+          - name: enrolledCount
+            label: Enrolled Cadre Badge
             type: string
-          - name: mandate
-            label: Department Core Mandate
-            type: text
-          - name: clearance
-            type: string
-          - name: cadreStrength
-            type: string
-          - name: leads
-            label: Department Coordinators
+          - name: coordinators
+            label: Lead Coordinators & Directors
             type: object
             list: true
             fields:
+              - name: id
+                label: Coordinator Badge Code (e.g. DIR-01, COORD-02)
+                type: string
               - name: name
+                label: Coordinator Full Name
                 type: string
-              - name: role
+              - name: roleType
+                label: Role Type (e.g. /// DEPT HEAD, /// SR COORDINATOR)
                 type: string
-              - name: course
+              - name: roleColor
+                label: Accent Color Class
+                type: string
+              - name: tenure
+                label: Academic Major & Standing
                 type: string
               - name: portrait
                 label: Coordinator Portrait (Square 1:1)
@@ -1336,17 +1360,27 @@ content:
                 options:
                   media: images
               - name: linkedin
+                label: LinkedIn Profile URL
                 type: string
-          - name: operators
-            label: Junior Operatives & Associates
+          - name: directoryTable
+            label: Active Cadre Directory Table
             type: object
             list: true
             fields:
               - name: name
+                label: Operative Name
                 type: string
-              - name: role
+              - name: academic
+                label: Academic Standing
                 type: string
-              - name: course
+              - name: specialization
+                label: Role Specialization
+                type: string
+              - name: status
+                label: Protocol Status
+                type: string
+              - name: statusClass
+                label: Status Color Class
                 type: string
 
   # ----------------------------------------------------------------------------
@@ -1372,6 +1406,12 @@ content:
         type: string
       - name: statusBanner
         label: Induction Notice / Orientation Venue Notice
+        type: string
+      - name: searchPlaceholder
+        label: Search Box Placeholder Text
+        type: string
+      - name: filterWingLabel
+        label: Filter Wing Toolbar Label
         type: string
       - name: officialResultPdf
         label: Official Sealed PDF Roll

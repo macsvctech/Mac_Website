@@ -252,5 +252,9 @@
         }
       ]
     }
-  ]
+  ],
+  "searchPlaceholder": "[ FILTER BY CANDIDATE NAME OR SCORE... ]",
+  "filterWingLabel": "FILTER WING:",
+  "officialResultPdf": "/uploads/documents/recruitment-results-2026-27.pdf",
+  "officialPdfSize": "2.4MB"
 }
