@@ -4,10 +4,6 @@
   "totalCleared": 42,
   "headerTitle": "> RECRUITMENT_RESULTS_2026-27 // OFFICIAL INDUCTION LIST",
   "statusBanner": "/// ALL SELECTED CANDIDATES REPORT TO SVC AUDITORIUM 09:00 HRS FOR ORIENTATION // END OF LOG ///",
-  "searchPlaceholder": "[ FILTER BY CANDIDATE NAME OR SCORE... ]",
-  "filterWingLabel": "FILTER WING:",
-  "officialResultPdf": "/uploads/documents/recruitment-results-2026-27.pdf",
-  "officialPdfSize": "2.4MB",
   "onboardingLink": "https://forms.google.com",
   "wings": [
     {
@@ -17,16 +13,56 @@
       "count": 10,
       "passBadge": "10 PASS",
       "candidates": [
-        { "id": "01", "name": "DIA SURI", "score": "96.4" },
-        { "id": "02", "name": "VISHAL NAIR", "score": "94.2" },
-        { "id": "03", "name": "TANVI KAUR", "score": "93.0" },
-        { "id": "04", "name": "ADITYA GUPTA", "score": "91.8" },
-        { "id": "05", "name": "PREETI JAIN", "score": "90.5" },
-        { "id": "06", "name": "KARAN MEHRA", "score": "89.2" },
-        { "id": "07", "name": "NISHA BANSAL", "score": "88.7" },
-        { "id": "08", "name": "AMAN DIXIT", "score": "87.9" },
-        { "id": "09", "name": "RHEA SHARMA", "score": "86.4" },
-        { "id": "10", "name": "SAMAR SETHI", "score": "85.1" }
+        {
+          "id": "01",
+          "name": "DIA SURI",
+          "score": "96.4"
+        },
+        {
+          "id": "02",
+          "name": "VISHAL NAIR",
+          "score": "94.2"
+        },
+        {
+          "id": "03",
+          "name": "TANVI KAUR",
+          "score": "93.0"
+        },
+        {
+          "id": "04",
+          "name": "ADITYA GUPTA",
+          "score": "91.8"
+        },
+        {
+          "id": "05",
+          "name": "PREETI JAIN",
+          "score": "90.5"
+        },
+        {
+          "id": "06",
+          "name": "KARAN MEHRA",
+          "score": "89.2"
+        },
+        {
+          "id": "07",
+          "name": "NISHA BANSAL",
+          "score": "88.7"
+        },
+        {
+          "id": "08",
+          "name": "AMAN DIXIT",
+          "score": "87.9"
+        },
+        {
+          "id": "09",
+          "name": "RHEA SHARMA",
+          "score": "86.4"
+        },
+        {
+          "id": "10",
+          "name": "SAMAR SETHI",
+          "score": "85.1"
+        }
       ]
     },
     {
@@ -36,17 +72,61 @@
       "count": 11,
       "passBadge": "11 PASS",
       "candidates": [
-        { "id": "01", "name": "YASH THAKUR", "score": "98.1" },
-        { "id": "02", "name": "PRIYA CHOPRA", "score": "95.7" },
-        { "id": "03", "name": "HARSH GANDHI", "score": "94.0" },
-        { "id": "04", "name": "SIMRAN BAHL", "score": "92.5" },
-        { "id": "05", "name": "AKSHAT ROY", "score": "91.1" },
-        { "id": "06", "name": "NEHA SACHDEV", "score": "89.9" },
-        { "id": "07", "name": "MAYANK DAVE", "score": "88.3" },
-        { "id": "08", "name": "SHREYA TIWARI", "score": "87.0" },
-        { "id": "09", "name": "ANIKET PAUL", "score": "86.2" },
-        { "id": "10", "name": "VAIDEHI SINHA", "score": "85.8" },
-        { "id": "11", "name": "ARYAN BHATIA", "score": "85.0" }
+        {
+          "id": "01",
+          "name": "YASH THAKUR",
+          "score": "98.1"
+        },
+        {
+          "id": "02",
+          "name": "PRIYA CHOPRA",
+          "score": "95.7"
+        },
+        {
+          "id": "03",
+          "name": "HARSH GANDHI",
+          "score": "94.0"
+        },
+        {
+          "id": "04",
+          "name": "SIMRAN BAHL",
+          "score": "92.5"
+        },
+        {
+          "id": "05",
+          "name": "AKSHAT ROY",
+          "score": "91.1"
+        },
+        {
+          "id": "06",
+          "name": "NEHA SACHDEV",
+          "score": "89.9"
+        },
+        {
+          "id": "07",
+          "name": "MAYANK DAVE",
+          "score": "88.3"
+        },
+        {
+          "id": "08",
+          "name": "SHREYA TIWARI",
+          "score": "87.0"
+        },
+        {
+          "id": "09",
+          "name": "ANIKET PAUL",
+          "score": "86.2"
+        },
+        {
+          "id": "10",
+          "name": "VAIDEHI SINHA",
+          "score": "85.8"
+        },
+        {
+          "id": "11",
+          "name": "ARYAN BHATIA",
+          "score": "85.0"
+        }
       ]
     },
     {
@@ -56,17 +136,61 @@
       "count": 11,
       "passBadge": "11 PASS",
       "candidates": [
-        { "id": "01", "name": "ISHA KAPOOR", "score": "97.5" },
-        { "id": "02", "name": "DHRUV MENON", "score": "95.0" },
-        { "id": "03", "name": "KRITI TANEJA", "score": "93.8" },
-        { "id": "04", "name": "MANAV PATEL", "score": "92.1" },
-        { "id": "05", "name": "TANYA MITTAL", "score": "90.7" },
-        { "id": "06", "name": "VARUN GILL", "score": "89.4" },
-        { "id": "07", "name": "RIDDHI DEWAN", "score": "88.0" },
-        { "id": "08", "name": "CHETAN JOSHI", "score": "86.9" },
-        { "id": "09", "name": "ANVI BHATNAGAR", "score": "86.0" },
-        { "id": "10", "name": "SUMEET LUTHRA", "score": "85.3" },
-        { "id": "11", "name": "POOJA GARG", "score": "84.8" }
+        {
+          "id": "01",
+          "name": "ISHA KAPOOR",
+          "score": "97.5"
+        },
+        {
+          "id": "02",
+          "name": "DHRUV MENON",
+          "score": "95.0"
+        },
+        {
+          "id": "03",
+          "name": "KRITI TANEJA",
+          "score": "93.8"
+        },
+        {
+          "id": "04",
+          "name": "MANAV PATEL",
+          "score": "92.1"
+        },
+        {
+          "id": "05",
+          "name": "TANYA MITTAL",
+          "score": "90.7"
+        },
+        {
+          "id": "06",
+          "name": "VARUN GILL",
+          "score": "89.4"
+        },
+        {
+          "id": "07",
+          "name": "RIDDHI DEWAN",
+          "score": "88.0"
+        },
+        {
+          "id": "08",
+          "name": "CHETAN JOSHI",
+          "score": "86.9"
+        },
+        {
+          "id": "09",
+          "name": "ANVI BHATNAGAR",
+          "score": "86.0"
+        },
+        {
+          "id": "10",
+          "name": "SUMEET LUTHRA",
+          "score": "85.3"
+        },
+        {
+          "id": "11",
+          "name": "POOJA GARG",
+          "score": "84.8"
+        }
       ]
     },
     {
@@ -76,16 +200,56 @@
       "count": 10,
       "passBadge": "10 PASS",
       "candidates": [
-        { "id": "01", "name": "SAMARTH GOEL", "score": "99.0" },
-        { "id": "02", "name": "ANANYA KULKARNI", "score": "96.5" },
-        { "id": "03", "name": "PARTH KOHLI", "score": "94.8" },
-        { "id": "04", "name": "MEGHNA DUTTA", "score": "93.3" },
-        { "id": "05", "name": "HARSHIT SAXENA", "score": "91.0" },
-        { "id": "06", "name": "AASTHA SETH", "score": "89.6" },
-        { "id": "07", "name": "KUSHAGRA RAJ", "score": "88.4" },
-        { "id": "08", "name": "LAVANYA HEGDE", "score": "87.2" },
-        { "id": "09", "name": "TEJAS MANI", "score": "86.5" },
-        { "id": "10", "name": "DIVYA PILLAI", "score": "85.4" }
+        {
+          "id": "01",
+          "name": "SAMARTH GOEL",
+          "score": "99.0"
+        },
+        {
+          "id": "02",
+          "name": "ANANYA KULKARNI",
+          "score": "96.5"
+        },
+        {
+          "id": "03",
+          "name": "PARTH KOHLI",
+          "score": "94.8"
+        },
+        {
+          "id": "04",
+          "name": "MEGHNA DUTTA",
+          "score": "93.3"
+        },
+        {
+          "id": "05",
+          "name": "HARSHIT SAXENA",
+          "score": "91.0"
+        },
+        {
+          "id": "06",
+          "name": "AASTHA SETH",
+          "score": "89.6"
+        },
+        {
+          "id": "07",
+          "name": "KUSHAGRA RAJ",
+          "score": "88.4"
+        },
+        {
+          "id": "08",
+          "name": "LAVANYA HEGDE",
+          "score": "87.2"
+        },
+        {
+          "id": "09",
+          "name": "TEJAS MANI",
+          "score": "86.5"
+        },
+        {
+          "id": "10",
+          "name": "DIVYA PILLAI",
+          "score": "85.4"
+        }
       ]
     }
   ]
