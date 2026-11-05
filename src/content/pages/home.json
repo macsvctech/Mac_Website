@@ -22,7 +22,8 @@
     "imageTagSub": "ISO_800 // SVC_DELHI",
     "quoteSticker": "“Creative chaos executed perfectly.”",
     "quoteStickerSub": "// FIELD DISPATCH REVIEW",
-    "statSticker": "50+ CAMPAIGNS"
+    "statSticker": "50+ CAMPAIGNS",
+    "enabled": true
   },
   "receipts": {
     "sectionTag": "/// SECTION 1.2 // THE RECEIPTS [VERIFIED_DATA]",
@@ -32,33 +33,39 @@
         "id": "METRIC_01",
         "value": "50,000+",
         "label": "MONTHLY DIGITAL REACH",
-        "defaultActive": true
+        "defaultActive": true,
+        "enabled": true
       },
       {
         "id": "METRIC_02",
         "value": "50+",
         "label": "SPEAKER SESSIONS",
-        "defaultActive": false
+        "defaultActive": false,
+        "enabled": true
       },
       {
         "id": "METRIC_03",
         "value": "1,700+",
         "label": "INSTAGRAM FOLLOWERS",
-        "defaultActive": false
+        "defaultActive": false,
+        "enabled": true
       },
       {
         "id": "METRIC_04",
         "value": "1,100+",
         "label": "LINKEDIN NETWORK",
-        "defaultActive": false
+        "defaultActive": false,
+        "enabled": true
       },
       {
         "id": "METRIC_05",
         "value": "50+",
         "label": "BLOGS & REPORTS",
-        "defaultActive": false
+        "defaultActive": false,
+        "enabled": true
       }
-    ]
+    ],
+    "enabled": true
   },
   "machinery": {
     "title": "THE MACHINERY",
@@ -76,7 +83,8 @@
         "meta": "SYNDICATE_VAL: 100%",
         "image": null,
         "videoUrl": null,
-        "documentUrl": null
+        "documentUrl": null,
+        "enabled": true
       },
       {
         "code": "DEP_02",
@@ -89,7 +97,8 @@
         "meta": "VIRAL_DISPATCH",
         "image": null,
         "videoUrl": null,
-        "documentUrl": null
+        "documentUrl": null,
+        "enabled": true
       },
       {
         "code": "DEP_03",
@@ -102,7 +111,8 @@
         "meta": "TACTICAL_UNIT",
         "image": null,
         "videoUrl": null,
-        "documentUrl": null
+        "documentUrl": null,
+        "enabled": true
       },
       {
         "code": "SUB_DEP_4A",
@@ -115,7 +125,8 @@
         "meta": "RESEARCH_HUB",
         "image": null,
         "videoUrl": null,
-        "documentUrl": null
+        "documentUrl": null,
+        "enabled": true
       },
       {
         "code": "SUB_DEP_4B",
@@ -128,9 +139,11 @@
         "meta": "DESIGN_CORE",
         "image": null,
         "videoUrl": null,
-        "documentUrl": null
+        "documentUrl": null,
+        "enabled": true
       }
-    ]
+    ],
+    "enabled": true
   },
   "sponsors": {
     "header": "/// PAST_SPONSORS ->",
@@ -177,7 +190,8 @@
         "logoImage": null,
         "websiteUrl": "https://dubeat.com"
       }
-    ]
+    ],
+    "enabled": true
   },
   "freshPress": {
     "title": "FRESH OFF THE PRESS",
@@ -207,7 +221,8 @@
           "description": "Dissecting algorithmic shifting and brand visibility strategies in next-gen answer engines.",
           "link": "/intel",
           "highlighted": true,
-          "pdfUrl": null
+          "pdfUrl": null,
+          "enabled": true
         },
         {
           "tag": "[BRAND STRATEGY] // CASE_STUDY_88",
@@ -215,12 +230,14 @@
           "description": "How D2C upstarts are disrupting FMCG monopolies through guerilla narratives and rapid loops.",
           "link": "/intel",
           "highlighted": false,
-          "pdfUrl": null
+          "pdfUrl": null,
+          "enabled": true
         }
       ],
       "footerTotal": "ARCHIVE TOTAL: 52 DISPATCHES",
       "footerLinkText": "[ACCESS ALL INTEL]",
       "footerLink": "/intel"
-    }
+    },
+    "enabled": true
   }
 }

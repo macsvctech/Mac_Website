@@ -18,7 +18,8 @@
     "mediaSubCaption": "// SVC DHAULA KUAN PRECINCT    MAC_DEPT_HIST_2017-PRESENT",
     "clearanceStamp": "[ARCHIVAL_CLEARANCE]",
     "constitutionPdfUrl": "/uploads/documents/mac-society-constitution.pdf",
-    "constitutionPdfLabel": "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]"
+    "constitutionPdfLabel": "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]",
+    "enabled": true
   },
   "architecture": {
     "title": "CORE ARCHITECTURE",
@@ -135,7 +136,8 @@
           }
         ]
       }
-    ]
+    ],
+    "enabled": true
   },
   "plaques": {
     "vision": {
@@ -151,7 +153,8 @@
       "body": "To dismantle conventional marketing pedagogy through relentless hands-on project incubation, high-stakes tactical competitions, data-backed market research, and high-impact industry mentorship for every active club operative.",
       "operationalMandate": "OPERATIONAL_MANDATE // SVC_CAMPUS",
       "status": "[ACTIVE]"
-    }
+    },
+    "enabled": true
   },
   "wings": {
     "title": "OPERATIONAL WINGS // SPEC SHEET",
@@ -168,7 +171,8 @@
           "[CRISIS OPS]",
           "[ON-GROUND EXECUTION]"
         ],
-        "sampleWorkUrl": null
+        "sampleWorkUrl": null,
+        "enabled": true
       },
       {
         "deptTag": "DEPT_02 /// CAPITAL_B2B",
@@ -180,7 +184,8 @@
           "[CORPORATE B2B]",
           "[LIVE PROJECTS]"
         ],
-        "sampleWorkUrl": null
+        "sampleWorkUrl": null,
+        "enabled": true
       },
       {
         "deptTag": "DEPT_03 /// HYPE_ENGINE",
@@ -192,7 +197,8 @@
           "[DIGITAL CAMPAIGNS]",
           "[PR & OUTREACH]"
         ],
-        "sampleWorkUrl": null
+        "sampleWorkUrl": null,
+        "enabled": true
       },
       {
         "deptTag": "DEPT_04 /// INTEL_RESEARCH",
@@ -204,9 +210,11 @@
           "[MACZINE EDITORIAL]",
           "[WEB & DESIGN]"
         ],
-        "sampleWorkUrl": null
+        "sampleWorkUrl": null,
+        "enabled": true
       }
-    ]
+    ],
+    "enabled": true
   },
   "exitLogs": {
     "title": "DECLASSIFIED EXIT LOGS // PAST LEADERSHIP",
@@ -215,6 +223,7 @@
     "dossierCloseText": "[ CLOSE DOSSIER - ]",
     "linkedinText": "[ LINKEDIN ↗ ]",
     "readAllButtonText": "READ ALL TESTIMONIALS ->",
-    "readAllButtonUrl": "/testimonials"
+    "readAllButtonUrl": "/testimonials",
+    "enabled": true
   }
 }

@@ -63,7 +63,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 
       <!-- 3-Column Pass Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
-        {(coreCommand || []).map((officer) => (
+        {(coreCommand || []).filter((o) => o.enabled !== false).map((officer) => (
           <article class="officer-badge-card bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] flex flex-col">
             <!-- Card Header / Lanyard Slot Strip -->
             <div class="bg-stark-black h-11 px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black relative">
@@ -186,7 +186,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 
       <!-- Department Filter Switcher Tabs -->
       <div class="flex flex-wrap items-center gap-2" id="dept-tabs">
-        {(departments || []).map((dept, index) => (
+        {(departments || []).filter((d) => d.enabled !== false).map((dept, index) => (
           <button
             class={`dept-tab px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-xs sm:text-sm font-bold uppercase border-2 border-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] transition-all cursor-pointer ${
               index === 0
@@ -203,7 +203,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 
       <!-- Department Switchboard Panels Container -->
       <div class="w-full bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] p-4 sm:p-6 lg:p-8 flex flex-col gap-6 sm:gap-8">
-        {(departments || []).map((dept, index) => (
+        {(departments || []).filter((d) => d.enabled !== false).map((dept, index) => (
           <div
             id={dept.id}
             class={`dept-panel flex flex-col gap-6 sm:gap-8 ${index === 0 ? 'block' : 'hidden'}`}
@@ -234,7 +234,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                 /// HEAD DIRECTORS & LEAD COORDINATORS
               </span>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-                {(dept.coordinators || []).map((coord) => (
+                {(dept.coordinators || []).filter((c) => c.enabled !== false).map((coord) => (
                   <div class="paper-lift border-2 border-stark-black bg-surface p-3.5 sm:p-4 flex flex-col gap-2.5 sm:gap-3 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000]">
                     <div class="w-full aspect-[4/3] bg-tactical-stone border border-stark-black overflow-hidden relative">
                       <img
@@ -290,7 +290,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                   </tr>
                 </thead>
                 <tbody>
-                  {(dept.directoryTable || []).map((row) => (
+                  {(dept.directoryTable || []).filter((r) => r.enabled !== false).map((row) => (
                     <tr class="border-b border-stark-black bg-pure-white hover:bg-mac-yellow transition-colors">
                       <td class="py-2 sm:py-2.5 px-3 sm:px-4 font-bold border-r border-stark-black text-stark-black whitespace-nowrap">{row.name}</td>
                       <td class="py-2 sm:py-2.5 px-3 sm:px-4 border-r border-stark-black text-on-surface whitespace-nowrap">{row.academic}</td>
@@ -350,7 +350,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             >
               ALL [{totalCleared}]
             </button>
-            {(wings || []).map((w) => (
+            {(wings || []).filter((w) => w.enabled !== false).map((w) => (
               <button
                 class="terminal-filter-chip text-xs font-bold uppercase px-2 sm:px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors"
                 data-wing={w.id}
@@ -370,7 +370,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             <div class="text-xs text-pure-white/80">NO CANDIDATE IN CURRENT WING SECTOR MATCHES YOUR QUERY. VERIFY YOUR NAME OR ROLL NUMBER SPELLING.</div>
           </div>
 
-          {(wings || []).map((w) => (
+          {(wings || []).filter((w) => w.enabled !== false).map((w) => (
             <div
               class="wing-column border border-outline-variant/30 p-3.5 sm:p-4 bg-stark-black/60 flex flex-col gap-3"
               data-wing-column={w.id}
@@ -380,7 +380,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                 <span class="text-[10px] bg-mac-yellow/20 text-mac-yellow px-1 font-bold">{w.passBadge}</span>
               </div>
               <ul class="flex flex-col gap-2 terminal-list">
-                {(w.candidates || []).map((cand) => (
+                {(w.candidates || []).filter((c) => c.enabled !== false).map((cand) => (
                   <li
                     class="terminal-candidate-item flex items-center justify-between text-pure-white hover:text-mac-yellow border-b border-outline/20 pb-1 gap-2"
                     data-name={cand.name.toLowerCase()}

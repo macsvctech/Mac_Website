@@ -6,7 +6,7 @@ import BrutalMedia from '../../components/ui/BrutalMedia.astro';
 import BlueprintDivider from '../../components/ui/BlueprintDivider.astro';
 
 const allIntel = await getCollection('intel');
-const sortedIntel = allIntel.sort((a, b) => a.data.order - b.data.order);
+const sortedIntel = allIntel.filter((i) => i.data.enabled !== false).sort((a, b) => a.data.order - b.data.order);
 const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelData;
 ---
 

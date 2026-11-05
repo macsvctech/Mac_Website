@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "Neuromarketing in Gen-Z Apparel Retail"
 category: "Research Report"
 publishDate: "OCT 2026"

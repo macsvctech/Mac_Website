@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "The Rise of Challenger Brands: How Upstarts Dismantle Legacy Monopolies"
 category: "Case Study"
 publishDate: "OCT 2026"

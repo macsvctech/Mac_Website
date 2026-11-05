@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "id": "markopolis",
   "order": 1,
   "code": "OPERATION_01",
@@ -18,9 +19,18 @@
   "stickerColor": "red",
   "stickerRotate": "-rotate-3",
   "stats": [
-    { "value": "1,200+", "label": "FOOTFALL" },
-    { "value": "20+", "label": "COLLEGES" },
-    { "value": "6", "label": "ROUNDS" }
+    {
+      "value": "1,200+",
+      "label": "FOOTFALL"
+    },
+    {
+      "value": "20+",
+      "label": "COLLEGES"
+    },
+    {
+      "value": "6",
+      "label": "ROUNDS"
+    }
   ],
   "editions": [
     {

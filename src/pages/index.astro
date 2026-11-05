@@ -141,7 +141,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
       <!-- 5-Cell Collapsed Border Data Table Grid with Flat Hover-Swap -->
       <div class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-stark-black bg-pure-white">
-        {receipts.metrics.map((metric) => (
+        {receipts.metrics.filter((m) => m.enabled !== false).map((metric) => (
           <div
             class={`receipt-cell p-4 sm:p-6 lg:p-7 flex flex-col justify-between transition-colors cursor-pointer group ${
               metric.defaultActive
@@ -364,7 +364,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
         <!-- 6 Freight-Stamp Cells Grid with Flat Hover Snapping -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 flex-1 divide-y-2 sm:divide-y-0 divide-x-2 divide-stark-black">
-          {sponsors.items.map((sponsor) => (
+          {sponsors.items.filter((s) => s.enabled !== false).map((sponsor) => (
             <a
               href={sponsor.websiteUrl || "#"}
               target={sponsor.websiteUrl ? "_blank" : undefined}
@@ -490,7 +490,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
           <!-- Stacked Newspaper-Clipping Rows -->
           <div class="flex flex-col flex-1 divide-y-2 divide-stark-black">
-            {freshPress.intel.articles.map((article) => (
+            {freshPress.intel.articles.filter((a) => a.enabled !== false).map((article) => (
               <div
                 class={`p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 flex-1 transition-colors ${
                   article.highlighted 

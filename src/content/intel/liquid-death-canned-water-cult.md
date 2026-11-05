@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "How Liquid Death Turned Canned Water Into a Punk Cult"
 category: "Case Study"
 publishDate: "SEP 2026"

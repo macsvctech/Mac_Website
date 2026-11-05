@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "10-Minute Dopamine: Inside India's Hyper-Local Quick Commerce Battleground"
 category: "Blog"
 publishDate: "AUG 2026"

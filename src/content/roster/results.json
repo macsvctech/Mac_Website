@@ -16,54 +16,65 @@
         {
           "id": "01",
           "name": "DIA SURI",
-          "score": "96.4"
+          "score": "96.4",
+          "enabled": true
         },
         {
           "id": "02",
           "name": "VISHAL NAIR",
-          "score": "94.2"
+          "score": "94.2",
+          "enabled": true
         },
         {
           "id": "03",
           "name": "TANVI KAUR",
-          "score": "93.0"
+          "score": "93.0",
+          "enabled": true
         },
         {
           "id": "04",
           "name": "ADITYA GUPTA",
-          "score": "91.8"
+          "score": "91.8",
+          "enabled": true
         },
         {
           "id": "05",
           "name": "PREETI JAIN",
-          "score": "90.5"
+          "score": "90.5",
+          "enabled": true
         },
         {
           "id": "06",
           "name": "KARAN MEHRA",
-          "score": "89.2"
+          "score": "89.2",
+          "enabled": true
         },
         {
           "id": "07",
           "name": "NISHA BANSAL",
-          "score": "88.7"
+          "score": "88.7",
+          "enabled": true
         },
         {
           "id": "08",
           "name": "AMAN DIXIT",
-          "score": "87.9"
+          "score": "87.9",
+          "enabled": true
         },
         {
           "id": "09",
           "name": "RHEA SHARMA",
-          "score": "86.4"
+          "score": "86.4",
+          "enabled": true
         },
         {
           "id": "10",
           "name": "SAMAR SETHI",
-          "score": "85.1"
+          "score": "85.1",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "growth",
@@ -75,59 +86,71 @@
         {
           "id": "01",
           "name": "YASH THAKUR",
-          "score": "98.1"
+          "score": "98.1",
+          "enabled": true
         },
         {
           "id": "02",
           "name": "PRIYA CHOPRA",
-          "score": "95.7"
+          "score": "95.7",
+          "enabled": true
         },
         {
           "id": "03",
           "name": "HARSH GANDHI",
-          "score": "94.0"
+          "score": "94.0",
+          "enabled": true
         },
         {
           "id": "04",
           "name": "SIMRAN BAHL",
-          "score": "92.5"
+          "score": "92.5",
+          "enabled": true
         },
         {
           "id": "05",
           "name": "AKSHAT ROY",
-          "score": "91.1"
+          "score": "91.1",
+          "enabled": true
         },
         {
           "id": "06",
           "name": "NEHA SACHDEV",
-          "score": "89.9"
+          "score": "89.9",
+          "enabled": true
         },
         {
           "id": "07",
           "name": "MAYANK DAVE",
-          "score": "88.3"
+          "score": "88.3",
+          "enabled": true
         },
         {
           "id": "08",
           "name": "SHREYA TIWARI",
-          "score": "87.0"
+          "score": "87.0",
+          "enabled": true
         },
         {
           "id": "09",
           "name": "ANIKET PAUL",
-          "score": "86.2"
+          "score": "86.2",
+          "enabled": true
         },
         {
           "id": "10",
           "name": "VAIDEHI SINHA",
-          "score": "85.8"
+          "score": "85.8",
+          "enabled": true
         },
         {
           "id": "11",
           "name": "ARYAN BHATIA",
-          "score": "85.0"
+          "score": "85.0",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "media",
@@ -139,59 +162,71 @@
         {
           "id": "01",
           "name": "ISHA KAPOOR",
-          "score": "97.5"
+          "score": "97.5",
+          "enabled": true
         },
         {
           "id": "02",
           "name": "DHRUV MENON",
-          "score": "95.0"
+          "score": "95.0",
+          "enabled": true
         },
         {
           "id": "03",
           "name": "KRITI TANEJA",
-          "score": "93.8"
+          "score": "93.8",
+          "enabled": true
         },
         {
           "id": "04",
           "name": "MANAV PATEL",
-          "score": "92.1"
+          "score": "92.1",
+          "enabled": true
         },
         {
           "id": "05",
           "name": "TANYA MITTAL",
-          "score": "90.7"
+          "score": "90.7",
+          "enabled": true
         },
         {
           "id": "06",
           "name": "VARUN GILL",
-          "score": "89.4"
+          "score": "89.4",
+          "enabled": true
         },
         {
           "id": "07",
           "name": "RIDDHI DEWAN",
-          "score": "88.0"
+          "score": "88.0",
+          "enabled": true
         },
         {
           "id": "08",
           "name": "CHETAN JOSHI",
-          "score": "86.9"
+          "score": "86.9",
+          "enabled": true
         },
         {
           "id": "09",
           "name": "ANVI BHATNAGAR",
-          "score": "86.0"
+          "score": "86.0",
+          "enabled": true
         },
         {
           "id": "10",
           "name": "SUMEET LUTHRA",
-          "score": "85.3"
+          "score": "85.3",
+          "enabled": true
         },
         {
           "id": "11",
           "name": "POOJA GARG",
-          "score": "84.8"
+          "score": "84.8",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "tech",
@@ -203,54 +238,65 @@
         {
           "id": "01",
           "name": "SAMARTH GOEL",
-          "score": "99.0"
+          "score": "99.0",
+          "enabled": true
         },
         {
           "id": "02",
           "name": "ANANYA KULKARNI",
-          "score": "96.5"
+          "score": "96.5",
+          "enabled": true
         },
         {
           "id": "03",
           "name": "PARTH KOHLI",
-          "score": "94.8"
+          "score": "94.8",
+          "enabled": true
         },
         {
           "id": "04",
           "name": "MEGHNA DUTTA",
-          "score": "93.3"
+          "score": "93.3",
+          "enabled": true
         },
         {
           "id": "05",
           "name": "HARSHIT SAXENA",
-          "score": "91.0"
+          "score": "91.0",
+          "enabled": true
         },
         {
           "id": "06",
           "name": "AASTHA SETH",
-          "score": "89.6"
+          "score": "89.6",
+          "enabled": true
         },
         {
           "id": "07",
           "name": "KUSHAGRA RAJ",
-          "score": "88.4"
+          "score": "88.4",
+          "enabled": true
         },
         {
           "id": "08",
           "name": "LAVANYA HEGDE",
-          "score": "87.2"
+          "score": "87.2",
+          "enabled": true
         },
         {
           "id": "09",
           "name": "TEJAS MANI",
-          "score": "86.5"
+          "score": "86.5",
+          "enabled": true
         },
         {
           "id": "10",
           "name": "DIVYA PILLAI",
-          "score": "85.4"
+          "score": "85.4",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     }
   ],
   "searchPlaceholder": "[ FILTER BY CANDIDATE NAME OR SCORE... ]",

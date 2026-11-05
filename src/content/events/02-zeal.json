@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "id": "zeal",
   "order": 2,
   "code": "OPERATION_02",
@@ -18,9 +19,18 @@
   "stickerColor": "white",
   "stickerRotate": "rotate-2",
   "stats": [
-    { "value": "ANNUAL", "label": "CADENCE" },
-    { "value": "15+", "label": "BRAND PARTNERS" },
-    { "value": "LIVE", "label": "WORKSHOPS" }
+    {
+      "value": "ANNUAL",
+      "label": "CADENCE"
+    },
+    {
+      "value": "15+",
+      "label": "BRAND PARTNERS"
+    },
+    {
+      "value": "LIVE",
+      "label": "WORKSHOPS"
+    }
   ],
   "editions": [
     {

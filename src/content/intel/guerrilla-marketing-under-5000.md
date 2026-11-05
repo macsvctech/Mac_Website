@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "Guerrilla Marketing Tactics That Cost Under INR 5,000"
 category: "Podcast / Video"
 publishDate: "AUG 2026"

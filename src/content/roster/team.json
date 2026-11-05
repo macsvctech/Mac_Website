@@ -18,7 +18,8 @@
     "council": "/// HIGH COMMAND COUNCIL",
     "title": "CORE COMMAND // EXECUTIVE COUNCIL",
     "clearance": "CLEARANCE: LEVEL-05 ALPHA",
-    "officerCount": "TOTAL: 03 OFFICERS"
+    "officerCount": "TOTAL: 03 OFFICERS",
+    "enabled": true
   },
   "coreCommand": [
     {
@@ -31,7 +32,8 @@
       "wing": "STRATEGY & RELAYS",
       "mandate": "Oversees institutional partnerships, flagship marketing conclaves, and multi-department execution protocols across Delhi University circuits.",
       "contactEmail": "mac.svc2016@gmail.com",
-      "linkedinUrl": "https://linkedin.com"
+      "linkedinUrl": "https://linkedin.com",
+      "enabled": true
     },
     {
       "idCode": "ID // MAC-CORE-02",
@@ -43,7 +45,8 @@
       "wing": "BRAND & SPONSORSHIPS",
       "mandate": "Leads corporate alliances, brand integrations, capital acquisition for MAC Arena 2027, and inter-society competitive delegations.",
       "contactEmail": "mac.svc2016@gmail.com",
-      "linkedinUrl": "https://linkedin.com"
+      "linkedinUrl": "https://linkedin.com",
+      "enabled": true
     },
     {
       "idCode": "ID // MAC-CORE-03",
@@ -55,7 +58,8 @@
       "wing": "OPERATIONS & LOGISTICS",
       "mandate": "Directs internal logistics, volunteer deployments, regulatory administrative permissions, and recruitment protocol enforcement.",
       "contactEmail": "mac.svc2016@gmail.com",
-      "linkedinUrl": "https://linkedin.com"
+      "linkedinUrl": "https://linkedin.com",
+      "enabled": true
     }
   ],
   "departments": [
@@ -74,7 +78,8 @@
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // MATH",
           "portrait": "/uploads/images/roster/sneha.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-02",
@@ -83,7 +88,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
           "portrait": "/uploads/images/roster/kabir.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-03",
@@ -92,7 +98,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
           "portrait": "/uploads/images/roster/devansh.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-04",
@@ -101,7 +108,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
           "portrait": "/uploads/images/roster/pooja.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         }
       ],
       "directoryTable": [
@@ -110,37 +118,43 @@
           "academic": "2ND YEAR // B.COM (H)",
           "specialization": "[VENUE & CADRE PROTOCOLS]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "SIDDHARTH RAO",
           "academic": "2ND YEAR // ECONOMICS",
           "specialization": "[STAGE & SOUND OPERATIONS]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "MEERA JOSHI",
           "academic": "1ST YEAR // STATISTICS",
           "specialization": "[OPERATIONAL DEPLOYMENT]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "ROHAN VERMA",
           "academic": "1ST YEAR // B.A. PROGRAMME",
           "specialization": "[FIELD LOGISTICS UNIT]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "TARUN KALYAN",
           "academic": "1ST YEAR // MATHEMATICS",
           "specialization": "[EQUIPMENT RELAY LOGS]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "dept-2",
@@ -157,7 +171,8 @@
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ECON",
           "portrait": "/uploads/images/blueprint/devanshu.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-05",
@@ -166,7 +181,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // B.COM",
           "portrait": "/uploads/images/blueprint/govind.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-06",
@@ -175,7 +191,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
           "portrait": "/uploads/images/roster/kabir.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-07",
@@ -184,7 +201,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
           "portrait": "/uploads/images/roster/pooja.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         }
       ],
       "directoryTable": [
@@ -193,37 +211,43 @@
           "academic": "2ND YEAR // B.COM (H)",
           "specialization": "[CORPORATE RELATIONS]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "NEHA SACHDEV",
           "academic": "2ND YEAR // ECONOMICS",
           "specialization": "[SPONSORSHIP PROPOSALS]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "MAYANK DAVE",
           "academic": "1ST YEAR // STATISTICS",
           "specialization": "[DELEGATION OUTREACH]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "SHREYA TIWARI",
           "academic": "1ST YEAR // B.A. PROGRAMME",
           "specialization": "[BRAND RELAYS]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "ANIKET PAUL",
           "academic": "1ST YEAR // MATHEMATICS",
           "specialization": "[PARTNERSHIP TRACKING]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "dept-3",
@@ -240,7 +264,8 @@
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ENG (H)",
           "portrait": "/uploads/images/roster/sneha.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-08",
@@ -249,7 +274,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
           "portrait": "/uploads/images/roster/devansh.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-09",
@@ -258,7 +284,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
           "portrait": "/uploads/images/roster/pooja.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-10",
@@ -267,7 +294,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // MATH",
           "portrait": "/uploads/images/roster/aarav.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         }
       ],
       "directoryTable": [
@@ -276,37 +304,43 @@
           "academic": "2ND YEAR // B.COM (H)",
           "specialization": "[INSTAGRAM FEED ARCHITECT]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "VARUN GILL",
           "academic": "2ND YEAR // ECONOMICS",
           "specialization": "[REELS & VIDEO DIRECTOR]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "RIDDHI DEWAN",
           "academic": "1ST YEAR // STATISTICS",
           "specialization": "[COPYWRITING SPRINT]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "CHETAN JOSHI",
           "academic": "1ST YEAR // B.A. PROGRAMME",
           "specialization": "[COMMUNITY TELEMETRY]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "ANVI BHATNAGAR",
           "academic": "1ST YEAR // MATHEMATICS",
           "specialization": "[PRESS RELEASES & PR]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     },
     {
       "id": "dept-4",
@@ -323,7 +357,8 @@
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // STATS",
           "portrait": "/uploads/images/roster/chaitanya.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-11",
@@ -332,7 +367,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // MATH",
           "portrait": "/uploads/images/roster/sneha.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-12",
@@ -341,7 +377,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
           "portrait": "/uploads/images/roster/ritesh.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         },
         {
           "id": "COORD-13",
@@ -350,7 +387,8 @@
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
           "portrait": "/uploads/images/roster/pooja.jpg",
-          "linkedin": "https://linkedin.com"
+          "linkedin": "https://linkedin.com",
+          "enabled": true
         }
       ],
       "directoryTable": [
@@ -359,37 +397,43 @@
           "academic": "2ND YEAR // B.COM (H)",
           "specialization": "[EDITORIAL ZINE REVIEW]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "AASTHA SETH",
           "academic": "2ND YEAR // ECONOMICS",
           "specialization": "[QUANTITATIVE SURVEYS]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "KUSHAGRA RAJ",
           "academic": "1ST YEAR // STATISTICS",
           "specialization": "[WEB ENGINE & CODE]",
           "status": "DEPLOYED",
-          "statusClass": "text-system-red"
+          "statusClass": "text-system-red",
+          "enabled": true
         },
         {
           "name": "LAVANYA HEGDE",
           "academic": "1ST YEAR // B.A. PROGRAMME",
           "specialization": "[MARKET INTELLIGENCE]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         },
         {
           "name": "TEJAS MANI",
           "academic": "1ST YEAR // MATHEMATICS",
           "specialization": "[ARCHIVAL DATA SYSTEMS]",
           "status": "STANDBY",
-          "statusClass": "text-system-blue"
+          "statusClass": "text-system-blue",
+          "enabled": true
         }
-      ]
+      ],
+      "enabled": true
     }
   ]
 }

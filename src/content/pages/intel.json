@@ -44,7 +44,8 @@
         "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
         "pages": "48 PGS"
       }
-    ]
+    ],
+    "enabled": true
   },
   "feedSection": {
     "tag": "// FIELD_INTEL_INDEX",
@@ -52,15 +53,32 @@
     "searchPlaceholder": "SEARCH INTEL...",
     "readDispatchText": "[ READ DISPATCH ↗ ]",
     "categories": [
-      { "id": "ALL", "label": "[ ALL INTEL ]" },
-      { "id": "Research Report", "label": "[ RESEARCH REPORTS ]" },
-      { "id": "Blog", "label": "[ BLOGS ]" },
-      { "id": "Case Study", "label": "[ CASE STUDIES ]" },
-      { "id": "Podcast / Video", "label": "[ PODCAST / VIDEO ]" }
-    ]
+      {
+        "id": "ALL",
+        "label": "[ ALL INTEL ]"
+      },
+      {
+        "id": "Research Report",
+        "label": "[ RESEARCH REPORTS ]"
+      },
+      {
+        "id": "Blog",
+        "label": "[ BLOGS ]"
+      },
+      {
+        "id": "Case Study",
+        "label": "[ CASE STUDIES ]"
+      },
+      {
+        "id": "Podcast / Video",
+        "label": "[ PODCAST / VIDEO ]"
+      }
+    ],
+    "enabled": true
   },
   "archiveSection": {
     "title": "/// COMPLETE_ARCHIVE_INDEX",
-    "status": "[STATUS: REPOSITORY SYNCHRONIZED]"
+    "status": "[STATUS: REPOSITORY SYNCHRONIZED]",
+    "enabled": true
   }
 }

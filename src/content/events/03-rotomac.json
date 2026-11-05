@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "id": "rotomac",
   "order": 3,
   "code": "OPERATION_03",
@@ -18,9 +19,18 @@
   "stickerColor": "yellow",
   "stickerRotate": "-rotate-2",
   "stats": [
-    { "value": "100%", "label": "INTERNAL DRILL" },
-    { "value": "4 WKS", "label": "INTENSIVE" },
-    { "value": "1 WINNER", "label": "CHAMPION CUP" }
+    {
+      "value": "100%",
+      "label": "INTERNAL DRILL"
+    },
+    {
+      "value": "4 WKS",
+      "label": "INTENSIVE"
+    },
+    {
+      "value": "1 WINNER",
+      "label": "CHAMPION CUP"
+    }
   ],
   "editions": [
     {

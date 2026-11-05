@@ -13,11 +13,13 @@
     "registrationUrl": "https://unstop.com",
     "registrationCtaText": "REGISTER ON UNSTOP ->",
     "posterImage": "/uploads/images/arena/markopolis.jpg",
-    "standbyMessage": "/// RADAR STANDBY // NO ACTIVE RADAR PINGS DETECTED ///"
+    "standbyMessage": "/// RADAR STANDBY // NO ACTIVE RADAR PINGS DETECTED ///",
+    "enabled": true
   },
   "flagshipSection": {
     "title": "FLAGSHIP OPERATIONS",
-    "badge": "/// 03 SYNCHRONIZED ARENAS"
+    "badge": "/// 03 SYNCHRONIZED ARENAS",
+    "enabled": true
   },
   "evidenceWallSection": {
     "title": "THE EVIDENCE WALL // VISUAL ARCHIVE",
@@ -44,6 +46,7 @@
         "label": "[ MAC CAMP & BTS ]"
       }
     ],
-    "loadMoreText": "[ LOAD MORE EVIDENCE (18 REMAINING) + ]"
+    "loadMoreText": "[ LOAD MORE EVIDENCE (18 REMAINING) + ]",
+    "enabled": true
   }
 }

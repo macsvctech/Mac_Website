@@ -64,6 +64,7 @@ const intel = defineCollection({
     attachmentFile: z.string().optional(),
     attachmentLabel: z.string().optional(),
     featured: z.boolean().default(false),
+    enabled: z.boolean().default(true),
     keyTakeaways: z.array(z.string()).optional(),
     readingVelocity: z.string().optional(),
     order: z.number().default(99),

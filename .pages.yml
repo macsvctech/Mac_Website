@@ -208,6 +208,10 @@ content:
         label: Hero Blueprint Terminal & Media
         type: object
         fields:
+          - name: enabled
+            label: "Show Hero Section?"
+            type: boolean
+            default: true
           - name: archiveRef
             label: Archival Reference Stamp
             type: string
@@ -281,6 +285,10 @@ content:
         label: The Receipts // Numerical Proof
         type: object
         fields:
+          - name: enabled
+            label: "Show The Receipts / Verified Metrics Section?"
+            type: boolean
+            default: true
           - name: sectionTag
             label: Section Stamp
             type: string
@@ -308,6 +316,10 @@ content:
         label: The Machinery // 4 Departments Preview
         type: object
         fields:
+          - name: enabled
+            label: "Show The Machinery / Departments Grid?"
+            type: boolean
+            default: true
           - name: title
             label: Section Title
             type: string
@@ -394,6 +406,10 @@ content:
         label: Fresh Off The Press // Live Feeds
         type: object
         fields:
+          - name: enabled
+            label: "Show Fresh Off The Press / Live Feed Section?"
+            type: boolean
+            default: true
           - name: title
             label: Section Title
             type: string
@@ -694,7 +710,11 @@ content:
     filename: "{primary}.json"
     view:
       primary: name
-      fields: [name, role, badgeId]
+      fields:
+      - name: enabled
+        label: "Visible on Website? (Toggle ON/OFF)"
+        type: boolean
+        default: true [name, role, badgeId]
       sort: order
     fields:
       - name: order
@@ -742,6 +762,10 @@ content:
     path: src/content/pages/testimonials.json
     format: json
     fields:
+      - name: statsEnabled
+        label: "Show Top Telemetry Metrics Strip?"
+        type: boolean
+        default: true
       - name: breadcrumb
         label: Breadcrumb Header
         type: string
@@ -882,7 +906,11 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields: [title, code, statusBadge]
+      fields:
+      - name: enabled
+        label: "Visible on Website? (Toggle ON/OFF)"
+        type: boolean
+        default: true [title, code, statusBadge]
       sort: order
     fields:
       - name: id
@@ -993,7 +1021,11 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields: [figureCode, title, category]
+      fields:
+      - name: enabled
+        label: "Visible on Website? (Toggle ON/OFF)"
+        type: boolean
+        default: true [figureCode, title, category]
       sort: order
     fields:
       - name: figureCode
@@ -1137,7 +1169,11 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, category, publishDate, author]
+      fields:
+      - name: enabled
+        label: "Publish on Website? (Toggle ON/OFF)"
+        type: boolean
+        default: true [title, category, publishDate, author]
       sort: order
     fields:
       - name: title
@@ -1280,6 +1316,10 @@ content:
         type: object
         list: true
         fields:
+          - name: enabled
+            label: "Show This Officer Badge?"
+            type: boolean
+            default: true
           - name: idCode
             label: Official ID Code
             type: string
@@ -1339,6 +1379,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: "Show This Coordinator Card?"
+                type: boolean
+                default: true
               - name: id
                 label: Coordinator Badge Code (e.g. DIR-01, COORD-02)
                 type: string
@@ -1367,6 +1411,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: "Show This Cadre Member Row?"
+                type: boolean
+                default: true
               - name: name
                 label: Operative Name
                 type: string
@@ -1463,6 +1511,18 @@ content:
     path: src/content/pages/contact.json
     format: json
     fields:
+      - name: terminalEnabled
+        label: "Show Contact Form Terminal?"
+        type: boolean
+        default: true
+      - name: sponsorshipEnabled
+        label: "Show Partnership & Sponsorship Deck Download?"
+        type: boolean
+        default: true
+      - name: externalChannelsEnabled
+        label: "Show External Telemetry & Social Channels?"
+        type: boolean
+        default: true
       - name: breadcrumb
         label: Breadcrumb Header
         type: string

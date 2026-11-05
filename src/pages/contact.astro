@@ -663,7 +663,7 @@ const {
               {externalChannelsTitle}
             </div>
             <div class="flex flex-col gap-2">
-              {externalLinks.map((link) => (
+              {(externalLinks || []).filter((link) => link.enabled !== false).map((link) => (
                 <a
                   class={`border-2 border-stark-black p-3.5 flex items-center justify-between font-mono text-xs sm:text-sm font-bold shadow-[2px_2px_0px_#000000] transition-all ${
                     link.active

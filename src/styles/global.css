@@ -15,6 +15,42 @@
   --color-pure-white: #FFFFFF;
   --color-blueprint-grid: #D0C6AB;
   --color-system-blue: #007AFF;
+
+  --color-on-surface: #1F1B11;
+  --color-on-surface-variant: #4D4632;
+  --color-surface-dim: #E1D9C8;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #FBF3E1;
+  --color-surface-container: #F6EDDB;
+  --color-surface-container-high: #F0E7D6;
+  --color-surface-container-highest: #EAE2D0;
+  --color-surface-variant: #EAE2D0;
+  --color-inverse-surface: #343024;
+  --color-inverse-on-surface: #F8F0DE;
+  --color-outline: #7E7760;
+  --color-outline-variant: #D0C6AB;
+}
+
+html.dark {
+  --color-surface: #0a0a08;
+  --color-tactical-stone: #151411;
+  --color-blueprint-grid: #28241c;
+  --color-pure-white: #11100d;
+  --color-stark-black: #000000;
+
+  --color-on-surface: #FAF4E6;
+  --color-on-surface-variant: #C2BAA6;
+  --color-surface-dim: #070705;
+  --color-surface-container-lowest: #0d0c0a;
+  --color-surface-container-low: #151410;
+  --color-surface-container: #1b1914;
+  --color-surface-container-high: #24221c;
+  --color-surface-container-highest: #2e2b23;
+  --color-surface-variant: #1e1c17;
+  --color-inverse-surface: #FAF4E6;
+  --color-inverse-on-surface: #14120e;
+  --color-outline: #8c8573;
+  --color-outline-variant: #3a3528;
 }
 
 @layer base {
@@ -30,12 +66,16 @@
 
   html {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #FFF8EF;
-    color: #1F1B11;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   /* Exposed 32px x 32px graph-paper grid background globally */
@@ -47,12 +87,12 @@
     max-width: 100vw;
     overflow-x: hidden;
     position: relative;
-    background-color: #FFF8EF;
+    background-color: var(--color-surface);
     background-image: 
-      linear-gradient(to right, #D0C6AB 1px, transparent 1px),
-      linear-gradient(to bottom, #D0C6AB 1px, transparent 1px);
+      linear-gradient(to right, var(--color-blueprint-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-blueprint-grid) 1px, transparent 1px);
     background-size: 32px 32px;
-    color: #1F1B11;
+    color: var(--color-on-surface);
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -135,10 +175,10 @@
 
   /* Blueprint Grid background helper */
   .bg-grid-blueprint {
-    background-color: #FFF8EF;
+    background-color: var(--color-surface);
     background-image: 
-      linear-gradient(to right, #D0C6AB 1px, transparent 1px),
-      linear-gradient(to bottom, #D0C6AB 1px, transparent 1px);
+      linear-gradient(to right, var(--color-blueprint-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-blueprint-grid) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
@@ -510,6 +550,61 @@
     max-width: 100%;
     height: auto;
     margin: 1.5rem 0;
+  }
+
+  /* Prose Brutalist Dark Mode Adaptations */
+  html.dark .prose-brutalist h1,
+  html.dark .prose-brutalist h2,
+  html.dark .prose-brutalist h3 {
+    color: #FAF4E6;
+    border-color: #FAF4E6;
+  }
+  html.dark .prose-brutalist p,
+  html.dark .prose-brutalist ul,
+  html.dark .prose-brutalist ol,
+  html.dark .prose-brutalist li {
+    color: #FAF4E6;
+  }
+  html.dark .prose-brutalist table {
+    background-color: #11100d;
+    border-color: #FAF4E6;
+    box-shadow: 4px 4px 0px #000000;
+  }
+  html.dark .prose-brutalist td {
+    color: #FAF4E6;
+    border-color: #3a3528;
+  }
+  html.dark .prose-brutalist tr:hover td {
+    background-color: #F0C903;
+    color: #000000;
+  }
+  html.dark .prose-brutalist thead {
+    background-color: #000000;
+    color: #F0C903;
+  }
+
+  /* Dark mode brutalist borders and shadows */
+  html.dark .border-stark-black,
+  html.dark .border-black-2,
+  html.dark .border-black-4,
+  html.dark .border-brutal-2,
+  html.dark .border-brutal-4 {
+    border-color: #000000;
+  }
+
+  /* Paper Lift Physics in Dark Mode */
+  html.dark .paper-lift:hover,
+  html.dark .intel-article-card:hover,
+  html.dark .officer-badge-card:hover,
+  html.dark .paper-lift-alt:hover,
+  html.dark .evidence-card:hover {
+    box-shadow: 10px 10px 0px #000000 !important;
+  }
+
+  /* Selection in dark mode */
+  html.dark ::selection {
+    background-color: #F0C903;
+    color: #000000;
   }
 
   /* =========================================================================

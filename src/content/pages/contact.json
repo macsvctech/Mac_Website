@@ -32,7 +32,8 @@
     "status": "[ STATUS: OPEN 09:00 - 17:00 IST ]",
     "mapImage": "/uploads/images/tactical-map.png",
     "googleMapsUrl": "https://maps.google.com/?q=Sri+Venkateswara+College+Benito+Juarez+Marg+New+Delhi",
-    "viewMapText": "[ VIEW GOOGLE MAP ↗ ]"
+    "viewMapText": "[ VIEW GOOGLE MAP ↗ ]",
+    "enabled": true
   },
   "sponsorshipHeading": "PARTNERSHIP & SPONSORSHIP DOSSIER:",
   "sponsorshipTitle": "MAC_OFFICIAL_SPONSORSHIP_DECK_2027.PDF",
@@ -64,5 +65,8 @@
       "url": "mailto:mac.svc2016@gmail.com",
       "active": false
     }
-  ]
+  ],
+  "terminalEnabled": true,
+  "sponsorshipEnabled": true,
+  "externalChannelsEnabled": true
 }

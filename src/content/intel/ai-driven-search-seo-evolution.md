@@ -1,4 +1,5 @@
 ---
+enabled: true
 title: "AI-Driven Search and SEO Evolution: Is the Traditional Web Dead?"
 category: "Research Report"
 publishDate: "NOV 2026"
