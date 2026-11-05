@@ -3,20 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BrutalMedia from '../components/ui/BrutalMedia.astro';
 import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
 import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import { getCollection } from 'astro:content';
 import arenaContent from '../content/pages/arena.json';
-import markopolis from '../content/events/01-markopolis.json';
-import zeal from '../content/events/02-zeal.json';
-import rotomac from '../content/events/03-rotomac.json';
 
-import g1 from '../content/gallery/01-bts-night-ops.json';
-import g2 from '../content/gallery/02-annual-assembly.json';
-import g3 from '../content/gallery/03-markopolis-war-room.json';
-import g4 from '../content/gallery/04-keynote-series.json';
-import g5 from '../content/gallery/05-rotomac-podium.json';
-import g6 from '../content/gallery/06-closing-ceremony.json';
+const allEvents = await getCollection('events');
+const events = allEvents.sort((a, b) => (a.data.order || 99) - (b.data.order || 99)).map((e) => e.data);
 
-const events = [markopolis, zeal, rotomac];
-const gallery = [g1, g2, g3, g4, g5, g6];
+const allGallery = await getCollection('gallery');
+const gallery = allGallery.sort((a, b) => (a.data.order || 99) - (b.data.order || 99)).map((g) => g.data);
+
 const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arenaContent;
 ---
 

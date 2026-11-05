@@ -687,10 +687,15 @@ content:
   # 04. TESTIMONIALS (ALUMNI PRESIDENT EXIT DOSSIERS)
   # ----------------------------------------------------------------------------
   - name: testimonials
-    label: "🎙️ Blueprint: Alumni President Exit Dossiers"
+    label: "🎙️ Testimonials: Alumni President & Member Exit Dossiers"
     type: collection
     path: src/content/testimonials
     format: json
+    filename: "{primary}.json"
+    view:
+      primary: name
+      fields: [name, role, badgeId]
+      sort: order
     fields:
       - name: order
         label: Display Order Index
@@ -874,6 +879,11 @@ content:
     type: collection
     path: src/content/events
     format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [title, code, statusBadge]
+      sort: order
     fields:
       - name: id
         label: Operation Slug / Key
@@ -980,6 +990,11 @@ content:
     type: collection
     path: src/content/gallery
     format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [figureCode, title, category]
+      sort: order
     fields:
       - name: figureCode
         label: Archival Figure Stamp (e.g. FIG_01)
@@ -1119,6 +1134,11 @@ content:
     type: collection
     path: src/content/intel
     format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, category, publishDate, author]
+      sort: order
     fields:
       - name: title
         label: Dossier Headline

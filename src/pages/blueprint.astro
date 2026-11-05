@@ -3,12 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BrutalMedia from '../components/ui/BrutalMedia.astro';
 import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
 import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import { getCollection } from 'astro:content';
 import blueprintContent from '../content/pages/blueprint.json';
-import devanshu from '../content/testimonials/01-devanshu-gupta.json';
-import govind from '../content/testimonials/02-govind-kumar.json';
+
+const allTestimonials = await getCollection('testimonials');
+const sortedTestimonials = allTestimonials.sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+const testimonials = sortedTestimonials.slice(0, 2).map((t) => t.data);
 
 const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = blueprintContent;
-const testimonials = [devanshu, govind];
 ---
 
 <BaseLayout title="BLUEPRINT /// THE MARKETING CLUB (MAC)">
