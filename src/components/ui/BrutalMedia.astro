@@ -171,9 +171,9 @@ const hasMedia = isHtml5Video || embedUrl || isImage;
 
   <!-- Optional Bottom Caption Strip -->
   {caption && (
-    <div class="bg-pure-white border-t-2 border-stark-black px-3 py-2 font-mono text-xs font-bold text-stark-black flex items-center justify-between select-none">
-      <span class="truncate">{caption}</span>
-      <span class="text-[10px] text-on-surface-variant font-medium shrink-0 ml-2 uppercase">
+    <div class="bg-pure-white border-t-2 border-stark-black px-3 py-2 font-mono text-xs font-bold text-stark-black flex items-center justify-between select-none min-w-0 gap-2">
+      <span class="truncate min-w-0">{caption}</span>
+      <span class="text-[10px] text-on-surface-variant font-medium shrink-0 uppercase">
         {isHtml5Video || embedUrl ? "[VIDEO_DOC]" : "[FIG_REF]"}
       </span>
     </div>

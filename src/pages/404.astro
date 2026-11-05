@@ -5,33 +5,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="404: SECTOR NOT FOUND /// THE MARKETING CLUB (MAC)">
   <!-- 1. BREADCRUMB COMMAND STRIP -->
   <section class="w-full bg-tactical-stone border-b-2 border-stark-black">
-    <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-2.5 flex items-center justify-between">
-      <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-stark-black font-bold uppercase truncate">
-        <span class="inline-block w-2.5 h-2.5 bg-system-red animate-pulse"></span>
-        <span>/// DIRECTORY: ROOT / SYS_ERROR_404 // AIR_GAP_REACHED</span>
+    <div class="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-stark-black font-bold uppercase truncate min-w-0">
+        <span class="inline-block w-2.5 h-2.5 bg-system-red animate-pulse shrink-0"></span>
+        <span class="truncate">/// DIRECTORY: ROOT / SYS_ERROR_404 // AIR_GAP_REACHED</span>
       </div>
-      <span class="font-mono text-[11px] font-bold uppercase bg-pure-white text-system-red px-2 py-0.5 border border-stark-black shadow-[2px_2px_0px_#000000]">
+      <span class="font-mono text-[11px] font-bold uppercase bg-pure-white text-system-red px-2 py-0.5 border border-stark-black shadow-[2px_2px_0px_#000000] shrink-0">
         [FAULT: 404]
       </span>
     </div>
   </section>
 
   <!-- MAIN 404 ERROR CANVAS -->
-  <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1 flex flex-col justify-center">
-    <div class="border-4 border-stark-black shadow-[10px_10px_0px_#000000] bg-pure-white relative">
-      <!-- Blueprint Technical Corner Registration Crosshairs -->
-      <span class="absolute -top-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
-      <span class="absolute -top-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
-      <span class="absolute -bottom-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
-      <span class="absolute -bottom-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+  <main class="w-full max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 sm:py-16 flex-1 flex flex-col justify-center">
+    <div class="border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[10px_10px_0px_#000000] bg-pure-white relative">
+      <!-- Blueprint Technical Corner Registration Crosshairs (Desktop Only) -->
+      <span class="hidden sm:inline absolute -top-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="hidden sm:inline absolute -top-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="hidden sm:inline absolute -bottom-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="hidden sm:inline absolute -bottom-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
 
       <!-- Terminal Header -->
-      <div class="h-12 bg-stark-black px-4 sm:px-6 flex items-center justify-between border-b-4 border-stark-black select-none">
-        <div class="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold text-system-red uppercase">
-          <span class="material-symbols-outlined text-[18px]">warning</span>
-          <span>&gt; SYSTEM_FAULT // SECTOR_NOT_FOUND</span>
+      <div class="min-h-12 h-auto py-2.5 sm:py-0 bg-stark-black px-3.5 sm:px-6 flex items-center justify-between border-b-4 border-stark-black select-none gap-2">
+        <div class="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold text-system-red uppercase min-w-0 truncate">
+          <span class="material-symbols-outlined text-[18px] shrink-0">warning</span>
+          <span class="truncate">&gt; SYSTEM_FAULT // SECTOR_NOT_FOUND</span>
         </div>
-        <div class="flex items-center gap-1.5">
+        <div class="flex items-center gap-1.5 shrink-0">
           <span class="w-2.5 h-2.5 bg-system-red inline-block"></span>
           <span class="w-2.5 h-2.5 bg-mac-yellow inline-block"></span>
           <span class="w-2.5 h-2.5 bg-pure-white inline-block"></span>
@@ -39,33 +39,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <!-- Error Content Body -->
-      <div class="p-6 sm:p-10 lg:p-12 flex flex-col items-start gap-6 bg-pure-white">
+      <div class="p-4 sm:p-10 lg:p-12 flex flex-col items-start gap-5 sm:gap-6 bg-pure-white">
         
-        <div class="inline-block bg-system-red text-pure-white font-mono text-xs font-bold px-3 py-1 border-2 border-stark-black shadow-[3px_3px_0px_#000000] uppercase -rotate-1">
+        <div class="inline-block bg-system-red text-pure-white font-mono text-xs font-bold px-2.5 sm:px-3 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000] uppercase -rotate-1">
           /// HTTP_ERROR_STATUS_404
         </div>
 
         <div class="space-y-2">
-          <h1 class="font-display text-[72px] sm:text-[96px] lg:text-[120px] font-black leading-none uppercase text-stark-black tracking-tight select-none">
+          <h1 class="font-display text-[56px] xs:text-[72px] sm:text-[96px] lg:text-[120px] font-black leading-none uppercase text-stark-black tracking-tight select-none">
             404<span class="text-system-red">!</span>
           </h1>
-          <p class="font-display text-2xl sm:text-3xl font-black uppercase text-stark-black leading-tight">
+          <p class="font-display text-xl sm:text-2xl md:text-3xl font-black uppercase text-stark-black leading-tight break-words">
             SECTOR AIR-GAP REACHED. THE REQUESTED DOSSIER DOES NOT EXIST.
           </p>
         </div>
 
         <!-- Terminal Telemetry Log Box -->
-        <div class="w-full bg-stark-black text-pure-white border-2 border-stark-black p-4 font-mono text-xs space-y-1.5 shadow-[4px_4px_0px_#000000]">
+        <div class="w-full bg-stark-black text-pure-white border-2 border-stark-black p-3.5 sm:p-4 font-mono text-xs space-y-1.5 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] break-words">
           <div class="text-mac-yellow font-bold">&gt; SCANNING FREQUENCIES: NO SIGNAL DETECTED.</div>
           <div class="text-tactical-stone">&gt; REASON: URL COORDINATES MISALIGNED OR ASSET DECLASSIFICATION REVOKED.</div>
           <div class="text-electric-cyan">&gt; PROTOCOL: FALLBACK TO KNOWN SAFE COORDINATES IMMEDIATELY.</div>
         </div>
 
         <!-- Action Controls -->
-        <div class="pt-4 flex flex-wrap items-center gap-4">
+        <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <a
             href="/"
-            class="arcade-btn bg-mac-yellow text-stark-black px-6 py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow flex items-center gap-2"
+            class="arcade-btn w-full sm:w-auto justify-center bg-mac-yellow text-stark-black px-5 sm:px-6 py-3 sm:py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow flex items-center gap-2 text-center"
           >
             <span class="material-symbols-outlined text-[18px]">home</span>
             <span>[ RETURN TO COMMAND PERIMETER ]</span>
@@ -73,7 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <a
             href="/intel"
-            class="arcade-btn bg-pure-white text-stark-black px-6 py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[6px_6px_0px_#000000] hover:bg-tactical-stone flex items-center gap-2"
+            class="arcade-btn w-full sm:w-auto justify-center bg-pure-white text-stark-black px-5 sm:px-6 py-3 sm:py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] hover:bg-tactical-stone flex items-center gap-2 text-center"
           >
             <span class="material-symbols-outlined text-[18px]">description</span>
             <span>[ BROWSE INTEL STAND ]</span>
@@ -81,7 +81,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <a
             href="/contact"
-            class="arcade-btn bg-tactical-stone text-stark-black px-6 py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-pure-white flex items-center gap-2"
+            class="arcade-btn w-full sm:w-auto justify-center bg-tactical-stone text-stark-black px-5 sm:px-6 py-3 sm:py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-pure-white flex items-center gap-2 text-center"
           >
             <span class="material-symbols-outlined text-[18px]">terminal</span>
             <span>[ TRANSMIT ISSUE REPORT ]</span>

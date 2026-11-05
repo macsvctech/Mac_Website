@@ -23,7 +23,7 @@ const { Content } = await render(entry);
 
 <BaseLayout title={`${entry.data.title} /// MAC INTEL`}>
   <!-- READING SCROLL INDICATOR BAR -->
-  <div class="w-full bg-tactical-stone border-b-2 border-stark-black sticky top-[80px] z-40">
+  <div class="w-full bg-tactical-stone border-b-2 border-stark-black sticky top-16 sm:top-20 z-40">
     <div
       class="h-1.5 bg-mac-yellow border-r-2 border-stark-black transition-[width] duration-75"
       id="intel-scroll-bar"
@@ -32,7 +32,7 @@ const { Content } = await render(entry);
   </div>
 
   <!-- TACTICAL UTILITY STRIP -->
-  <aside aria-label="Dispatch Telemetry Header" class="w-full bg-tactical-stone border-b-2 border-stark-black py-2.5 px-4 md:px-8 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+  <aside aria-label="Dispatch Telemetry Header" class="w-full bg-tactical-stone border-b-2 border-stark-black py-2.5 px-3.5 sm:px-6 md:px-8 flex flex-wrap items-center justify-between gap-2.5 font-mono text-xs">
     <a
       href="/intel"
       class="inline-flex items-center gap-2 bg-pure-white hover:bg-mac-yellow text-stark-black px-3 py-1.5 border-2 border-stark-black shadow-[2px_2px_0px_#000000] font-mono font-bold tracking-wider active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
@@ -41,7 +41,7 @@ const { Content } = await render(entry);
       <span>[&lt;- BACK TO INTEL STAND]</span>
     </a>
 
-    <div class="flex items-center gap-3 font-mono text-stark-black uppercase font-bold tracking-wider flex-wrap">
+    <div class="flex items-center gap-2 sm:gap-3 font-mono text-stark-black uppercase font-bold tracking-wider flex-wrap">
       <span 
         class="hidden sm:inline bg-pure-white px-2 py-0.5 border border-stark-black copy-trigger cursor-copy hover:underline"
         data-copy={entry.data.dossierId}
@@ -61,11 +61,11 @@ const { Content } = await render(entry);
   </aside>
 
   <!-- MAIN DOSSIER CANVAS WRAPPER -->
-  <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-8">
     <!-- DOSSIER HERO CONTAINER BLOCK -->
-    <header class="w-full bg-pure-white border-4 border-stark-black p-6 md:p-10 shadow-[8px_8px_0px_#000000] mb-8">
+    <header class="w-full bg-pure-white border-4 border-stark-black p-4 sm:p-6 md:p-10 shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] mb-6 sm:mb-8">
       <!-- TOP METADATA ROW -->
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b-2 border-stark-black pb-4 mb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b-2 border-stark-black pb-3 sm:pb-4 mb-4 sm:mb-6">
         <div class="flex items-center gap-2">
           <span class={`font-mono text-xs font-bold px-3 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] ${
             entry.data.category === 'Research Report'
@@ -84,18 +84,18 @@ const { Content } = await render(entry);
             </span>
           )}
         </div>
-        <div class="font-mono text-xs text-on-surface-variant font-bold tracking-wider uppercase">
+        <div class="font-mono text-[11px] sm:text-xs text-on-surface-variant font-bold tracking-wider uppercase break-words">
           PUBLISHED: {entry.data.publishDate} // CADRE: {entry.data.authorRole || entry.data.author} // {entry.data.readTime} {entry.data.refNumber ? `// REF: ${entry.data.refNumber}` : ''}
         </div>
       </div>
 
       <!-- MAIN HEADLINE -->
-      <h1 class="font-black text-3xl sm:text-4xl md:text-5xl uppercase text-stark-black tracking-tight leading-tight mb-4">
+      <h1 class="font-black text-2xl sm:text-4xl md:text-5xl uppercase text-stark-black tracking-tight leading-tight mb-3 sm:mb-4 break-words">
         {entry.data.title}
       </h1>
 
       <!-- DECK / ABSTRACT -->
-      <p class="font-sans text-base sm:text-lg text-on-surface-variant max-w-5xl mb-8 leading-relaxed">
+      <p class="font-sans text-sm sm:text-base md:text-lg text-on-surface-variant max-w-5xl mb-6 sm:mb-8 leading-relaxed">
         {entry.data.excerpt}
       </p>
 
@@ -114,10 +114,10 @@ const { Content } = await render(entry);
           <img
             src={entry.data.coverImage}
             alt={entry.data.coverCaption || entry.data.title}
-            class="w-full h-[320px] md:h-[500px] object-cover filter contrast-125 block"
+            class="w-full h-[220px] sm:h-[320px] md:h-[500px] object-cover filter contrast-125 block"
           />
         )}
-        <figcaption class="bg-stark-black text-mac-yellow border-t-2 border-stark-black py-2.5 px-4 flex flex-wrap items-center justify-between font-mono text-xs uppercase tracking-widest gap-2">
+        <figcaption class="bg-stark-black text-mac-yellow border-t-2 border-stark-black py-2.5 px-3.5 sm:px-4 flex flex-wrap items-center justify-between font-mono text-[11px] sm:text-xs uppercase tracking-widest gap-2">
           <span class="flex items-center gap-2">
             <span class="material-symbols-outlined text-xs text-mac-yellow">biotech</span>
             {entry.data.coverCaption || `FIG_01 // ${entry.data.title}`}
@@ -134,13 +134,13 @@ const { Content } = await render(entry);
     </header>
 
     <!-- 2-COLUMN DOSSIER GRID -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-8 sm:mb-12 items-start">
       <!-- LEFT SIDEBAR: DOSSIER TELEMETRY & DISPATCH CONTROLS (4 COLS) -->
-      <div class="lg:col-span-4 lg:sticky lg:top-36 space-y-6">
+      <div class="lg:col-span-4 lg:sticky lg:top-28 space-y-5 sm:space-y-6">
         <!-- CARD 1: AUTHOR DOSSIER & CADRE IDENTITY -->
-        <div class="border-4 border-stark-black bg-tactical-stone shadow-[6px_6px_0px_#000000]">
+        <div class="border-4 border-stark-black bg-tactical-stone shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000]">
           <!-- MODULE HEADER -->
-          <div class="bg-stark-black text-mac-yellow font-mono text-xs font-bold py-2.5 px-4 flex items-center justify-between border-b-2 border-stark-black">
+          <div class="bg-stark-black text-mac-yellow font-mono text-xs font-bold py-2.5 px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black">
             <span class="flex items-center gap-1.5">
               <span class="material-symbols-outlined text-xs">folder_shared</span>
               &gt; AUTHOR_DOSSIER
@@ -151,14 +151,14 @@ const { Content } = await render(entry);
             </span>
           </div>
 
-          <div class="p-5 space-y-5">
+          <div class="p-3.5 sm:p-5 space-y-4 sm:space-y-5">
             <!-- AUTHOR ID CARD -->
-            <div class="bg-pure-white border-2 border-stark-black p-3.5 shadow-[2px_2px_0px_#000000]">
-              <div class="font-mono text-[11px] text-on-surface-variant uppercase font-bold">DISPATCH ORIGIN</div>
-              <div class="font-black text-lg uppercase text-stark-black leading-snug mt-1">{entry.data.author}</div>
-              <div class="font-mono text-xs text-[#705d00] font-bold mt-1.5 flex items-center gap-1">
-                <span class="material-symbols-outlined text-xs">verified</span>
-                {entry.data.authorRole || 'SRI VENKATESWARA COLLEGE, DU'}
+            <div class="bg-pure-white border-2 border-stark-black p-3 sm:p-3.5 shadow-[2px_2px_0px_#000000]">
+              <div class="font-mono text-[10px] sm:text-[11px] text-on-surface-variant uppercase font-bold">DISPATCH ORIGIN</div>
+              <div class="font-black text-base sm:text-lg uppercase text-stark-black leading-snug mt-1 break-words">{entry.data.author}</div>
+              <div class="font-mono text-xs text-[#705d00] font-bold mt-1.5 flex items-center gap-1 break-words">
+                <span class="material-symbols-outlined text-xs shrink-0">verified</span>
+                <span>{entry.data.authorRole || 'SRI VENKATESWARA COLLEGE, DU'}</span>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ const { Content } = await render(entry);
                   <span class="text-system-red">[CLASSIFIED]</span>
                 </div>
                 {entry.data.keyTakeaways.map((takeaway: string, idx: number) => (
-                  <div class="bg-pure-white border-2 border-stark-black p-3 font-mono text-xs leading-relaxed text-stark-black">
+                  <div class="bg-pure-white border-2 border-stark-black p-2.5 sm:p-3 font-mono text-xs leading-relaxed text-stark-black break-words">
                     <strong class="text-stark-black">0{idx + 1} //</strong> {takeaway}
                   </div>
                 ))}
@@ -180,7 +180,7 @@ const { Content } = await render(entry);
             <!-- TRANSMISSION ARCADE TRIGGER STACK -->
             <div class="space-y-2.5 pt-2 border-t-2 border-stark-black">
               <button
-                class="w-full bg-pure-white hover:bg-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+                class="w-full bg-pure-white hover:bg-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#000000] sm:hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer"
                 id="copy-dispatch-btn"
                 type="button"
               >
@@ -191,7 +191,7 @@ const { Content } = await render(entry);
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full bg-electric-cyan hover:bg-stark-black hover:text-electric-cyan text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+                class="w-full bg-electric-cyan hover:bg-stark-black hover:text-electric-cyan text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#000000] sm:hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
               >
                 <span>[ SHARE ON LINKEDIN ↗ ]</span>
               </a>
@@ -200,7 +200,7 @@ const { Content } = await render(entry);
                 <a
                   href={entry.data.attachmentFile}
                   download
-                  class="w-full bg-mac-yellow hover:bg-stark-black hover:text-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+                  class="w-full bg-mac-yellow hover:bg-stark-black hover:text-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#000000] sm:hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
                 >
                   <span>{entry.data.attachmentLabel || '[ 📄 DOWNLOAD DISPATCH PDF ]'}</span>
                 </a>
@@ -208,7 +208,7 @@ const { Content } = await render(entry);
             </div>
 
             <!-- METRIC MINI-BOX -->
-            <div class="border-2 border-stark-black bg-surface p-3 font-mono text-xs flex items-center justify-between">
+            <div class="border-2 border-stark-black bg-surface p-2.5 sm:p-3 font-mono text-xs flex items-center justify-between">
               <span class="text-on-surface-variant font-bold">READING VELOCITY:</span>
               <span class="font-bold text-stark-black bg-pure-white px-2 py-0.5 border border-stark-black">
                 {entry.data.readingVelocity || '280 WPM'}
@@ -218,7 +218,7 @@ const { Content } = await render(entry);
         </div>
 
         <!-- CARD 2: DOSSIER AUDIT LOG -->
-        <div class="border-2 border-stark-black bg-pure-white p-4 shadow-[4px_4px_0px_#000000] space-y-2 font-mono text-xs">
+        <div class="border-2 border-stark-black bg-pure-white p-3.5 sm:p-4 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] space-y-2 font-mono text-xs">
           <div class="flex items-center justify-between border-b border-stark-black pb-1.5 font-bold">
             <span>/// SECURITY HASH</span>
             <span class="text-[#006875] font-mono">SHA256:7B9A</span>
@@ -230,16 +230,16 @@ const { Content } = await render(entry);
       </div>
 
       <!-- RIGHT READING VESSEL (8 COLS) -->
-      <article class="lg:col-span-8 bg-pure-white border-4 border-stark-black p-6 sm:p-10 md:p-12 shadow-[8px_8px_0px_#000000] prose-brutalist">
+      <article class="lg:col-span-8 bg-pure-white border-4 border-stark-black p-4 sm:p-8 md:p-12 shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] prose-brutalist">
         <Content />
 
         <!-- END OF DISPATCH ARCHIVAL STAMP -->
-        <div class="border-2 border-dashed border-stark-black p-5 bg-surface flex flex-wrap items-center justify-between font-mono text-xs sm:text-sm font-bold gap-3 mt-10">
+        <div class="border-2 border-dashed border-stark-black p-3.5 sm:p-5 bg-surface flex flex-wrap items-center justify-between font-mono text-xs sm:text-sm font-bold gap-3 mt-8 sm:mt-10">
           <div class="flex items-center gap-2 text-stark-black">
-            <span class="material-symbols-outlined text-[#705d00]">terminal</span>
-            <span>/// END_OF_FILE // TRANSMISSION COMPLETE // STATUS: VERIFIED</span>
+            <span class="material-symbols-outlined text-[#705d00] shrink-0">terminal</span>
+            <span class="break-words">/// END_OF_FILE // TRANSMISSION COMPLETE // STATUS: VERIFIED</span>
           </div>
-          <span class="bg-stark-black text-mac-yellow px-3 py-1 border border-stark-black text-xs">
+          <span class="bg-stark-black text-mac-yellow px-2.5 sm:px-3 py-1 border border-stark-black text-xs">
             [ CLEARANCE LVL_04 ]
           </span>
         </div>
@@ -247,37 +247,37 @@ const { Content } = await render(entry);
     </div>
 
     <!-- "NEXT INTEL" SPLIT NAVIGATION DECK -->
-    <nav aria-label="Dispatch Navigation" class="w-full border-4 border-stark-black bg-pure-white shadow-[6px_6px_0px_#000000] my-8 grid grid-cols-1 md:grid-cols-2">
+    <nav aria-label="Dispatch Navigation" class="w-full border-4 border-stark-black bg-pure-white shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] my-6 sm:my-8 grid grid-cols-1 md:grid-cols-2">
       <!-- PREVIOUS DISPATCH -->
       {prev ? (
         <a
           href={`/intel/${prev.id}`}
-          class="p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-mac-yellow transition-colors flex flex-col justify-between group cursor-pointer"
+          class="p-4 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-mac-yellow transition-colors flex flex-col justify-between group cursor-pointer"
         >
           <div class="flex items-center gap-2 font-mono text-xs font-bold text-[#705d00] mb-2">
             <span class="material-symbols-outlined text-xs">arrow_back</span>
             <span>/// PREVIOUS DISPATCH</span>
           </div>
-          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+          <div class="font-black text-base sm:text-lg md:text-xl uppercase text-stark-black group-hover:underline break-words">
             [&lt;- {prev.data.title}]
           </div>
-          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+          <div class="mt-3 sm:mt-4 font-mono text-xs text-on-surface-variant font-semibold">
             {prev.data.dossierId} // {prev.data.category.toUpperCase()}
           </div>
         </a>
       ) : (
         <a
           href="/intel"
-          class="p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-tactical-stone transition-colors flex flex-col justify-between group cursor-pointer"
+          class="p-4 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-tactical-stone transition-colors flex flex-col justify-between group cursor-pointer"
         >
           <div class="flex items-center gap-2 font-mono text-xs font-bold text-on-surface-variant mb-2">
             <span class="material-symbols-outlined text-xs">arrow_back</span>
             <span>/// INTEL INDEX</span>
           </div>
-          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+          <div class="font-black text-base sm:text-lg md:text-xl uppercase text-stark-black group-hover:underline break-words">
             [&lt;- RETURN TO DISPATCH REPOSITORY]
           </div>
-          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+          <div class="mt-3 sm:mt-4 font-mono text-xs text-on-surface-variant font-semibold">
             ALL ACTIVE INTEL REPORTS
           </div>
         </a>
@@ -287,32 +287,32 @@ const { Content } = await render(entry);
       {next ? (
         <a
           href={`/intel/${next.id}`}
-          class="p-6 md:p-8 hover:bg-electric-cyan transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
+          class="p-4 sm:p-6 md:p-8 hover:bg-electric-cyan transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
         >
           <div class="flex items-center gap-2 font-mono text-xs font-bold text-[#006875] mb-2">
             <span>NEXT DISPATCH ///</span>
             <span class="material-symbols-outlined text-xs">arrow_forward</span>
           </div>
-          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+          <div class="font-black text-base sm:text-lg md:text-xl uppercase text-stark-black group-hover:underline break-words">
             [{next.data.title} -&gt;]
           </div>
-          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+          <div class="mt-3 sm:mt-4 font-mono text-xs text-on-surface-variant font-semibold">
             {next.data.dossierId} // {next.data.category.toUpperCase()}
           </div>
         </a>
       ) : (
         <a
           href="/intel"
-          class="p-6 md:p-8 hover:bg-tactical-stone transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
+          class="p-4 sm:p-6 md:p-8 hover:bg-tactical-stone transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
         >
           <div class="flex items-center gap-2 font-mono text-xs font-bold text-on-surface-variant mb-2">
             <span>INTEL INDEX ///</span>
             <span class="material-symbols-outlined text-xs">arrow_forward</span>
           </div>
-          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+          <div class="font-black text-base sm:text-lg md:text-xl uppercase text-stark-black group-hover:underline break-words">
             [RETURN TO DISPATCH REPOSITORY -&gt;]
           </div>
-          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+          <div class="mt-3 sm:mt-4 font-mono text-xs text-on-surface-variant font-semibold">
             ALL ACTIVE INTEL REPORTS
           </div>
         </a>

@@ -43,7 +43,7 @@ const uid = id || "accordion-" + Math.random().toString(36).substring(2, 9);
   <!-- Collapsible Content Drawer -->
   <div
     id={`${uid}-drawer`}
-    class={`accordion-drawer w-full border-2 border-stark-black bg-surface p-5 sm:p-6 shadow-brutal-sm transition-all duration-200 ${
+    class={`accordion-drawer w-full border-2 border-stark-black bg-surface p-3.5 sm:p-6 shadow-brutal-sm transition-all duration-200 ${
       defaultOpen ? "block" : "hidden"
     } ${drawerClass}`}
     role="region"

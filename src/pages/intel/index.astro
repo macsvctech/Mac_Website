@@ -147,14 +147,14 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
   </div>
 
   <!-- SECTION 4.2 — FILTERABLE EDITORIAL FEED & FEATURED ZINE CLIPPINGS -->
-  <section class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+  <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mb-8 sm:mb-12">
     <!-- Header & Filter Bar -->
-    <div class="flex flex-col md:flex-row justify-between md:items-end border-b-4 border-stark-black pb-4 mb-8 gap-4">
+    <div class="flex flex-col md:flex-row justify-between md:items-end border-b-4 border-stark-black pb-4 mb-6 sm:mb-8 gap-4">
       <div>
         <span class="font-mono text-xs text-on-surface-variant uppercase font-bold block mb-1">
           {feedSection.tag}
         </span>
-        <h2 class="font-black text-3xl md:text-4xl uppercase text-stark-black leading-none">
+        <h2 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase text-stark-black leading-none break-words">
           {feedSection.title}
         </h2>
       </div>
@@ -173,12 +173,12 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
         </div>
 
         <!-- Filter Tabs -->
-        <div class="flex flex-wrap gap-2 font-mono text-xs font-bold" id="intel-filter-buttons">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 font-mono text-xs font-bold" id="intel-filter-buttons">
           {feedSection.categories.map((cat: any, idx: number) => (
             <button
               type="button"
               data-category={cat.id}
-              class={`intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all ${
+              class={`intel-filter-btn px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-stark-black transition-all ${
                 idx === 0
                   ? 'bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]'
                   : 'bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow'
@@ -192,10 +192,10 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
     </div>
 
     <!-- 3-Column Featured Zine Clipping Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="intel-articles-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="intel-articles-grid">
       {sortedIntel.map((item) => (
         <article
-          class="intel-article-card bg-pure-white border-4 border-stark-black shadow-[6px_6px_0px_#000000] flex flex-col justify-between hover:shadow-[8px_8px_0px_#000000] transition-all group"
+          class="intel-article-card bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] flex flex-col justify-between hover:shadow-[6px_6px_0px_#000000] sm:hover:shadow-[8px_8px_0px_#000000] transition-all group"
           data-category={item.data.category}
           data-title={item.data.title.toLowerCase()}
           data-author={item.data.author.toLowerCase()}
@@ -216,9 +216,9 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
               )}
             </div>
 
-            <div class="p-5">
+            <div class="p-4 sm:p-5">
               <div class="flex justify-between items-center mb-3">
-                <span class={`font-mono text-xs font-bold px-2 py-0.5 border border-stark-black ${
+                <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 border border-stark-black ${
                   item.data.category === 'Research Report'
                     ? 'bg-electric-cyan text-stark-black'
                     : item.data.category === 'Case Study'
@@ -229,29 +229,29 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
                 }`}>
                   [{item.data.category.toUpperCase()}]
                 </span>
-                <span class="font-mono text-xs text-on-surface-variant font-bold">
+                <span class="font-mono text-[11px] sm:text-xs text-on-surface-variant font-bold">
                   {item.data.readTime}
                 </span>
               </div>
 
-              <h3 class="font-black text-lg text-stark-black leading-snug line-clamp-2 mb-3 group-hover:underline">
+              <h3 class="font-black text-base sm:text-lg text-stark-black leading-snug line-clamp-2 mb-2.5 sm:mb-3 group-hover:underline break-words">
                 <a href={`/intel/${item.id}`}>
                   {item.data.title}
                 </a>
               </h3>
 
-              <p class="font-sans text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+              <p class="font-sans text-xs sm:text-sm text-on-surface-variant line-clamp-2 mb-3 sm:mb-4 leading-relaxed">
                 {item.data.excerpt}
               </p>
             </div>
           </div>
 
-          <div class="px-5 pb-5">
+          <div class="px-4 pb-4 sm:px-5 sm:pb-5">
             <div class="flex justify-between items-center pt-3 border-t-2 border-stark-black font-mono text-xs font-bold">
               <span class="text-stark-black uppercase truncate pr-2">{item.data.author}</span>
               <a
                 href={`/intel/${item.id}`}
-                class="bg-stark-black text-mac-yellow px-3 py-1 border border-stark-black hover:bg-mac-yellow hover:text-stark-black transition-all shrink-0"
+                class="bg-stark-black text-mac-yellow px-2.5 sm:px-3 py-1 border border-stark-black hover:bg-mac-yellow hover:text-stark-black transition-all shrink-0"
               >
                 {feedSection.readDispatchText || "[READ ->]"}
               </a>
@@ -262,13 +262,13 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
     </div>
 
     <!-- No Results Placeholder (Hidden by default) -->
-    <div id="no-intel-results" class="hidden p-8 sm:p-12 text-center border-4 border-stark-black bg-mac-yellow shadow-[6px_6px_0px_#000000] font-mono font-bold text-stark-black my-6">
-      <div class="font-display font-black text-2xl sm:text-3xl uppercase mb-2">/// ZERO DISPATCHES FOUND ///</div>
+    <div id="no-intel-results" class="hidden p-6 sm:p-12 text-center border-4 border-stark-black bg-mac-yellow shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] font-mono font-bold text-stark-black my-6">
+      <div class="font-display font-black text-xl sm:text-3xl uppercase mb-2">/// ZERO DISPATCHES FOUND ///</div>
       <div class="text-xs sm:text-sm uppercase mb-4 text-stark-black/90">NO CLASSIFIED RECORDS MATCH YOUR SEARCH TELEMETRY.</div>
       <button
         id="reset-intel-filter-btn"
         type="button"
-        class="inline-block py-2.5 px-5 bg-stark-black text-mac-yellow border-2 border-stark-black text-xs font-bold uppercase shadow-[3px_3px_0px_#000000] hover:bg-pure-white hover:text-stark-black transition-all cursor-pointer"
+        class="inline-block py-2 sm:py-2.5 px-4 sm:px-5 bg-stark-black text-mac-yellow border-2 border-stark-black text-xs font-bold uppercase shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000] hover:bg-pure-white hover:text-stark-black transition-all cursor-pointer"
       >
         [ RESET ALL FILTERS ]
       </button>
@@ -276,20 +276,20 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
   </section>
 
   <!-- SECTION 4.3 — INDUSTRIAL ARCHIVE TIMETABLE -->
-  <section class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+  <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mb-10 sm:mb-16">
     <!-- Subheader Bar -->
-    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
-      <div class="font-mono text-sm sm:text-base font-bold text-stark-black uppercase flex items-center gap-2">
-        <span class="material-symbols-outlined text-[20px] text-stark-black">folder_open</span>
-        <span>{archiveSection.title} [SHOWING ALL 6 DECLASSIFIED ARTICLES]</span>
+    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3 sm:mb-4 gap-2">
+      <div class="font-mono text-xs sm:text-base font-bold text-stark-black uppercase flex items-center gap-2 truncate">
+        <span class="material-symbols-outlined text-[18px] sm:text-[20px] text-stark-black shrink-0">folder_open</span>
+        <span class="truncate">{archiveSection.title} [SHOWING ALL 6 DECLASSIFIED ARTICLES]</span>
       </div>
-      <div class="font-mono text-xs text-on-surface-variant font-bold">
+      <div class="font-mono text-xs text-on-surface-variant font-bold shrink-0">
         {archiveSection.status}
       </div>
     </div>
 
     <!-- Table Frame -->
-    <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white w-full overflow-x-auto">
+    <div class="border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] bg-pure-white w-full overflow-x-auto">
       <div class="min-w-[760px]">
         <!-- Table Header Row -->
         <div class="bg-stark-black text-mac-yellow font-mono text-xs uppercase font-bold py-3 px-6 grid grid-cols-12 border-b-2 border-stark-black">
