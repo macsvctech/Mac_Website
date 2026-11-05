@@ -15,7 +15,7 @@
     "linkedin": "https://www.linkedin.com/company/the-marketing-club-sri-venkateswara-college/"
   },
   "recruitmentBanner": {
-    "enabled": true,
+    "enabled": false,
     "text": "/// RECRUITMENT RESULTS 2026-27 ARE LIVE — CLICK TO CHECK CLEARANCE ///",
     "link": "/roster#clearance-board"
   },
@@ -25,7 +25,7 @@
       "href": "/"
     },
     {
-      "name": "BLUEPRINT",
+      "name": "MODUS OPERANDI",
       "href": "/blueprint"
     },
     {
