@@ -10,8 +10,6 @@
   "address": "Sri Venkateswara College, Benito Juarez Road, Dhaula Kuan, New Delhi, 110021",
   "logoUrl": "/uploads/images/logo.svg",
   "faviconUrl": "/uploads/images/logo.svg",
-  "brochurePdfUrl": "/uploads/documents/mac-society-brochure-2026.pdf",
-  "brochureLabel": "SOCIETY BROCHURE [PDF]",
   "socials": {
     "instagram": "https://instagram.com/mac.svc",
     "linkedin": "https://www.linkedin.com/company/the-marketing-club-svc"
@@ -22,11 +20,26 @@
     "link": "/roster#clearance-board"
   },
   "navigation": [
-    { "name": "HOME", "href": "/" },
-    { "name": "BLUEPRINT", "href": "/blueprint" },
-    { "name": "ARENA", "href": "/arena" },
-    { "name": "INTEL", "href": "/intel" },
-    { "name": "ROSTER", "href": "/roster" }
+    {
+      "name": "HOME",
+      "href": "/"
+    },
+    {
+      "name": "BLUEPRINT",
+      "href": "/blueprint"
+    },
+    {
+      "name": "ARENA",
+      "href": "/arena"
+    },
+    {
+      "name": "INTEL",
+      "href": "/intel"
+    },
+    {
+      "name": "ROSTER",
+      "href": "/roster"
+    }
   ],
   "headerCta": {
     "text": "[JOIN THE CLUB ->]",
@@ -49,10 +62,26 @@
     "telPrefix": "TEL: ",
     "mailPrefix": "/// MAIL: ",
     "socialLinks": [
-      { "label": "[INSTAGRAM]", "url": "https://instagram.com/mac.svc", "external": true },
-      { "label": "[LINKEDIN]", "url": "https://www.linkedin.com/company/the-marketing-club-svc", "external": true },
-      { "label": "[EMAIL]", "url": "mailto:mac.svc2016@gmail.com", "external": false },
-      { "label": "[ARCHIVES]", "url": "/intel", "external": false }
+      {
+        "label": "[INSTAGRAM]",
+        "url": "https://instagram.com/mac.svc",
+        "external": true
+      },
+      {
+        "label": "[LINKEDIN]",
+        "url": "https://www.linkedin.com/company/the-marketing-club-svc",
+        "external": true
+      },
+      {
+        "label": "[EMAIL]",
+        "url": "mailto:mac.svc2016@gmail.com",
+        "external": false
+      },
+      {
+        "label": "[ARCHIVES]",
+        "url": "/intel",
+        "external": false
+      }
     ],
     "copyright": "© 2026-27 THE MARKETING CLUB, SVC.\nALL RIGHTS RESERVED.",
     "statusBadge": "[ALL RELAYS SECURED // STATUS: LIVE]"
