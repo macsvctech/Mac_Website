@@ -377,6 +377,10 @@ content:
         label: Past Corporate Sponsors & Brand Partners
         type: object
         fields:
+          - name: enabled
+            label: "Show Corporate Sponsors Belt?"
+            type: boolean
+            default: true
           - name: header
             label: Section Header
             type: string
@@ -523,6 +527,10 @@ content:
         label: Official Club Manifesto & Visual Evidence
         type: object
         fields:
+          - name: enabled
+            label: "Show Society Manifesto Frame?"
+            type: boolean
+            default: true
           - name: estBadge
             label: Establishment Milestone Badge
             type: string
@@ -562,6 +570,10 @@ content:
         label: 4 Declassified Architectural Pillars
         type: object
         fields:
+          - name: enabled
+            label: "Show Architecture & Pillars Strip?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: badge
@@ -648,6 +660,10 @@ content:
         label: Operational Wings & Syllabi
         type: object
         fields:
+          - name: enabled
+            label: "Show Operational Wings Breakdown?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: badge
@@ -682,6 +698,10 @@ content:
         label: Section 2.5 Declassified Exit Logs
         type: object
         fields:
+          - name: enabled
+            label: "Show Presidential Exit Logs Section?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: badge
@@ -821,6 +841,10 @@ content:
         label: Live Target Countdown Radar
         type: object
         fields:
+          - name: enabled
+            label: "Show Next Operation Radar Banner?"
+            type: boolean
+            default: true
           - name: isLive
             label: Radar Active & Broadcasting?
             type: boolean
@@ -871,6 +895,10 @@ content:
         label: Flagship Section Header
         type: object
         fields:
+          - name: enabled
+            label: "Show Flagship Conclaves Header?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: badge
@@ -879,6 +907,10 @@ content:
         label: Evidence Wall Section Header
         type: object
         fields:
+          - name: enabled
+            label: "Show Evidence Wall Gallery Section?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: tagline
@@ -1086,6 +1118,10 @@ content:
         label: MACzine Annual Anthology Spotlight
         type: object
         fields:
+          - name: enabled
+            label: "Show Annual MACzine Hero Spotlight?"
+            type: boolean
+            default: true
           - name: terminalHeader
             label: Terminal Header
             type: string
@@ -1144,6 +1180,10 @@ content:
         label: Intel Feed Settings
         type: object
         fields:
+          - name: enabled
+            label: "Show Filterable Research Feed Section?"
+            type: boolean
+            default: true
           - name: tag
             type: string
           - name: title
@@ -1579,6 +1619,10 @@ content:
         label: Physical Base Coordinates
         type: object
         fields:
+          - name: enabled
+            label: "Show Coordinates & Blueprint Map Card?"
+            type: boolean
+            default: true
           - name: title
             type: string
           - name: subtitle
