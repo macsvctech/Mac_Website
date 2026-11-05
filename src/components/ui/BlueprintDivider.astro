@@ -19,19 +19,19 @@ const dotColor =
   accent === 'red' ? 'bg-system-red' : 'bg-stark-black';
 ---
 
-<div class={`w-full my-8 sm:my-10 flex items-center gap-2 sm:gap-3 select-none ${className}`} aria-hidden="true">
+<div class={`w-full my-6 sm:my-10 flex items-center gap-1.5 sm:gap-3 select-none overflow-hidden ${className}`} aria-hidden="true">
   <!-- Left Registration Crosshair -->
-  <span class="font-mono text-sm sm:text-base font-black text-stark-black leading-none">+</span>
-  <div class="h-[2px] bg-stark-black flex-1"></div>
+  <span class="font-mono text-xs sm:text-base font-black text-stark-black leading-none shrink-0">+</span>
+  <div class="h-[2px] bg-stark-black flex-1 min-w-[6px]"></div>
   
   <!-- Center Metadata Badge -->
-  <div class="border-2 border-stark-black bg-pure-white px-2.5 sm:px-3 py-1 font-mono text-[10px] sm:text-xs font-bold text-stark-black flex items-center gap-2 shadow-[2px_2px_0px_#000000] shrink-0">
-    <span class={`w-2 h-2 ${dotColor} inline-block border border-stark-black shrink-0`}></span>
-    <span class="uppercase tracking-wider">/// {tag}</span>
+  <div class="border-2 border-stark-black bg-pure-white px-2 sm:px-3 py-1 font-mono text-[9px] sm:text-xs font-bold text-stark-black flex items-center gap-1.5 sm:gap-2 shadow-[2px_2px_0px_#000000] shrink-0 max-w-[calc(100vw-3rem)]">
+    <span class={`w-1.5 h-1.5 sm:w-2 sm:h-2 ${dotColor} inline-block border border-stark-black shrink-0`}></span>
+    <span class="uppercase tracking-wider truncate">/// {tag}</span>
     <span class="text-on-surface-variant font-medium hidden sm:inline">[{code}]</span>
   </div>
   
   <!-- Right Rail & Crosshair -->
-  <div class="h-[2px] bg-stark-black flex-1"></div>
-  <span class="font-mono text-sm sm:text-base font-black text-stark-black leading-none">+</span>
+  <div class="h-[2px] bg-stark-black flex-1 min-w-[6px]"></div>
+  <span class="font-mono text-xs sm:text-base font-black text-stark-black leading-none shrink-0">+</span>
 </div>

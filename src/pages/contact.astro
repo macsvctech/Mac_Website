@@ -26,8 +26,8 @@ const {
 
 <BaseLayout title="CONTACT /// THE MARKETING CLUB (MAC)">
   <!-- SECONDARY BREADCRUMB COMMAND STRIP -->
-  <div class="w-full bg-tactical-stone border-b-2 border-stark-black px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 select-none">
-    <div class="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold tracking-wider text-stark-black truncate">
+  <div class="w-full bg-tactical-stone border-b-2 border-stark-black px-3.5 sm:px-6 lg:px-8 py-2.5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 select-none">
+    <div class="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold tracking-wider text-stark-black min-w-0 truncate">
       <span class="inline-block w-2.5 h-2.5 bg-system-red animate-pulse border border-stark-black shrink-0"></span>
       <span class="truncate">{breadcrumb}</span>
     </div>
@@ -38,18 +38,18 @@ const {
   </div>
 
   <!-- MAIN VIEWPORT CONTAINER: 2-COLUMN ASYMMETRIC COMMAND GRID -->
-  <main class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+  <main class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
       <!-- LEFT COLUMN (6 COLUMNS) — SYSTEM COMMUNICATION TERMINAL -->
-      <section class="lg:col-span-6 flex flex-col bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] relative">
+      <section class="lg:col-span-6 flex flex-col bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] relative">
         <!-- Terminal Title Bar -->
-        <header class="h-12 bg-stark-black px-6 flex items-center justify-between border-b-4 border-stark-black select-none">
-          <div class="flex items-center gap-2">
-            <span class="font-mono text-sm sm:text-base font-bold text-mac-yellow tracking-wider">
+        <header class="min-h-12 h-auto py-2.5 px-4 sm:px-6 flex items-center justify-between border-b-4 border-stark-black select-none gap-2">
+          <div class="flex items-center gap-2 min-w-0 truncate">
+            <span class="font-mono text-xs sm:text-base font-bold text-mac-yellow tracking-wider truncate">
               {terminalHeader}
             </span>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 shrink-0">
             <span class="font-mono text-xs font-bold text-mac-yellow animate-pulse">[&gt;_]</span>
             <span class="w-3 h-3 bg-mac-yellow border border-stark-black inline-block"></span>
           </div>
@@ -58,7 +58,7 @@ const {
         <!-- Terminal Body -->
         <form
           id="contact-terminal-form"
-          class="p-6 md:p-8 flex flex-col gap-6"
+          class="p-4 sm:p-6 md:p-8 flex flex-col gap-5 sm:gap-6"
           data-recipient={recipientEmail}
           data-transmitting={formFeedback?.transmittingText || "/// TRANSMITTING PAYLOAD... ///"}
           data-confirmed={formFeedback?.confirmedBtnText || "TRANSMISSION CONFIRMED ▷"}
@@ -160,7 +160,7 @@ const {
 
           <!-- Submit Arcade Button -->
           <button
-            class="w-full h-16 bg-mac-yellow border-4 border-stark-black shadow-[6px_6px_0px_#000000] flex items-center justify-center font-black text-xl md:text-2xl uppercase text-stark-black hover:bg-stark-black hover:text-mac-yellow active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all cursor-pointer tracking-wider"
+            class="w-full h-14 sm:h-16 bg-mac-yellow border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] flex items-center justify-center font-black text-lg sm:text-xl md:text-2xl uppercase text-stark-black hover:bg-stark-black hover:text-mac-yellow active:translate-x-[4px] active:translate-y-[4px] sm:active:translate-x-[6px] sm:active:translate-y-[6px] active:shadow-none transition-all cursor-pointer tracking-wider"
             id="transmit-btn"
             type="submit"
           >
@@ -170,145 +170,482 @@ const {
       </section>
 
       <!-- RIGHT COLUMN (6 COLUMNS) — COORDINATES & TELEMETRY CARD -->
-      <section class="lg:col-span-6 flex flex-col border-4 border-stark-black shadow-[8px_8px_0px_#000000] bg-pure-white">
+      <section class="lg:col-span-6 flex flex-col border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white">
         <!-- TOP BLOCK: HEADQUARTERS DOSSIER (YELLOW #F0C903) -->
-        <div class="bg-mac-yellow p-6 md:p-8 relative overflow-hidden border-b-4 border-stark-black">
+        <div class="bg-mac-yellow p-4 sm:p-6 md:p-8 relative overflow-hidden border-b-4 border-stark-black">
           <!-- Subtle Oversized Watermark -->
-          <div class="absolute -right-6 -bottom-8 text-[120px] font-black text-stark-black/10 select-none pointer-events-none tracking-tighter leading-none">
+          <div class="absolute -right-6 -bottom-8 text-[100px] sm:text-[120px] font-black text-stark-black/10 select-none pointer-events-none tracking-tighter leading-none">
             MAC
           </div>
           <div class="relative z-10 flex flex-col">
             <div class="flex items-center gap-2 text-stark-black mb-1">
-              <span class="material-symbols-outlined text-[36px] font-black leading-none">near_me</span>
-              <h2 class="font-black text-3xl md:text-4xl uppercase tracking-tight text-stark-black m-0 leading-none">
+              <span class="material-symbols-outlined text-[28px] sm:text-[36px] font-black leading-none">near_me</span>
+              <h2 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight text-stark-black m-0 leading-none">
                 {coordinates.title}
               </h2>
             </div>
-            <div class="font-mono text-xs font-bold uppercase text-stark-black tracking-wider mb-4">
+            <div class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black tracking-wider mb-4">
               {coordinates.subtitle}
             </div>
 
             <!-- Inset Address Dossier Box -->
             <div 
-              class="bg-pure-white border-2 border-stark-black p-5 shadow-[4px_4px_0px_#000000] flex flex-col gap-2 copy-trigger cursor-copy"
+              class="bg-pure-white border-2 border-stark-black p-3.5 sm:p-5 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] flex flex-col gap-2 copy-trigger cursor-copy"
               data-copy={`${coordinates.collegeName}, ${coordinates.streetAddress}, ${coordinates.cityPin}`}
               title="CLICK TO COPY PHYSICAL ADDRESS"
             >
-              <pre class="font-mono text-xs sm:text-sm font-bold text-stark-black leading-relaxed whitespace-pre-wrap uppercase m-0 pointer-events-none">{coordinates.collegeName}
+              <pre class="font-mono text-[11px] sm:text-xs md:text-sm font-bold text-stark-black leading-relaxed whitespace-pre-wrap uppercase m-0 pointer-events-none break-words">{coordinates.collegeName}
 {coordinates.streetAddress}
 {coordinates.cityPin}
 /// TEL: {coordinates.phone}
 /// MAIL: {coordinates.email}</pre>
-              <div class="flex items-center justify-between pointer-events-none">
-                <span class="font-mono text-xs font-bold bg-electric-cyan text-stark-black border-2 border-stark-black px-2 py-0.5 shadow-[2px_2px_0px_#000000] inline-block uppercase">
+              <div class="flex items-center justify-between pointer-events-none pt-1 border-t border-stark-black/20">
+                <span class="font-mono text-[10px] sm:text-xs font-bold bg-electric-cyan text-stark-black border-2 border-stark-black px-2 py-0.5 shadow-[2px_2px_0px_#000000] inline-block uppercase">
                   {coordinates.status}
                 </span>
-                <span class="font-mono text-[10px] text-on-surface-variant font-bold uppercase">[ CLICK TO COPY ⧉ ]</span>
+                <span class="font-mono text-[9px] sm:text-[10px] text-on-surface-variant font-bold uppercase">[ CLICK TO COPY ⧉ ]</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- MIDDLE BLOCK: TACTICAL ARCHITECTURAL BLUEPRINT STREET MAP -->
-        <div class="relative w-full h-[380px] bg-surface border-b-4 border-stark-black overflow-hidden select-none cursor-reticle" data-reticle>
+        <div class="relative w-full h-[280px] sm:h-[380px] bg-surface border-b-4 border-stark-black overflow-hidden select-none cursor-reticle" data-reticle>
           <svg class="w-full h-full block" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="tactical-blueprint-subgrid" width="16" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#D0C6AB" stroke-width="0.75" opacity="0.5"></path>
-              </pattern>
-              <pattern id="tactical-blueprint-major" width="64" height="64" patternUnits="userSpaceOnUse">
-                <rect width="64" height="64" fill="url(#tactical-blueprint-subgrid)"></rect>
-                <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#B8AC8D" stroke-width="1.2" opacity="0.7"></path>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="#FFF8F0"></rect>
-            <rect width="100%" height="100%" fill="url(#tactical-blueprint-major)"></rect>
-            <rect x="28" y="140" width="130" height="195" fill="#EFE8D8" stroke="#000000" stroke-width="2" stroke-dasharray="4 2"></rect>
-            <rect x="35" y="148" width="116" height="85" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="93" y="182" font-family="JetBrains Mono" font-size="8.5" font-weight="800" fill="#000000" text-anchor="middle">SATYA NIKETAN</text>
-            <text x="93" y="195" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#4D4632" text-anchor="middle">[COMMERCIAL HUB &amp; CAFES]</text>
-            <rect x="35" y="240" width="116" height="85" fill="#E5DDCB" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="93" y="278" font-family="JetBrains Mono" font-size="7.5" font-weight="700" fill="#000000" text-anchor="middle">RESIDENTIAL CLUSTER</text>
-            <text x="93" y="290" font-family="JetBrains Mono" font-size="6.5" font-weight="500" fill="#4D4632" text-anchor="middle">[STUDENT SECTOR // PGs]</text>
-            <rect x="230" y="135" width="285" height="205" fill="#EFE7D5" stroke="#000000" stroke-width="3"></rect>
-            <rect x="240" y="145" width="160" height="75" fill="#FFFFFF" stroke="#000000" stroke-width="2"></rect>
-            <text x="248" y="162" font-family="JetBrains Mono" font-size="8.5" font-weight="800" fill="#000000">MAIN ACADEMIC BLOCK</text>
-            <text x="248" y="174" font-family="JetBrains Mono" font-size="7" font-weight="600" fill="#4D4632">DEPT OF COMMERCE / AUDITORIUM</text>
-            <text x="248" y="186" font-family="JetBrains Mono" font-size="7" font-weight="600" fill="#4D4632">LIBRARY // ICT &amp; ADMIN CELL</text>
-            <rect x="240" y="226" width="75" height="36" fill="#FAF2E2" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="246" y="244" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#000000">ROCK GARDEN</text>
-            <text x="246" y="254" font-family="JetBrains Mono" font-size="6" font-weight="500" fill="#7E7760">[STUDENT FOYER]</text>
-            <rect x="322" y="226" width="78" height="36" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="328" y="244" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#000000">SVC CANTEEN</text>
-            <text x="328" y="254" font-family="JetBrains Mono" font-size="6" font-weight="500" fill="#7E7760">[COMMAND REFUEL]</text>
-            <rect x="410" y="145" width="95" height="117" fill="#E4DBC7" stroke="#000000" stroke-width="1.5"></rect>
-            <circle cx="457" cy="203" r="32" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="3 3"></circle>
-            <text x="457" y="200" font-family="JetBrains Mono" font-size="8" font-weight="800" fill="#000000" text-anchor="middle">CRICKET GROUND</text>
-            <text x="457" y="211" font-family="JetBrains Mono" font-size="6.5" font-weight="600" fill="#4D4632" text-anchor="middle">&amp; SPORTS COMPLEX</text>
-            <rect x="240" y="270" width="265" height="60" fill="none" stroke="#7E7760" stroke-width="1" stroke-dasharray="2 2"></rect>
-            <text x="372" y="304" font-family="JetBrains Mono" font-size="7.5" font-weight="700" fill="#7E7760" text-anchor="middle">SRI VENKATESWARA PERIMETER CAMPUS GROUNDS</text>
-            <rect x="230" y="350" width="125" height="30" fill="#E5DDD0" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="236" y="365" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#000000">RAM LAL ANAND COLL.</text>
-            <rect x="365" y="350" width="125" height="30" fill="#E5DDD0" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="371" y="365" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#000000">ARYABHATTA COLLEGE</text>
-            <path d="M-20,68 L660,118" fill="none" stroke="#000000" stroke-width="30" stroke-linecap="square"></path>
-            <path d="M-20,68 L660,118" fill="none" stroke="#F0C903" stroke-width="22"></path>
-            <path d="M-20,68 L660,118" fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="10 10"></path>
-            <path d="M 195,85 L 195,385" fill="none" stroke="#000000" stroke-width="32" stroke-linecap="square"></path>
-            <path d="M 195,85 L 195,385" fill="none" stroke="#FFFFFF" stroke-width="24"></path>
-            <path d="M 195,85 L 195,385" fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="8 8"></path>
-            <path d="M 195,150 L 230,150" fill="none" stroke="#000000" stroke-width="8"></path>
-            <path d="M 195,150 L 230,150" fill="none" stroke="#F0C903" stroke-width="4"></path>
-            <path d="M 195,185 L 165,185" fill="none" stroke="#000000" stroke-width="8"></path>
-            <path d="M 195,185 L 165,185" fill="none" stroke="#FFFFFF" stroke-width="4"></path>
-            <path d="M-20,40 L660,90" fill="none" stroke="#ba1a1a" stroke-width="4.5" stroke-dasharray="10 4"></path>
-            <circle cx="240" cy="59" r="6" fill="#ba1a1a" stroke="#000000" stroke-width="2"></circle>
-            <rect x="252" y="46" width="215" height="20" fill="#000000" stroke="#ba1a1a" stroke-width="1.5"></rect>
-            <text x="258" y="59" font-family="JetBrains Mono" font-size="7.5" font-weight="800" fill="#FFFFFF">DURGABAI DESHMUKH SOUTH CAMPUS ◉</text>
-            <path d="M 240,65 L 240,115 L 195,115" fill="none" stroke="#ba1a1a" stroke-width="3" stroke-dasharray="3 3"></path>
-            <rect x="225" y="92" width="74" height="14" fill="#FFFFFF" stroke="#ba1a1a" stroke-width="1"></rect>
-            <text x="228" y="102" font-family="JetBrains Mono" font-size="6.5" font-weight="700" fill="#ba1a1a">FOOT OVER BRIDGE</text>
-            <text x="40" y="88" font-family="JetBrains Mono" font-size="9" font-weight="800" fill="#000000" transform="rotate(4.2, 40, 88)">RING ROAD / MAHATMA GANDHI MARG ⇄</text>
-            <text x="200" y="255" font-family="JetBrains Mono" font-size="9" font-weight="800" fill="#000000" transform="rotate(90, 200, 255)">BENITO JUAREZ MARG ⇄</text>
-            <text x="500" y="78" font-family="JetBrains Mono" font-size="7.5" font-weight="800" fill="#000000">▲ TO DHAULA KUAN FLYOVER</text>
-            <text x="500" y="88" font-family="JetBrains Mono" font-size="6.5" font-weight="700" fill="#4D4632">AIRPORT EXPRESS METRO INTERCHANGE</text>
-            <text x="195" y="376" font-family="JetBrains Mono" font-size="7" font-weight="800" fill="#000000" text-anchor="middle">▼ TOWARDS SAN MARTIN MARG / MOTI BAGH</text>
-            <rect x="545" y="12" width="85" height="42" fill="#000000" stroke="#F0C903" stroke-width="1.5"></rect>
-            <text x="587" y="28" font-family="JetBrains Mono" font-size="14" font-weight="900" fill="#F0C903" text-anchor="middle">▲ N</text>
-            <text x="587" y="42" font-family="JetBrains Mono" font-size="7" font-weight="700" fill="#FFFFFF" text-anchor="middle">AZIMUTH 000°</text>
-            <rect x="12" y="12" width="240" height="32" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"></rect>
-            <text x="18" y="25" font-family="JetBrains Mono" font-size="7.5" font-weight="800" fill="#000000">SECTOR_LAT: 28.5878° N // LON: 77.1666° E</text>
-            <text x="18" y="36" font-family="JetBrains Mono" font-size="6.5" font-weight="700" fill="#4D4632">ELEVATION: 231M // GRID REF: DL-SOUTH-06</text>
-            <rect x="12" y="348" width="120" height="20" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"></rect>
-            <line x1="18" y1="360" x2="108" y2="360" stroke="#000000" stroke-width="2"></line>
-            <line x1="18" y1="356" x2="18" y2="364" stroke="#000000" stroke-width="2"></line>
-            <line x1="63" y1="357" x2="63" y2="363" stroke="#000000" stroke-width="1.5"></line>
-            <line x1="108" y1="356" x2="108" y2="364" stroke="#000000" stroke-width="2"></line>
-            <text x="18" y="353" font-family="JetBrains Mono" font-size="6" font-weight="700" fill="#000000">0</text>
-            <text x="55" y="353" font-family="JetBrains Mono" font-size="6" font-weight="700" fill="#000000">100m</text>
-            <text x="98" y="353" font-family="JetBrains Mono" font-size="6" font-weight="700" fill="#000000">200m</text>
-          </svg>
+  <defs>
+    <!-- Blueprint Grids -->
+    <pattern id="tactical-blueprint-subgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#D0C6AB" stroke-width="0.75" opacity="0.45" />
+    </pattern>
+    <pattern id="tactical-blueprint-major" width="64" height="64" patternUnits="userSpaceOnUse">
+      <rect width="64" height="64" fill="url(#tactical-blueprint-subgrid)" />
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#B8AC8D" stroke-width="1.2" opacity="0.65" />
+    </pattern>
+    <pattern id="sports-turf-hatch" width="6" height="6" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#60864E" stroke-width="0.75" opacity="0.35" />
+    </pattern>
+  </defs>
+
+  <!-- 1. BASE BACKGROUND & ARCHITECTURAL BLUEPRINT GRID -->
+  <rect width="100%" height="100%" fill="#FFF8F0" />
+  <rect width="100%" height="100%" fill="url(#tactical-blueprint-major)" />
+
+  <!-- 2. CAMPUS ZONE GROUND POLYGON (Sri Venkateswara College Campus Boundary) -->
+  <path d="M 50,335 L 65,220 L 95,120 L 190,40 L 480,20 L 525,85 L 375,188 L 295,225 C 255,245 220,285 200,350 Z" 
+        fill="#FAF2E2" stroke="#000000" stroke-width="1.5" stroke-dasharray="4 3" />
+  
+  <text x="75" y="352" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="700" fill="#7E7760">/// CAMPUS WEST PERIMETER</text>
+  <text x="320" y="32" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="700" fill="#7E7760" text-anchor="middle">SRI VENKATESWARA COLLEGE PROPERTY BOUNDARY // EST. 1961</text>
+
+  <!-- 3. SATYA NIKETAN URBAN ZONE BASE (South-East across Benito Juarez Marg) -->
+  <path d="M 235,385 C 250,320 290,265 355,232 L 645,125 L 645,385 Z" fill="#EFE8D8" stroke="#000000" stroke-width="2" />
+
+  <!-- 4. SATYA NIKETAN STREET NETWORK & BUILDING PARCELS -->
+  <!-- 4.1 Street corridors (White with Dashed Centerlines) -->
+  
+  <!-- 5th Lane -->
+  <path d="M 265,348 L 335,322" stroke="#FFFFFF" stroke-width="11" stroke-linecap="square" />
+  <path d="M 265,348 L 335,322" stroke="#000000" stroke-width="1" stroke-dasharray="3 2" />
+
+  <!-- 4th Lane (The Core Cafe Row) -->
+  <path d="M 300,296 L 565,198" stroke="#FFFFFF" stroke-width="14" stroke-linecap="square" />
+  <path d="M 300,296 L 565,198" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 2" />
+
+  <!-- 3rd Lane -->
+  <path d="M 345,342 L 620,242" stroke="#FFFFFF" stroke-width="13" stroke-linecap="square" />
+  <path d="M 345,342 L 620,242" stroke="#000000" stroke-width="1" stroke-dasharray="4 2" />
+
+  <!-- 2nd Lane -->
+  <path d="M 385,385 L 640,290" stroke="#FFFFFF" stroke-width="12" stroke-linecap="square" />
+  <path d="M 385,385 L 640,290" stroke="#000000" stroke-width="1" stroke-dasharray="3 2" />
+
+  <!-- Nanakpura Road (SE direction) -->
+  <path d="M 326,242 L 388,385" stroke="#FFFFFF" stroke-width="13" stroke-linecap="square" />
+  <path d="M 326,242 L 388,385" stroke="#000000" stroke-width="1" stroke-dasharray="3 2" />
+
+  <!-- B Street -->
+  <path d="M 370,270 L 412,385" stroke="#FFFFFF" stroke-width="9" stroke-linecap="square" />
+  <path d="M 370,270 L 412,385" stroke="#000000" stroke-width="0.8" stroke-dasharray="2 2" />
+
+  <!-- Satya Niketan Road (Main Spine) -->
+  <path d="M 412,210 L 482,385" stroke="#FFFFFF" stroke-width="15" stroke-linecap="square" />
+  <path d="M 412,210 L 482,385" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 2" />
+
+  <!-- Street A -->
+  <path d="M 488,182 L 565,385" stroke="#FFFFFF" stroke-width="12" stroke-linecap="square" />
+  <path d="M 488,182 L 565,385" stroke="#000000" stroke-width="1" stroke-dasharray="3 2" />
+
+  <!-- 4.2 Satya Niketan Building Blocks / Urban Clusters -->
+  <!-- Block cluster 1: Between Nanakpura Rd & 5th Ln / 4th Ln -->
+  <polygon points="275,340 320,323 313,307 282,319" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="280,378 335,357 330,344 285,361" fill="#E5DDD0" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Block cluster 2: Between Nanakpura Rd, B St & 4th Ln / 3rd Ln -->
+  <polygon points="334,292 365,280 357,260 327,272" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="340,334 371,322 361,298 330,310" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="353,365 385,353 376,330 345,342" fill="#E5DDD0" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Block cluster 3: Between B St, Satya Niketan Rd & 4th Ln / 3rd Ln -->
+  <polygon points="377,276 405,265 397,245 370,256" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="383,318 412,307 403,283 374,294" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="397,351 426,340 417,316 388,327" fill="#FAF2E2" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Block cluster 4: Between Satya Niketan Rd & Street A (Core Cafe Hub) -->
+  <polygon points="424,258 480,237 472,217 416,238" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+  <line x1="438" y1="253" x2="430" y2="233" stroke="#000000" stroke-width="1" />
+  <line x1="452" y1="248" x2="444" y2="228" stroke="#000000" stroke-width="1" />
+  <line x1="466" y1="243" x2="458" y2="223" stroke="#000000" stroke-width="1" />
+
+  <polygon points="432,300 490,278 482,254 424,276" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+  <line x1="446" y1="295" x2="438" y2="271" stroke="#000000" stroke-width="1" />
+  <line x1="461" y1="289" x2="453" y2="265" stroke="#000000" stroke-width="1" />
+  <line x1="475" y1="284" x2="467" y2="260" stroke="#000000" stroke-width="1" />
+
+  <polygon points="445,334 504,312 495,288 436,310" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="458,368 518,346 510,322 450,344" fill="#E5DDD0" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Block cluster 5: East of Street A -->
+  <polygon points="498,230 554,209 546,189 490,210" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="508,272 568,249 558,226 498,248" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="522,314 582,291 573,266 513,289" fill="#FAF2E2" stroke="#000000" stroke-width="1.5" />
+  <polygon points="536,356 596,333 587,308 527,331" fill="#E5DDD0" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Block cluster 6: Far East Blocks (towards Ring Road junction) -->
+  <polygon points="572,202 630,180 622,160 564,182" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <polygon points="584,244 642,222 633,198 575,220" fill="#FAF2E2" stroke="#000000" stroke-width="1.5" />
+  <polygon points="598,286 645,268 645,240 589,262" fill="#E5DDD0" stroke="#000000" stroke-width="1.2" />
+
+  <!-- Satya Niketan Header Badge -->
+  <rect x="424" y="244" width="76" height="14" fill="#000000" stroke="#F0C903" stroke-width="1" />
+  <text x="462" y="254" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#F0C903" text-anchor="middle">SATYA NIKETAN</text>
+  <text x="462" y="264" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#4D4632" text-anchor="middle">[COMMERCIAL &amp; CAFE SECTOR]</text>
+
+  <!-- Angled Street Labels -->
+  <text x="315" y="291" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="800" fill="#000000" transform="rotate(-20.3, 315, 291)">4TH LN // CAFE ROW ➔</text>
+  <text x="365" y="337" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#4D4632" transform="rotate(-20.3, 365, 337)">3RD LN</text>
+  <text x="405" y="379" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#4D4632" transform="rotate(-20.3, 405, 379)">2ND LN</text>
+  <text x="272" y="343" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#4D4632" transform="rotate(-20.3, 272, 343)">5TH LN</text>
+
+  <text x="345" y="280" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#000000" transform="rotate(66, 345, 280)">NANAKPURA RD ➔</text>
+  <text x="382" y="295" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#7E7760" transform="rotate(66, 382, 295)">B ST</text>
+  <text x="432" y="295" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="800" fill="#000000" transform="rotate(66, 432, 295)">SATYA NIKETAN RD ➔</text>
+  <text x="508" y="275" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#000000" transform="rotate(66, 508, 275)">STREET A ➔</text>
+
+  <!-- Green landmark dot on 3rd Ln / Street A (matching screenshot) -->
+  <circle cx="538" cy="272" r="5" fill="#34A853" stroke="#000000" stroke-width="1.5" />
+  <circle cx="538" cy="272" r="1.5" fill="#FFFFFF" />
+
+  <!-- 5. BENITO JUAREZ MARG (The Main Diagonal Arterial Road) -->
+  <!-- Outer road casing -->
+  <path d="M 205,385 C 220,315 260,255 330,222 L 650,105" 
+        fill="none" stroke="#000000" stroke-width="32" stroke-linecap="square" />
+  <!-- Asphalt road bed -->
+  <path d="M 205,385 C 220,315 260,255 330,222 L 650,105" 
+        fill="none" stroke="#FFFFFF" stroke-width="26" />
+  <!-- Center Median / Dual Carriageway Divider -->
+  <path d="M 205,385 C 220,315 260,255 330,222 L 650,105" 
+        fill="none" stroke="#F0C903" stroke-width="4" />
+  <path d="M 205,385 C 220,315 260,255 330,222 L 650,105" 
+        fill="none" stroke="#000000" stroke-width="1.5" stroke-dasharray="6 4" />
+
+  <!-- Road Traffic Flow Arrows & Street Labels -->
+  <g transform="rotate(-20.3, 490, 162)">
+    <text x="490" y="157" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="0.08em">
+      BENITO JUAREZ MARG ⇄
+    </text>
+    <text x="490" y="167" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="700" fill="#4D4632" text-anchor="middle">
+      [PRIMARY ARTERIAL CORRIDOR // DUAL CARRIAGEWAY]
+    </text>
+    <path d="M 585,160 L 595,160 M 591,157 L 595,160 L 591,163" stroke="#000000" stroke-width="1.5" fill="none" />
+    <path d="M 385,160 L 375,160 M 379,157 L 375,160 L 379,163" stroke="#000000" stroke-width="1.5" fill="none" />
+  </g>
+
+  <!-- Curving Hindi / English Road label at bottom-left -->
+  <text x="175" y="340" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#000000" transform="rotate(-68, 175, 340)">
+    बेनिटो जुआरेज मार्ग ⇄
+  </text>
+  <text x="183" y="340" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#7E7760" transform="rotate(-68, 175, 340)">
+    ▼ TOWARDS MOTI BAGH // SAN MARTIN MARG
+  </text>
+
+  <!-- 6. BUS STOPS ALONG BENITO JUAREZ MARG -->
+  <g transform="translate(262, 230)">
+    <rect x="-7" y="-7" width="14" height="14" fill="#F0C903" stroke="#000000" stroke-width="1.5" />
+    <text x="0" y="3.5" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#000000" text-anchor="middle">🚌</text>
+    <rect x="9" y="-6" width="62" height="11" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="12" y="2" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">BUS STOP [SVC]</text>
+  </g>
+
+  <g transform="translate(305, 260)">
+    <rect x="-7" y="-7" width="14" height="14" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <text x="0" y="3.5" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#000000" text-anchor="middle">🚌</text>
+    <rect x="-72" y="-5" width="62" height="11" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+    <text x="-70" y="3" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#000000">BUS STOP [SATYA]</text>
+  </g>
+
+  <!-- 7. SRI VENKATESWARA COLLEGE ACCESS DRIVEWAY / ENTRANCE LOOP -->
+  <!-- Horseshoe U-loop off Benito Juarez Marg -->
+  <path d="M 285,237 C 295,200 315,182 340,182 C 365,182 375,198 382,207" 
+        fill="none" stroke="#000000" stroke-width="14" stroke-linecap="round" />
+  <path d="M 285,237 C 295,200 315,182 340,182 C 365,182 375,198 382,207" 
+        fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" />
+  <path d="M 285,237 C 295,200 315,182 340,182 C 365,182 375,198 382,207" 
+        fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="3 3" />
+
+  <!-- Landscaped Teardrop Island -->
+  <ellipse cx="338" cy="202" rx="16" ry="9" fill="#FAF2E2" stroke="#000000" stroke-width="1.5" />
+  <text x="338" y="204.5" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#7E7760" text-anchor="middle">SVC FOYER</text>
+
+  <!-- Gates -->
+  <rect x="256" y="210" width="36" height="10" fill="#000000" />
+  <text x="274" y="217.5" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#F0C903" text-anchor="middle">GATE 01 ➔</text>
+
+  <rect x="375" y="196" width="34" height="10" fill="#000000" />
+  <text x="392" y="203.5" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#F0C903" text-anchor="middle">GATE 02 ➔</text>
+
+  <!-- 8. BUILDINGS & CAMPUS GEOMETRY -->
+
+  <!-- 8.1 OVERHEAD WATER TANK (North-West Campus) -->
+  <g id="overhead-water-tank" transform="translate(125, 82)">
+    <rect x="-16" y="-16" width="32" height="32" fill="#EFE8D8" stroke="#000000" stroke-width="1.2" stroke-dasharray="2 2" />
+    <circle cx="0" cy="0" r="14" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <circle cx="0" cy="0" r="9" fill="#FAF2E2" stroke="#000000" stroke-width="1.2" />
+    <circle cx="0" cy="0" r="3.5" fill="#F0C903" stroke="#000000" stroke-width="1" />
+    <line x1="-14" y1="0" x2="14" y2="0" stroke="#000000" stroke-width="1" />
+    <line x1="0" y1="-14" x2="0" y2="14" stroke="#000000" stroke-width="1" />
+
+    <text x="0" y="26" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="800" fill="#000000" text-anchor="middle">
+      OVERHEAD WATER TANK
+    </text>
+    <text x="0" y="34" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="600" fill="#4D4632" text-anchor="middle">
+      ओवरहेड वॉटर टैंक
+    </text>
+  </g>
+
+  <!-- Trees / Grove near water tank -->
+  <g fill="#E5DDD0" stroke="#000000" stroke-width="1" opacity="0.8">
+    <circle cx="95" cy="85" r="5" />
+    <circle cx="102" cy="110" r="5.5" />
+    <circle cx="155" cy="65" r="4.5" />
+    <circle cx="165" cy="88" r="4" />
+  </g>
+  <text x="85" y="125" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="600" fill="#7E7760">/// BOTANICAL GROVE</text>
+
+  <!-- 8.2 SVC AUDITORIUM (West of Main Building) -->
+  <g id="svc-auditorium">
+    <polygon points="188,145 220,132 246,132 246,178 206,178 188,162" 
+             fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+    <polygon points="198,178 238,178 234,188 202,188" 
+             fill="#FAF2E2" stroke="#000000" stroke-width="1.5" />
+    <circle cx="217" cy="148" r="6" fill="#000000" />
+    <text x="217" y="151.5" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#F0C903" text-anchor="middle">🏛</text>
+    
+    <text x="217" y="162" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#000000" text-anchor="middle">
+      SVC AUDITORIUM
+    </text>
+    <text x="217" y="171" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="600" fill="#4D4632" text-anchor="middle">
+      एसवीसी ऑडिटोरियम
+    </text>
+    <text x="218" y="185" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#7E7760" text-anchor="middle">
+      [800-SEAT HALL]
+    </text>
+  </g>
+
+  <!-- 8.3 SVC MAIN ACADEMIC COMPLEX -->
+  <g id="svc-main-building">
+    <!-- North Wing (Library & Department Block) -->
+    <rect x="305" y="98" width="90" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <!-- Courtyard -->
+    <rect x="325" y="112" width="50" height="20" fill="#EFE8D8" stroke="#000000" stroke-width="1.2" stroke-dasharray="2 2" />
+    <text x="350" y="124" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#7E7760" text-anchor="middle">[CENTRAL QUADRANGLE]</text>
+
+    <!-- Main Front Administrative Block -->
+    <polygon points="295,128 405,128 405,168 368,168 368,178 332,178 332,168 295,168" 
+             fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+    
+    <!-- Entrance Porch Canopy -->
+    <rect x="332" y="168" width="36" height="12" fill="#F0C903" stroke="#000000" stroke-width="2" />
+    <text x="350" y="176.5" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="900" fill="#000000" text-anchor="middle">MAIN PORTICO</text>
+
+    <!-- East Wing -->
+    <rect x="405" y="124" width="28" height="38" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+    
+    <!-- West Wing -->
+    <rect x="267" y="132" width="28" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.8" />
+    <!-- Walkway to Auditorium -->
+    <path d="M 267,148 L 246,148" stroke="#000000" stroke-width="6" />
+    <path d="M 267,148 L 246,148" stroke="#F0C903" stroke-width="3" />
+
+    <!-- College Building Brutalist Label Header -->
+    <rect x="285" y="72" width="158" height="22" fill="#000000" stroke="#F0C903" stroke-width="1.5" />
+    <text x="364" y="83" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="900" fill="#F0C903" text-anchor="middle">
+      SRI VENKATESWARA COLLEGE
+    </text>
+    <text x="364" y="92" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+      श्री वेंकटेश्वर कॉलेज // VENKY [EST. 1961]
+    </text>
+
+    <text x="350" y="145" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#000000" text-anchor="middle">
+      MAIN ACADEMIC BLOCK
+    </text>
+    <text x="350" y="154" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="600" fill="#4D4632" text-anchor="middle">
+      DEPT OF COMMERCE // ICT // ADMIN
+    </text>
+  </g>
+
+  <!-- 8.4 TWO GREEN LAWNS / SPORTS GROUNDS (East of Sri Venkateswara College) -->
+  <g id="campus-lawns">
+    <!-- Lawn 1 (West Lawn / Front Garden) -->
+    <g transform="translate(442, 138) rotate(-20.3)">
+      <rect x="-18" y="-14" width="36" height="28" fill="#8EB87A" stroke="#000000" stroke-width="2" />
+      <rect x="-18" y="-14" width="36" height="28" fill="url(#sports-turf-hatch)" />
+      <text x="0" y="2" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#000000" text-anchor="middle">LAWN 01</text>
+    </g>
+
+    <!-- Lawn 2 (East Lawn / Sports Pitch) -->
+    <g transform="translate(485, 122) rotate(-20.3)">
+      <rect x="-18" y="-14" width="36" height="28" fill="#8EB87A" stroke="#000000" stroke-width="2" />
+      <rect x="-18" y="-14" width="36" height="28" fill="url(#sports-turf-hatch)" />
+      <text x="0" y="2" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#000000" text-anchor="middle">LAWN 02</text>
+    </g>
+
+    <text x="465" y="102" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="800" fill="#000000" text-anchor="middle" transform="rotate(-20.3, 465, 102)">
+      FRONT LAWNS &amp; CRICKET COMPLEX
+    </text>
+  </g>
+
+  <!-- 8.5 HEALTH CENTRE / WEST CAMPUS -->
+  <g id="campus-health-centre" transform="translate(40, 260)">
+    <rect x="0" y="0" width="34" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <circle cx="17" cy="12" r="5" fill="#BA1A1A" />
+    <path d="M 17,9.5 L 17,14.5 M 14.5,12 L 19.5,12" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="square" />
+    <text x="17" y="32" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#4D4632" text-anchor="middle">HEALTH CENTRE</text>
+    <text x="17" y="38" font-family="'JetBrains Mono', monospace" font-size="4.5" font-weight="600" fill="#7E7760" text-anchor="middle">स्वास्थ्य केंद्र</text>
+  </g>
+
+  <!-- 9. DURGABAI DESHMUKH SOUTH CAMPUS METRO STATION & AH1 / RING ROAD -->
+  <g id="metro-interchange">
+    <!-- AH1 / Ring Road Corridor -->
+    <path d="M 520,0 L 640,65" stroke="#000000" stroke-width="28" stroke-linecap="square" />
+    <path d="M 520,0 L 640,65" stroke="#FFFFFF" stroke-width="22" />
+    <path d="M 520,0 L 640,65" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+
+    <!-- Delhi Metro Pink Line Viaduct -->
+    <path d="M 480,25 L 640,110" stroke="#000000" stroke-width="8" stroke-linecap="square" />
+    <path d="M 480,25 L 640,110" stroke="#BA1A1A" stroke-width="4.5" />
+    <path d="M 480,25 L 640,110" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="3 3" />
+
+    <!-- Station Concourse / Platform Building -->
+    <polygon points="535,45 615,88 605,108 525,65" fill="#000000" stroke="#BA1A1A" stroke-width="2" />
+    <text x="570" y="73" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" transform="rotate(28, 570, 73)">
+      DURGABAI DESHMUKH 🚊
+    </text>
+    <text x="566" y="81" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#F0C903" text-anchor="middle" transform="rotate(28, 566, 81)">
+      SOUTH CAMPUS [PINK LINE]
+    </text>
+
+    <!-- Foot Over Bridge (FOB) Skywalk -->
+    <path d="M 545,72 L 535,92 L 490,140 L 475,175" fill="none" stroke="#BA1A1A" stroke-width="3" stroke-dasharray="3 2" />
+    <rect x="495" y="105" width="46" height="11" fill="#FFFFFF" stroke="#BA1A1A" stroke-width="1" />
+    <text x="518" y="113" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="800" fill="#BA1A1A" text-anchor="middle">
+      SKYWALK / FOB
+    </text>
+
+    <!-- AH1 Badge & Route Markers -->
+    <rect x="580" y="4" width="22" height="12" fill="#2E7D32" stroke="#000000" stroke-width="1" />
+    <text x="591" y="12.5" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="900" fill="#FFFFFF" text-anchor="middle">AH1</text>
+    
+    <text x="548" y="24" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">
+      ▲ TO DHAULA KUAN // AIRPORT EXPRESS
+    </text>
+  </g>
+
+  <!-- 10. TACTICAL HUD OVERLAYS & TELEMETRY -->
+
+  <!-- 10.1 Top-Left Telemetry Coordinates Dossier -->
+  <g transform="translate(14, 14)">
+    <rect width="195" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <rect x="0" y="0" width="4" height="34" fill="#F0C903" />
+    <text x="10" y="12" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="900" fill="#000000">
+      LAT: 28.5878° N // LON: 77.1666° E
+    </text>
+    <text x="10" y="21" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#4D4632">
+      GRID REF: DL-SOUTH-CAMPUS-06 // ELEV: 231M
+    </text>
+    <text x="10" y="29.5" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#7E7760">
+      HQ: SRI VENKATESWARA // DHAULA KUAN SUB-ZONE
+    </text>
+  </g>
+
+  <!-- 10.2 Top-Right Azimuth Compass -->
+  <g transform="translate(565, 34)">
+    <rect width="62" height="32" fill="#000000" stroke="#F0C903" stroke-width="1.5" />
+    <text x="31" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="900" fill="#F0C903" text-anchor="middle">
+      ▲ N
+    </text>
+    <text x="31" y="25" font-family="'JetBrains Mono', monospace" font-size="5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      AZIMUTH 018°
+    </text>
+  </g>
+
+  <!-- 10.3 Bottom-Left Tactical Metric Scale Bar -->
+  <g transform="translate(14, 346)">
+    <rect width="135" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <line x1="12" y1="358" x2="120" y2="358" stroke="#000000" stroke-width="2" />
+    <line x1="12" y1="354" x2="12" y2="362" stroke="#000000" stroke-width="2" />
+    <line x1="48" y1="355" x2="48" y2="361" stroke="#000000" stroke-width="1.5" />
+    <line x1="84" y1="355" x2="84" y2="361" stroke="#000000" stroke-width="1.5" />
+    <line x1="120" y1="354" x2="120" y2="362" stroke="#000000" stroke-width="2" />
+    <text x="12" y="352" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">0</text>
+    <text x="44" y="352" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">50m</text>
+    <text x="78" y="352" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">100m</text>
+    <text x="112" y="352" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="800" fill="#000000">150m</text>
+  </g>
+
+  <!-- 11. EMBEDDED TACTICAL RADAR PINPOINT OVER SRI VENKATESWARA COLLEGE -->
+  <g transform="translate(350, 174)" id="tactical-radar-ping">
+    <!-- Animated Expanding Radar Wave -->
+    <circle r="12" fill="rgba(255, 59, 48, 0.25)" stroke="#BA1A1A" stroke-width="1.5">
+      <animate attributeName="r" values="6;26" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Secondary Yellow Echo -->
+    <circle r="8" fill="none" stroke="#F0C903" stroke-width="1.5" stroke-dasharray="2 2">
+      <animate attributeName="r" values="4;18" dur="2s" begin="0.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" begin="0.6s" repeatCount="indefinite" />
+    </circle>
+    <!-- Solid Bullseye Pin Center -->
+    <circle r="5" fill="#000000" stroke="#F0C903" stroke-width="1.8" />
+    <circle r="2" fill="#F0C903" />
+  </g>
+
+  <!-- Reticle Corner Accents -->
+  <path d="M 6,18 L 6,6 L 18,6" stroke="#000000" stroke-width="2" fill="none" />
+  <path d="M 634,18 L 634,6 L 622,6" stroke="#000000" stroke-width="2" fill="none" />
+  <path d="M 6,362 L 6,374 L 18,374" stroke="#000000" stroke-width="2" fill="none" />
+  <path d="M 634,362 L 634,374 L 622,374" stroke="#000000" stroke-width="2" fill="none" />
+</svg>
 
           <!-- Radar Pulse Pinpoint Marker -->
-          <div class="absolute left-[47%] top-[45%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none z-10">
+          <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none z-10 max-w-[85vw]" style="left: 54.7%; top: 45.8%;">
             <div class="relative flex items-center justify-center">
-              <span class="w-10 h-10 border-2 border-system-red animate-ping absolute bg-system-red/20"></span>
-              <div class="w-7 h-7 bg-stark-black border-2 border-mac-yellow flex items-center justify-center shadow-[3px_3px_0px_#000000]">
-                <span class="material-symbols-outlined text-[16px] text-mac-yellow font-black">adjust</span>
+              <span class="w-8 sm:w-10 h-8 sm:h-10 border-2 border-system-red animate-ping absolute bg-system-red/20"></span>
+              <div class="w-6 sm:w-7 h-6 sm:h-7 bg-stark-black border-2 border-mac-yellow flex items-center justify-center shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000]">
+                <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-mac-yellow font-black">adjust</span>
               </div>
             </div>
-            <div class="mt-1.5 bg-stark-black border-2 border-mac-yellow px-2.5 py-1 shadow-[4px_4px_0px_#000000] flex items-center gap-1.5">
-              <span class="w-2 h-2 bg-mac-yellow animate-pulse inline-block"></span>
-              <span class="font-mono text-[10px] font-black text-mac-yellow tracking-wider whitespace-nowrap">
-                [⌖ SRI VENKATESWARA COLLEGE // VENKY // MAC HQ]
+            <div class="mt-1.5 bg-stark-black border-2 border-mac-yellow px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] flex items-center gap-1.5 max-w-full text-center">
+              <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-mac-yellow animate-pulse inline-block shrink-0"></span>
+              <span class="font-mono text-[8px] sm:text-[10px] font-black text-mac-yellow tracking-wider break-words sm:whitespace-nowrap">
+                [⌖ SRI VENKATESWARA COLLEGE // MAC HQ]
               </span>
             </div>
           </div>
 
           <!-- Bottom Right: View Google Map Button -->
-          <div class="absolute bottom-3 right-3 z-20">
+          <div class="absolute bottom-2.5 sm:bottom-3 right-2.5 sm:right-3 z-20">
             <a
-              class="bg-pure-white text-stark-black font-mono text-xs font-bold border-2 border-stark-black px-3.5 py-1.5 shadow-[3px_3px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow active:translate-x-0.5 active:translate-y-0.5 active:shadow-none inline-flex items-center gap-1.5 transition-all"
+              class="bg-pure-white text-stark-black font-mono text-[11px] sm:text-xs font-bold border-2 border-stark-black px-2.5 sm:px-3.5 py-1 sm:py-1.5 shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow active:translate-x-0.5 active:translate-y-0.5 active:shadow-none inline-flex items-center gap-1.5 transition-all"
               href={coordinates.googleMapsUrl}
               rel="noopener noreferrer"
               target="_blank"
@@ -320,7 +657,7 @@ const {
         </div>
 
         <!-- BOTTOM BLOCK: EXTERNAL TELEMETRY & CHANNELS -->
-        <div class="p-6 bg-pure-white flex flex-col gap-5">
+        <div class="p-4 sm:p-6 bg-pure-white flex flex-col gap-4 sm:gap-5">
           <div>
             <div class="font-mono text-xs font-bold uppercase text-stark-black mb-3 select-none">
               {externalChannelsTitle}

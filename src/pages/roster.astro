@@ -12,15 +12,15 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 <BaseLayout title="ROSTER /// THE MARKETING CLUB (MAC)">
   <!-- BREADCRUMB / METADATA RELAY STRIP -->
   <section class="w-full bg-tactical-stone border-b-2 border-stark-black">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2.5 h-2.5 bg-system-red"></span>
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 min-w-0 truncate">
+        <span class="inline-block w-2.5 h-2.5 bg-system-red shrink-0"></span>
         <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-stark-black truncate">
           {breadcrumb}
         </span>
       </div>
-      <div class="flex items-center gap-4 font-mono text-xs font-bold uppercase">
-        <span class="bg-pure-white px-2 py-0.5 border border-stark-black">
+      <div class="flex items-center gap-3 sm:gap-4 font-mono text-xs font-bold uppercase shrink-0">
+        <span class="bg-pure-white px-2 py-0.5 border border-stark-black shadow-[1px_1px_0px_#000000]">
           {cadreStatus}
         </span>
         <span class="text-on-surface-variant hidden sm:inline">
@@ -31,53 +31,53 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
   </section>
 
   <!-- MAIN ROSTER CANVAS CONTAINER -->
-  <div class="w-full max-w-7xl mx-auto px-4 lg:px-8 py-10 flex flex-col gap-16">
+  <div class="w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 flex flex-col gap-10 sm:gap-16">
     <!-- ========================================================================= -->
     <!-- SECTION 5.1 — CORE COMMAND BACKSTAGE ID BADGES (PRESIDENTIAL TRIO)         -->
     <!-- ========================================================================= -->
-    <section class="flex flex-col gap-8 w-full">
+    <section class="flex flex-col gap-6 sm:gap-8 w-full">
       <!-- Section Headline -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b-4 border-stark-black">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 border-b-4 border-stark-black">
         <div class="flex flex-col gap-1">
           <div class="flex items-center gap-2">
             <span class="bg-mac-yellow text-stark-black font-mono text-xs px-2 py-0.5 font-bold uppercase border border-stark-black">
               {sectionCommand.tier}
             </span>
-            <span class="font-mono text-xs uppercase tracking-wider text-on-surface-variant font-bold">
+            <span class="font-mono text-xs uppercase tracking-wider text-on-surface-variant font-bold truncate">
               {sectionCommand.council}
             </span>
           </div>
-          <h1 class="font-black text-3xl sm:text-4xl lg:text-5xl uppercase text-stark-black tracking-tight leading-none mt-1">
+          <h1 class="font-black text-2xl sm:text-4xl lg:text-5xl uppercase text-stark-black tracking-tight leading-none mt-1 break-words">
             {sectionCommand.title}
           </h1>
         </div>
-        <div class="flex items-center gap-3">
-          <span class="font-mono text-xs font-bold uppercase bg-tactical-stone px-3 py-1.5 border-2 border-stark-black">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          <span class="font-mono text-[11px] sm:text-xs font-bold uppercase bg-tactical-stone px-2.5 sm:px-3 py-1 sm:py-1.5 border-2 border-stark-black">
             {sectionCommand.clearance}
           </span>
-          <span class="font-mono text-xs font-bold uppercase bg-stark-black text-pure-white px-3 py-1.5 border-2 border-stark-black">
+          <span class="font-mono text-[11px] sm:text-xs font-bold uppercase bg-stark-black text-pure-white px-2.5 sm:px-3 py-1 sm:py-1.5 border-2 border-stark-black">
             {sectionCommand.officerCount}
           </span>
         </div>
       </div>
 
       <!-- 3-Column Pass Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
         {(coreCommand || []).map((officer) => (
-          <article class="officer-badge-card bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] flex flex-col">
+          <article class="officer-badge-card bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] flex flex-col">
             <!-- Card Header / Lanyard Slot Strip -->
-            <div class="bg-stark-black h-11 px-4 flex items-center justify-between border-b-2 border-stark-black relative">
+            <div class="bg-stark-black h-11 px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black relative">
               <span 
-                class="font-mono text-xs text-mac-yellow font-bold uppercase tracking-wider copy-trigger cursor-copy hover:underline" 
+                class="font-mono text-xs text-mac-yellow font-bold uppercase tracking-wider copy-trigger cursor-copy hover:underline truncate" 
                 data-copy={officer.idCode} 
                 title="CLICK TO COPY CALLSIGN ⧉"
               >
                 {officer.idCode}
               </span>
               <!-- Center punched hole -->
-              <div class="w-8 h-2 bg-tactical-stone border border-stark-black"></div>
+              <div class="w-8 h-2 bg-tactical-stone border border-stark-black shrink-0"></div>
               <!-- Mock barcode -->
-              <div class="flex items-center gap-[2px] h-5 py-0.5" aria-hidden="true">
+              <div class="flex items-center gap-[2px] h-5 py-0.5 shrink-0" aria-hidden="true">
                 <span class="w-[2px] h-full bg-pure-white"></span>
                 <span class="w-[1px] h-full bg-pure-white"></span>
                 <span class="w-[3px] h-full bg-pure-white"></span>
@@ -89,31 +89,31 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             </div>
 
             <!-- Photo Container -->
-            <div class="p-5 bg-surface flex flex-col items-center">
+            <div class="p-3.5 sm:p-5 bg-surface flex flex-col items-center">
               <div class="w-full aspect-square border-2 border-stark-black bg-stark-black relative overflow-hidden">
                 <img
                   src={officer.portraitImage}
                   alt={`${officer.name} - ${officer.role}`}
                   class="w-full h-full object-cover grayscale contrast-125"
                 />
-                <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[11px] font-bold px-2 py-0.5 border border-mac-yellow uppercase">
+                <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 border border-mac-yellow uppercase">
                   {officer.authBadge}
                 </div>
               </div>
             </div>
 
             <!-- Name & Role Banner -->
-            <div class="bg-mac-yellow px-5 py-4 border-t-2 border-b-2 border-stark-black flex flex-col gap-0.5">
+            <div class="bg-mac-yellow px-4 sm:px-5 py-3 sm:py-4 border-t-2 border-b-2 border-stark-black flex flex-col gap-0.5">
               <span class="font-mono text-xs font-bold text-stark-black tracking-widest uppercase">
                 {officer.role}
               </span>
-              <h2 class="font-black text-2xl uppercase text-stark-black tracking-tight leading-none mt-1">
+              <h2 class="font-black text-xl sm:text-2xl uppercase text-stark-black tracking-tight leading-none mt-1 break-words">
                 {officer.name}
               </h2>
             </div>
 
             <!-- Specs Matrix -->
-            <div class="p-5 flex flex-col gap-3 bg-pure-white flex-1">
+            <div class="p-3.5 sm:p-5 flex flex-col gap-3 bg-pure-white flex-1">
               <div class="grid grid-cols-2 gap-2 text-stark-black">
                 <div class="bg-surface border border-stark-black p-2 flex flex-col">
                   <span class="font-mono text-[10px] text-on-surface-variant uppercase font-bold">TENURE</span>
@@ -140,7 +140,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             <div class="grid grid-cols-2 border-t-2 border-stark-black bg-pure-white font-mono text-xs font-bold uppercase">
               <a
                 href={`mailto:${officer.contactEmail}`}
-                class="py-3 px-2 border-r-2 border-stark-black text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
+                class="py-2.5 sm:py-3 px-2 border-r-2 border-stark-black text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
               >
                 <span class="material-symbols-outlined text-[16px]">mail</span>
                 <span>{teamData.contactButtonText || "[CONTACT ✉]"}</span>
@@ -149,7 +149,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                 href={officer.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="py-3 px-2 text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
+                class="py-2.5 sm:py-3 px-2 text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
               >
                 <span class="material-symbols-outlined text-[16px]">north_east</span>
                 <span>{teamData.linkedinButtonText || "[LINKEDIN ↗]"}</span>
@@ -167,18 +167,18 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
     <!-- SECTION 5.2 — DEPARTMENT OPERATOR SWITCHBOARD                             -->
     <!-- ========================================================================= -->
     <section class="flex flex-col gap-6 w-full">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b-2 border-stark-black">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-3 border-b-2 border-stark-black">
         <div class="flex flex-col">
           <span class="font-mono text-xs font-bold uppercase text-on-surface-variant">
             /// SQUADRON ARCHITECTURE
           </span>
-          <h2 class="font-black text-3xl md:text-4xl uppercase text-stark-black tracking-tight leading-none mt-1">
+          <h2 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase text-stark-black tracking-tight leading-none mt-1 break-words">
             DEPARTMENT HEADS & OPERATORS
           </h2>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-electric-cyan border border-stark-black animate-pulse"></span>
-          <span class="font-mono text-xs font-bold uppercase text-stark-black">
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-electric-cyan border border-stark-black animate-pulse"></span>
+          <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black">
             /// ACTIVE CADRE DIRECTORY
           </span>
         </div>
@@ -188,7 +188,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
       <div class="flex flex-wrap items-center gap-2" id="dept-tabs">
         {(departments || []).map((dept, index) => (
           <button
-            class={`dept-tab px-4 py-2.5 font-mono text-xs sm:text-sm font-bold uppercase border-2 border-stark-black shadow-[4px_4px_0px_#000000] transition-all cursor-pointer ${
+            class={`dept-tab px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-xs sm:text-sm font-bold uppercase border-2 border-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] transition-all cursor-pointer ${
               index === 0
                 ? 'bg-electric-cyan text-stark-black active'
                 : 'bg-pure-white text-stark-black hover:bg-stark-black hover:text-mac-yellow'
@@ -202,23 +202,23 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
       </div>
 
       <!-- Department Switchboard Panels Container -->
-      <div class="w-full bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] p-6 lg:p-8 flex flex-col gap-8">
+      <div class="w-full bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] p-4 sm:p-6 lg:p-8 flex flex-col gap-6 sm:gap-8">
         {(departments || []).map((dept, index) => (
           <div
             id={dept.id}
-            class={`dept-panel flex flex-col gap-8 ${index === 0 ? 'block' : 'hidden'}`}
+            class={`dept-panel flex flex-col gap-6 sm:gap-8 ${index === 0 ? 'block' : 'hidden'}`}
           >
             <!-- Department Descriptor Header -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-stark-black bg-surface -mx-6 -mt-6 p-6">
-              <div class="flex items-center gap-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 border-b-2 border-stark-black bg-surface -mx-4 -mt-4 sm:-mx-6 sm:-mt-6 lg:-mx-8 lg:-mt-8 p-4 sm:p-6">
+              <div class="flex items-center gap-3 min-w-0">
                 <span class="w-8 h-8 bg-stark-black text-mac-yellow font-mono font-bold flex items-center justify-center border border-stark-black shrink-0">
                   {dept.num}
                 </span>
-                <div>
-                  <h3 class="font-black text-xl sm:text-2xl uppercase text-stark-black leading-none">
+                <div class="min-w-0">
+                  <h3 class="font-black text-lg sm:text-xl md:text-2xl uppercase text-stark-black leading-none break-words">
                     {dept.name}
                   </h3>
-                  <p class="font-mono text-xs text-on-surface-variant font-bold mt-1">
+                  <p class="font-mono text-xs text-on-surface-variant font-bold mt-1 break-words">
                     {dept.tagline}
                   </p>
                 </div>
@@ -230,12 +230,12 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 
             <!-- 4-Column Coordinator Mini Cards -->
             <div>
-              <span class="font-mono text-xs uppercase font-bold text-stark-black block mb-4">
+              <span class="font-mono text-xs uppercase font-bold text-stark-black block mb-3 sm:mb-4">
                 /// HEAD DIRECTORS & LEAD COORDINATORS
               </span>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
                 {(dept.coordinators || []).map((coord) => (
-                  <div class="paper-lift border-2 border-stark-black bg-surface p-4 flex flex-col gap-3 shadow-[4px_4px_0px_#000000]">
+                  <div class="paper-lift border-2 border-stark-black bg-surface p-3.5 sm:p-4 flex flex-col gap-2.5 sm:gap-3 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000]">
                     <div class="w-full aspect-[4/3] bg-tactical-stone border border-stark-black overflow-hidden relative">
                       <img
                         src={coord.portrait}
@@ -250,7 +250,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                       <span class={`font-mono text-[11px] ${coord.roleColor} font-bold uppercase`}>
                         {coord.roleType}
                       </span>
-                      <span class="font-black text-base uppercase text-stark-black leading-tight mt-0.5">
+                      <span class="font-black text-base uppercase text-stark-black leading-tight mt-0.5 break-words">
                         {coord.name}
                       </span>
                       <span class="font-mono text-[11px] text-on-surface-variant mt-0.5">
@@ -280,22 +280,22 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
 
             <!-- Bottom Directory Table -->
             <div class="w-full overflow-x-auto border-2 border-stark-black">
-              <table class="w-full border-collapse text-left font-mono text-xs sm:text-sm">
+              <table class="w-full border-collapse text-left font-mono text-[11px] sm:text-xs md:text-sm">
                 <thead>
                   <tr class="bg-stark-black text-pure-white">
-                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col1 || "CALLSIGN / NAME"}</th>
-                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col2 || "ACADEMIC STANDING"}</th>
-                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col3 || "ROLE SPECIALIZATION"}</th>
-                    <th class="py-3 px-4 uppercase tracking-wider font-bold text-right">{teamData.tableHeaders?.col4 || "PROTOCOL STATUS"}</th>
+                    <th class="py-2.5 sm:py-3 px-3 sm:px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid whitespace-nowrap">{teamData.tableHeaders?.col1 || "CALLSIGN / NAME"}</th>
+                    <th class="py-2.5 sm:py-3 px-3 sm:px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid whitespace-nowrap">{teamData.tableHeaders?.col2 || "ACADEMIC STANDING"}</th>
+                    <th class="py-2.5 sm:py-3 px-3 sm:px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid whitespace-nowrap">{teamData.tableHeaders?.col3 || "ROLE SPECIALIZATION"}</th>
+                    <th class="py-2.5 sm:py-3 px-3 sm:px-4 uppercase tracking-wider font-bold text-right whitespace-nowrap">{teamData.tableHeaders?.col4 || "PROTOCOL STATUS"}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {(dept.directoryTable || []).map((row) => (
                     <tr class="border-b border-stark-black bg-pure-white hover:bg-mac-yellow transition-colors">
-                      <td class="py-2.5 px-4 font-bold border-r border-stark-black text-stark-black">{row.name}</td>
-                      <td class="py-2.5 px-4 border-r border-stark-black text-on-surface">{row.academic}</td>
-                      <td class="py-2.5 px-4 border-r border-stark-black text-stark-black">{row.specialization}</td>
-                      <td class={`py-2.5 px-4 text-right font-bold ${row.statusClass}`}>{row.status}</td>
+                      <td class="py-2 sm:py-2.5 px-3 sm:px-4 font-bold border-r border-stark-black text-stark-black whitespace-nowrap">{row.name}</td>
+                      <td class="py-2 sm:py-2.5 px-3 sm:px-4 border-r border-stark-black text-on-surface whitespace-nowrap">{row.academic}</td>
+                      <td class="py-2 sm:py-2.5 px-3 sm:px-4 border-r border-stark-black text-stark-black">{row.specialization}</td>
+                      <td class={`py-2 sm:py-2.5 px-3 sm:px-4 text-right font-bold whitespace-nowrap ${row.statusClass}`}>{row.status}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -314,24 +314,24 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
     <!-- ========================================================================= -->
     <section id="clearance-board" class="w-full flex flex-col gap-6 mb-12">
       <!-- Dark Terminal Container -->
-      <div class="w-full bg-[#1e1b16] border-4 border-stark-black shadow-[8px_8px_0px_#f0c903] flex flex-col">
+      <div class="w-full bg-[#1e1b16] border-4 border-stark-black shadow-[4px_4px_0px_#f0c903] sm:shadow-[8px_8px_0px_#f0c903] flex flex-col">
         <!-- Yellow Header Bar -->
-        <div class="h-12 bg-mac-yellow border-b-4 border-stark-black px-4 lg:px-6 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-2 truncate">
+        <div class="min-h-12 h-auto py-2.5 sm:py-0 bg-mac-yellow border-b-4 border-stark-black px-3.5 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+          <div class="flex items-center gap-2 min-w-0 truncate">
             <span class="w-3 h-3 bg-stark-black inline-block shrink-0"></span>
             <span class="font-mono text-xs sm:text-sm font-bold uppercase text-stark-black tracking-wider truncate">
               {headerTitle}
             </span>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <span class="font-mono text-xs uppercase font-bold bg-stark-black text-mac-yellow px-2.5 py-1 border border-stark-black">
+          <div class="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+            <span class="font-mono text-[11px] sm:text-xs uppercase font-bold bg-stark-black text-mac-yellow px-2 py-0.5 sm:px-2.5 sm:py-1 border border-stark-black">
               [ STATUS: {totalCleared} CANDIDATES CLEARED ]
             </span>
           </div>
         </div>
 
         <!-- Terminal Filter & Search Toolbar -->
-        <div class="p-4 lg:p-6 border-b-2 border-outline-variant/30 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-stark-black">
+        <div class="p-3.5 sm:p-4 lg:p-6 border-b-2 border-outline-variant/30 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4 bg-stark-black">
           <div class="flex items-center gap-2 flex-1 max-w-xl">
             <span class="text-mac-yellow font-mono font-bold">&gt;&gt;</span>
             <input
@@ -341,10 +341,10 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
               type="text"
             />
           </div>
-          <div class="flex flex-wrap items-center gap-2 font-mono" id="terminal-wing-filters">
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 font-mono" id="terminal-wing-filters">
             <span class="text-xs text-tactical-stone uppercase font-bold mr-1">{resultsData.filterWingLabel || "FILTER WING:"}</span>
             <button
-              class="terminal-filter-chip active text-xs font-bold uppercase px-2.5 py-1 bg-mac-yellow text-stark-black border border-mac-yellow cursor-pointer"
+              class="terminal-filter-chip active text-xs font-bold uppercase px-2 sm:px-2.5 py-1 bg-mac-yellow text-stark-black border border-mac-yellow cursor-pointer"
               data-wing="ALL"
               type="button"
             >
@@ -352,7 +352,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             </button>
             {(wings || []).map((w) => (
               <button
-                class="terminal-filter-chip text-xs font-bold uppercase px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors"
+                class="terminal-filter-chip text-xs font-bold uppercase px-2 sm:px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors"
                 data-wing={w.id}
                 type="button"
               >
@@ -363,16 +363,16 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
         </div>
 
         <!-- 4-Column Terminal Monospace Printout -->
-        <div class="p-6 lg:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs relative">
+        <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-mono text-xs relative">
           <!-- Zero Candidates Matching Filter Notice -->
-          <div id="terminal-no-candidates" class="hidden col-span-full border-2 border-mac-yellow bg-stark-black p-8 text-center text-mac-yellow shadow-[4px_4px_0px_#000000]">
-            <div class="text-xl font-bold mb-2">/// NO CLEARED CANDIDATES FOUND ///</div>
+          <div id="terminal-no-candidates" class="hidden col-span-full border-2 border-mac-yellow bg-stark-black p-6 sm:p-8 text-center text-mac-yellow shadow-[4px_4px_0px_#000000]">
+            <div class="text-lg sm:text-xl font-bold mb-2">/// NO CLEARED CANDIDATES FOUND ///</div>
             <div class="text-xs text-pure-white/80">NO CANDIDATE IN CURRENT WING SECTOR MATCHES YOUR QUERY. VERIFY YOUR NAME OR ROLL NUMBER SPELLING.</div>
           </div>
 
           {(wings || []).map((w) => (
             <div
-              class="wing-column border border-outline-variant/30 p-4 bg-stark-black/60 flex flex-col gap-3"
+              class="wing-column border border-outline-variant/30 p-3.5 sm:p-4 bg-stark-black/60 flex flex-col gap-3"
               data-wing-column={w.id}
             >
               <div class="pb-2 border-b border-mac-yellow/40 flex items-center justify-between">
@@ -382,12 +382,12 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
               <ul class="flex flex-col gap-2 terminal-list">
                 {(w.candidates || []).map((cand) => (
                   <li
-                    class="terminal-candidate-item flex items-center justify-between text-pure-white hover:text-mac-yellow border-b border-outline/20 pb-1"
+                    class="terminal-candidate-item flex items-center justify-between text-pure-white hover:text-mac-yellow border-b border-outline/20 pb-1 gap-2"
                     data-name={cand.name.toLowerCase()}
                     data-score={cand.score}
                   >
-                    <span>{cand.id}. {cand.name}</span>
-                    <span class="text-secondary-fixed-dim">[SCORE: {cand.score}]</span>
+                    <span class="break-words">{cand.id}. {cand.name}</span>
+                    <span class="text-secondary-fixed-dim shrink-0">[SCORE: {cand.score}]</span>
                   </li>
                 ))}
               </ul>
@@ -396,7 +396,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
         </div>
 
         <!-- Bottom Terminal Status Seal -->
-        <div class="bg-stark-black px-4 lg:px-6 py-3 border-t-2 border-outline-variant/40 flex flex-wrap items-center justify-between gap-3 text-mac-yellow font-mono text-xs font-bold uppercase tracking-wider">
+        <div class="bg-stark-black px-3.5 sm:px-6 py-3 border-t-2 border-outline-variant/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 text-mac-yellow font-mono text-xs font-bold uppercase tracking-wider">
           <div class="flex items-center gap-2">
             <span class="animate-pulse">●</span>
             <span>{statusBanner}</span>

@@ -103,23 +103,23 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
       )}
 
       <!-- 2. STICKY BRUTALIST NAVBAR -->
-      <div class="w-full h-20 bg-surface border-b-4 border-stark-black">
-        <div class="max-w-[1280px] mx-auto h-full px-4 md:px-8 flex items-center justify-between gap-4">
+      <div class="w-full h-16 sm:h-20 bg-surface border-b-4 border-stark-black">
+        <div class="max-w-[1280px] mx-auto h-full px-3.5 sm:px-6 md:px-8 flex items-center justify-between gap-3 sm:gap-4">
           
           <!-- Far Left: Logo & Organization Brand Identity -->
-          <a href="/" class="flex items-center gap-3 shrink-0 group focus:outline-none">
+          <a href="/" class="flex items-center gap-2.5 sm:gap-3 shrink-0 group focus:outline-none min-w-0">
             <img 
               src={settings.logoUrl || "/logo.svg"} 
               alt="Official MAC TV Speech-Bubble Logo" 
-              class="h-11 w-auto object-contain transition-transform group-hover:scale-105" 
+              class="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0" 
               height="44"
               width="44"
             />
-            <div class="flex flex-col">
-              <span class="font-display font-black text-lg sm:text-xl lg:text-2xl tracking-tighter uppercase text-stark-black leading-none group-hover:text-primary transition-colors">
+            <div class="flex flex-col min-w-0">
+              <span class="font-display font-black text-base sm:text-xl lg:text-2xl tracking-tighter uppercase text-stark-black leading-none group-hover:text-primary transition-colors truncate">
                 {settings.shortTitle}
               </span>
-              <span class="font-mono text-[10px] sm:text-xs font-bold text-on-surface-variant tracking-wider uppercase mt-1 leading-none">
+              <span class="font-mono text-[9px] sm:text-xs font-bold text-on-surface-variant tracking-wider uppercase mt-0.5 sm:mt-1 leading-none truncate">
                 {settings.college} // DU
               </span>
             </div>
@@ -143,7 +143,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
           </nav>
 
           <!-- Far Right: Arcade CTA & Mobile Toggle Button -->
-          <div class="flex items-center gap-3 shrink-0">
+          <div class="flex items-center gap-2 sm:gap-3 shrink-0">
             <!-- Desktop Arcade CTA Button -->
             <a
               href={headerCta.link}
@@ -160,7 +160,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
             <button
               id="mobile-menu-btn"
               type="button"
-              class="md:hidden arcade-btn-sm bg-mac-yellow text-stark-black px-3 py-1.5 font-mono text-xs font-bold border-2 border-stark-black shadow-[3px_3px_0px_#000000] focus:outline-none"
+              class="md:hidden arcade-btn-sm bg-mac-yellow text-stark-black px-2.5 py-1.5 font-mono text-xs font-bold border-2 border-stark-black shadow-[3px_3px_0px_#000000] focus:outline-none shrink-0"
               aria-label="Toggle Navigation Menu"
               aria-expanded="false"
               aria-controls="mobile-nav-drawer"
@@ -177,12 +177,12 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
       <!-- 3. MOBILE MENU DROPDOWN DRAWER (<768px) -->
       <div 
         id="mobile-nav-drawer" 
-        class="hidden md:hidden w-full bg-tactical-stone border-b-4 border-stark-black shadow-brutal divide-y-2 divide-stark-black"
+        class="hidden md:hidden w-full bg-tactical-stone border-b-4 border-stark-black shadow-brutal divide-y-2 divide-stark-black max-h-[calc(100vh-4.5rem)] overflow-y-auto"
       >
         {navLinks.map((item, idx) => (
           <a
             href={item.href}
-            class={`block p-4 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-between ${
+            class={`block p-3.5 sm:p-4 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-between ${
               item.active 
                 ? "bg-mac-yellow text-stark-black font-black" 
                 : "bg-pure-white text-stark-black hover:bg-mac-yellow"
@@ -197,7 +197,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
         <!-- Final Link: Join The Club / Contact -->
         <a
           href={headerCta.link}
-          class={`block p-4 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-between ${
+          class={`block p-3.5 sm:p-4 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-between ${
             isContactActive 
               ? "bg-stark-black text-mac-yellow font-black" 
               : "bg-electric-cyan text-stark-black hover:bg-stark-black hover:text-electric-cyan"
@@ -226,12 +226,12 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
 
     <!-- STARK BLACK BRUTALIST FOOTER -->
     <footer class="w-full bg-stark-black text-pure-white border-t-4 border-stark-black">
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start md:items-center">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start md:items-center">
           
           <!-- Col 1: Brand & College Coordinates -->
           <div class="md:col-span-5 flex flex-col space-y-2">
-            <span class="font-display font-black text-3xl md:text-4xl text-mac-yellow leading-none tracking-tight">
+            <span class="font-display font-black text-2xl sm:text-3xl md:text-4xl text-mac-yellow leading-none tracking-tight">
               {footer.brandAcronym}
             </span>
             <span class="font-mono text-xs font-bold text-pure-white uppercase tracking-wider">
@@ -240,10 +240,10 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
             <p class="font-mono text-[11px] text-tactical-stone leading-relaxed max-w-sm pt-1">
               {settings.address}
             </p>
-            <p class="font-mono text-[11px] text-electric-cyan pt-1">
-              <span>{footer.telPrefix}</span><button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.phone} title="CLICK TO COPY PHONE">{settings.phone}</button> 
-              <span>{footer.mailPrefix}</span><button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.email} title="CLICK TO COPY EMAIL">{settings.email}</button>
-            </p>
+            <div class="font-mono text-[11px] text-electric-cyan pt-1 flex flex-wrap gap-x-2 gap-y-1">
+              <span>{footer.telPrefix}<button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.phone} title="CLICK TO COPY PHONE">{settings.phone}</button></span> 
+              <span>{footer.mailPrefix}<button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.email} title="CLICK TO COPY EMAIL">{settings.email}</button></span>
+            </div>
             {settings.brochurePdfUrl && (
               <div class="pt-2">
                 <BrutalFileDownload
@@ -256,7 +256,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
           </div>
 
           <!-- Col 2: Social Links & Archives -->
-          <div class="md:col-span-4 flex flex-wrap items-center justify-start md:justify-center gap-2.5 font-mono text-xs">
+          <div class="md:col-span-4 flex flex-wrap items-center justify-start md:justify-center gap-2 font-mono text-xs">
             {(footer.socialLinks || []).map((social) => (
               <a 
                 href={social.url} 
@@ -270,7 +270,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
           </div>
 
           <!-- Col 3: Copyright & Security Clearance Status -->
-          <div class="md:col-span-3 text-left md:text-right space-y-1">
+          <div class="md:col-span-3 text-left md:text-right space-y-1.5">
             <p class="font-mono text-[11px] text-tactical-stone uppercase tracking-wide whitespace-pre-line">
               {footer.copyright}
             </p>
@@ -288,12 +288,12 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
     <!-- BRUTALIST MECHANICAL CLIPBOARD TOAST HUD (ITEM 5) -->
     <div 
       id="brutal-clipboard-toast" 
-      class="fixed bottom-6 right-6 z-[9999] bg-mac-yellow text-stark-black border-4 border-stark-black shadow-[6px_6px_0px_#000000] p-3 sm:p-4 font-mono font-black text-xs uppercase flex items-center gap-3 transition-transform duration-150 translate-y-36 pointer-events-none select-none max-w-[92vw]"
+      class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] bg-mac-yellow text-stark-black border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] p-3 sm:p-4 font-mono font-black text-xs uppercase flex items-center gap-2.5 sm:gap-3 transition-transform duration-150 translate-y-36 pointer-events-none select-none max-w-[calc(100vw-2rem)] sm:max-w-md"
       role="status"
       aria-live="polite"
     >
-      <span class="w-3 h-3 bg-stark-black inline-block animate-pulse shrink-0"></span>
-      <div class="flex flex-col gap-0.5 truncate">
+      <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-stark-black inline-block animate-pulse shrink-0"></span>
+      <div class="flex flex-col gap-0.5 min-w-0 truncate">
         <span class="text-[10px] text-[#705d00] tracking-wider font-bold">/// BUFFER_STAMP // 200 OK</span>
         <span class="truncate">[✓] COPIED: <span id="brutal-toast-value" class="text-stark-black underline"></span></span>
       </div>

@@ -16,15 +16,15 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
 <BaseLayout title="BLUEPRINT /// THE MARKETING CLUB (MAC)">
   <!-- 1. BREADCRUMB BAR -->
   <section class="w-full bg-tactical-stone border-b-2 border-stark-black">
-    <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-      <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 bg-stark-black inline-block"></span>
-        <span class="font-mono text-xs sm:text-sm text-stark-black font-bold uppercase tracking-wider">
+    <div class="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="w-2.5 h-2.5 bg-stark-black inline-block shrink-0"></span>
+        <span class="font-mono text-xs sm:text-sm text-stark-black font-bold uppercase tracking-wider truncate">
           {breadcrumb.directory}
         </span>
       </div>
-      <div class="flex items-center gap-3">
-        <span class="font-mono text-[11px] text-stark-black font-bold uppercase bg-pure-white px-2 py-0.5 border border-stark-black shadow-[2px_2px_0px_#000000]">
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="font-mono text-[10px] sm:text-[11px] text-stark-black font-bold uppercase bg-pure-white px-2 py-0.5 border border-stark-black shadow-[2px_2px_0px_#000000]">
           {breadcrumb.securityTier}
         </span>
       </div>
@@ -32,21 +32,21 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
   </section>
 
   <!-- MAIN BLUEPRINT CONTENT CONTAINER -->
-  <div class="max-w-[1280px] w-full mx-auto px-4 lg:px-8 py-10 space-y-16">
+  <div class="max-w-[1280px] w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-10 sm:space-y-16">
     
     <!-- 2. SECTION 2.1 — THE CLUB MANIFESTO (2-COLUMN SPLIT FRAME) -->
-    <section class="w-full border-4 border-stark-black shadow-[8px_8px_0px_#000000] bg-pure-white">
+    <section class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white">
       <div class="grid grid-cols-1 lg:grid-cols-12">
         <!-- LEFT CELL -->
-        <div class="lg:col-span-6 p-6 lg:p-10 flex flex-col justify-between border-b-4 lg:border-b-0 lg:border-r-4 border-stark-black bg-pure-white">
-          <div class="space-y-6">
-            <div class="inline-flex items-center bg-electric-cyan text-stark-black border-2 border-stark-black px-3 py-1 font-mono text-xs font-bold uppercase shadow-[2px_2px_0px_#000000]">
+        <div class="lg:col-span-6 p-4 sm:p-6 lg:p-10 flex flex-col justify-between border-b-4 lg:border-b-0 lg:border-r-4 border-stark-black bg-pure-white">
+          <div class="space-y-4 sm:space-y-6">
+            <div class="inline-flex items-center bg-electric-cyan text-stark-black border-2 border-stark-black px-2.5 sm:px-3 py-1 font-mono text-[11px] sm:text-xs font-bold uppercase shadow-[2px_2px_0px_#000000]">
               {manifesto.estBadge}
             </div>
-            <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl text-stark-black font-black uppercase tracking-tight leading-[1.05]">
+            <h1 class="font-display text-2xl sm:text-4xl lg:text-5xl text-stark-black font-black uppercase tracking-tight leading-[1.05]">
               {manifesto.headline}
             </h1>
-            <div class="space-y-4 font-sans text-base text-on-surface leading-relaxed">
+            <div class="space-y-3 sm:space-y-4 font-sans text-sm sm:text-base text-on-surface leading-relaxed">
               {manifesto.paragraphs.map((p) => (
                 <p>{p}</p>
               ))}
@@ -65,18 +65,18 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
             )}
           </div>
 
-          <div class="pt-8 mt-8 border-t-2 border-stark-black flex flex-wrap items-center justify-between gap-4">
-            <span class="font-mono text-xs font-bold uppercase text-on-surface-variant">
+          <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t-2 border-stark-black flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+            <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-on-surface-variant truncate">
               {manifesto.spec}
             </span>
-            <span class="bg-mac-yellow text-stark-black font-mono text-xs font-black uppercase px-2.5 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] -rotate-1">
+            <span class="bg-mac-yellow text-stark-black font-mono text-[11px] sm:text-xs font-black uppercase px-2.5 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] -rotate-1 shrink-0">
               {manifesto.status}
             </span>
           </div>
         </div>
 
         <!-- RIGHT CELL -->
-        <div class="lg:col-span-6 bg-mac-yellow p-6 lg:p-8 flex flex-col justify-between">
+        <div class="lg:col-span-6 bg-mac-yellow p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
           <div class="border-2 border-stark-black shadow-[4px_4px_0px_#000000] overflow-hidden bg-stark-black">
             <BrutalMedia
               src={manifesto.mediaImage}
@@ -84,21 +84,21 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
               alt="MAC Collective collegiate cohort assembly outdoors at Sri Venkateswara College"
               ratio="auto"
               border={false}
-              class="w-full h-[340px] lg:h-[400px]"
-              mediaClass="w-full h-[340px] lg:h-[400px] object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+              class="w-full h-[240px] sm:h-[340px] lg:h-[400px]"
+              mediaClass="w-full h-[240px] sm:h-[340px] lg:h-[400px] object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
             />
           </div>
 
-          <div class="mt-6 bg-stark-black text-pure-white border-2 border-stark-black p-4 space-y-2 select-none">
+          <div class="mt-4 sm:mt-6 bg-stark-black text-pure-white border-2 border-stark-black p-3.5 sm:p-4 space-y-2 select-none">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="font-mono text-xs font-bold text-mac-yellow tracking-wider uppercase">
+              <span class="font-mono text-[11px] sm:text-xs font-bold text-mac-yellow tracking-wider uppercase">
                 {manifesto.mediaCaption}
               </span>
-              <span class="font-mono text-[10px] bg-pure-white text-stark-black px-1.5 py-0.5 font-black uppercase">
+              <span class="font-mono text-[9px] sm:text-[10px] bg-pure-white text-stark-black px-1.5 py-0.5 font-black uppercase">
                 {manifesto.clearanceStamp || "[ARCHIVAL_CLEARANCE]"}
               </span>
             </div>
-            <p class="font-mono text-[11px] text-tactical-stone uppercase tracking-wider">
+            <p class="font-mono text-[10px] sm:text-[11px] text-tactical-stone uppercase tracking-wider">
               {manifesto.mediaSubCaption}
             </p>
           </div>
@@ -107,7 +107,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
     </section>
 
     <!-- CONNECTOR RAIL 2.1 -> 2.2 -->
-    <BlueprintDivider tag="STRUCTURAL_ARCHITECTURE" code="SYS_ARCH_02" accent="yellow" class="my-6" />
+    <BlueprintDivider tag="STRUCTURAL_ARCHITECTURE" code="SYS_ARCH_02" accent="yellow" class="my-4 sm:my-6" />
 
     <!-- 3. SECTION 2.2 — CORE ARCHITECTURE (INTERACTIVE 4-TAB FILING CABINET) -->
     <section class="space-y-4">
@@ -115,7 +115,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
         <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-stark-black">
           {architecture.title}
         </h2>
-        <span class="font-mono text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black">
+        <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black self-start sm:self-auto">
           {architecture.badge}
         </span>
       </div>
@@ -126,7 +126,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
           {architecture.tabs.map((tab, idx) => (
             <button
               type="button"
-              class={`arch-tab-btn h-[52px] px-3 flex items-center justify-center font-mono text-xs sm:text-sm font-bold uppercase border-r-2 border-b-2 md:border-b-0 border-stark-black transition-colors cursor-pointer select-none ${
+              class={`arch-tab-btn min-h-[46px] h-auto py-2.5 px-2 flex items-center justify-center font-mono text-[11px] sm:text-xs md:text-sm font-bold uppercase border-r-2 border-b-2 md:border-b-0 border-stark-black transition-colors cursor-pointer select-none ${
                 idx === 0 
                   ? "bg-mac-yellow text-stark-black shadow-inner" 
                   : "bg-tactical-stone text-stark-black hover:bg-surface-variant"
@@ -139,7 +139,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
         </div>
 
         <!-- CABINET CONTENT PANELS -->
-        <div class="p-6 lg:p-9 bg-pure-white">
+        <div class="p-4 sm:p-6 lg:p-9 bg-pure-white">
           
           <!-- PANEL 1: IDENTITY -->
           <div class="arch-tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" id="tab-identity">
@@ -352,35 +352,35 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
     </section>
 
     <!-- CONNECTOR RAIL 2.2 -> 2.3 -->
-    <BlueprintDivider tag="CHARTER_DOCTRINE" code="PLAQUE_SYS_03" accent="cyan" class="my-6" />
+    <BlueprintDivider tag="CHARTER_DOCTRINE" code="PLAQUE_SYS_03" accent="cyan" class="my-4 sm:my-6" />
 
     <!-- 4. SECTION 2.3 — VISION & MISSION BLUEPRINT PLAQUES -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
       <!-- VISION PLAQUE -->
       <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white flex flex-col justify-between">
         <div>
           <!-- Black Header Bar -->
-          <div class="h-10 bg-stark-black px-4 flex items-center justify-between border-b-2 border-stark-black">
-            <span class="font-mono text-xs font-bold uppercase text-electric-cyan tracking-wider">
+          <div class="h-10 bg-stark-black px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black">
+            <span class="font-mono text-xs font-bold uppercase text-electric-cyan tracking-wider truncate">
               {plaques.vision.specTag}
             </span>
-            <span class="w-3 h-3 bg-electric-cyan border border-stark-black"></span>
+            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-electric-cyan border border-stark-black shrink-0"></span>
           </div>
           <!-- Body -->
-          <div class="p-6 lg:p-8 space-y-4">
-            <h3 class="font-display text-2xl sm:text-3xl font-black uppercase text-stark-black tracking-tight">
+          <div class="p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
+            <h3 class="font-display text-xl sm:text-2xl lg:text-3xl font-black uppercase text-stark-black tracking-tight">
               {plaques.vision.title}
             </h3>
-            <p class="font-sans text-base text-on-surface leading-relaxed">
+            <p class="font-sans text-sm sm:text-base text-on-surface leading-relaxed">
               {plaques.vision.body}
             </p>
           </div>
         </div>
-        <div class="px-6 lg:px-8 py-3 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between">
-          <span class="font-mono text-xs font-bold uppercase text-stark-black">
+        <div class="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between">
+          <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black">
             {plaques.vision.targetHorizon}
           </span>
-          <span class="font-mono text-xs font-black text-system-red">
+          <span class="font-mono text-[11px] sm:text-xs font-black text-system-red">
             {plaques.vision.status}
           </span>
         </div>
@@ -390,27 +390,27 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
       <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white flex flex-col justify-between">
         <div>
           <!-- Black Header Bar -->
-          <div class="h-10 bg-stark-black px-4 flex items-center justify-between border-b-2 border-stark-black">
-            <span class="font-mono text-xs font-bold uppercase text-mac-yellow tracking-wider">
+          <div class="h-10 bg-stark-black px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black">
+            <span class="font-mono text-xs font-bold uppercase text-mac-yellow tracking-wider truncate">
               {plaques.mission.specTag}
             </span>
-            <span class="w-3 h-3 bg-mac-yellow border border-stark-black"></span>
+            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-mac-yellow border border-stark-black shrink-0"></span>
           </div>
           <!-- Body -->
-          <div class="p-6 lg:p-8 space-y-4">
-            <h3 class="font-display text-2xl sm:text-3xl font-black uppercase text-stark-black tracking-tight">
+          <div class="p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
+            <h3 class="font-display text-xl sm:text-2xl lg:text-3xl font-black uppercase text-stark-black tracking-tight">
               {plaques.mission.title}
             </h3>
-            <p class="font-sans text-base text-on-surface leading-relaxed">
+            <p class="font-sans text-sm sm:text-base text-on-surface leading-relaxed">
               {plaques.mission.body}
             </p>
           </div>
         </div>
-        <div class="px-6 lg:px-8 py-3 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between">
-          <span class="font-mono text-xs font-bold uppercase text-stark-black">
+        <div class="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between">
+          <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black">
             {plaques.mission.operationalMandate}
           </span>
-          <span class="font-mono text-xs font-black text-system-blue">
+          <span class="font-mono text-[11px] sm:text-xs font-black text-system-blue">
             {plaques.mission.status}
           </span>
         </div>
@@ -418,7 +418,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
     </section>
 
     <!-- CONNECTOR RAIL 2.3 -> 2.4 -->
-    <BlueprintDivider tag="DEPARTMENT_REGISTRY" code="WINGS_SPEC_04" accent="red" class="my-6" />
+    <BlueprintDivider tag="DEPARTMENT_REGISTRY" code="WINGS_SPEC_04" accent="red" class="my-4 sm:my-6" />
 
     <!-- 5. SECTION 2.4 — OPERATIONAL WINGS // SPEC SHEET (4 STACKED TABLE ROWS) -->
     <section id="departments" class="space-y-4 scroll-mt-28">
@@ -426,7 +426,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
         <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-stark-black">
           {wings.title}
         </h2>
-        <span class="font-mono text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black">
+        <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black self-start sm:self-auto">
           {wings.badge}
         </span>
       </div>
@@ -440,17 +440,17 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
             "bg-pure-white text-stark-black";
 
           return (
-            <div class="p-6 lg:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center hover:bg-surface-container-low transition-colors">
+            <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-start md:items-center hover:bg-surface-container-low transition-colors">
               <div class="md:col-span-3 flex md:flex-col items-start gap-2">
-                <span class={`font-mono text-xs font-black uppercase px-2.5 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] ${badgeBg}`}>
+                <span class={`font-mono text-[11px] sm:text-xs font-black uppercase px-2.5 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] ${badgeBg}`}>
                   {div.deptTag}
                 </span>
               </div>
               <div class="md:col-span-5 space-y-1">
-                <h4 class="font-display text-xl sm:text-2xl font-black uppercase text-stark-black">
+                <h4 class="font-display text-lg sm:text-2xl font-black uppercase text-stark-black">
                   {div.name}
                 </h4>
-                <p class="font-sans text-sm sm:text-base text-on-surface-variant">
+                <p class="font-sans text-xs sm:text-base text-on-surface-variant">
                   {div.description}
                 </p>
                 {div.sampleWorkUrl && (
@@ -463,9 +463,9 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                   </div>
                 )}
               </div>
-              <div class="md:col-span-4 flex flex-wrap gap-2 justify-start md:justify-end">
+              <div class="md:col-span-4 flex flex-wrap gap-1.5 sm:gap-2 justify-start md:justify-end">
                 {div.skills.map((skill) => (
-                  <span class="font-mono text-xs font-bold uppercase bg-pure-white text-stark-black px-2 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000]">
+                  <span class="font-mono text-[11px] sm:text-xs font-bold uppercase bg-pure-white text-stark-black px-2 py-0.5 sm:py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000]">
                     {skill}
                   </span>
                 ))}
@@ -477,7 +477,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
     </section>
 
     <!-- CONNECTOR RAIL 2.4 -> 2.5 -->
-    <BlueprintDivider tag="LEADERSHIP_ARCHIVES" code="EXIT_LOGS_05" accent="black" class="my-6" />
+    <BlueprintDivider tag="LEADERSHIP_ARCHIVES" code="EXIT_LOGS_05" accent="black" class="my-4 sm:my-6" />
 
     <!-- 6. SECTION 2.5 — DECLASSIFIED EXIT LOGS // PAST LEADERSHIP -->
     <section class="space-y-6">
@@ -485,19 +485,19 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
         <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-stark-black">
           {exitLogs.title}
         </h2>
-        <span class="font-mono text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black">
+        <span class="font-mono text-[11px] sm:text-xs font-bold uppercase text-stark-black bg-tactical-stone px-2 py-1 border border-stark-black self-start sm:self-auto">
           {exitLogs.badge}
         </span>
       </div>
 
       <div class="space-y-6">
         {testimonials.map((person, idx) => (
-          <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white p-6 lg:p-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white p-4 sm:p-6 lg:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-start">
               
               <!-- Left Portrait -->
               <div class="md:col-span-3">
-                <div class="relative border-2 border-stark-black bg-stark-black shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden">
+                <div class="relative border-2 border-stark-black bg-stark-black shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden max-w-[240px] sm:max-w-none">
                   <BrutalMedia
                     src={person.portraitImage}
                     videoUrl={person.videoTestimonialUrl}
@@ -507,25 +507,25 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                     class="w-full h-full"
                     mediaClass="w-full h-full object-cover grayscale contrast-125"
                   />
-                  <div class="absolute bottom-2 left-2 bg-stark-black text-pure-white font-mono text-xs font-bold px-2 py-0.5 border border-pure-white z-10">
+                  <div class="absolute bottom-2 left-2 bg-stark-black text-pure-white font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 border border-pure-white z-10">
                     {person.badgeId}
                   </div>
                 </div>
               </div>
 
               <!-- Right Overview & Collapsible Drawer -->
-              <div class="md:col-span-9 flex flex-col justify-between h-full space-y-4">
+              <div class="md:col-span-9 flex flex-col justify-between h-full space-y-3 sm:space-y-4">
                 <div>
                   <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-2xl sm:text-3xl font-black uppercase text-stark-black">
+                    <h3 class="font-display text-xl sm:text-2xl lg:text-3xl font-black uppercase text-stark-black">
                       {person.name}
                     </h3>
                     <span class={`font-mono text-xs font-bold uppercase ${idx === 0 ? "text-system-red" : "text-electric-cyan font-black bg-stark-black px-1"}`}>
                       /// {person.role}
                     </span>
                   </div>
-                  <div class="mt-3 p-4 bg-tactical-stone border-2 border-stark-black">
-                    <p class="font-sans text-sm sm:text-base text-stark-black italic leading-relaxed">
+                  <div class="mt-2.5 sm:mt-3 p-3.5 sm:p-4 bg-tactical-stone border-2 border-stark-black">
+                    <p class="font-sans text-xs sm:text-sm md:text-base text-stark-black italic leading-relaxed">
                       {person.pullQuote}
                     </p>
                   </div>
@@ -534,7 +534,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                 <!-- Collapsible Drawer Container -->
                 <div
                   id={`drawer-person-${idx}`}
-                  class={`border-2 border-stark-black bg-surface-container-low p-5 space-y-3 font-sans text-sm sm:text-base text-on-surface ${
+                  class={`border-2 border-stark-black bg-surface-container-low p-4 sm:p-5 space-y-3 font-sans text-xs sm:text-sm md:text-base text-on-surface ${
                     person.defaultOpen ? "block" : "hidden"
                   }`}
                 >
@@ -544,10 +544,10 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                 </div>
 
                 <!-- Controls: Expand/Collapse Button & LinkedIn Link -->
-                <div class="flex flex-wrap items-center gap-3 pt-2">
+                <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
                   <button
                     type="button"
-                    class={`font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 border-2 border-stark-black shadow-[4px_4px_0px_#000000] cursor-pointer select-none transition-colors dossier-toggle-btn ${
+                    class={`font-mono text-xs sm:text-sm font-bold uppercase px-3.5 sm:px-4 py-2 border-2 border-stark-black shadow-[4px_4px_0px_#000000] cursor-pointer select-none transition-colors dossier-toggle-btn ${
                       person.defaultOpen
                         ? "bg-stark-black text-mac-yellow hover:bg-mac-yellow hover:text-stark-black"
                         : "bg-mac-yellow text-stark-black hover:bg-stark-black hover:text-mac-yellow"
@@ -564,7 +564,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                       href={person.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="font-mono text-xs sm:text-sm font-bold uppercase bg-pure-white text-stark-black px-4 py-2 border-2 border-stark-black shadow-[4px_4px_0px_#000000] hover:bg-stark-black hover:text-pure-white active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+                      class="font-mono text-xs sm:text-sm font-bold uppercase bg-pure-white text-stark-black px-3.5 sm:px-4 py-2 border-2 border-stark-black shadow-[4px_4px_0px_#000000] hover:bg-stark-black hover:text-pure-white active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
                     >
                       {exitLogs.linkedinText || "[ LINKEDIN ↗ ]"}
                     </a>
@@ -582,7 +582,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
       <div class="pt-4 flex justify-start">
         <a
           href={exitLogs.readAllButtonUrl || "/testimonials"}
-          class="arcade-btn bg-mac-yellow text-stark-black px-6 py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow flex items-center gap-2.5 active:translate-x-1 active:translate-y-1 active:shadow-none"
+          class="arcade-btn bg-mac-yellow text-stark-black px-5 sm:px-6 py-3 sm:py-3.5 border-4 border-stark-black font-mono text-xs sm:text-sm font-bold uppercase shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow flex items-center gap-2.5 active:translate-x-1 active:translate-y-1 active:shadow-none w-full sm:w-auto justify-center"
         >
           <span>{exitLogs.readAllButtonText || "READ ALL TESTIMONIALS ->"}</span>
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
