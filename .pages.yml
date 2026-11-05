@@ -1,38 +1,44 @@
-# ==============================================================================
-# PAGES CMS CONFIGURATION (https://pagescms.org)
-# THE MARKETING CLUB (MAC) | SRI VENKATESWARA COLLEGE, UNIVERSITY OF DELHI
-# ==============================================================================
-
-# 1. MULTIMODAL MEDIA REPOSITORIES
 media:
   - name: images
-    label: "Images & Visual Assets"
-    input: public/uploads/images
-    output: /uploads/images
-    categories: [image]
-    extensions: [jpg, jpeg, png, webp, avif, svg, gif]
-
+    label: 🖼️ Image Assets (Uploads to public/media/images)
+    input: public/media/images
+    output: /media/images
+    categories:
+      - image
+    extensions:
+      - jpg
+      - jpeg
+      - png
+      - webp
+      - avif
+      - svg
+      - gif
   - name: videos
-    label: "Video Clips & Teasers"
-    input: public/uploads/videos
-    output: /uploads/videos
-    categories: [video]
-    extensions: [mp4, webm, mov]
-
+    label: 🎬 Video Assets (Uploads to public/media/videos)
+    input: public/media/videos
+    output: /media/videos
+    categories:
+      - video
+    extensions:
+      - mp4
+      - webm
+      - mov
   - name: documents
-    label: "PDFs, Decks & Documents"
-    input: public/uploads/documents
-    output: /uploads/documents
-    categories: [document, compressed]
-    extensions: [pdf, pptx, docx, xlsx, zip]
-
-# 2. EDITABLE CONTENT COLLECTIONS & MASTER FILES
+    label: 📄 Documents & PDFs (Uploads to public/media/documents)
+    input: public/media/documents
+    output: /media/documents
+    categories:
+      - document
+      - compressed
+    extensions:
+      - pdf
+      - pptx
+      - docx
+      - xlsx
+      - zip
 content:
-  # ----------------------------------------------------------------------------
-  # 01. GLOBAL BRAND, CAUTION BANNER & FOOTER
-  # ----------------------------------------------------------------------------
   - name: global_settings
-    label: "📢 Global Brand, Logo, Caution Ticker & Footer"
+    label: 📢 Global Brand, Logo, Caution Ticker & Footer
     type: file
     path: src/content/settings/global.json
     format: json
@@ -70,16 +76,19 @@ content:
         type: image
         options:
           media: images
+        description: Main society logo displayed in top navigation. Transparent PNG or SVG (~400x120px).
       - name: faviconUrl
         label: Browser Favicon Asset
         type: image
         options:
           media: images
+        description: Browser tab icon (.ico, .png, or .svg). Recommended square 32x32 or 64x64.
       - name: brochurePdfUrl
         label: Society Brochure PDF File
         type: file
         options:
           media: documents
+        description: Official society brochure PDF for header download button. Under 10MB.
       - name: brochureLabel
         label: Society Brochure Button Label
         type: string
@@ -100,6 +109,7 @@ content:
           - name: enabled
             label: Broadcast Banner Across All Pages?
             type: boolean
+            description: Toggle ON to show the yellow high-visibility alert bar across all pages.
           - name: text
             label: Marquee Announcement Text
             type: string
@@ -193,11 +203,14 @@ content:
             type: text
           - name: statusBadge
             label: Relays Status Stamp Badge
-            type: string
-
-  # ----------------------------------------------------------------------------
-  # 02. HOME PAGE
-  # ----------------------------------------------------------------------------
+            type: select
+            options:
+              values:
+                - TELEMETRY ONLINE // ALL SYSTEMS GO
+                - RECRUITMENT OPERATIONS LIVE
+                - ANNUAL CONCLAVE IN SESSION
+                - ARCHIVE MODE // SEMESTER BREAK
+            description: Status indicator badge shown in the footer terminal bar.
   - name: home_page
     label: "🏠 Home Page: Hero Photo/Video, Metrics, Wings & Sponsors"
     type: file
@@ -209,9 +222,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Hero Section?"
+            label: Show Hero Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: archiveRef
             label: Archival Reference Stamp
             type: string
@@ -255,6 +269,7 @@ content:
             type: image
             options:
               media: images
+            description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
           - name: videoUrl
             label: Hero Video Stream (.mp4 / YouTube embed or blank)
             type: string
@@ -263,6 +278,7 @@ content:
             type: image
             options:
               media: images
+            description: Event poster visual. Vertical 3:4 or A3 ratio. Recommended .webp or .jpg under 2.5MB.
           - name: imageAlt
             label: Image Descriptive Alt Text
             type: text
@@ -286,9 +302,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show The Receipts / Verified Metrics Section?"
+            label: Show The Receipts / Verified Metrics Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: sectionTag
             label: Section Stamp
             type: string
@@ -317,9 +334,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show The Machinery / Departments Grid?"
+            label: Show The Machinery / Departments Grid?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             label: Section Title
             type: string
@@ -347,7 +365,12 @@ content:
                 label: Border Accent Color
                 type: select
                 options:
-                  values: [cyan, red, yellow, white, stone]
+                  values:
+                    - cyan
+                    - red
+                    - yellow
+                    - white
+                    - stone
               - name: cols
                 label: Column Width (4 or 8)
                 type: number
@@ -365,6 +388,7 @@ content:
                 type: image
                 options:
                   media: images
+                description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
               - name: videoUrl
                 label: Department Teaser Video (.mp4 / YouTube)
                 type: string
@@ -373,14 +397,16 @@ content:
                 type: file
                 options:
                   media: documents
+                description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: sponsors
         label: Past Corporate Sponsors & Brand Partners
         type: object
         fields:
           - name: enabled
-            label: "Show Corporate Sponsors Belt?"
+            label: Show Corporate Sponsors Belt?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: header
             label: Section Header
             type: string
@@ -403,6 +429,7 @@ content:
                 type: image
                 options:
                   media: images
+                description: Transparent vector SVG or PNG logo asset. High resolution, crisp edges.
               - name: websiteUrl
                 label: Partner Brand Website URL
                 type: string
@@ -411,9 +438,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Fresh Off The Press / Live Feed Section?"
+            label: Show Fresh Off The Press / Live Feed Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             label: Section Title
             type: string
@@ -447,12 +475,19 @@ content:
                 type: string
               - name: status
                 label: Status Stamp
-                type: string
+                type: select
+                options:
+                  values:
+                    - REGISTRATIONS OPEN
+                    - FLAGSHIP OPERATION
+                    - MISSION ACTIVE
+                    - CONCLUDED / ARCHIVED
               - name: image
                 label: Promo Graphic / Key Artwork
                 type: image
                 options:
                   media: images
+                description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
               - name: videoUrl
                 label: Video Teaser (.mp4 / YouTube)
                 type: string
@@ -461,6 +496,7 @@ content:
                 type: file
                 options:
                   media: documents
+                description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
           - name: intel
             label: Featured Research Dispatches
             type: object
@@ -496,6 +532,7 @@ content:
                     type: file
                     options:
                       media: documents
+                    description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
               - name: footerTotal
                 label: Counter Footer
                 type: string
@@ -505,10 +542,6 @@ content:
               - name: footerLink
                 label: Action Link Destination
                 type: string
-
-  # ----------------------------------------------------------------------------
-  # 03. BLUEPRINT PAGE
-  # ----------------------------------------------------------------------------
   - name: blueprint_page
     label: "📐 Blueprint Page: Manifesto, Pillars, Vision & Wings"
     type: file
@@ -528,9 +561,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Society Manifesto Frame?"
+            label: Show Society Manifesto Frame?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: estBadge
             label: Establishment Milestone Badge
             type: string
@@ -546,12 +580,18 @@ content:
             type: string
           - name: status
             label: Readiness Status
-            type: string
+            type: select
+            options:
+              values:
+                - ARCHIVED DIRECTIVE // RATIFIED
+                - FOUNDATIONAL CHARTER
+                - DECLASSIFIED PROTOCOL
           - name: mediaImage
             label: Collective Photograph
             type: image
             options:
               media: images
+            description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
           - name: mediaVideoUrl
             label: Collective Video Loop (.mp4 / YouTube)
             type: string
@@ -566,14 +606,16 @@ content:
             type: file
             options:
               media: documents
+            description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: architecture
         label: 4 Declassified Architectural Pillars
         type: object
         fields:
           - name: enabled
-            label: "Show Architecture & Pillars Strip?"
+            label: Show Architecture & Pillars Strip?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: badge
@@ -614,7 +656,11 @@ content:
                 label: Tab Color Accent
                 type: select
                 options:
-                  values: [red, blue, yellow, white]
+                  values:
+                    - red
+                    - blue
+                    - yellow
+                    - white
               - name: items
                 label: Bullet Principles
                 type: object
@@ -661,9 +707,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Operational Wings Breakdown?"
+            label: Show Operational Wings Breakdown?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: badge
@@ -680,7 +727,11 @@ content:
               - name: colorScheme
                 type: select
                 options:
-                  values: [yellow, cyan, red, white]
+                  values:
+                    - yellow
+                    - cyan
+                    - red
+                    - white
               - name: name
                 type: string
               - name: description
@@ -694,14 +745,16 @@ content:
                 type: file
                 options:
                   media: documents
+                description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: exitLogs
         label: Section 2.5 Declassified Exit Logs
         type: object
         fields:
           - name: enabled
-            label: "Show Presidential Exit Logs Section?"
+            label: Show Presidential Exit Logs Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: badge
@@ -718,10 +771,6 @@ content:
           - name: readAllButtonUrl
             label: Read All Testimonials Button URL
             type: string
-
-  # ----------------------------------------------------------------------------
-  # 04. TESTIMONIALS (ALUMNI PRESIDENT EXIT DOSSIERS)
-  # ----------------------------------------------------------------------------
   - name: testimonials
     label: "🎙️ Testimonials: Alumni President & Member Exit Dossiers"
     type: collection
@@ -730,16 +779,21 @@ content:
     filename: "{primary}.json"
     view:
       primary: name
-      fields: [name, role, badgeId]
+      fields:
+        - name
+        - role
+        - badgeId
       sort: order
     fields:
       - name: enabled
-        label: "Visible on Website? (Toggle ON/OFF)"
+        label: Visible on Website? (Toggle ON/OFF)
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: order
         label: Display Order Index
         type: number
+        description: Display priority number (e.g. 1, 2, 3). Items with lower numbers appear first on the page.
       - name: name
         label: Alumni President Name
         type: string
@@ -763,6 +817,7 @@ content:
         type: image
         options:
           media: images
+        description: Square 1:1 ratio headshot (e.g. 600x600). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
       - name: videoTestimonialUrl
         label: Video Testimonial / Interview (.mp4 / YouTube)
         type: string
@@ -772,10 +827,6 @@ content:
       - name: defaultOpen
         label: Expand Accordion by Default?
         type: boolean
-
-  # ----------------------------------------------------------------------------
-  # 04B. TESTIMONIALS ARCHIVE PAGE (GLOBAL HEADERS & STATS)
-  # ----------------------------------------------------------------------------
   - name: testimonials_page
     label: "🏛️ Testimonials Page: Archive Vault, Stats & Controls"
     type: file
@@ -783,9 +834,10 @@ content:
     format: json
     fields:
       - name: statsEnabled
-        label: "Show Top Telemetry Metrics Strip?"
+        label: Show Top Telemetry Metrics Strip?
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: breadcrumb
         label: Breadcrumb Header
         type: string
@@ -821,10 +873,6 @@ content:
         type: string
       - name: backToBlueprintText
         type: string
-
-  # ----------------------------------------------------------------------------
-  # 05. ARENA RADAR & NEXT OPERATION COUNTDOWN
-  # ----------------------------------------------------------------------------
   - name: arena_radar
     label: "🚨 Arena: Live Next-Operation Countdown, Poster & Rulebook"
     type: file
@@ -842,12 +890,14 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Next Operation Radar Banner?"
+            label: Show Next Operation Radar Banner?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: isLive
             label: Radar Active & Broadcasting?
             type: boolean
+            description: Toggle ON to turn the live countdown timer on. Toggle OFF when between operations.
           - name: eventTitle
             label: Target Operation Title
             type: string
@@ -856,13 +906,21 @@ content:
             type: string
           - name: statusBadge
             label: Live Status Stamp
-            type: string
+            type: select
+            options:
+              values:
+                - "STATUS: ACTIVE BROADCAST"
+                - "STATUS: REGISTRATION OPEN"
+                - "STATUS: BRIEFING COMMENCED"
+                - "STATUS: SIMULATION COMPLETE"
+                - "STATUS: STANDBY // NEXT TARGET PENDING"
           - name: date
             label: Event Month & Year
             type: string
           - name: targetDate
             label: Target Countdown Timestamp (YYYY-MM-DDTHH:MM:SS)
             type: string
+            description: Target launch date in ISO format (e.g. 2026-11-20T10:00:00). Powers the live countdown clock.
           - name: venue
             label: Physical / Virtual Staging Ground
             type: string
@@ -880,6 +938,7 @@ content:
             type: image
             options:
               media: images
+            description: Event poster visual. Vertical 3:4 or A3 ratio. Recommended .webp or .jpg under 2.5MB.
           - name: teaserVideoUrl
             label: Teaser Trailer Video (.mp4 / YouTube)
             type: string
@@ -888,6 +947,7 @@ content:
             type: file
             options:
               media: documents
+            description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
           - name: standbyMessage
             label: Inactive Radar Standby Notice
             type: string
@@ -896,9 +956,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Flagship Conclaves Header?"
+            label: Show Flagship Conclaves Header?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: badge
@@ -908,9 +969,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Evidence Wall Gallery Section?"
+            label: Show Evidence Wall Gallery Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: tagline
@@ -926,10 +988,6 @@ content:
                 type: string
           - name: loadMoreText
             type: string
-
-  # ----------------------------------------------------------------------------
-  # 06. ARENA FLAGSHIP OPERATIONS (EVENTS)
-  # ----------------------------------------------------------------------------
   - name: events
     label: "🎪 Arena: Flagship Operations (MarkoPolis, ZEAL, RotoMAC)"
     type: collection
@@ -938,13 +996,17 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields: [title, code, statusBadge]
+      fields:
+        - title
+        - code
+        - statusBadge
       sort: order
     fields:
       - name: enabled
-        label: "Visible on Website? (Toggle ON/OFF)"
+        label: Visible on Website? (Toggle ON/OFF)
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: id
         label: Operation Slug / Key
         type: string
@@ -952,6 +1014,7 @@ content:
       - name: order
         label: Sort Order
         type: number
+        description: Display priority number (e.g. 1, 2, 3). Items with lower numbers appear first on the page.
       - name: code
         label: Operation Code
         type: string
@@ -960,7 +1023,15 @@ content:
         type: string
       - name: statusBadge
         label: Active Status Stamp
-        type: string
+        type: select
+        options:
+          values:
+            - ACTIVE / REGISTRATIONS OPEN
+            - UPCOMING // ANNOUNCED
+            - ANNUAL FLAGSHIP
+            - MISSION CONCLUDED
+            - ARCHIVED
+        description: Operational status tag badge rendered on the event dossier.
       - name: title
         label: Event Title
         type: string
@@ -972,12 +1043,18 @@ content:
         label: Badge Color Accent
         type: select
         options:
-          values: [yellow, cyan, red, white]
+          values:
+            - yellow
+            - cyan
+            - red
+            - white
       - name: imagePosition
         label: Image Orientation
         type: select
         options:
-          values: [left, right]
+          values:
+            - left
+            - right
       - name: tagline
         label: Strategic Tagline
         type: string
@@ -989,6 +1066,7 @@ content:
         type: image
         options:
           media: images
+        description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
       - name: stickerText
         label: Floating Zine Stamp Callout
         type: string
@@ -996,7 +1074,12 @@ content:
         label: Stamp Color
         type: select
         options:
-          values: [yellow, red, cyan, stone, white]
+          values:
+            - yellow
+            - red
+            - cyan
+            - stone
+            - white
       - name: stickerRotate
         label: CSS Rotation Class (e.g. -rotate-3)
         type: string
@@ -1032,6 +1115,7 @@ content:
             type: image
             options:
               media: images
+            description: Event poster visual. Vertical 3:4 or A3 ratio. Recommended .webp or .jpg under 2.5MB.
           - name: caption
             label: Edition Brief Description / Caption
             type: text
@@ -1041,10 +1125,6 @@ content:
           - name: winner
             label: Winner / Highlights
             type: string
-
-  # ----------------------------------------------------------------------------
-  # 07. ARENA EVIDENCE WALL (GALLERY)
-  # ----------------------------------------------------------------------------
   - name: gallery
     label: "📸 Arena: Evidence Wall Photo & Video Gallery"
     type: collection
@@ -1053,13 +1133,17 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields: [figureCode, title, category]
+      fields:
+        - figureCode
+        - title
+        - category
       sort: order
     fields:
       - name: enabled
-        label: "Visible on Website? (Toggle ON/OFF)"
+        label: Visible on Website? (Toggle ON/OFF)
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: figureCode
         label: Archival Figure Stamp (e.g. FIG_01)
         type: string
@@ -1072,7 +1156,13 @@ content:
         label: Filter Category
         type: select
         options:
-          values: [ALL, MARKOPOLIS, ZEAL, SPEAKERS, BTS]
+          values:
+            - ALL
+            - MARKOPOLIS
+            - ZEAL
+            - SPEAKERS
+            - BTS
+        description: Filter tag matching the Evidence Wall live category buttons.
       - name: badge
         label: Visual Category Pill
         type: string
@@ -1083,25 +1173,26 @@ content:
         label: Media Asset Format
         type: select
         options:
-          values: [image, video]
+          values:
+            - image
+            - video
       - name: image
         label: Photograph File
         type: image
         options:
           media: images
+        description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
       - name: videoUrl
         label: Video Stream / Reel (.mp4 or YouTube)
         type: string
       - name: caption
         label: Field Log Observation Caption
         type: text
+        description: Single-sentence archival log description (max 100 characters).
       - name: order
         label: Display Order Index
         type: number
-
-  # ----------------------------------------------------------------------------
-  # 08. INTEL SPOTLIGHT (ANNUAL MACZINE ISSUE)
-  # ----------------------------------------------------------------------------
+        description: Display priority number (e.g. 1, 2, 3). Items with lower numbers appear first on the page.
   - name: intel_spotlight
     label: "📕 Intel: Annual MACzine Cover & PDF Issue Upload"
     type: file
@@ -1119,9 +1210,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Annual MACzine Hero Spotlight?"
+            label: Show Annual MACzine Hero Spotlight?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: terminalHeader
             label: Terminal Header
             type: string
@@ -1145,11 +1237,13 @@ content:
             type: image
             options:
               media: images
+            description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
           - name: pdfFile
             label: Complete Magazine Digital Edition PDF
             type: file
             options:
               media: documents
+            description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
           - name: figureCode
             type: string
           - name: releaseDate
@@ -1174,6 +1268,7 @@ content:
                 type: file
                 options:
                   media: documents
+                description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
               - name: pages
                 type: string
       - name: feedSection
@@ -1181,9 +1276,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Filterable Research Feed Section?"
+            label: Show Filterable Research Feed Section?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: tag
             type: string
           - name: title
@@ -1197,10 +1293,6 @@ content:
                 type: string
               - name: label
                 type: string
-
-  # ----------------------------------------------------------------------------
-  # 09. INTEL RESEARCH ARTICLES, CASE STUDIES & BLOGS
-  # ----------------------------------------------------------------------------
   - name: intel_articles
     label: "📰 Intel: Research Reports, Blogs, Case Studies & PDFs"
     type: collection
@@ -1209,13 +1301,18 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, category, publishDate, author]
+      fields:
+        - title
+        - category
+        - publishDate
+        - author
       sort: order
     fields:
       - name: enabled
-        label: "Publish on Website? (Toggle ON/OFF)"
+        label: Publish on Website? (Toggle ON/OFF)
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: title
         label: Dossier Headline
         type: string
@@ -1224,7 +1321,11 @@ content:
         label: Content Classification
         type: select
         options:
-          values: ["Research Report", "Blog", "Case Study", "Podcast / Video"]
+          values:
+            - Research Report
+            - Blog
+            - Case Study
+            - Podcast / Video
       - name: publishDate
         label: Release Date (e.g. NOV 2026)
         type: string
@@ -1242,6 +1343,7 @@ content:
         type: image
         options:
           media: images
+        description: Square 1:1 ratio headshot (e.g. 600x600). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
       - name: dossierId
         label: Dossier Unique Archive ID (e.g. MAC-INTEL-2026-042)
         type: string
@@ -1260,6 +1362,7 @@ content:
         type: image
         options:
           media: images
+        description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
       - name: coverCaption
         label: Visual Technical Caption
         type: string
@@ -1271,12 +1374,14 @@ content:
         type: file
         options:
           media: documents
+        description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: attachmentLabel
         label: Download Button Text
         type: string
       - name: featured
         label: Pin to Featured Home Feed?
         type: boolean
+        description: Toggle ON to feature this dossier as the hero headline article at the top of the feed.
       - name: readingVelocity
         label: Reading Velocity Metric
         type: string
@@ -1287,15 +1392,12 @@ content:
       - name: order
         label: Feed Priority Index
         type: number
+        description: Display priority number (e.g. 1, 2, 3). Items with lower numbers appear first on the page.
       - name: body
         label: Full Research Report (Markdown with Images)
         type: rich-text
         options:
           media: images
-
-  # ----------------------------------------------------------------------------
-  # 10. ROSTER OPERATORS & DEPARTMENT DIRECTORY
-  # ----------------------------------------------------------------------------
   - name: roster_team
     label: "🪪 Roster: Core Council & Department Operator ID Badges"
     type: file
@@ -1310,6 +1412,7 @@ content:
         type: file
         options:
           media: documents
+        description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: breadcrumb
         type: string
       - name: cadreStatus
@@ -1357,9 +1460,10 @@ content:
         list: true
         fields:
           - name: enabled
-            label: "Show This Officer Badge?"
+            label: Show This Officer Badge?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: idCode
             label: Official ID Code
             type: string
@@ -1374,6 +1478,7 @@ content:
             type: image
             options:
               media: images
+            description: Square 1:1 ratio headshot (e.g. 600x600). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
           - name: authBadge
             type: string
           - name: tenure
@@ -1420,9 +1525,10 @@ content:
             list: true
             fields:
               - name: enabled
-                label: "Show This Coordinator Card?"
+                label: Show This Coordinator Card?
                 type: boolean
                 default: true
+                description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
               - name: id
                 label: Coordinator Badge Code (e.g. DIR-01, COORD-02)
                 type: string
@@ -1443,6 +1549,7 @@ content:
                 type: image
                 options:
                   media: images
+                description: Square 1:1 ratio headshot (e.g. 600x600). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
               - name: linkedin
                 label: LinkedIn Profile URL
                 type: string
@@ -1452,9 +1559,10 @@ content:
             list: true
             fields:
               - name: enabled
-                label: "Show This Cadre Member Row?"
+                label: Show This Cadre Member Row?
                 type: boolean
                 default: true
+                description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
               - name: name
                 label: Operative Name
                 type: string
@@ -1466,14 +1574,17 @@ content:
                 type: string
               - name: status
                 label: Protocol Status
-                type: string
+                type: select
+                options:
+                  values:
+                    - OPERATIONAL
+                    - DEPLOYED
+                    - STANDBY
+                    - ALUMNI CADRE
+                description: Operational readiness status code.
               - name: statusClass
                 label: Status Color Class
                 type: string
-
-  # ----------------------------------------------------------------------------
-  # 11. RECRUITMENT RESULTS 2026-27 & CLEARANCE BOARD
-  # ----------------------------------------------------------------------------
   - name: recruitment_results
     label: "✅ Roster: Recruitment Results 2026-27 & Official PDF"
     type: file
@@ -1506,6 +1617,7 @@ content:
         type: file
         options:
           media: documents
+        description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: officialPdfSize
         label: PDF File Size
         type: string
@@ -1541,10 +1653,6 @@ content:
               - name: score
                 label: Interview Evaluation Score
                 type: string
-
-  # ----------------------------------------------------------------------------
-  # 12. CONTACT COORDINATES & SPONSORSHIP DECK
-  # ----------------------------------------------------------------------------
   - name: contact_page
     label: "📡 Contact: Terminal, Coordinates, Map Graphic & Pitch Deck"
     type: file
@@ -1552,17 +1660,20 @@ content:
     format: json
     fields:
       - name: terminalEnabled
-        label: "Show Contact Form Terminal?"
+        label: Show Contact Form Terminal?
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: sponsorshipEnabled
-        label: "Show Partnership & Sponsorship Deck Download?"
+        label: Show Partnership & Sponsorship Deck Download?
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: externalChannelsEnabled
-        label: "Show External Telemetry & Social Channels?"
+        label: Show External Telemetry & Social Channels?
         type: boolean
         default: true
+        description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
       - name: breadcrumb
         label: Breadcrumb Header
         type: string
@@ -1620,9 +1731,10 @@ content:
         type: object
         fields:
           - name: enabled
-            label: "Show Coordinates & Blueprint Map Card?"
+            label: Show Coordinates & Blueprint Map Card?
             type: boolean
             default: true
+            description: Toggle ON to display this section on the live website. Toggle OFF to hide it without deleting data.
           - name: title
             type: string
           - name: subtitle
@@ -1638,12 +1750,18 @@ content:
           - name: email
             type: string
           - name: status
-            type: string
+            type: select
+            options:
+              values:
+                - TRANSMITTER ONLINE
+                - CAMPUS STATION ACTIVE
+                - STANDBY // OFF-HOURS
           - name: mapImage
             label: Tactical Map Blueprint Image
             type: image
             options:
               media: images
+            description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
           - name: googleMapsUrl
             label: Google Maps Pin Link
             type: string
@@ -1655,6 +1773,7 @@ content:
         type: file
         options:
           media: documents
+        description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
       - name: sponsorshipHeading
         label: Sponsorship Section Subheading
         type: string
