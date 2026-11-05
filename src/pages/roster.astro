@@ -1,0 +1,525 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrutalMedia from '../components/ui/BrutalMedia.astro';
+import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import teamData from '../content/roster/team.json';
+import resultsData from '../content/roster/results.json';
+
+const { academicYear, councilPdfUrl, breadcrumb, cadreStatus, station, sectionCommand, coreCommand, departments } = teamData;
+const { session, isPublished, totalCleared, headerTitle, statusBanner, officialResultPdf, officialPdfSize, wings } = resultsData;
+---
+
+<BaseLayout title="ROSTER /// THE MARKETING CLUB (MAC)">
+  <!-- BREADCRUMB / METADATA RELAY STRIP -->
+  <section class="w-full bg-tactical-stone border-b-2 border-stark-black">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 bg-system-red"></span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-stark-black truncate">
+          {breadcrumb}
+        </span>
+      </div>
+      <div class="flex items-center gap-4 font-mono text-xs font-bold uppercase">
+        <span class="bg-pure-white px-2 py-0.5 border border-stark-black">
+          {cadreStatus}
+        </span>
+        <span class="text-on-surface-variant hidden sm:inline">
+          {station}
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN ROSTER CANVAS CONTAINER -->
+  <div class="w-full max-w-7xl mx-auto px-4 lg:px-8 py-10 flex flex-col gap-16">
+    <!-- ========================================================================= -->
+    <!-- SECTION 5.1 — CORE COMMAND BACKSTAGE ID BADGES (PRESIDENTIAL TRIO)         -->
+    <!-- ========================================================================= -->
+    <section class="flex flex-col gap-8 w-full">
+      <!-- Section Headline -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b-4 border-stark-black">
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center gap-2">
+            <span class="bg-mac-yellow text-stark-black font-mono text-xs px-2 py-0.5 font-bold uppercase border border-stark-black">
+              {sectionCommand.tier}
+            </span>
+            <span class="font-mono text-xs uppercase tracking-wider text-on-surface-variant font-bold">
+              {sectionCommand.council}
+            </span>
+          </div>
+          <h1 class="font-black text-3xl sm:text-4xl lg:text-5xl uppercase text-stark-black tracking-tight leading-none mt-1">
+            {sectionCommand.title}
+          </h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="font-mono text-xs font-bold uppercase bg-tactical-stone px-3 py-1.5 border-2 border-stark-black">
+            {sectionCommand.clearance}
+          </span>
+          <span class="font-mono text-xs font-bold uppercase bg-stark-black text-pure-white px-3 py-1.5 border-2 border-stark-black">
+            {sectionCommand.officerCount}
+          </span>
+        </div>
+      </div>
+
+      <!-- 3-Column Pass Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        {coreCommand.map((officer) => (
+          <article class="officer-badge-card bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] flex flex-col">
+            <!-- Card Header / Lanyard Slot Strip -->
+            <div class="bg-stark-black h-11 px-4 flex items-center justify-between border-b-2 border-stark-black relative">
+              <span 
+                class="font-mono text-xs text-mac-yellow font-bold uppercase tracking-wider copy-trigger cursor-copy hover:underline" 
+                data-copy={officer.idCode} 
+                title="CLICK TO COPY CALLSIGN ⧉"
+              >
+                {officer.idCode}
+              </span>
+              <!-- Center punched hole -->
+              <div class="w-8 h-2 bg-tactical-stone border border-stark-black"></div>
+              <!-- Mock barcode -->
+              <div class="flex items-center gap-[2px] h-5 py-0.5" aria-hidden="true">
+                <span class="w-[2px] h-full bg-pure-white"></span>
+                <span class="w-[1px] h-full bg-pure-white"></span>
+                <span class="w-[3px] h-full bg-pure-white"></span>
+                <span class="w-[1px] h-full bg-pure-white"></span>
+                <span class="w-[2px] h-full bg-pure-white"></span>
+                <span class="w-[4px] h-full bg-pure-white"></span>
+                <span class="w-[1px] h-full bg-pure-white"></span>
+              </div>
+            </div>
+
+            <!-- Photo Container -->
+            <div class="p-5 bg-surface flex flex-col items-center">
+              <div class="w-full aspect-square border-2 border-stark-black bg-stark-black relative overflow-hidden">
+                <img
+                  src={officer.portraitImage}
+                  alt={`${officer.name} - ${officer.role}`}
+                  class="w-full h-full object-cover grayscale contrast-125"
+                />
+                <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[11px] font-bold px-2 py-0.5 border border-mac-yellow uppercase">
+                  {officer.authBadge}
+                </div>
+              </div>
+            </div>
+
+            <!-- Name & Role Banner -->
+            <div class="bg-mac-yellow px-5 py-4 border-t-2 border-b-2 border-stark-black flex flex-col gap-0.5">
+              <span class="font-mono text-xs font-bold text-stark-black tracking-widest uppercase">
+                {officer.role}
+              </span>
+              <h2 class="font-black text-2xl uppercase text-stark-black tracking-tight leading-none mt-1">
+                {officer.name}
+              </h2>
+            </div>
+
+            <!-- Specs Matrix -->
+            <div class="p-5 flex flex-col gap-3 bg-pure-white flex-1">
+              <div class="grid grid-cols-2 gap-2 text-stark-black">
+                <div class="bg-surface border border-stark-black p-2 flex flex-col">
+                  <span class="font-mono text-[10px] text-on-surface-variant uppercase font-bold">TENURE</span>
+                  <span class="font-mono text-xs font-bold uppercase mt-0.5">{officer.tenure}</span>
+                </div>
+                <div class="bg-surface border border-stark-black p-2 flex flex-col">
+                  <span class="font-mono text-[10px] text-on-surface-variant uppercase font-bold">WING</span>
+                  <span class="font-mono text-xs font-bold uppercase mt-0.5">{officer.wing}</span>
+                </div>
+              </div>
+
+              <div class="border border-stark-black p-2.5 bg-tactical-stone flex flex-col gap-1">
+                <span class="font-mono text-xs text-stark-black uppercase font-bold flex items-center justify-between">
+                  <span>OPERATIONAL MANDATE</span>
+                  <span class="text-system-red">/// ACTIVE</span>
+                </span>
+                <p class="font-mono text-xs text-on-surface leading-snug">
+                  {officer.mandate}
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Footer Buttons -->
+            <div class="grid grid-cols-2 border-t-2 border-stark-black bg-pure-white font-mono text-xs font-bold uppercase">
+              <a
+                href={`mailto:${officer.contactEmail}`}
+                class="py-3 px-2 border-r-2 border-stark-black text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
+              >
+                <span class="material-symbols-outlined text-[16px]">mail</span>
+                <span>{teamData.contactButtonText || "[CONTACT ✉]"}</span>
+              </a>
+              <a
+                href={officer.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="py-3 px-2 text-stark-black text-center hover:bg-electric-cyan transition-colors flex items-center justify-center gap-1.5 active:bg-stark-black active:text-pure-white"
+              >
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+                <span>{teamData.linkedinButtonText || "[LINKEDIN ↗]"}</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- CONNECTOR RAIL 5.1 -> 5.2 -->
+    <BlueprintDivider tag="SQUADRON_ARCHITECTURE" code="CADRE_ROSTER_05" accent="yellow" class="my-2" />
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5.2 — DEPARTMENT OPERATOR SWITCHBOARD                             -->
+    <!-- ========================================================================= -->
+    <section class="flex flex-col gap-6 w-full">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b-2 border-stark-black">
+        <div class="flex flex-col">
+          <span class="font-mono text-xs font-bold uppercase text-on-surface-variant">
+            /// SQUADRON ARCHITECTURE
+          </span>
+          <h2 class="font-black text-3xl md:text-4xl uppercase text-stark-black tracking-tight leading-none mt-1">
+            DEPARTMENT HEADS & OPERATORS
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-electric-cyan border border-stark-black animate-pulse"></span>
+          <span class="font-mono text-xs font-bold uppercase text-stark-black">
+            /// ACTIVE CADRE DIRECTORY
+          </span>
+        </div>
+      </div>
+
+      <!-- Department Filter Switcher Tabs -->
+      <div class="flex flex-wrap items-center gap-2" id="dept-tabs">
+        {departments.map((dept, index) => (
+          <button
+            class={`dept-tab px-4 py-2.5 font-mono text-xs sm:text-sm font-bold uppercase border-2 border-stark-black shadow-[4px_4px_0px_#000000] transition-all cursor-pointer ${
+              index === 0
+                ? 'bg-electric-cyan text-stark-black active'
+                : 'bg-pure-white text-stark-black hover:bg-stark-black hover:text-mac-yellow'
+            }`}
+            data-target={dept.id}
+            type="button"
+          >
+            {dept.tabLabel}
+          </button>
+        ))}
+      </div>
+
+      <!-- Department Switchboard Panels Container -->
+      <div class="w-full bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] p-6 lg:p-8 flex flex-col gap-8">
+        {departments.map((dept, index) => (
+          <div
+            id={dept.id}
+            class={`dept-panel flex flex-col gap-8 ${index === 0 ? 'block' : 'hidden'}`}
+          >
+            <!-- Department Descriptor Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-stark-black bg-surface -mx-6 -mt-6 p-6">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 bg-stark-black text-mac-yellow font-mono font-bold flex items-center justify-center border border-stark-black shrink-0">
+                  {dept.num}
+                </span>
+                <div>
+                  <h3 class="font-black text-xl sm:text-2xl uppercase text-stark-black leading-none">
+                    {dept.name}
+                  </h3>
+                  <p class="font-mono text-xs text-on-surface-variant font-bold mt-1">
+                    {dept.tagline}
+                  </p>
+                </div>
+              </div>
+              <span class="font-mono text-xs uppercase font-bold bg-mac-yellow text-stark-black px-3 py-1 border border-stark-black self-start sm:self-auto shrink-0 shadow-[2px_2px_0px_#000000]">
+                {dept.enrolledCount}
+              </span>
+            </div>
+
+            <!-- 4-Column Coordinator Mini Cards -->
+            <div>
+              <span class="font-mono text-xs uppercase font-bold text-stark-black block mb-4">
+                /// HEAD DIRECTORS & LEAD COORDINATORS
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {dept.coordinators.map((coord) => (
+                  <div class="paper-lift border-2 border-stark-black bg-surface p-4 flex flex-col gap-3 shadow-[4px_4px_0px_#000000]">
+                    <div class="w-full aspect-[4/3] bg-tactical-stone border border-stark-black overflow-hidden relative">
+                      <img
+                        src={coord.portrait}
+                        alt={coord.name}
+                        class="w-full h-full object-cover grayscale"
+                      />
+                      <span class="absolute top-1 left-1 bg-stark-black text-pure-white text-[10px] font-mono px-1">
+                        {coord.id}
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class={`font-mono text-[11px] ${coord.roleColor} font-bold uppercase`}>
+                        {coord.roleType}
+                      </span>
+                      <span class="font-black text-base uppercase text-stark-black leading-tight mt-0.5">
+                        {coord.name}
+                      </span>
+                      <span class="font-mono text-[11px] text-on-surface-variant mt-0.5">
+                        {coord.tenure}
+                      </span>
+                    </div>
+                    <a
+                      href={coord.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-auto w-full py-1.5 bg-pure-white border border-stark-black text-stark-black font-mono text-xs font-bold uppercase text-center hover:bg-mac-yellow transition-colors block"
+                    >
+                      [LINKEDIN ↗]
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Divider Strip -->
+            <div class="flex items-center gap-3 pt-2">
+              <span class="font-mono text-xs font-bold uppercase bg-stark-black text-mac-yellow px-3 py-1">
+                {teamData.cadreRosterHeading || "/// SENIOR & JUNIOR CADRE ROSTER"}
+              </span>
+              <div class="h-[2px] bg-stark-black flex-1"></div>
+            </div>
+
+            <!-- Bottom Directory Table -->
+            <div class="w-full overflow-x-auto border-2 border-stark-black">
+              <table class="w-full border-collapse text-left font-mono text-xs sm:text-sm">
+                <thead>
+                  <tr class="bg-stark-black text-pure-white">
+                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col1 || "CALLSIGN / NAME"}</th>
+                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col2 || "ACADEMIC STANDING"}</th>
+                    <th class="py-3 px-4 uppercase tracking-wider font-bold border-r border-blueprint-grid">{teamData.tableHeaders?.col3 || "ROLE SPECIALIZATION"}</th>
+                    <th class="py-3 px-4 uppercase tracking-wider font-bold text-right">{teamData.tableHeaders?.col4 || "PROTOCOL STATUS"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dept.directoryTable.map((row) => (
+                    <tr class="border-b border-stark-black bg-pure-white hover:bg-mac-yellow transition-colors">
+                      <td class="py-2.5 px-4 font-bold border-r border-stark-black text-stark-black">{row.name}</td>
+                      <td class="py-2.5 px-4 border-r border-stark-black text-on-surface">{row.academic}</td>
+                      <td class="py-2.5 px-4 border-r border-stark-black text-stark-black">{row.specialization}</td>
+                      <td class={`py-2.5 px-4 text-right font-bold ${row.statusClass}`}>{row.status}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CONNECTOR RAIL 5.2 -> 5.3 -->
+    <BlueprintDivider tag="RECRUITMENT_CLEARANCE_TERMINAL" code="RESULTS_CLEARANCE_06" accent="cyan" class="my-2" />
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5.3 — CLEARANCE_GRANTED TERMINAL BOARD (RECRUITMENT RESULTS)       -->
+    <!-- ========================================================================= -->
+    <section id="clearance-board" class="w-full flex flex-col gap-6 mb-12">
+      <!-- Dark Terminal Container -->
+      <div class="w-full bg-[#1e1b16] border-4 border-stark-black shadow-[8px_8px_0px_#f0c903] flex flex-col">
+        <!-- Yellow Header Bar -->
+        <div class="h-12 bg-mac-yellow border-b-4 border-stark-black px-4 lg:px-6 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2 truncate">
+            <span class="w-3 h-3 bg-stark-black inline-block shrink-0"></span>
+            <span class="font-mono text-xs sm:text-sm font-bold uppercase text-stark-black tracking-wider truncate">
+              {headerTitle}
+            </span>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="font-mono text-xs uppercase font-bold bg-stark-black text-mac-yellow px-2.5 py-1 border border-stark-black">
+              [ STATUS: {totalCleared} CANDIDATES CLEARED ]
+            </span>
+          </div>
+        </div>
+
+        <!-- Terminal Filter & Search Toolbar -->
+        <div class="p-4 lg:p-6 border-b-2 border-outline-variant/30 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-stark-black">
+          <div class="flex items-center gap-2 flex-1 max-w-xl">
+            <span class="text-mac-yellow font-mono font-bold">&gt;&gt;</span>
+            <input
+              id="terminal-search"
+              class="w-full bg-[#343024] border-2 border-outline text-pure-white placeholder:text-surface-dim font-mono text-xs sm:text-sm px-3 py-2 outline-none focus:border-mac-yellow focus:bg-[#221b00] transition-colors"
+              placeholder={resultsData.searchPlaceholder || "[ FILTER BY CANDIDATE NAME OR SCORE... ]"}
+              type="text"
+            />
+          </div>
+          <div class="flex flex-wrap items-center gap-2 font-mono" id="terminal-wing-filters">
+            <span class="text-xs text-tactical-stone uppercase font-bold mr-1">{resultsData.filterWingLabel || "FILTER WING:"}</span>
+            <button
+              class="terminal-filter-chip active text-xs font-bold uppercase px-2.5 py-1 bg-mac-yellow text-stark-black border border-mac-yellow cursor-pointer"
+              data-wing="ALL"
+              type="button"
+            >
+              ALL [{totalCleared}]
+            </button>
+            {wings.map((w) => (
+              <button
+                class="terminal-filter-chip text-xs font-bold uppercase px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors"
+                data-wing={w.id}
+                type="button"
+              >
+                {w.name} [{w.count}]
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- 4-Column Terminal Monospace Printout -->
+        <div class="p-6 lg:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs relative">
+          <!-- Zero Candidates Matching Filter Notice -->
+          <div id="terminal-no-candidates" class="hidden col-span-full border-2 border-mac-yellow bg-stark-black p-8 text-center text-mac-yellow shadow-[4px_4px_0px_#000000]">
+            <div class="text-xl font-bold mb-2">/// NO CLEARED CANDIDATES FOUND ///</div>
+            <div class="text-xs text-pure-white/80">NO CANDIDATE IN CURRENT WING SECTOR MATCHES YOUR QUERY. VERIFY YOUR NAME OR ROLL NUMBER SPELLING.</div>
+          </div>
+
+          {wings.map((w) => (
+            <div
+              class="wing-column border border-outline-variant/30 p-4 bg-stark-black/60 flex flex-col gap-3"
+              data-wing-column={w.id}
+            >
+              <div class="pb-2 border-b border-mac-yellow/40 flex items-center justify-between">
+                <span class="text-mac-yellow font-bold uppercase tracking-wider">{w.code}</span>
+                <span class="text-[10px] bg-mac-yellow/20 text-mac-yellow px-1 font-bold">{w.passBadge}</span>
+              </div>
+              <ul class="flex flex-col gap-2 terminal-list">
+                {w.candidates.map((cand) => (
+                  <li
+                    class="terminal-candidate-item flex items-center justify-between text-pure-white hover:text-mac-yellow border-b border-outline/20 pb-1"
+                    data-name={cand.name.toLowerCase()}
+                    data-score={cand.score}
+                  >
+                    <span>{cand.id}. {cand.name}</span>
+                    <span class="text-secondary-fixed-dim">[SCORE: {cand.score}]</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Bottom Terminal Status Seal -->
+        <div class="bg-stark-black px-4 lg:px-6 py-3 border-t-2 border-outline-variant/40 flex flex-wrap items-center justify-between gap-3 text-mac-yellow font-mono text-xs font-bold uppercase tracking-wider">
+          <div class="flex items-center gap-2">
+            <span class="animate-pulse">●</span>
+            <span>{statusBanner}</span>
+          </div>
+          {officialResultPdf && (
+            <a
+              class="text-pure-white underline hover:text-mac-yellow"
+              href={officialResultPdf}
+              download
+            >
+              [DOWNLOAD OFFICIAL SIGNED PDF ({officialPdfSize || '2.4MB'})]
+            </a>
+          )}
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<!-- CLIENT-SIDE SCRIPT: DEPARTMENT TABS, TERMINAL SEARCH, WING FILTERS -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Department Tabs Switcher
+    const deptTabs = document.querySelectorAll('.dept-tab');
+    const deptPanels = document.querySelectorAll('.dept-panel');
+
+    deptTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-target');
+
+        // Reset tabs style
+        deptTabs.forEach((t) => {
+          t.classList.remove('bg-electric-cyan', 'active');
+          t.classList.add('bg-pure-white', 'hover:bg-stark-black', 'hover:text-mac-yellow');
+        });
+
+        // Activate clicked tab
+        tab.classList.remove('bg-pure-white', 'hover:bg-stark-black', 'hover:text-mac-yellow');
+        tab.classList.add('bg-electric-cyan', 'active');
+
+        // Show matching panel
+        deptPanels.forEach((panel) => {
+          if (panel.id === targetId) {
+            panel.classList.remove('hidden');
+            panel.classList.add('block');
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('block');
+          }
+        });
+      });
+    });
+
+    // 2. Clearance Board Search & Wing Filter
+    const searchInput = document.getElementById('terminal-search');
+    const wingChips = document.querySelectorAll('.terminal-filter-chip');
+    const candidateItems = document.querySelectorAll('.terminal-candidate-item');
+    const wingColumns = document.querySelectorAll('.wing-column');
+    const noCandidatesBox = document.getElementById('terminal-no-candidates');
+
+    let activeWing = 'ALL';
+    let searchQuery = '';
+
+    function filterClearanceBoard() {
+      let totalVisible = 0;
+
+      // Filter items
+      candidateItems.forEach((item) => {
+        const name = item.getAttribute('data-name') || '';
+        const score = item.getAttribute('data-score') || '';
+        const parentWing = item.closest('.wing-column')?.getAttribute('data-wing-column');
+
+        const matchesWing = activeWing === 'ALL' || parentWing === activeWing;
+        const matchesSearch = !searchQuery || name.includes(searchQuery) || score.includes(searchQuery);
+
+        if (matchesWing && matchesSearch) {
+          item.style.display = 'flex';
+          totalVisible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Hide or show columns if all their items are hidden
+      wingColumns.forEach((col) => {
+        const colWing = col.getAttribute('data-wing-column');
+        if (activeWing !== 'ALL' && colWing !== activeWing) {
+          col.style.display = 'none';
+        } else {
+          // Check if this column has any visible candidates
+          const visibleInCol = col.querySelectorAll('.terminal-candidate-item[style*="display: flex"]').length;
+          col.style.display = visibleInCol > 0 ? 'flex' : (searchQuery ? 'none' : 'flex');
+        }
+      });
+
+      if (noCandidatesBox) {
+        if (totalVisible === 0) {
+          noCandidatesBox.classList.remove('hidden');
+        } else {
+          noCandidatesBox.classList.add('hidden');
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        filterClearanceBoard();
+      });
+    }
+
+    wingChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        activeWing = chip.getAttribute('data-wing') || 'ALL';
+
+        wingChips.forEach((c) => {
+          c.className = 'terminal-filter-chip text-xs font-bold uppercase px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors';
+        });
+
+        chip.className = 'terminal-filter-chip active text-xs font-bold uppercase px-2.5 py-1 bg-mac-yellow text-stark-black border border-mac-yellow cursor-pointer';
+
+        filterClearanceBoard();
+      });
+    });
+  });
+</script>

@@ -1,0 +1,67 @@
+{
+  "id": "markopolis",
+  "order": 1,
+  "code": "OPERATION_01",
+  "operationBadge": "/// OPERATION_01 // BI-ANNUAL FLAGSHIP CONCLAVE",
+  "statusBadge": "[STATUS: ACTIVE_CYCLE]",
+  "title": "MARKOPOLIS",
+  "cadence": "Q4 CADENCE",
+  "cadenceBadgeColor": "yellow",
+  "headerBg": "bg-stark-black text-primary-container",
+  "headerDotBg": "bg-primary-container",
+  "headerStatusClass": "text-pure-white",
+  "imagePosition": "left",
+  "tagline": "THE BI-ANNUAL MARKETING SIMULATION CONCLAVE",
+  "description": "MAC's premier inter-college marketing and business strategy simulation. Featuring high-stakes bidding wars, crisis PR rooms, and industry keynote seminars designed to push analytical limits.",
+  "coverImage": "/uploads/images/arena/markopolis.jpg",
+  "stickerText": "500+ TEAMS NATIONWIDE",
+  "stickerColor": "red",
+  "stickerRotate": "-rotate-3",
+  "stats": [
+    { "value": "1,200+", "label": "FOOTFALL" },
+    { "value": "20+", "label": "COLLEGES" },
+    { "value": "6", "label": "ROUNDS" }
+  ],
+  "editions": [
+    {
+      "year": "2026",
+      "editionBadge": "'26",
+      "title": "MARKOPOLIS 2026",
+      "subtitle": "THE ASYMMETRIC MONOPOLY",
+      "poster": "/uploads/images/arena/markopolis-2026.jpg",
+      "caption": "Markopolis 2026 convened 500+ top collegiate delegations across 20+ universities to battle in live corporate crisis rooms, hostile takeover bids, and unit economics auctions.",
+      "metrics": "500+ TEAMS // 20+ UNIVERSITIES",
+      "winner": "WINNER: SRCC // RUNNER UP: HINDU COLLEGE"
+    },
+    {
+      "year": "2025",
+      "editionBadge": "'25",
+      "title": "MARKOPOLIS 2025",
+      "subtitle": "DISRUPTION & SCALE",
+      "poster": "/uploads/images/arena/markopolis-2025.jpg",
+      "caption": "Focused on the rise of challenger brands against legacy FMCG conglomerates, featuring high-stakes boardroom negotiations and impromptu product pivot rounds.",
+      "metrics": "420+ TEAMS // 1,200+ ATTENDEES",
+      "winner": "WINNER: ST. STEPHEN'S // RUNNER UP: SVC"
+    },
+    {
+      "year": "2024",
+      "editionBadge": "'24",
+      "title": "MARKOPOLIS 2024",
+      "subtitle": "THE VENTURE AUDIT",
+      "poster": "/uploads/images/arena/markopolis-2024.jpg",
+      "caption": "Simulated venture capital pitch war rooms where delegations defended volatile burn rates and dynamic customer acquisition costs before corporate executives.",
+      "metrics": "350+ TEAMS // 15+ PARTNERS",
+      "winner": "WINNER: SHAHEED SUKHDEV // RUNNER UP: KMC"
+    },
+    {
+      "year": "2023",
+      "editionBadge": "'23",
+      "title": "MARKOPOLIS 2023",
+      "subtitle": "PR WARFARE & REDEMPTION",
+      "poster": "/uploads/images/arena/markopolis-2023.jpg",
+      "caption": "A high-decibel crisis management conclave where teams tackled breaking news leaks every 10 minutes to protect public enterprise brand equity.",
+      "metrics": "300+ TEAMS // 8 ROUNDS",
+      "winner": "WINNER: HANSRAJ COLLEGE // RUNNER UP: RAMJAS"
+    }
+  ]
+}

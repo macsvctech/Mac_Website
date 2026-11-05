@@ -1,0 +1,226 @@
+{
+  "hero": {
+    "archiveRef": "ARCHIVE_DOSSIER // REF_SVC_MAC_2026",
+    "status": "STATUS: COMBAT_ACTIVE",
+    "estBadge": "EST. 2017 // 10 YEARS",
+    "headlinePrefix": "WE ARE",
+    "headlineHighlight": "THE NOISE.",
+    "description": "The official marketing society of Sri Venkateswara College. We don’t just follow trends, we build the campaigns that define them.",
+    "primaryCta": {
+      "text": "[OUR WORK ->]",
+      "link": "/arena"
+    },
+    "secondaryCta": {
+      "text": "[READ BLUEPRINT]",
+      "link": "/blueprint"
+    },
+    "image": "/uploads/images/hero-photo.jpg",
+    "videoUrl": null,
+    "poster": "/uploads/images/hero-photo.jpg",
+    "imageAlt": "High contrast gritty screenprint graphic duotone yellow and deep black photograph of energetic university marketing society students cheering, holding placards and bullhorns at Sri Venkateswara College campus festival. Heavy film grain, punk zine texture, risograph halftone print aesthetic, maximum black contrast with vivid industrial yellow.",
+    "imageTag": "FRAME: CAMPAIGN_DISPATCH_REC_09",
+    "imageTagSub": "ISO_800 // SVC_DELHI",
+    "quoteSticker": "“Creative chaos executed perfectly.”",
+    "quoteStickerSub": "// FIELD DISPATCH REVIEW",
+    "statSticker": "50+ CAMPAIGNS"
+  },
+  "receipts": {
+    "sectionTag": "/// SECTION 1.2 // THE RECEIPTS [VERIFIED_DATA]",
+    "sectionLoc": "LOC_SVC // REGISTRY_REVISED_2026",
+    "metrics": [
+      {
+        "id": "METRIC_01",
+        "value": "50,000+",
+        "label": "MONTHLY DIGITAL REACH",
+        "defaultActive": true
+      },
+      {
+        "id": "METRIC_02",
+        "value": "50+",
+        "label": "SPEAKER SESSIONS",
+        "defaultActive": false
+      },
+      {
+        "id": "METRIC_03",
+        "value": "1,700+",
+        "label": "INSTAGRAM FOLLOWERS",
+        "defaultActive": false
+      },
+      {
+        "id": "METRIC_04",
+        "value": "1,100+",
+        "label": "LINKEDIN NETWORK",
+        "defaultActive": false
+      },
+      {
+        "id": "METRIC_05",
+        "value": "50+",
+        "label": "BLOGS & REPORTS",
+        "defaultActive": false
+      }
+    ]
+  },
+  "machinery": {
+    "title": "THE MACHINERY",
+    "badge": "/// OUR 4 DEPARTMENTS",
+    "link": "/blueprint#departments",
+    "departments": [
+      {
+        "code": "DEP_01",
+        "name": "GROWTH & OUTREACH",
+        "icon": "query_stats",
+        "color": "cyan",
+        "cols": 8,
+        "description": "The financial & corporate backbone. Securing high-impact sponsorships, brand partnerships, and live industry projects. Speaking the language of ROI.",
+        "tag": "[CAPITAL & INDUSTRY]",
+        "meta": "SYNDICATE_VAL: 100%",
+        "image": null,
+        "videoUrl": null,
+        "documentUrl": null
+      },
+      {
+        "code": "DEP_02",
+        "name": "SOCIAL MEDIA & PR",
+        "icon": "campaign",
+        "color": "red",
+        "cols": 4,
+        "description": "Managing the public narrative. Driving digital outreach, creative storytelling, and campus-wide hype.",
+        "tag": "[NARRATIVE & HYPE]",
+        "meta": "VIRAL_DISPATCH",
+        "image": null,
+        "videoUrl": null,
+        "documentUrl": null
+      },
+      {
+        "code": "DEP_03",
+        "name": "EVENTS & LOGISTICS",
+        "icon": "event_repeat",
+        "color": "yellow",
+        "cols": 4,
+        "description": "The executors. Turning ambitious blueprints into physical reality across flagship simulations and conclaves.",
+        "tag": "[OPERATIONS & SCALE]",
+        "meta": "TACTICAL_UNIT",
+        "image": null,
+        "videoUrl": null,
+        "documentUrl": null
+      },
+      {
+        "code": "SUB_DEP_4A",
+        "name": "TECHNICAL & RESEARCH",
+        "icon": "terminal",
+        "color": "white",
+        "cols": 4,
+        "description": "The analytical core. Publishing market research reports, SEO case studies, and curating the annual MACzine.",
+        "tag": "[INTEL & ANALYSIS]",
+        "meta": "RESEARCH_HUB",
+        "image": null,
+        "videoUrl": null,
+        "documentUrl": null
+      },
+      {
+        "code": "SUB_DEP_4B",
+        "name": "CREATIVE STUDIO",
+        "icon": "palette",
+        "color": "stone",
+        "cols": 4,
+        "description": "The visual architects. Designing the brutalist identity, zines, and campaign collateral of MAC.",
+        "tag": "[IDENTITY & DESIGN]",
+        "meta": "DESIGN_CORE",
+        "image": null,
+        "videoUrl": null,
+        "documentUrl": null
+      }
+    ]
+  },
+  "sponsors": {
+    "header": "/// PAST_SPONSORS ->",
+    "items": [
+      {
+        "name": "RED BULL",
+        "tag": "[ENERGY PARTNER]",
+        "highlighted": false,
+        "logoImage": null,
+        "websiteUrl": "https://www.redbull.com"
+      },
+      {
+        "name": "CORNITOS",
+        "tag": "[SNACK PARTNER]",
+        "highlighted": true,
+        "logoImage": null,
+        "websiteUrl": "https://www.cornitos.in"
+      },
+      {
+        "name": "THE BELGIAN WAFFLE CO.",
+        "tag": "[DESSERT PARTNER]",
+        "highlighted": false,
+        "logoImage": null,
+        "websiteUrl": "https://thebelgianwaffle.co"
+      },
+      {
+        "name": "BALAJI WAFERS",
+        "tag": "[TITLE SPONSOR]",
+        "highlighted": false,
+        "logoImage": null,
+        "websiteUrl": "https://www.balajiwafers.com"
+      },
+      {
+        "name": "UNSTOP",
+        "tag": "[PLATFORM PARTNER]",
+        "highlighted": false,
+        "logoImage": null,
+        "websiteUrl": "https://unstop.com"
+      },
+      {
+        "name": "DU BEAT",
+        "tag": "[MEDIA PARTNER]",
+        "highlighted": false,
+        "logoImage": null,
+        "websiteUrl": "https://dubeat.com"
+      }
+    ]
+  },
+  "freshPress": {
+    "title": "FRESH OFF THE PRESS",
+    "feedTag": "REALTIME FEED // DEPLOYMENT_STREAM",
+    "flagship": {
+      "headerTitle": "> FLAGSHIP_SPOTLIGHT // MARKOPOLIS",
+      "simulationBadge": "FLAGSHIP_SIMULATION_2026",
+      "subBadge": "ANNUAL // SVC",
+      "title": "MARKOPOLIS: THE BI-ANNUAL MARKETING SIMULATION",
+      "subtitle": "CAMPUS CONCLAVE // 1000+ DELEGATES",
+      "ctaText": "[ENTER THE ARENA ->]",
+      "ctaLink": "/arena",
+      "status": "STATUS: REGISTRATIONS_OPEN",
+      "image": null,
+      "videoUrl": null,
+      "rulebookPdfUrl": "/uploads/documents/markopolis-rulebook.pdf",
+      "rulebookPdfLabel": "DOWNLOAD RULEBOOK [PDF]"
+    },
+    "intel": {
+      "headerTitle": "> LATEST_INTEL_DISPATCH",
+      "feedLabel": "MACZINE_FEED",
+      "readArticleText": "[READ ↗]",
+      "articles": [
+        {
+          "tag": "[SEO & AI] // MACZINE ISSUE #09",
+          "title": "AI-Driven Search and SEO Evolution",
+          "description": "Dissecting algorithmic shifting and brand visibility strategies in next-gen answer engines.",
+          "link": "/intel",
+          "highlighted": true,
+          "pdfUrl": null
+        },
+        {
+          "tag": "[BRAND STRATEGY] // CASE_STUDY_88",
+          "title": "The Rise of Challenger Brands in India",
+          "description": "How D2C upstarts are disrupting FMCG monopolies through guerilla narratives and rapid loops.",
+          "link": "/intel",
+          "highlighted": false,
+          "pdfUrl": null
+        }
+      ],
+      "footerTotal": "ARCHIVE TOTAL: 52 DISPATCHES",
+      "footerLinkText": "[ACCESS ALL INTEL]",
+      "footerLink": "/intel"
+    }
+  }
+}

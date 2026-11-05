@@ -1,0 +1,67 @@
+{
+  "id": "zeal",
+  "order": 2,
+  "code": "OPERATION_02",
+  "operationBadge": "/// OPERATION_02 // THE ANNUAL MARKETING FEST",
+  "statusBadge": "[EDITION: ZEAL '26]",
+  "title": "ZEAL",
+  "cadence": "ANNUAL STAGE",
+  "cadenceBadgeColor": "cyan",
+  "headerBg": "bg-primary-container text-stark-black",
+  "headerDotBg": "bg-stark-black",
+  "headerStatusClass": "bg-stark-black text-primary-container px-2 py-0.5 text-label-mono-sm uppercase",
+  "imagePosition": "right",
+  "tagline": "ANNUAL INTER-COLLEGE MARKETING FESTIVAL",
+  "description": "Our annual celebration of creative marketing, guerrilla campaigns, and street-level brand battles complemented by speaker sessions and recreational arenas across the South Campus greens.",
+  "coverImage": "/uploads/images/arena/zeal.jpg",
+  "stickerText": "SVC LAWN ARENA",
+  "stickerColor": "white",
+  "stickerRotate": "rotate-2",
+  "stats": [
+    { "value": "ANNUAL", "label": "CADENCE" },
+    { "value": "15+", "label": "BRAND PARTNERS" },
+    { "value": "LIVE", "label": "WORKSHOPS" }
+  ],
+  "editions": [
+    {
+      "year": "2026",
+      "editionBadge": "'26",
+      "title": "ZEAL 2026",
+      "subtitle": "GUERRILLA HORIZON",
+      "poster": "/uploads/images/arena/zeal-2026.jpg",
+      "caption": "The 2026 edition of ZEAL transformed the South Campus greens into a live marketing circus with campus-wide guerrilla activations, satirical ad-mad showdowns, and live brand roasts.",
+      "metrics": "3,000+ FOOTFALL // 15+ SPONSORS",
+      "winner": "OVERALL CHAMPION: SVC CADRE"
+    },
+    {
+      "year": "2025",
+      "editionBadge": "'25",
+      "title": "ZEAL 2025",
+      "subtitle": "VIRAL FREQUENCIES",
+      "poster": "/uploads/images/arena/zeal-2025.jpg",
+      "caption": "Centered around digital-first viral mechanics, rapid meme marketing stunts, and open-air brand pitch acceleration on the college amphitheatre stage.",
+      "metrics": "2,500+ FOOTFALL // 12+ EVENTS",
+      "winner": "OVERALL CHAMPION: LADY SHRI RAM"
+    },
+    {
+      "year": "2024",
+      "editionBadge": "'24",
+      "title": "ZEAL 2024",
+      "subtitle": "STREET-LEVEL BRANDING",
+      "poster": "/uploads/images/arena/zeal-2024.jpg",
+      "caption": "Teams received raw physical props and 90 minutes to engineer crowdsourced campus spectacles, drawing massive live audiences across the lawns.",
+      "metrics": "2,200+ FOOTFALL // 10 BRAND PARTNERS",
+      "winner": "OVERALL CHAMPION: GARGI COLLEGE"
+    },
+    {
+      "year": "2023",
+      "editionBadge": "'23",
+      "title": "ZEAL 2023",
+      "subtitle": "THE UNCONSTRAINED STAGE",
+      "poster": "/uploads/images/arena/zeal-2023.jpg",
+      "caption": "A landmark post-pandemic renaissance for Delhi University's marketing circuit, packed with guest keynote panels and high-energy ad battles.",
+      "metrics": "1,800+ FOOTFALL // 8 ARENAS",
+      "winner": "OVERALL CHAMPION: SVC"
+    }
+  ]
+}

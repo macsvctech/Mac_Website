@@ -1,0 +1,548 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrutalMedia from '../components/ui/BrutalMedia.astro';
+import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
+import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import homeContent from '../content/pages/home.json';
+
+const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
+---
+
+<BaseLayout>
+  <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 flex flex-col">
+    
+    <!-- =========================================================================
+         SECTION 1.1 — HERO SPLIT CONTAINER
+         ========================================================================= -->
+    <section class="w-full bg-tactical-stone border-4 border-stark-black shadow-[6px_6px_0px_#000000] p-6 sm:p-8 lg:p-10 mb-8 sm:mb-10 relative">
+      <!-- Blueprint Technical Corner Registration Crosshairs -->
+      <span class="absolute -top-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="absolute -top-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="absolute -bottom-3.5 -left-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+      <span class="absolute -bottom-3.5 -right-3.5 font-mono text-base font-black text-stark-black pointer-events-none select-none z-30">+</span>
+
+      <!-- Dossier Technical Tab Header -->
+      <div class="flex items-center justify-between border-b-2 border-stark-black pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-3 h-3 bg-system-red border border-stark-black"></span>
+          <span class="inline-block w-3 h-3 bg-mac-yellow border border-stark-black"></span>
+          <span class="inline-block w-3 h-3 bg-electric-cyan border border-stark-black"></span>
+          <span class="font-mono text-xs sm:text-[13px] font-bold text-stark-black uppercase tracking-wider ml-2">
+            {hero.archiveRef}
+          </span>
+        </div>
+        <div class="font-mono text-xs bg-stark-black text-mac-yellow px-2 py-1 font-bold select-none">
+          {hero.status}
+        </div>
+      </div>
+
+      <!-- 2-Column Split Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- LEFT OVERLAPPING CARD -->
+        <div class="lg:col-span-6 bg-pure-white border-2 border-stark-black p-6 sm:p-8 lg:p-10 flex flex-col justify-between shadow-[4px_4px_0px_#000000] relative">
+          <div class="flex flex-col gap-6">
+            <!-- Top Tag Sticker -->
+            <div class="self-start">
+              <span class="inline-block bg-electric-cyan text-stark-black border-2 border-stark-black font-mono text-xs font-bold px-3 py-1 -rotate-2 shadow-[4px_4px_0px_#000000] select-none">
+                {hero.estBadge}
+              </span>
+            </div>
+
+            <!-- Main Stacked Headline -->
+            <h1 class="flex flex-col font-display text-[52px] sm:text-[68px] lg:text-[80px] leading-none tracking-[-0.04em] uppercase font-black">
+              <span class="text-stark-black">{hero.headlinePrefix}</span>
+              <span class="text-mac-yellow drop-shadow-[4px_4px_0px_#000000] [text-shadow:_2px_2px_0_#000000,_-2px_-2px_0_#000000,_2px_-2px_0_#000000,_-2px_2px_0_#000000]">
+                {hero.headlineHighlight}
+              </span>
+            </h1>
+
+            <!-- Body Copy -->
+            <p class="font-sans text-base sm:text-lg text-on-surface font-medium leading-relaxed max-w-xl">
+              {hero.description}
+            </p>
+          </div>
+
+          <!-- CTA Trigger Action Area -->
+          <div class="pt-8 mt-6 border-t-2 border-stark-black flex flex-wrap items-center gap-4">
+            <a
+              href={hero.primaryCta.link}
+              class="inline-flex items-center justify-center font-mono text-sm sm:text-base uppercase font-bold bg-electric-cyan text-stark-black border-2 border-stark-black px-6 py-4 shadow-[6px_6px_0px_#000000] hover:bg-stark-black hover:text-electric-cyan hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000000] active:translate-x-1.5 active:translate-y-1.5 active:shadow-none transition-none cursor-pointer"
+            >
+              {hero.primaryCta.text}
+            </a>
+            <a
+              href={hero.secondaryCta.link}
+              class="inline-flex items-center justify-center font-mono text-xs sm:text-sm uppercase font-bold bg-tactical-stone text-stark-black border-2 border-stark-black px-5 py-4 shadow-[4px_4px_0px_#000000] hover:bg-stark-black hover:text-pure-white transition-none cursor-pointer"
+            >
+              {hero.secondaryCta.text}
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT VISUAL FRAME -->
+        <div class="lg:col-span-6 relative border-2 border-stark-black bg-stark-black min-h-[460px] flex items-center justify-center overflow-visible">
+          <!-- Visual Halftone Asset or Video Loop with BrutalMedia multimodal auto-detection -->
+          <BrutalMedia
+            src={hero.image}
+            videoUrl={hero.videoUrl}
+            poster={hero.poster}
+            alt={hero.imageAlt}
+            ratio="auto"
+            border={false}
+            class="w-full h-full min-h-[460px]"
+            mediaClass="w-full h-full min-h-[460px] object-cover border-none filter contrast-125"
+          />
+
+          <!-- Halftone Overlay Noise Accent Bar -->
+          <div class="absolute top-0 left-0 right-0 bg-stark-black text-pure-white font-mono text-[11px] px-3 py-1 border-b-2 border-stark-black flex justify-between items-center z-10 opacity-90 select-none">
+            <span>{hero.imageTag}</span>
+            <span class="text-mac-yellow">{hero.imageTagSub}</span>
+          </div>
+
+          <!-- Overlapping Top-Right Quote Sticker -->
+          <div class="absolute -top-4 -right-2 sm:-right-4 z-20 rotate-3 max-w-[260px] bg-pure-white border-2 border-stark-black p-3 shadow-[4px_4px_0px_#000000] select-none">
+            <p class="font-mono text-xs sm:text-[13px] font-bold text-stark-black leading-tight">
+              {hero.quoteSticker}
+            </p>
+            <span class="block mt-1 font-mono text-[10px] text-on-surface-variant font-semibold uppercase">
+              {hero.quoteStickerSub}
+            </span>
+          </div>
+
+          <!-- Overlapping Bottom-Center Stat Sticker -->
+          <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-20 -rotate-[4deg] bg-system-red border-2 border-stark-black px-6 py-2 shadow-[6px_6px_0px_#000000] select-none">
+            <span class="font-display font-extrabold text-xl sm:text-2xl text-pure-white tracking-tight uppercase whitespace-nowrap">
+              {hero.statSticker}
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION CONNECTOR RAIL -->
+    <BlueprintDivider tag="IMPACT_RECEIPTS // VERIFIED_METRICS" code="TEL_01.2" accent="yellow" />
+
+    <!-- =========================================================================
+         SECTION 1.2 — "THE RECEIPTS" (5-CELL IMPACT COUNTER STRIP)
+         ========================================================================= -->
+    <section class="w-full mb-8 sm:mb-12 flex flex-col">
+      <!-- Terminal Bar Tag Label -->
+      <div class="flex items-center justify-between mb-2">
+        <div class="font-mono text-xs sm:text-sm font-bold text-stark-black uppercase tracking-wider bg-tactical-stone border-2 border-stark-black px-3 py-1 shadow-[2px_2px_0px_#000000] inline-flex items-center gap-2 select-none">
+          <span class="w-2 h-2 bg-mac-yellow inline-block"></span>
+          {receipts.sectionTag}
+        </div>
+        <div class="hidden sm:block font-mono text-xs text-on-surface-variant font-bold uppercase select-none">
+          {receipts.sectionLoc}
+        </div>
+      </div>
+
+      <!-- 5-Cell Collapsed Border Data Table Grid with Flat Hover-Swap -->
+      <div class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-stark-black bg-pure-white">
+        {receipts.metrics.map((metric) => (
+          <div
+            class={`receipt-cell p-6 sm:p-7 flex flex-col justify-between transition-colors cursor-pointer group ${
+              metric.defaultActive
+                ? "bg-mac-yellow text-stark-black hover:bg-stark-black hover:text-mac-yellow"
+                : "bg-pure-white text-stark-black hover:bg-mac-yellow hover:text-stark-black"
+            }`}
+          >
+            <div>
+              <span class={`font-mono text-xs font-bold uppercase tracking-wider block ${
+                metric.defaultActive 
+                  ? "opacity-80 group-hover:text-mac-yellow" 
+                  : "text-on-surface-variant group-hover:text-stark-black"
+              }`}>
+                /// {metric.id}
+              </span>
+              <div class={`font-display text-4xl sm:text-5xl font-black tracking-tight mt-3 mb-2 ${
+                metric.defaultActive ? "text-stark-black group-hover:text-mac-yellow" : "text-stark-black"
+              }`}>
+                {metric.value}
+              </div>
+            </div>
+            <div class={`font-mono text-xs sm:text-sm font-bold uppercase tracking-wider pt-3 border-t-2 ${
+              metric.defaultActive ? "border-stark-black group-hover:border-mac-yellow" : "border-stark-black"
+            }`}>
+              {metric.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION CONNECTOR RAIL -->
+    <BlueprintDivider tag="DEPARTMENTAL_UNITS // 4_DIVISIONS" code="TEL_01.3" accent="cyan" />
+
+    <!-- =========================================================================
+         SECTION 1.3 — "THE MACHINERY" (DEPARTMENTS BENTO GRID)
+         ========================================================================= -->
+    <section class="w-full mb-8 sm:mb-12 flex flex-col">
+      <!-- Section Header Bar -->
+      <div class="w-full flex items-center justify-between border-b-4 border-stark-black pb-4 mb-8">
+        <h2 class="font-display text-[36px] sm:text-[48px] leading-tight font-black uppercase text-stark-black tracking-[-0.03em]">
+          {machinery.title}
+        </h2>
+        <a 
+          href={machinery.link}
+          class="bg-stark-black text-pure-white font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 border-2 border-stark-black tracking-wider shadow-[3px_3px_0px_#000000] hover:bg-mac-yellow hover:text-stark-black transition-colors"
+        >
+          {machinery.badge}
+        </a>
+      </div>
+
+      <!-- Bento Grid (Row 1: 8 + 4 cols | Row 2: 4 + 8 cols) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-stretch">
+        
+        <!-- ROW 1, LEFT CARD (8 COLS): Growth & Outreach (Electric Cyan) -->
+        <a
+          href={machinery.link}
+          class="paper-lift lg:col-span-8 bg-[#00E5FF] border-2 border-stark-black p-6 sm:p-8 flex flex-col justify-between shadow-[6px_6px_0px_#000000] group cursor-pointer"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="bg-pure-white border-2 border-stark-black p-3 shadow-[2px_2px_0px_#000000] inline-flex items-center justify-center">
+                <span class="material-symbols-outlined text-stark-black text-[28px]">query_stats</span>
+              </div>
+              <span class="font-mono text-sm font-bold text-stark-black uppercase tracking-wider">DEP_01</span>
+            </div>
+            <h3 class="font-display text-[28px] sm:text-[32px] leading-[36px] font-extrabold uppercase text-stark-black mb-3">
+              {machinery.departments[0].name}
+            </h3>
+            <p class="font-sans text-on-surface text-base sm:text-[17px] leading-relaxed max-w-2xl font-medium">
+              {machinery.departments[0].description}
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t-2 border-stark-black flex items-center justify-between">
+            <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-3 py-1 text-xs">
+              {machinery.departments[0].tag}
+            </span>
+            <span class="font-mono text-xs font-bold text-stark-black">
+              {machinery.departments[0].meta}
+            </span>
+          </div>
+        </a>
+
+        <!-- ROW 1, RIGHT CARD (4 COLS): Social Media & PR (System Red) -->
+        <a
+          href={machinery.link}
+          class="paper-lift-alt lg:col-span-4 bg-[#FF3B30] border-2 border-stark-black p-6 sm:p-8 flex flex-col justify-between shadow-[6px_6px_0px_#000000] group cursor-pointer text-pure-white"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="bg-pure-white border-2 border-stark-black p-3 shadow-[2px_2px_0px_#000000] inline-flex items-center justify-center">
+                <span class="material-symbols-outlined text-stark-black text-[28px]">campaign</span>
+              </div>
+              <span class="font-mono text-sm font-bold text-pure-white uppercase tracking-wider">DEP_02</span>
+            </div>
+            <h3 class="font-display text-[28px] sm:text-[32px] leading-[36px] font-extrabold uppercase text-pure-white mb-3">
+              {machinery.departments[1].name}
+            </h3>
+            <p class="font-sans text-pure-white/95 text-sm sm:text-base leading-relaxed font-medium">
+              {machinery.departments[1].description}
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t-2 border-pure-white flex items-center justify-between">
+            <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-3 py-1 text-xs">
+              {machinery.departments[1].tag}
+            </span>
+            <span class="font-mono text-xs font-bold text-pure-white">
+              {machinery.departments[1].meta}
+            </span>
+          </div>
+        </a>
+
+        <!-- ROW 2, LEFT CARD (4 COLS): Events & Logistics (MAC Yellow) -->
+        <a
+          href={machinery.link}
+          class="paper-lift-alt lg:col-span-4 bg-[#F0C903] border-2 border-stark-black p-6 sm:p-8 flex flex-col justify-between shadow-[6px_6px_0px_#000000] group cursor-pointer"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="bg-stark-black border-2 border-stark-black p-3 shadow-[2px_2px_0px_#000000] inline-flex items-center justify-center">
+                <span class="material-symbols-outlined text-pure-white text-[28px]">event_repeat</span>
+              </div>
+              <span class="font-mono text-sm font-bold text-stark-black uppercase tracking-wider">DEP_03</span>
+            </div>
+            <h3 class="font-display text-[28px] sm:text-[32px] leading-[36px] font-extrabold uppercase text-stark-black mb-3">
+              {machinery.departments[2].name}
+            </h3>
+            <p class="font-sans text-stark-black text-sm sm:text-base leading-relaxed font-medium">
+              {machinery.departments[2].description}
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t-2 border-stark-black flex items-center justify-between">
+            <span class="font-mono font-bold uppercase text-stark-black bg-tactical-stone border-2 border-stark-black px-3 py-1 text-xs">
+              {machinery.departments[2].tag}
+            </span>
+            <span class="font-mono text-xs font-bold text-stark-black">
+              {machinery.departments[2].meta}
+            </span>
+          </div>
+        </a>
+
+        <!-- ROW 2, RIGHT SPLIT CONTAINER (8 COLS): Tech & Creative Sub-Wings -->
+        <div class="paper-lift lg:col-span-8 border-2 border-stark-black shadow-[6px_6px_0px_#000000] grid grid-cols-1 md:grid-cols-2 divide-y-2 md:divide-y-0 md:divide-x-2 divide-stark-black bg-pure-white">
+          
+          <!-- Left Sub-Cell: Technical & Research -->
+          <a
+            href={machinery.link}
+            class="p-6 sm:p-8 flex flex-col justify-between bg-pure-white hover:bg-surface-container-low transition-colors group cursor-pointer"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="bg-tactical-stone border-2 border-stark-black p-2.5 inline-flex items-center justify-center">
+                  <span class="material-symbols-outlined text-stark-black text-[24px]">terminal</span>
+                </div>
+                <span class="font-mono text-xs font-bold text-on-surface-variant uppercase">
+                  {machinery.departments[3].code}
+                </span>
+              </div>
+              <h3 class="font-display text-2xl sm:text-[28px] leading-[32px] font-extrabold uppercase text-stark-black mb-3">
+                {machinery.departments[3].name}
+              </h3>
+              <p class="font-sans text-on-surface text-sm sm:text-[15px] leading-relaxed">
+                {machinery.departments[3].description}
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t-2 border-stark-black flex items-center justify-between">
+              <span class="font-mono font-bold uppercase text-stark-black bg-mac-yellow border-2 border-stark-black px-3 py-1 text-xs">
+                {machinery.departments[3].tag}
+              </span>
+            </div>
+          </a>
+
+          <!-- Right Sub-Cell: Creative Studio -->
+          <a
+            href={machinery.link}
+            class="p-6 sm:p-8 flex flex-col justify-between bg-tactical-stone hover:bg-surface-container transition-colors group cursor-pointer"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="bg-pure-white border-2 border-stark-black p-2.5 inline-flex items-center justify-center">
+                  <span class="material-symbols-outlined text-stark-black text-[24px]">palette</span>
+                </div>
+                <span class="font-mono text-xs font-bold text-on-surface-variant uppercase">
+                  {machinery.departments[4].code}
+                </span>
+              </div>
+              <h3 class="font-display text-2xl sm:text-[28px] leading-[32px] font-extrabold uppercase text-stark-black mb-3">
+                {machinery.departments[4].name}
+              </h3>
+              <p class="font-sans text-on-surface text-sm sm:text-[15px] leading-relaxed">
+                {machinery.departments[4].description}
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t-2 border-stark-black flex items-center justify-between">
+              <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-3 py-1 text-xs">
+                {machinery.departments[4].tag}
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION CONNECTOR RAIL -->
+    <BlueprintDivider tag="CORPORATE_SYNDICATE // PAST_PARTNERS" code="TEL_01.4" accent="black" />
+
+    <!-- =========================================================================
+         SECTION 1.4 — "BACKED BY GIANTS" (SPONSOR CONVEYOR BELT)
+         ========================================================================= -->
+    <section class="w-full my-4 sm:my-6 bg-pure-white border-y-4 border-stark-black shadow-[6px_6px_0px_#000000]">
+      <div class="flex flex-col lg:flex-row w-full items-stretch">
+        <!-- Left Fixed Header Block -->
+        <div class="bg-stark-black text-mac-yellow w-full lg:w-[240px] shrink-0 p-6 flex items-center justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-stark-black select-none">
+          <div class="font-mono text-sm sm:text-base font-bold uppercase tracking-wider text-center flex items-center gap-2">
+            {sponsors.header}
+          </div>
+        </div>
+
+        <!-- 6 Freight-Stamp Cells Grid with Flat Hover Snapping -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 flex-1 divide-y-2 sm:divide-y-0 divide-x-2 divide-stark-black">
+          {sponsors.items.map((sponsor) => (
+            <a
+              href={sponsor.websiteUrl || "#"}
+              target={sponsor.websiteUrl ? "_blank" : undefined}
+              rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
+              class={`flex flex-col items-center justify-center p-6 min-h-[120px] transition-all text-center group cursor-pointer ${
+                sponsor.highlighted
+                  ? "bg-mac-yellow text-stark-black shadow-[inset_0px_0px_0px_2px_#000000]"
+                  : "bg-pure-white text-stark-black hover:bg-mac-yellow hover:shadow-[inset_0px_0px_0px_2px_#000000]"
+              }`}
+            >
+              <div class="font-display text-[18px] sm:text-[20px] lg:text-[22px] font-black uppercase text-stark-black tracking-tight mb-1 group-hover:scale-105 transition-transform">
+                {sponsor.name}
+              </div>
+              <span class={`font-mono text-[11px] sm:text-[12px] font-bold uppercase tracking-wider ${
+                sponsor.highlighted ? "text-stark-black" : "text-on-surface-variant group-hover:text-stark-black"
+              }`}>
+                {sponsor.tag}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONNECTOR RAIL -->
+    <BlueprintDivider tag="DEPLOYMENT_STREAM // LIVE_FEEDS" code="TEL_01.5" accent="red" />
+
+    <!-- =========================================================================
+         SECTION 1.5 — "FRESH OFF THE PRESS" (2-COLUMN TEASER SPLIT)
+         ========================================================================= -->
+    <section class="w-full mb-16">
+      <div class="w-full flex items-center justify-between border-b-4 border-stark-black pb-4 mb-8">
+        <h2 class="font-display text-[32px] sm:text-[44px] lg:text-[48px] leading-tight font-black uppercase text-stark-black tracking-[-0.03em]">
+          {freshPress.title}
+        </h2>
+        <div class="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-on-surface-variant select-none">
+          {freshPress.feedTag}
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- LEFT TERMINAL CARD (> FLAGSHIP_SPOTLIGHT) -->
+        <div class="lg:col-span-6 bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] flex flex-col justify-between">
+          <!-- 48px Top Header Bar -->
+          <div class="h-12 bg-stark-black px-4 flex items-center justify-between border-b-2 border-stark-black select-none">
+            <span class="font-mono text-xs sm:text-sm font-bold text-mac-yellow uppercase">
+              {freshPress.flagship.headerTitle}
+            </span>
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 bg-pure-white"></span>
+              <span class="w-2.5 h-2.5 bg-mac-yellow"></span>
+            </div>
+          </div>
+
+          <!-- Poster Box Content Area -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between flex-1">
+            <a 
+              href={freshPress.flagship.ctaLink} 
+              class="aspect-video w-full bg-stark-black border-2 border-stark-black p-6 flex flex-col justify-between relative overflow-hidden mb-6 group cursor-pointer block"
+            >
+              <!-- Background Technical Lines -->
+              <div 
+                class="absolute inset-0 opacity-20 pointer-events-none" 
+                style="background-image: repeating-linear-gradient(0deg, #F0C903 0px, #F0C903 1px, transparent 1px, transparent 16px);"
+              ></div>
+              
+              <div class="flex justify-between items-start z-10">
+                <span class="bg-mac-yellow text-stark-black font-mono text-xs font-bold px-2 py-0.5 border border-stark-black">
+                  {freshPress.flagship.simulationBadge}
+                </span>
+                <span class="text-mac-yellow font-mono text-xs font-bold">
+                  {freshPress.flagship.subBadge}
+                </span>
+              </div>
+
+              <div class="z-10 mt-auto">
+                <h4 class="font-display text-[24px] sm:text-[30px] lg:text-[34px] leading-tight font-black uppercase text-pure-white tracking-tight group-hover:text-mac-yellow transition-colors">
+                  {freshPress.flagship.title}
+                </h4>
+                <div class="font-mono text-xs sm:text-sm font-bold uppercase text-mac-yellow mt-2">
+                  {freshPress.flagship.subtitle}
+                </div>
+              </div>
+            </a>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <a
+                href={freshPress.flagship.ctaLink}
+                class="inline-flex items-center justify-center font-mono text-xs sm:text-sm uppercase font-bold bg-mac-yellow text-stark-black border-2 border-stark-black px-6 py-3.5 shadow-[4px_4px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow transition-none cursor-pointer"
+              >
+                {freshPress.flagship.ctaText}
+              </a>
+              <span class="font-mono text-xs text-on-surface-variant font-bold">
+                {freshPress.flagship.status}
+              </span>
+            </div>
+
+            {freshPress.flagship.rulebookPdfUrl && (
+              <div class="pt-4 border-t-2 border-stark-black mt-4">
+                <BrutalFileDownload
+                  fileUrl={freshPress.flagship.rulebookPdfUrl}
+                  fileLabel={freshPress.flagship.rulebookPdfLabel || "DOWNLOAD RULEBOOK [PDF]"}
+                  fileType="PDF"
+                  variant="bar"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- RIGHT TERMINAL CARD (> LATEST_INTEL_DISPATCH) -->
+        <div class="lg:col-span-6 bg-pure-white border-4 border-stark-black shadow-[8px_8px_0px_#000000] flex flex-col justify-between">
+          <!-- 48px Top Header Bar -->
+          <div class="h-12 bg-stark-black px-4 flex items-center justify-between border-b-2 border-stark-black select-none">
+            <span class="font-mono text-xs sm:text-sm font-bold text-mac-yellow uppercase">
+              {freshPress.intel.headerTitle}
+            </span>
+            <span class="font-mono text-xs text-pure-white uppercase font-bold">
+              {freshPress.intel.feedLabel}
+            </span>
+          </div>
+
+          <!-- Stacked Newspaper-Clipping Rows -->
+          <div class="flex flex-col flex-1 divide-y-2 divide-stark-black">
+            {freshPress.intel.articles.map((article) => (
+              <div
+                class={`p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 flex-1 transition-colors ${
+                  article.highlighted 
+                    ? "bg-mac-yellow" 
+                    : "bg-pure-white hover:bg-tactical-stone"
+                }`}
+              >
+                <div class="flex flex-col gap-2">
+                  <span class={`font-mono text-xs font-bold uppercase ${
+                    article.highlighted ? "text-stark-black" : "text-on-surface-variant"
+                  }`}>
+                    {article.tag}
+                  </span>
+                  <h4 class="font-display text-lg sm:text-[20px] font-bold text-stark-black leading-snug">
+                    {article.title}
+                  </h4>
+                  <p class={`font-sans text-sm font-medium ${
+                    article.highlighted ? "text-stark-black/85" : "text-on-surface-variant"
+                  }`}>
+                    {article.description}
+                  </p>
+                </div>
+                <a
+                  href={article.link}
+                  class={`self-start sm:self-center shrink-0 px-4 py-2 font-mono text-xs font-bold uppercase transition-none cursor-pointer ${
+                    article.highlighted
+                      ? "bg-stark-black text-mac-yellow border border-stark-black hover:bg-pure-white hover:text-stark-black"
+                      : "bg-pure-white text-stark-black border-2 border-stark-black hover:bg-stark-black hover:text-mac-yellow"
+                  }`}
+                >
+                  {freshPress.intel.readArticleText || "[READ ↗]"}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <!-- Terminal Footer Bar -->
+          <div class="p-4 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between select-none">
+            <span class="font-mono text-xs font-bold text-stark-black">
+              {freshPress.intel.footerTotal}
+            </span>
+            <a
+              href={freshPress.intel.footerLink}
+              class="font-mono text-xs font-bold uppercase text-stark-black underline hover:bg-stark-black hover:text-pure-white px-1"
+            >
+              {freshPress.intel.footerLinkText}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

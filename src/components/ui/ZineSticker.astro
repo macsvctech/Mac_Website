@@ -1,0 +1,41 @@
+---
+interface Props {
+  text: string;
+  color?: "yellow" | "cyan" | "red" | "white" | "stone";
+  tilt?: string;
+  class?: string;
+  size?: "sm" | "md" | "lg";
+}
+
+const {
+  text,
+  color = "yellow",
+  tilt = "-2deg",
+  class: className = "",
+  size = "md",
+} = Astro.props;
+
+const colorMap = {
+  yellow: "bg-mac-yellow text-stark-black",
+  cyan: "bg-electric-cyan text-stark-black",
+  red: "bg-system-red text-pure-white",
+  white: "bg-pure-white text-stark-black",
+  stone: "bg-tactical-stone text-stark-black",
+};
+
+const sizeMap = {
+  sm: "text-[10px] px-2 py-0.5",
+  md: "text-xs px-3 py-1",
+  lg: "text-sm px-4 py-1.5",
+};
+
+const chosenColor = colorMap[color] || colorMap.yellow;
+const chosenSize = sizeMap[size] || sizeMap.md;
+---
+
+<span
+  class={`inline-block font-mono font-bold uppercase tracking-wider border-2 border-stark-black shadow-brutal-sm select-none transition-transform hover:scale-105 ${chosenColor} ${chosenSize} ${className}`}
+  style={`transform: rotate(${tilt});`}
+>
+  {text}
+</span>

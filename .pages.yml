@@ -1,0 +1,1537 @@
+# ==============================================================================
+# PAGES CMS CONFIGURATION (https://pagescms.org)
+# THE MARKETING CLUB (MAC) | SRI VENKATESWARA COLLEGE, UNIVERSITY OF DELHI
+# ==============================================================================
+
+# 1. MULTIMODAL MEDIA REPOSITORIES
+media:
+  - name: images
+    label: "Images & Visual Assets"
+    input: public/uploads/images
+    output: /uploads/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif, svg, gif]
+
+  - name: videos
+    label: "Video Clips & Teasers"
+    input: public/uploads/videos
+    output: /uploads/videos
+    categories: [video]
+    extensions: [mp4, webm, mov]
+
+  - name: documents
+    label: "PDFs, Decks & Documents"
+    input: public/uploads/documents
+    output: /uploads/documents
+    categories: [document, compressed]
+    extensions: [pdf, pptx, docx, xlsx, zip]
+
+# 2. EDITABLE CONTENT COLLECTIONS & MASTER FILES
+content:
+  # ----------------------------------------------------------------------------
+  # 01. GLOBAL BRAND, CAUTION BANNER & FOOTER
+  # ----------------------------------------------------------------------------
+  - name: global_settings
+    label: "📢 Global Brand, Logo, Caution Ticker & Footer"
+    type: file
+    path: src/content/settings/global.json
+    format: json
+    fields:
+      - name: siteTitle
+        label: Official Site Title
+        type: string
+        required: true
+      - name: shortTitle
+        label: Short Title
+        type: string
+      - name: college
+        label: College Affiliation
+        type: string
+      - name: university
+        label: University System
+        type: string
+      - name: tagline
+        label: Tactical Tagline
+        type: string
+      - name: estYear
+        label: Founding Year
+        type: string
+      - name: email
+        label: Society Primary Inbound Email
+        type: string
+      - name: phone
+        label: Primary Operational Phone
+        type: string
+      - name: address
+        label: Physical Headquarters Address
+        type: text
+      - name: logoUrl
+        label: Official Vector/Raster Logo
+        type: image
+        options:
+          media: images
+      - name: faviconUrl
+        label: Browser Favicon Asset
+        type: image
+        options:
+          media: images
+      - name: brochurePdfUrl
+        label: Society Brochure PDF File
+        type: file
+        options:
+          media: documents
+      - name: brochureLabel
+        label: Society Brochure Button Label
+        type: string
+      - name: socials
+        label: Official Social Coordinates
+        type: object
+        fields:
+          - name: instagram
+            label: Instagram Profile URL
+            type: string
+          - name: linkedin
+            label: LinkedIn Organization URL
+            type: string
+      - name: recruitmentBanner
+        label: Top Caution-Tape Marquee Ticker
+        type: object
+        fields:
+          - name: enabled
+            label: Broadcast Banner Across All Pages?
+            type: boolean
+          - name: text
+            label: Marquee Announcement Text
+            type: string
+          - name: link
+            label: Banner Destination URL / Anchor
+            type: string
+      - name: navigation
+        label: Header Navigation Menu Links
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nav Tab Label
+            type: string
+          - name: href
+            label: Route URL
+            type: string
+      - name: headerCta
+        label: Top-Right Arcade CTA Button
+        type: object
+        fields:
+          - name: text
+            label: Desktop Button Label
+            type: string
+          - name: link
+            label: Destination Link
+            type: string
+          - name: mobileNumber
+            label: Mobile Index Number (e.g. 06)
+            type: string
+          - name: mobileLabel
+            label: Mobile Menu Item Label
+            type: string
+          - name: mobileActiveBadge
+            label: Mobile Active Badge Text
+            type: string
+          - name: mobileInactiveBadge
+            label: Mobile Inactive Badge Text
+            type: string
+      - name: mobileMenu
+        label: Mobile Navigation Drawer Settings
+        type: object
+        fields:
+          - name: openText
+            label: Hamburger Button Closed State Text
+            type: string
+          - name: closeText
+            label: Hamburger Button Open State Text
+            type: string
+          - name: activeBadge
+            label: Active Item Badge
+            type: string
+          - name: openBadge
+            label: Inactive Item Badge
+            type: string
+      - name: footerMarquee
+        label: Footer Caution-Tape Marquee Ticker
+        type: string
+      - name: footer
+        label: Stark Black Master Footer Parameters
+        type: object
+        fields:
+          - name: brandAcronym
+            label: Big Brand Acronym (MAC)
+            type: string
+          - name: collegeSub
+            label: Subtitle
+            type: string
+          - name: telPrefix
+            label: Phone Label Prefix
+            type: string
+          - name: mailPrefix
+            label: Mail Label Prefix
+            type: string
+          - name: socialLinks
+            label: Footer Text Links
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Display Label
+                type: string
+              - name: url
+                label: Target URL
+                type: string
+              - name: external
+                label: External Tab Link?
+                type: boolean
+          - name: copyright
+            label: Copyright Legal Notice
+            type: text
+          - name: statusBadge
+            label: Relays Status Stamp Badge
+            type: string
+
+  # ----------------------------------------------------------------------------
+  # 02. HOME PAGE
+  # ----------------------------------------------------------------------------
+  - name: home_page
+    label: "🏠 Home Page: Hero Photo/Video, Metrics, Wings & Sponsors"
+    type: file
+    path: src/content/pages/home.json
+    format: json
+    fields:
+      - name: hero
+        label: Hero Blueprint Terminal & Media
+        type: object
+        fields:
+          - name: archiveRef
+            label: Archival Reference Stamp
+            type: string
+          - name: status
+            label: Operational Status Badge
+            type: string
+          - name: estBadge
+            label: Milestone Pill
+            type: string
+          - name: headlinePrefix
+            label: Headline Prefix
+            type: string
+          - name: headlineHighlight
+            label: Headline High-Contrast Highlight
+            type: string
+          - name: description
+            label: Core Society Mission Summary
+            type: text
+          - name: primaryCta
+            label: Primary CTA Button
+            type: object
+            fields:
+              - name: text
+                label: Button Text
+                type: string
+              - name: link
+                label: Destination Link
+                type: string
+          - name: secondaryCta
+            label: Secondary CTA Button
+            type: object
+            fields:
+              - name: text
+                label: Button Text
+                type: string
+              - name: link
+                label: Destination Link
+                type: string
+          - name: image
+            label: Hero Photograph (High-Contrast Screenprint)
+            type: image
+            options:
+              media: images
+          - name: videoUrl
+            label: Hero Video Stream (.mp4 / YouTube embed or blank)
+            type: string
+          - name: poster
+            label: Hero Video Poster / Fallback Image
+            type: image
+            options:
+              media: images
+          - name: imageAlt
+            label: Image Descriptive Alt Text
+            type: text
+          - name: imageTag
+            label: Image Framing Code Tag
+            type: string
+          - name: imageTagSub
+            label: Image Framing Sub-Stamp
+            type: string
+          - name: quoteSticker
+            label: Floating Zine Quote Callout
+            type: string
+          - name: quoteStickerSub
+            label: Quote Attribution Sub-Tag
+            type: string
+          - name: statSticker
+            label: Floating High-Voltage Stat Badge
+            type: string
+      - name: receipts
+        label: The Receipts // Numerical Proof
+        type: object
+        fields:
+          - name: sectionTag
+            label: Section Stamp
+            type: string
+          - name: sectionLoc
+            label: Geographic Coordinates Stamp
+            type: string
+          - name: metrics
+            label: Stat Counters
+            type: object
+            list: true
+            fields:
+              - name: id
+                label: Metric Key
+                type: string
+              - name: value
+                label: Stat Number (e.g. 50,000+)
+                type: string
+              - name: label
+                label: Stat Label
+                type: string
+              - name: defaultActive
+                label: Active Yellow Accent?
+                type: boolean
+      - name: machinery
+        label: The Machinery // 4 Departments Preview
+        type: object
+        fields:
+          - name: title
+            label: Section Title
+            type: string
+          - name: badge
+            label: Section Badge
+            type: string
+          - name: link
+            label: Detail Route Link
+            type: string
+          - name: departments
+            label: Department Wings
+            type: object
+            list: true
+            fields:
+              - name: code
+                label: Dept Code
+                type: string
+              - name: name
+                label: Dept Name
+                type: string
+              - name: icon
+                label: Material Symbol Icon Name
+                type: string
+              - name: color
+                label: Border Accent Color
+                type: select
+                options:
+                  values: [cyan, red, yellow, white, stone]
+              - name: cols
+                label: Column Width (4 or 8)
+                type: number
+              - name: description
+                label: Department Mission
+                type: text
+              - name: tag
+                label: Tactical Tag
+                type: string
+              - name: meta
+                label: System Meta Code
+                type: string
+              - name: image
+                label: Department Visual / Poster (Optional)
+                type: image
+                options:
+                  media: images
+              - name: videoUrl
+                label: Department Teaser Video (.mp4 / YouTube)
+                type: string
+              - name: documentUrl
+                label: Department Syllabus / Overview PDF
+                type: file
+                options:
+                  media: documents
+      - name: sponsors
+        label: Past Corporate Sponsors & Brand Partners
+        type: object
+        fields:
+          - name: header
+            label: Section Header
+            type: string
+          - name: items
+            label: Brand Logos
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: Partner Brand Name
+                type: string
+              - name: tag
+                label: Partnership Category
+                type: string
+              - name: highlighted
+                label: Spotlight in Bright Yellow?
+                type: boolean
+              - name: logoImage
+                label: Partner Vector Logo / Artwork
+                type: image
+                options:
+                  media: images
+              - name: websiteUrl
+                label: Partner Brand Website URL
+                type: string
+      - name: freshPress
+        label: Fresh Off The Press // Live Feeds
+        type: object
+        fields:
+          - name: title
+            label: Section Title
+            type: string
+          - name: feedTag
+            label: Feed Status Tag
+            type: string
+          - name: flagship
+            label: Featured Conclave Spotlight
+            type: object
+            fields:
+              - name: headerTitle
+                label: Terminal Header
+                type: string
+              - name: simulationBadge
+                label: Simulation Stamp
+                type: string
+              - name: subBadge
+                label: Cadence Stamp
+                type: string
+              - name: title
+                label: Event Name
+                type: string
+              - name: subtitle
+                label: Event Subtitle
+                type: string
+              - name: ctaText
+                label: Button Action Text
+                type: string
+              - name: ctaLink
+                label: Button Destination
+                type: string
+              - name: status
+                label: Status Stamp
+                type: string
+              - name: image
+                label: Promo Graphic / Key Artwork
+                type: image
+                options:
+                  media: images
+              - name: videoUrl
+                label: Video Teaser (.mp4 / YouTube)
+                type: string
+              - name: rulebookPdfUrl
+                label: Downloadable Rulebook PDF
+                type: file
+                options:
+                  media: documents
+          - name: intel
+            label: Featured Research Dispatches
+            type: object
+            fields:
+              - name: headerTitle
+                label: Terminal Header
+                type: string
+              - name: feedLabel
+                label: Feed Label
+                type: string
+              - name: articles
+                label: Featured Articles
+                type: object
+                list: true
+                fields:
+                  - name: tag
+                    label: Category Tag
+                    type: string
+                  - name: title
+                    label: Article Title
+                    type: string
+                  - name: description
+                    label: Article Excerpt
+                    type: text
+                  - name: link
+                    label: Destination Slug
+                    type: string
+                  - name: highlighted
+                    label: Highlighted Card?
+                    type: boolean
+                  - name: pdfUrl
+                    label: Direct PDF Whitepaper (Optional)
+                    type: file
+                    options:
+                      media: documents
+              - name: footerTotal
+                label: Counter Footer
+                type: string
+              - name: footerLinkText
+                label: Action Link Label
+                type: string
+              - name: footerLink
+                label: Action Link Destination
+                type: string
+
+  # ----------------------------------------------------------------------------
+  # 03. BLUEPRINT PAGE
+  # ----------------------------------------------------------------------------
+  - name: blueprint_page
+    label: "📐 Blueprint Page: Manifesto, Pillars, Vision & Wings"
+    type: file
+    path: src/content/pages/blueprint.json
+    format: json
+    fields:
+      - name: breadcrumb
+        label: Breadcrumb Header
+        type: object
+        fields:
+          - name: directory
+            type: string
+          - name: securityTier
+            type: string
+      - name: manifesto
+        label: Official Club Manifesto & Visual Evidence
+        type: object
+        fields:
+          - name: estBadge
+            label: Establishment Milestone Badge
+            type: string
+          - name: headline
+            label: Manifesto Headline
+            type: string
+          - name: paragraphs
+            label: Manifesto Body Paragraphs
+            type: string
+            list: true
+          - name: spec
+            label: Document Spec Code
+            type: string
+          - name: status
+            label: Readiness Status
+            type: string
+          - name: mediaImage
+            label: Collective Photograph
+            type: image
+            options:
+              media: images
+          - name: mediaVideoUrl
+            label: Collective Video Loop (.mp4 / YouTube)
+            type: string
+          - name: mediaCaption
+            label: Technical Caption
+            type: string
+          - name: mediaSubCaption
+            label: Archival Coordinates
+            type: string
+          - name: constitutionPdfUrl
+            label: Official Society Constitution PDF
+            type: file
+            options:
+              media: documents
+      - name: architecture
+        label: 4 Declassified Architectural Pillars
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: badge
+            type: string
+          - name: tabs
+            label: Architecture Dossier Tabs
+            type: object
+            list: true
+            fields:
+              - name: id
+                label: Tab Unique Identifier
+                type: string
+              - name: buttonLabel
+                label: Button Label
+                type: string
+              - name: title
+                label: Tab Full Title
+                type: string
+              - name: pillarTag
+                label: Pillar Identifier Tag
+                type: string
+              - name: schematic
+                label: Schematic Code
+                type: string
+              - name: docId
+                label: Document ID
+                type: string
+              - name: clearance
+                label: Clearance Badge
+                type: string
+              - name: classification
+                label: Classification Label
+                type: string
+              - name: founded
+                label: Foundation Tag
+                type: string
+              - name: accent
+                label: Tab Color Accent
+                type: select
+                options:
+                  values: [red, blue, yellow, white]
+              - name: items
+                label: Bullet Principles
+                type: object
+                list: true
+                fields:
+                  - name: label
+                    type: string
+                  - name: text
+                    type: text
+      - name: visionMission
+        label: Vision & Mission Parameters
+        type: object
+        fields:
+          - name: vision
+            label: Vision Statement
+            type: object
+            fields:
+              - name: specTag
+                type: string
+              - name: title
+                type: string
+              - name: body
+                type: text
+              - name: targetHorizon
+                type: string
+              - name: status
+                type: string
+          - name: mission
+            label: Mission Statement
+            type: object
+            fields:
+              - name: specTag
+                type: string
+              - name: title
+                type: string
+              - name: body
+                type: text
+              - name: operationalMandate
+                type: string
+              - name: status
+                type: string
+      - name: wings
+        label: Operational Wings & Syllabi
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: badge
+            type: string
+          - name: anchorId
+            type: string
+          - name: divisions
+            label: Department Divisions
+            type: object
+            list: true
+            fields:
+              - name: deptTag
+                type: string
+              - name: colorScheme
+                type: select
+                options:
+                  values: [yellow, cyan, red, white]
+              - name: name
+                type: string
+              - name: description
+                type: text
+              - name: skills
+                label: Core Skill Badges
+                type: string
+                list: true
+              - name: sampleWorkUrl
+                label: Department Case Deck / Syllabus PDF
+                type: file
+                options:
+                  media: documents
+      - name: exitLogs
+        label: Section 2.5 Declassified Exit Logs
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: badge
+            type: string
+          - name: dossierOpenText
+            type: string
+          - name: dossierCloseText
+            type: string
+          - name: linkedinText
+            type: string
+          - name: readAllButtonText
+            label: Read All Testimonials Button Text
+            type: string
+          - name: readAllButtonUrl
+            label: Read All Testimonials Button URL
+            type: string
+
+  # ----------------------------------------------------------------------------
+  # 04. TESTIMONIALS (ALUMNI PRESIDENT EXIT DOSSIERS)
+  # ----------------------------------------------------------------------------
+  - name: testimonials
+    label: "🎙️ Blueprint: Alumni President Exit Dossiers"
+    type: collection
+    path: src/content/testimonials
+    format: json
+    fields:
+      - name: order
+        label: Display Order Index
+        type: number
+      - name: name
+        label: Alumni President Name
+        type: string
+        required: true
+      - name: role
+        label: Executive Tenure Office
+        type: string
+        required: true
+      - name: badgeId
+        label: Dossier Badge ID (e.g. ID // PRES_25-26)
+        type: string
+      - name: pullQuote
+        label: Featured Pull Quote
+        type: text
+      - name: fullLetter
+        label: Full Declassified Exit Letter Paragraphs
+        type: text
+        list: true
+      - name: portraitImage
+        label: Alumni ID Portrait (Square 1:1)
+        type: image
+        options:
+          media: images
+      - name: videoTestimonialUrl
+        label: Video Testimonial / Interview (.mp4 / YouTube)
+        type: string
+      - name: linkedinUrl
+        label: LinkedIn Profile URL
+        type: string
+      - name: defaultOpen
+        label: Expand Accordion by Default?
+        type: boolean
+
+  # ----------------------------------------------------------------------------
+  # 04B. TESTIMONIALS ARCHIVE PAGE (GLOBAL HEADERS & STATS)
+  # ----------------------------------------------------------------------------
+  - name: testimonials_page
+    label: "🏛️ Testimonials Page: Archive Vault, Stats & Controls"
+    type: file
+    path: src/content/pages/testimonials.json
+    format: json
+    fields:
+      - name: breadcrumb
+        label: Breadcrumb Header
+        type: string
+      - name: securityTier
+        label: Security Clearance Badge
+        type: string
+      - name: header
+        label: Header Spotlight Terminal
+        type: object
+        fields:
+          - name: terminalTag
+            type: string
+          - name: title
+            type: string
+          - name: badge
+            type: string
+          - name: description
+            type: text
+      - name: stats
+        label: Telemetry Metrics Strip
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: value
+            type: string
+      - name: dossierOpenText
+        type: string
+      - name: dossierCloseText
+        type: string
+      - name: linkedinText
+        type: string
+      - name: backToBlueprintText
+        type: string
+
+  # ----------------------------------------------------------------------------
+  # 05. ARENA RADAR & NEXT OPERATION COUNTDOWN
+  # ----------------------------------------------------------------------------
+  - name: arena_radar
+    label: "🚨 Arena: Live Next-Operation Countdown, Poster & Rulebook"
+    type: file
+    path: src/content/pages/arena.json
+    format: json
+    fields:
+      - name: pageTitle
+        label: Page Breadcrumb Title
+        type: string
+      - name: sysRef
+        label: System Reference Code
+        type: string
+      - name: radar
+        label: Live Target Countdown Radar
+        type: object
+        fields:
+          - name: isLive
+            label: Radar Active & Broadcasting?
+            type: boolean
+          - name: eventTitle
+            label: Target Operation Title
+            type: string
+          - name: subBadge
+            label: Classification Badge
+            type: string
+          - name: statusBadge
+            label: Live Status Stamp
+            type: string
+          - name: date
+            label: Event Month & Year
+            type: string
+          - name: targetDate
+            label: Target Countdown Timestamp (YYYY-MM-DDTHH:MM:SS)
+            type: string
+          - name: venue
+            label: Physical / Virtual Staging Ground
+            type: string
+          - name: prizePool
+            label: Total Prize Pool (e.g. INR 75,000+)
+            type: string
+          - name: registrationUrl
+            label: Registration Portal URL (Unstop, etc.)
+            type: string
+          - name: registrationCtaText
+            label: Button Action Label
+            type: string
+          - name: posterImage
+            label: Official High-Res Event Poster
+            type: image
+            options:
+              media: images
+          - name: teaserVideoUrl
+            label: Teaser Trailer Video (.mp4 / YouTube)
+            type: string
+          - name: rulebookPdfUrl
+            label: Official Simulation Rulebook PDF
+            type: file
+            options:
+              media: documents
+          - name: standbyMessage
+            label: Inactive Radar Standby Notice
+            type: string
+      - name: flagshipSection
+        label: Flagship Section Header
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: badge
+            type: string
+      - name: evidenceWallSection
+        label: Evidence Wall Section Header
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: tagline
+            type: string
+          - name: categories
+            label: Gallery Filter Categories
+            type: object
+            list: true
+            fields:
+              - name: id
+                type: string
+              - name: label
+                type: string
+          - name: loadMoreText
+            type: string
+
+  # ----------------------------------------------------------------------------
+  # 06. ARENA FLAGSHIP OPERATIONS (EVENTS)
+  # ----------------------------------------------------------------------------
+  - name: events
+    label: "🎪 Arena: Flagship Operations (MarkoPolis, ZEAL, RotoMAC)"
+    type: collection
+    path: src/content/events
+    format: json
+    fields:
+      - name: id
+        label: Operation Slug / Key
+        type: string
+        required: true
+      - name: order
+        label: Sort Order
+        type: number
+      - name: code
+        label: Operation Code
+        type: string
+      - name: operationBadge
+        label: Operation Cadence Badge
+        type: string
+      - name: statusBadge
+        label: Active Status Stamp
+        type: string
+      - name: title
+        label: Event Title
+        type: string
+        required: true
+      - name: cadence
+        label: Cadence Label
+        type: string
+      - name: cadenceBadgeColor
+        label: Badge Color Accent
+        type: select
+        options:
+          values: [yellow, cyan, red, white]
+      - name: imagePosition
+        label: Image Orientation
+        type: select
+        options:
+          values: [left, right]
+      - name: tagline
+        label: Strategic Tagline
+        type: string
+      - name: description
+        label: Comprehensive Event Description
+        type: text
+      - name: coverImage
+        label: Operation Cover Photo / Key Art
+        type: image
+        options:
+          media: images
+      - name: stickerText
+        label: Floating Zine Stamp Callout
+        type: string
+      - name: stickerColor
+        label: Stamp Color
+        type: select
+        options:
+          values: [yellow, red, cyan, stone, white]
+      - name: stickerRotate
+        label: CSS Rotation Class (e.g. -rotate-3)
+        type: string
+      - name: stats
+        label: Event Footfall & Scale Stats
+        type: object
+        list: true
+        fields:
+          - name: value
+            type: string
+          - name: label
+            type: string
+      - name: editions
+        label: Historical Yearly Editions & Posters
+        type: object
+        list: true
+        fields:
+          - name: year
+            label: Event Year (e.g. 2026)
+            type: string
+            required: true
+          - name: editionBadge
+            label: Edition Short Tag (e.g. '26)
+            type: string
+          - name: title
+            label: Edition Title
+            type: string
+          - name: subtitle
+            label: Edition Theme / Tagline
+            type: string
+          - name: poster
+            label: Official Edition Poster Image
+            type: image
+            options:
+              media: images
+          - name: caption
+            label: Edition Brief Description / Caption
+            type: text
+          - name: metrics
+            label: Key Scale Metrics
+            type: string
+          - name: winner
+            label: Winner / Highlights
+            type: string
+
+  # ----------------------------------------------------------------------------
+  # 07. ARENA EVIDENCE WALL (GALLERY)
+  # ----------------------------------------------------------------------------
+  - name: gallery
+    label: "📸 Arena: Evidence Wall Photo & Video Gallery"
+    type: collection
+    path: src/content/gallery
+    format: json
+    fields:
+      - name: figureCode
+        label: Archival Figure Stamp (e.g. FIG_01)
+        type: string
+        required: true
+      - name: title
+        label: Evidence Specimen Title
+        type: string
+        required: true
+      - name: category
+        label: Filter Category
+        type: select
+        options:
+          values: [ALL, MARKOPOLIS, ZEAL, SPEAKERS, BTS]
+      - name: badge
+        label: Visual Category Pill
+        type: string
+      - name: date
+        label: Capture Date
+        type: string
+      - name: mediaType
+        label: Media Asset Format
+        type: select
+        options:
+          values: [image, video]
+      - name: image
+        label: Photograph File
+        type: image
+        options:
+          media: images
+      - name: videoUrl
+        label: Video Stream / Reel (.mp4 or YouTube)
+        type: string
+      - name: caption
+        label: Field Log Observation Caption
+        type: text
+      - name: order
+        label: Display Order Index
+        type: number
+
+  # ----------------------------------------------------------------------------
+  # 08. INTEL SPOTLIGHT (ANNUAL MACZINE ISSUE)
+  # ----------------------------------------------------------------------------
+  - name: intel_spotlight
+    label: "📕 Intel: Annual MACzine Cover & PDF Issue Upload"
+    type: file
+    path: src/content/pages/intel.json
+    format: json
+    fields:
+      - name: breadcrumb
+        label: Breadcrumb Header
+        type: string
+      - name: clearance
+        label: Security Clearance Badge
+        type: string
+      - name: maczine
+        label: MACzine Annual Anthology Spotlight
+        type: object
+        fields:
+          - name: terminalHeader
+            label: Terminal Header
+            type: string
+          - name: issn
+            label: Publication ISSN / Catalog
+            type: string
+          - name: badge
+            label: Release Pill
+            type: string
+          - name: curatorTag
+            label: Department Attribution
+            type: string
+          - name: title
+            label: Publication Title
+            type: string
+          - name: description
+            label: Issue Overview
+            type: text
+          - name: coverImage
+            label: Front Cover Key Art
+            type: image
+            options:
+              media: images
+          - name: pdfFile
+            label: Complete Magazine Digital Edition PDF
+            type: file
+            options:
+              media: documents
+          - name: figureCode
+            type: string
+          - name: releaseDate
+            type: string
+          - name: highlights
+            label: Lead Features in this Issue
+            type: string
+            list: true
+          - name: archiveIssues
+            label: Historic Past Volumes
+            type: object
+            list: true
+            fields:
+              - name: vol
+                type: string
+              - name: year
+                type: string
+              - name: theme
+                type: string
+              - name: pdfUrl
+                label: Archive PDF Edition
+                type: file
+                options:
+                  media: documents
+              - name: pages
+                type: string
+      - name: feedSection
+        label: Intel Feed Settings
+        type: object
+        fields:
+          - name: tag
+            type: string
+          - name: title
+            type: string
+          - name: categories
+            label: Intel Category Tabs
+            type: object
+            list: true
+            fields:
+              - name: id
+                type: string
+              - name: label
+                type: string
+
+  # ----------------------------------------------------------------------------
+  # 09. INTEL RESEARCH ARTICLES, CASE STUDIES & BLOGS
+  # ----------------------------------------------------------------------------
+  - name: intel_articles
+    label: "📰 Intel: Research Reports, Blogs, Case Studies & PDFs"
+    type: collection
+    path: src/content/intel
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Dossier Headline
+        type: string
+        required: true
+      - name: category
+        label: Content Classification
+        type: select
+        options:
+          values: ["Research Report", "Blog", "Case Study", "Podcast / Video"]
+      - name: publishDate
+        label: Release Date (e.g. NOV 2026)
+        type: string
+      - name: readTime
+        label: Estimated Reading Time (e.g. 05 MIN READ)
+        type: string
+      - name: author
+        label: Author Name / Research Wing
+        type: string
+      - name: authorRole
+        label: Author Institutional Title
+        type: string
+      - name: authorAvatar
+        label: Author ID Avatar (Optional)
+        type: image
+        options:
+          media: images
+      - name: dossierId
+        label: Dossier Unique Archive ID (e.g. MAC-INTEL-2026-042)
+        type: string
+        required: true
+      - name: refNumber
+        label: Official Reference Number
+        type: string
+      - name: urgency
+        label: Tactical Urgency Flag
+        type: string
+      - name: excerpt
+        label: Executive Abstract
+        type: text
+      - name: coverImage
+        label: Dossier Key Visual Photo
+        type: image
+        options:
+          media: images
+      - name: coverCaption
+        label: Visual Technical Caption
+        type: string
+      - name: videoEmbedUrl
+        label: Video Breakdown / Podcast Link (.mp4 / YouTube)
+        type: string
+      - name: attachmentFile
+        label: Downloadable Whitepaper PDF / Slide Deck
+        type: file
+        options:
+          media: documents
+      - name: attachmentLabel
+        label: Download Button Text
+        type: string
+      - name: featured
+        label: Pin to Featured Home Feed?
+        type: boolean
+      - name: readingVelocity
+        label: Reading Velocity Metric
+        type: string
+      - name: keyTakeaways
+        label: Strategic Executive Takeaways
+        type: string
+        list: true
+      - name: order
+        label: Feed Priority Index
+        type: number
+      - name: body
+        label: Full Research Report (Markdown with Images)
+        type: rich-text
+        options:
+          media: images
+
+  # ----------------------------------------------------------------------------
+  # 10. ROSTER OPERATORS & DEPARTMENT DIRECTORY
+  # ----------------------------------------------------------------------------
+  - name: roster_team
+    label: "🪪 Roster: Core Council & Department Operator ID Badges"
+    type: file
+    path: src/content/roster/team.json
+    format: json
+    fields:
+      - name: academicYear
+        label: Academic Operational Session
+        type: string
+      - name: councilPdfUrl
+        label: Official Council Dossier PDF
+        type: file
+        options:
+          media: documents
+      - name: breadcrumb
+        type: string
+      - name: cadreStatus
+        type: string
+      - name: station
+        type: string
+      - name: sectionCommand
+        label: Command Header
+        type: object
+        fields:
+          - name: tier
+            type: string
+          - name: council
+            type: string
+          - name: title
+            type: string
+          - name: clearance
+            type: string
+          - name: officerCount
+            type: string
+      - name: coreCommand
+        label: High Command Council (3 Executive Lanyards)
+        type: object
+        list: true
+        fields:
+          - name: idCode
+            label: Official ID Code
+            type: string
+          - name: name
+            label: Officer Name
+            type: string
+          - name: role
+            label: Executive Role
+            type: string
+          - name: portraitImage
+            label: Lanyard ID Portrait (Square 1:1)
+            type: image
+            options:
+              media: images
+          - name: authBadge
+            type: string
+          - name: tenure
+            label: Academic Year & Major
+            type: string
+          - name: wing
+            label: Operational Domain
+            type: string
+          - name: mandate
+            label: Executive Leadership Bio
+            type: text
+          - name: contactEmail
+            label: Direct Society Email
+            type: string
+          - name: linkedinUrl
+            label: LinkedIn Profile URL
+            type: string
+      - name: departments
+        label: 4 Operational Departments
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Dept Identifier (events, growth, pr, tech)
+            type: string
+          - name: name
+            label: Department Name
+            type: string
+          - name: code
+            label: Department Code
+            type: string
+          - name: color
+            label: Accent Theme
+            type: select
+            options:
+              values: [yellow, cyan, red, white]
+          - name: icon
+            label: Material Symbol Icon Name
+            type: string
+          - name: mandate
+            label: Department Core Mandate
+            type: text
+          - name: clearance
+            type: string
+          - name: cadreStrength
+            type: string
+          - name: leads
+            label: Department Coordinators
+            type: object
+            list: true
+            fields:
+              - name: name
+                type: string
+              - name: role
+                type: string
+              - name: course
+                type: string
+              - name: portrait
+                label: Coordinator Portrait (Square 1:1)
+                type: image
+                options:
+                  media: images
+              - name: linkedin
+                type: string
+          - name: operators
+            label: Junior Operatives & Associates
+            type: object
+            list: true
+            fields:
+              - name: name
+                type: string
+              - name: role
+                type: string
+              - name: course
+                type: string
+
+  # ----------------------------------------------------------------------------
+  # 11. RECRUITMENT RESULTS 2026-27 & CLEARANCE BOARD
+  # ----------------------------------------------------------------------------
+  - name: recruitment_results
+    label: "✅ Roster: Recruitment Results 2026-27 & Official PDF"
+    type: file
+    path: src/content/roster/results.json
+    format: json
+    fields:
+      - name: session
+        label: Recruitment Intake Year
+        type: string
+      - name: isPublished
+        label: Publish Clearance Board Live?
+        type: boolean
+      - name: totalCleared
+        label: Total Inducted Operatives
+        type: number
+      - name: headerTitle
+        label: Terminal Header
+        type: string
+      - name: statusBanner
+        label: Induction Notice / Orientation Venue Notice
+        type: string
+      - name: officialResultPdf
+        label: Official Sealed PDF Roll
+        type: file
+        options:
+          media: documents
+      - name: officialPdfSize
+        label: PDF File Size
+        type: string
+      - name: onboardingLink
+        label: Inductee Intake Form Link
+        type: string
+      - name: wings
+        label: Selected Candidates by Wing
+        type: object
+        list: true
+        fields:
+          - name: id
+            type: string
+          - name: code
+            type: string
+          - name: name
+            type: string
+          - name: count
+            type: number
+          - name: passBadge
+            type: string
+          - name: candidates
+            label: Selected Inductees
+            type: object
+            list: true
+            fields:
+              - name: id
+                label: Rank Index (e.g. 01)
+                type: string
+              - name: name
+                label: Candidate Full Name
+                type: string
+              - name: score
+                label: Interview Evaluation Score
+                type: string
+
+  # ----------------------------------------------------------------------------
+  # 12. CONTACT COORDINATES & SPONSORSHIP DECK
+  # ----------------------------------------------------------------------------
+  - name: contact_page
+    label: "📡 Contact: Terminal, Coordinates, Map Graphic & Pitch Deck"
+    type: file
+    path: src/content/pages/contact.json
+    format: json
+    fields:
+      - name: breadcrumb
+        label: Breadcrumb Header
+        type: string
+      - name: encryptionBadge
+        label: Encryption Badge
+        type: string
+      - name: terminalHeader
+        label: Terminal Window Header
+        type: string
+      - name: formTitle
+        label: Form Title
+        type: string
+      - name: openProtocolBadge
+        label: Protocol Badge
+        type: string
+      - name: fields
+        label: Form Field Placeholders & Labels
+        type: object
+        fields:
+          - name: identifierLabel
+            type: string
+          - name: identifierType
+            type: string
+          - name: identifierPlaceholder
+            type: string
+          - name: networkLabel
+            type: string
+          - name: networkType
+            type: string
+          - name: networkPlaceholder
+            type: string
+          - name: protocolLabel
+            type: string
+          - name: protocolType
+            type: string
+          - name: protocolPlaceholder
+            type: string
+          - name: payloadLabel
+            type: string
+          - name: payloadType
+            type: string
+          - name: payloadPlaceholder
+            type: string
+      - name: packetStatus
+        label: Terminal Status String
+        type: string
+      - name: submitButtonText
+        label: Action Button Text
+        type: string
+      - name: recipientEmail
+        label: Target Submission Email (FormSubmit Endpoint)
+        type: string
+      - name: coordinates
+        label: Physical Base Coordinates
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: subtitle
+            type: string
+          - name: collegeName
+            type: string
+          - name: streetAddress
+            type: string
+          - name: cityPin
+            type: string
+          - name: phone
+            type: string
+          - name: email
+            type: string
+          - name: status
+            type: string
+          - name: mapImage
+            label: Tactical Map Blueprint Image
+            type: image
+            options:
+              media: images
+          - name: googleMapsUrl
+            label: Google Maps Pin Link
+            type: string
+          - name: viewMapText
+            label: Google Maps Button Label
+            type: string
+      - name: sponsorshipDeckPdf
+        label: Corporate Sponsorship Deck PDF
+        type: file
+        options:
+          media: documents
+      - name: sponsorshipHeading
+        label: Sponsorship Section Subheading
+        type: string
+      - name: sponsorshipTitle
+        label: Sponsorship File Title
+        type: string
+      - name: sponsorshipSize
+        label: File Size Badge
+        type: string
+      - name: formFeedback
+        label: AJAX In-Terminal Submission Feedback Strings
+        type: object
+        fields:
+          - name: transmittingText
+            label: Sending Status String
+            type: string
+          - name: confirmedBtnText
+            label: Button Confirmed String
+            type: string
+          - name: successMessage
+            label: Success 200 OK Message
+            type: string
+          - name: timeoutMessage
+            label: Timeout Warning Message
+            type: string
+          - name: mailtoButtonText
+            label: Fallback Mailto Button Text
+            type: string
+      - name: externalChannelsTitle
+        label: External Telemetry Header
+        type: string
+      - name: externalLinks
+        label: Social Telemetry Channels
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: actionText
+            type: string
+          - name: url
+            type: string
+          - name: active
+            type: boolean

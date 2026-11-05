@@ -1,0 +1,220 @@
+{
+  "breadcrumb": {
+    "directory": "/// DIRECTORY: ROOT / 02_BLUEPRINT // DECLASSIFIED CLUB MANUAL",
+    "securityTier": "SECURITY_TIER: 01 • ARCHIVAL_SEAL_INTACT"
+  },
+  "manifesto": {
+    "estBadge": "/// EST. 2017 // 10 YEARS OF MAKING IT HAPPEN",
+    "headline": "BRIDGING CLASSROOM STRATEGY WITH REAL-WORLD CHAOS.",
+    "paragraphs": [
+      "MAC, The Marketing Club of Sri Venkateswara College, stands as an industrial hub for creativity, consumer strategy, and execution. Through live corporate projects, high-stakes business simulations, and primary research, we shape marketers who challenge conventions.",
+      "Founded in 2017, we have consistently operated not as an extracurricular club, but as an underground creative agency and research laboratory on campus."
+    ],
+    "spec": "SPEC // SVC_MAC_MANIFESTO_V2",
+    "status": "STATUS: COMBAT_READY",
+    "mediaImage": "/uploads/images/blueprint/cohort.jpg",
+    "mediaVideoUrl": null,
+    "mediaCaption": "FIG_00 // THE_COLLECTIVE // SRI VENKATESWARA COLLEGE, DU",
+    "mediaSubCaption": "// SVC DHAULA KUAN PRECINCT    MAC_DEPT_HIST_2017-PRESENT",
+    "clearanceStamp": "[ARCHIVAL_CLEARANCE]",
+    "constitutionPdfUrl": "/uploads/documents/mac-society-constitution.pdf",
+    "constitutionPdfLabel": "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]"
+  },
+  "architecture": {
+    "title": "CORE ARCHITECTURE",
+    "badge": "/// DECLASSIFIED OPERATIONAL DOSSIER",
+    "tabs": [
+      {
+        "id": "tab-identity",
+        "buttonLabel": "[ 01 // OUR IDENTITY ]",
+        "title": "01. OUR IDENTITY: STUDENT-LED CREATIVE AGENCY",
+        "pillarTag": "/// ARCHITECTURAL PILLAR 01",
+        "schematic": "SCHEMATIC_01",
+        "docId": "MAC-DEF-01",
+        "clearance": "TIER_1_PUBLIC",
+        "classification": "THINK_TANK",
+        "founded": "2017 // SVC",
+        "accent": "red",
+        "items": [
+          {
+            "label": "[AUTONOMOUS CAMPAIGNS]:",
+            "text": "Zero bureaucratic red tape. Students conceptualize, pitch, and fund all operations from the ground up without commercial compromise."
+          },
+          {
+            "label": "[DATA + CRAFT DUALITY]:",
+            "text": "Every artistic execution is backed by quantitative audience analytics and SEO metrics, ensuring aesthetic excellence with empirical conversion."
+          },
+          {
+            "label": "[COLLEGIATE TALENT INCUBATOR]:",
+            "text": "Proven pipeline placing alumni into top marketing agencies, fast-growing consumer unicorns, and Tier-1 strategy consulting firms."
+          }
+        ]
+      },
+      {
+        "id": "tab-work",
+        "buttonLabel": "[ 02 // OUR WORK ]",
+        "title": "02. OUR WORK: HIGH-STAKES LIVE SIMULATIONS",
+        "pillarTag": "/// ARCHITECTURAL PILLAR 02",
+        "schematic": "SCHEMATIC_02",
+        "docId": "MAC-DEF-02",
+        "focus": "DELIVERABLES",
+        "status": "DEPLOYED",
+        "accent": "blue",
+        "outputLines": [
+          "> EXECUTION_OUTPUT: ACTIVE",
+          "> LIVE_ACCOUNTS: 14",
+          "> AUDIENCE_REACH: 1.2M+",
+          "> ANNUAL_FLAGSHIP: AD-DICT"
+        ],
+        "items": [
+          {
+            "label": "[FLAGSHIP ARENAS]:",
+            "text": "Annual business symposiums hosting 2,500+ participants nationwide under cutthroat crisis-room rulesets."
+          },
+          {
+            "label": "[CORPORATE CONSULTANCY]:",
+            "text": "End-to-end market entry audits, go-to-market roadmaps, and guerrilla launch activations for partner brands."
+          },
+          {
+            "label": "[EDITORIAL INTEL]:",
+            "text": "MACZINE publication cataloging primary consumer ethnographies, brand autopsies, and disruptive trends."
+          }
+        ]
+      },
+      {
+        "id": "tab-approach",
+        "buttonLabel": "[ 03 // OUR APPROACH ]",
+        "title": "03. OUR APPROACH: RADICAL ACCOUNTABILITY",
+        "pillarTag": "/// ARCHITECTURAL PILLAR 03",
+        "schematic": "SCHEMATIC_03",
+        "docId": "MAC-DEF-03",
+        "methodology": "AGILE_SPRINT",
+        "cadence": "SEMESTER_ROUNDS",
+        "accent": "yellow",
+        "boxHeading": "PRACTICE > THEORY",
+        "boxSub": "UNCOMPROMISING EXECUTION PIPELINE",
+        "items": [
+          {
+            "label": "[WAR-ROOM ITERATION]:",
+            "text": "Fast tactical feedback loops. Concepts undergo brutal peer critiques before facing external public eyes."
+          },
+          {
+            "label": "[CROSS-DISCIPLINE SYNERGY]:",
+            "text": "Copywriters pair with quantitative researchers; visual directors work directly with financial sponsors."
+          },
+          {
+            "label": "[POST-MORTEM CULTURE]:",
+            "text": "Every campaign concludes with forensic metric accounting, immortalizing learnings into central archives."
+          }
+        ]
+      },
+      {
+        "id": "tab-philosophy",
+        "buttonLabel": "[ 04 // OUR PHILOSOPHY ]",
+        "title": "04. OUR PHILOSOPHY: ZERO STERILE CORPORATE BS",
+        "pillarTag": "/// ARCHITECTURAL PILLAR 04",
+        "schematic": "SCHEMATIC_04",
+        "docId": "MAC-DEF-04",
+        "ethos": "ANTI-VANILLA",
+        "mandate": "PERPETUAL",
+        "accent": "cyan",
+        "boxHeading": "[NO BORING WORK]",
+        "boxSub": "MEMORABLE // POLARIZING // TANGIBLE",
+        "items": [
+          {
+            "label": "[COURAGE OVER COMFORT]:",
+            "text": "Safe creative work is invisible work. We advocate for distinct, opinionated campaigns with sharp perspective."
+          },
+          {
+            "label": "[INTELLECTUAL RIGOR]:",
+            "text": "Surface-level trends fade in weeks. Deep consumer psychology, human insight, and behavioral mechanics endure."
+          },
+          {
+            "label": "[FAMILY UNDER PRESSURE]:",
+            "text": "The strongest networks are built under tight deadlines, collective midnight grit, and shared victories."
+          }
+        ]
+      }
+    ]
+  },
+  "plaques": {
+    "vision": {
+      "specTag": "/// SPEC_01: OUR VISION",
+      "title": "THE STANDARD OF COLLEGIATE MARKETING.",
+      "body": "To establish an unrivaled benchmark across Asian university institutions—forging visionary leaders who command consumer psychology, technological agility, and fearless aesthetic discipline to reshape global commerce.",
+      "targetHorizon": "TARGET_HORIZON // 2030_DEPLOYMENT",
+      "status": "[LOCKED]"
+    },
+    "mission": {
+      "specTag": "/// SPEC_02: OUR MISSION",
+      "title": "DISRUPT. ANALYZE. DELIVER.",
+      "body": "To dismantle conventional marketing pedagogy through relentless hands-on project incubation, high-stakes tactical competitions, data-backed market research, and high-impact industry mentorship for every active club operative.",
+      "operationalMandate": "OPERATIONAL_MANDATE // SVC_CAMPUS",
+      "status": "[ACTIVE]"
+    }
+  },
+  "wings": {
+    "title": "OPERATIONAL WINGS // SPEC SHEET",
+    "badge": "/// 4 DIVISIONS // SYNCHRONIZED OPS",
+    "anchorId": "departments",
+    "divisions": [
+      {
+        "deptTag": "DEPT_01 /// OPS_CORE",
+        "colorScheme": "yellow",
+        "name": "EVENTS & LOGISTICS",
+        "description": "Architects of college-wide operations. Manages resource procurement, on-site staging, security protocols, and precision crisis handling during major multi-college festivals.",
+        "skills": [
+          "[EVENT ARCHITECTURE]",
+          "[CRISIS OPS]",
+          "[ON-GROUND EXECUTION]"
+        ],
+        "sampleWorkUrl": null
+      },
+      {
+        "deptTag": "DEPT_02 /// CAPITAL_B2B",
+        "colorScheme": "cyan",
+        "name": "GROWTH & OUTREACH",
+        "description": "The financial and corporate backbone. Secures high-ticket title sponsorships, executes business development pipelines, and negotiates partner agreements.",
+        "skills": [
+          "[SPONSORSHIP PITCHING]",
+          "[CORPORATE B2B]",
+          "[LIVE PROJECTS]"
+        ],
+        "sampleWorkUrl": null
+      },
+      {
+        "deptTag": "DEPT_03 /// HYPE_ENGINE",
+        "colorScheme": "red",
+        "name": "SOCIAL MEDIA & PR",
+        "description": "Brand velocity creators. Produces viral digital campaigns, manages multi-channel engagement, and controls the unified public identity of the club.",
+        "skills": [
+          "[BRAND NARRATIVE]",
+          "[DIGITAL CAMPAIGNS]",
+          "[PR & OUTREACH]"
+        ],
+        "sampleWorkUrl": null
+      },
+      {
+        "deptTag": "DEPT_04 /// INTEL_RESEARCH",
+        "colorScheme": "white",
+        "name": "TECHNICAL & RESEARCH",
+        "description": "The intellectual nerve-center. Publishes MACZINE reports, drives digital web infrastructure, and delivers quantitative data intelligence for case audits.",
+        "skills": [
+          "[MARKET RESEARCH]",
+          "[MACZINE EDITORIAL]",
+          "[WEB & DESIGN]"
+        ],
+        "sampleWorkUrl": null
+      }
+    ]
+  },
+  "exitLogs": {
+    "title": "DECLASSIFIED EXIT LOGS // PAST LEADERSHIP",
+    "badge": "/// ARCHIVE: 2025-26",
+    "dossierOpenText": "[ READ FULL DOSSIER + ]",
+    "dossierCloseText": "[ CLOSE DOSSIER - ]",
+    "linkedinText": "[ LINKEDIN ↗ ]",
+    "readAllButtonText": "READ ALL TESTIMONIALS ->",
+    "readAllButtonUrl": "/testimonials"
+  }
+}

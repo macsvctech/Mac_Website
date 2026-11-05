@@ -1,0 +1,75 @@
+---
+interface Props {
+  fileUrl?: string | null;
+  fileLabel?: string;
+  fileType?: "PDF" | "PPTX" | "ZIP" | "DOCX" | string;
+  fileSize?: string;
+  class?: string;
+  variant?: "button" | "bar";
+}
+
+const {
+  fileUrl,
+  fileLabel = "DOWNLOAD ATTACHMENT",
+  fileType = "PDF",
+  fileSize,
+  class: className = "",
+  variant = "button",
+} = Astro.props;
+
+// Guardrail: if fileUrl is empty or missing, render nothing.
+const hasFile = typeof fileUrl === "string" && fileUrl.trim().length > 0;
+
+const iconMap: Record<string, string> = {
+  PDF: "picture_as_pdf",
+  PPTX: "slideshow",
+  ZIP: "folder_zip",
+  DOCX: "article",
+};
+
+const iconName = iconMap[fileType.toUpperCase()] || "download";
+---
+
+{hasFile && (
+  variant === "bar" ? (
+    <a
+      href={fileUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+      class={`w-full bg-pure-white border-2 border-stark-black p-3.5 flex items-center justify-between shadow-brutal-sm hover:bg-mac-yellow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal transition-all group ${className}`}
+    >
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-tactical-stone border-2 border-stark-black flex items-center justify-center shrink-0 group-hover:bg-stark-black group-hover:text-mac-yellow transition-colors">
+          <span class="material-symbols-outlined text-[20px]">{iconName}</span>
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="font-mono text-xs font-extrabold uppercase text-stark-black tracking-wider group-hover:text-stark-black">
+            {fileLabel}
+          </span>
+          <span class="font-mono text-[10px] text-on-surface-variant uppercase font-medium">
+            FORMAT: {fileType.toUpperCase()} {fileSize ? `// ${fileSize}` : ""}
+          </span>
+        </div>
+      </div>
+
+      <div class="shrink-0 flex items-center gap-1 font-mono text-xs font-bold text-stark-black bg-tactical-stone border border-stark-black px-2 py-1 group-hover:bg-stark-black group-hover:text-pure-white">
+        <span>[GET FILE ↘]</span>
+      </div>
+    </a>
+  ) : (
+    <a
+      href={fileUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+      class={`arcade-btn-sm inline-flex items-center gap-2 bg-mac-yellow text-stark-black border-2 border-stark-black px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider shadow-brutal-sm hover:bg-stark-black hover:text-mac-yellow transition-colors ${className}`}
+    >
+      <span class="material-symbols-outlined text-[18px]">{iconName}</span>
+      <span>{fileLabel}</span>
+      {fileSize && (
+        <span class="opacity-75 text-[10px] ml-1">({fileSize})</span>
+      )}
+    </a>
+  )
+)}

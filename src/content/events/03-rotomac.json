@@ -1,0 +1,67 @@
+{
+  "id": "rotomac",
+  "order": 3,
+  "code": "OPERATION_03",
+  "operationBadge": "/// OPERATION_03 // INTRA-SOCIETY TRAINING BATTLEGROUND",
+  "statusBadge": "[CADRE: JUNIORS ONLY]",
+  "title": "ROTOMAC",
+  "cadence": "INTERNAL FORGE",
+  "cadenceBadgeColor": "stone",
+  "headerBg": "bg-secondary-container text-stark-black",
+  "headerDotBg": "bg-stark-black",
+  "headerStatusClass": "bg-stark-black text-secondary-container px-2 py-0.5 text-label-mono-sm uppercase",
+  "imagePosition": "left",
+  "tagline": "INTRA-SOCIETY STRATEGY & DRILL CRUCIBLE",
+  "description": "The ultimate crucible for newly inducted MAC recruits. Teams go head-to-head pitching mock product launches, defending budgets, and learning the uncompromising MAC standard under intense scrutiny.",
+  "coverImage": "/uploads/images/arena/rotomac.jpg",
+  "stickerText": "CADRE INDUCTION",
+  "stickerColor": "yellow",
+  "stickerRotate": "-rotate-2",
+  "stats": [
+    { "value": "100%", "label": "INTERNAL DRILL" },
+    { "value": "4 WKS", "label": "INTENSIVE" },
+    { "value": "1 WINNER", "label": "CHAMPION CUP" }
+  ],
+  "editions": [
+    {
+      "year": "2026",
+      "editionBadge": "'26",
+      "title": "ROTOMAC 2026",
+      "subtitle": "CADRE TRIAL BY FIRE",
+      "poster": "/uploads/images/arena/rotomac-2026.jpg",
+      "caption": "The internal battleground for MAC's newly inducted first-year recruits. Cohorts underwent intensive unit-economic audits and defended mock marketing plans under intense peer grilling.",
+      "metrics": "100% CADRE INDUCTION // 4 WEEKS",
+      "winner": "CHAMPION SQUADRON: DELTA FORCE"
+    },
+    {
+      "year": "2025",
+      "editionBadge": "'25",
+      "title": "ROTOMAC 2025",
+      "subtitle": "THE WAR CHEST CRUCIBLE",
+      "poster": "/uploads/images/arena/rotomac-2025.jpg",
+      "caption": "A 4-week pressure test where juniors designed asymmetric challenger brands from scratch, vetted by alumni directors from Unilever, McKinsey, and Google.",
+      "metrics": "35 FIRST-YEAR OPERATORS",
+      "winner": "CHAMPION SQUADRON: ALPHA WING"
+    },
+    {
+      "year": "2024",
+      "editionBadge": "'24",
+      "title": "ROTOMAC 2024",
+      "subtitle": "STRATEGIC FOUNDATIONS",
+      "poster": "/uploads/images/arena/rotomac-2024.jpg",
+      "caption": "Intensive pitch drills, live financial stress-tests, and campaign whiteboard sprint competitions that determined departmental leadership tracks.",
+      "metrics": "30 RECRUITS // 6 MENTORS",
+      "winner": "CHAMPION SQUADRON: VANGUARD"
+    },
+    {
+      "year": "2023",
+      "editionBadge": "'23",
+      "title": "ROTOMAC 2023",
+      "subtitle": "BOOTCAMP INITIATION",
+      "poster": "/uploads/images/arena/rotomac-2023.jpg",
+      "caption": "Forging the foundational discipline, presentation rigor, and deck-building craft that define MAC's reputation across the collegiate circuit.",
+      "metrics": "28 RECRUITS // 4 WEEKS",
+      "winner": "CHAMPION SQUADRON: TITANS"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+---
+interface Props {
+  src?: string | null;
+  videoUrl?: string | null;
+  poster?: string | null;
+  alt?: string;
+  aspectRatio?: "1/1" | "16/9" | "3/4" | "auto";
+  ratio?: "1/1" | "16/9" | "3/4" | "auto";
+  caption?: string;
+  tag?: string;
+  border?: boolean;
+  shadow?: boolean | string;
+  autoplay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  controls?: boolean;
+  class?: string;
+  mediaClass?: string;
+}
+
+const {
+  src,
+  videoUrl,
+  poster,
+  alt = "MAC Visual Media Archive",
+  aspectRatio,
+  ratio,
+  caption,
+  tag,
+  border = true,
+  shadow = false,
+  autoplay = false,
+  loop = false,
+  muted = false,
+  controls = true,
+  class: className = "",
+  mediaClass = "",
+} = Astro.props;
+
+// Support both aspectRatio and ratio prop names
+const chosenRatio = aspectRatio || ratio || "auto";
+
+const ratioClasses = {
+  "1/1": "aspect-square",
+  "16/9": "aspect-video",
+  "3/4": "aspect-[3/4]",
+  "auto": "aspect-auto",
+};
+
+const aspectClass = ratioClasses[chosenRatio] || "aspect-auto";
+
+let shadowClass = "";
+if (shadow === true) shadowClass = "shadow-brutal-sm";
+else if (typeof shadow === "string") shadowClass = shadow;
+
+// URL and media type detection
+function getEmbedUrl(url: string | null | undefined): string | null {
+  if (!url) return null;
+  const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+  if (ytMatch) {
+    return `https://www.youtube.com/embed/${ytMatch[1]}?rel=0&modestbranding=1`;
+  }
+  const vimeoMatch = url.match(/vimeo\.com\/(?:video\/)?([0-9]+)/);
+  if (vimeoMatch) {
+    return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
+  }
+  return null;
+}
+
+function isDirectVideo(url: string | null | undefined): boolean {
+  if (!url) return false;
+  return /\.(mp4|webm|ogg|m4v)(\?.*)?$/i.test(url);
+}
+
+const rawVideo = videoUrl || (src && (isDirectVideo(src) || getEmbedUrl(src)) ? src : null);
+const embedUrl = getEmbedUrl(rawVideo);
+const isHtml5Video = isDirectVideo(rawVideo);
+const isImage = !rawVideo && typeof src === "string" && src.trim().length > 0;
+const hasMedia = isHtml5Video || embedUrl || isImage;
+---
+
+<div class={`flex flex-col ${border ? "border-2 border-stark-black" : ""} ${shadowClass} ${className} bg-pure-white overflow-hidden`}>
+  <!-- Media Frame with Aspect Ratio Lock -->
+  <div class={`relative w-full ${aspectClass} overflow-hidden bg-tactical-stone flex items-center justify-center`}>
+    
+    <!-- Optional Technical Tag Overlay -->
+    {tag && (
+      <div class="absolute top-0 left-0 right-0 bg-stark-black text-pure-white font-mono text-[11px] px-3 py-1 border-b-2 border-stark-black flex justify-between items-center z-20 select-none">
+        <span class="truncate">{tag}</span>
+        <span class="text-mac-yellow shrink-0 ml-2 font-bold">
+          {isHtml5Video || embedUrl ? "VIDEO_FEED // 1080P" : "ISO_800 // MAC_ARCHIVE"}
+        </span>
+      </div>
+    )}
+
+    {embedUrl ? (
+      <!-- 1. Responsive 16:9 Brutalist iframe embed (YouTube/Vimeo) -->
+      <iframe
+        src={embedUrl}
+        title={alt}
+        class={`w-full h-full border-0 block ${mediaClass}`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    ) : isHtml5Video ? (
+      <!-- 2. Styled HTML5 Video Player -->
+      <video
+        src={rawVideo}
+        poster={poster || (src && !isDirectVideo(src) ? src : undefined)}
+        controls={controls}
+        autoplay={autoplay}
+        loop={loop}
+        muted={muted || autoplay}
+        playsinline
+        class={`w-full h-full object-cover block ${mediaClass}`}
+        preload="metadata"
+      >
+        <track kind="captions" />
+        Your browser does not support HTML5 video playback.
+      </video>
+    ) : isImage ? (
+      <!-- 3. Standard Locked-Aspect Image with Runtime Fallback Hook -->
+      <>
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          class={`w-full h-full object-cover block transition-transform duration-300 ${mediaClass}`}
+          onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+        />
+
+        <!-- Hidden Fallback Box (revealed on broken network load) -->
+        <div
+          class="w-full h-full bg-mac-yellow border-2 border-stark-black p-4 flex flex-col items-center justify-center text-center select-none"
+          style="display: none;"
+          role="status"
+          aria-label="Image failed to load placeholder"
+        >
+          <div class="w-10 h-10 border-2 border-stark-black bg-pure-white flex items-center justify-center mb-2 shadow-[2px_2px_0px_#000000]">
+            <span class="material-symbols-outlined text-stark-black text-[22px]">image_not_supported</span>
+          </div>
+          <div class="font-mono text-xs font-black uppercase tracking-wider text-stark-black">
+            /// VISUAL_ASSET_PENDING ///
+          </div>
+          <div class="font-mono text-[10px] text-stark-black/80 mt-1 uppercase">
+            CLEARANCE: ARCHIVAL_STAMP_REQUIRED
+          </div>
+        </div>
+      </>
+    ) : (
+      <!-- 4. Immediate Fallback Box (when neither image nor video is set in CMS) -->
+      <div 
+        class="w-full h-full min-h-[160px] bg-mac-yellow border-2 border-stark-black p-4 flex flex-col items-center justify-center text-center select-none"
+        role="status"
+        aria-label="Media asset pending placeholder"
+      >
+        <div class="w-10 h-10 border-2 border-stark-black bg-pure-white flex items-center justify-center mb-2 shadow-[2px_2px_0px_#000000]">
+          <span class="material-symbols-outlined text-stark-black text-[22px]">perm_media</span>
+        </div>
+        <div class="font-mono text-xs font-black uppercase tracking-wider text-stark-black">
+          /// VISUAL_ASSET_PENDING ///
+        </div>
+        <div class="font-mono text-[10px] text-stark-black/80 mt-1 uppercase">
+          AWAITING_CMS_DISPATCH // MULTIMODAL_CHANNEL
+        </div>
+      </div>
+    )}
+
+  </div>
+
+  <!-- Optional Bottom Caption Strip -->
+  {caption && (
+    <div class="bg-pure-white border-t-2 border-stark-black px-3 py-2 font-mono text-xs font-bold text-stark-black flex items-center justify-between select-none">
+      <span class="truncate">{caption}</span>
+      <span class="text-[10px] text-on-surface-variant font-medium shrink-0 ml-2 uppercase">
+        {isHtml5Video || embedUrl ? "[VIDEO_DOC]" : "[FIG_REF]"}
+      </span>
+    </div>
+  )}
+</div>

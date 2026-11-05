@@ -1,0 +1,60 @@
+{
+  "siteTitle": "THE MARKETING CLUB (MAC) | Sri Venkateswara College",
+  "shortTitle": "THE MARKETING CLUB",
+  "college": "SRI VENKATESWARA COLLEGE",
+  "university": "UNIVERSITY OF DELHI",
+  "tagline": "BUILD. MARKET. DISRUPT.",
+  "estYear": "2017",
+  "email": "mac.svc2016@gmail.com",
+  "phone": "+91 9813774500",
+  "address": "Sri Venkateswara College, Benito Juarez Road, Dhaula Kuan, New Delhi, 110021",
+  "logoUrl": "/uploads/images/logo.svg",
+  "faviconUrl": "/uploads/images/logo.svg",
+  "brochurePdfUrl": "/uploads/documents/mac-society-brochure-2026.pdf",
+  "brochureLabel": "SOCIETY BROCHURE [PDF]",
+  "socials": {
+    "instagram": "https://instagram.com/mac.svc",
+    "linkedin": "https://www.linkedin.com/company/the-marketing-club-svc"
+  },
+  "recruitmentBanner": {
+    "enabled": true,
+    "text": "/// RECRUITMENT RESULTS 2026-27 ARE LIVE — CLICK TO CHECK CLEARANCE ///",
+    "link": "/roster#clearance-board"
+  },
+  "navigation": [
+    { "name": "HOME", "href": "/" },
+    { "name": "BLUEPRINT", "href": "/blueprint" },
+    { "name": "ARENA", "href": "/arena" },
+    { "name": "INTEL", "href": "/intel" },
+    { "name": "ROSTER", "href": "/roster" }
+  ],
+  "headerCta": {
+    "text": "[JOIN THE CLUB ->]",
+    "link": "/contact",
+    "mobileNumber": "06",
+    "mobileLabel": "JOIN THE CLUB [CONTACT]",
+    "mobileActiveBadge": "[ACTIVE]",
+    "mobileInactiveBadge": "[APPLY ->]"
+  },
+  "mobileMenu": {
+    "openText": "[ MENU ≡ ]",
+    "closeText": "[ CLOSE X ]",
+    "activeBadge": "[ACTIVE]",
+    "openBadge": "[OPEN ->]"
+  },
+  "footerMarquee": "/// THE MARKETING CLUB /// SRI VENKATESWARA COLLEGE /// BUILD. MARKET. DISRUPT. /// EST. 2017 ///",
+  "footer": {
+    "brandAcronym": "MAC",
+    "collegeSub": "SRI VENKATESWARA COLLEGE // DU",
+    "telPrefix": "TEL: ",
+    "mailPrefix": "/// MAIL: ",
+    "socialLinks": [
+      { "label": "[INSTAGRAM]", "url": "https://instagram.com/mac.svc", "external": true },
+      { "label": "[LINKEDIN]", "url": "https://www.linkedin.com/company/the-marketing-club-svc", "external": true },
+      { "label": "[EMAIL]", "url": "mailto:mac.svc2016@gmail.com", "external": false },
+      { "label": "[ARCHIVES]", "url": "/intel", "external": false }
+    ],
+    "copyright": "© 2026-27 THE MARKETING CLUB, SVC.\nALL RIGHTS RESERVED.",
+    "statusBadge": "[ALL RELAYS SECURED // STATUS: LIVE]"
+  }
+}

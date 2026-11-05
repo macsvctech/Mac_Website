@@ -1,0 +1,69 @@
+{
+  "breadcrumb": "/// DIRECTORY: ROOT / 06_CONTACT // SYSTEM_COMMUNICATION & COORDINATES [STATUS: RELAYS_ACTIVE]",
+  "encryptionBadge": "[ ENCRYPTION: SHA256 // TERMINAL ONLINE ]",
+  "terminalHeader": "> SYSTEM_COMMUNICATION",
+  "formTitle": "INITIATE CONTACT // COLLABORATIONS, SPONSORSHIPS & INQUIRIES",
+  "openProtocolBadge": "[OPEN PROTOCOL]",
+  "fields": {
+    "identifierLabel": "/// IDENTIFIER [NAME]",
+    "identifierType": "TYPE_STRING",
+    "identifierPlaceholder": "ENTER_NAME",
+    "networkLabel": "/// NETWORK [EMAIL]",
+    "networkType": "VAL_RFC5322",
+    "networkPlaceholder": "ENTER_EMAIL_ADDRESS",
+    "protocolLabel": "/// PROTOCOL [SUBJECT]",
+    "protocolType": "SELECT_CADRE",
+    "protocolPlaceholder": "DEFINE_OBJECTIVE (E.G. SPONSORSHIP / EVENT / COLLAB)",
+    "payloadLabel": "/// PAYLOAD [MESSAGE]",
+    "payloadType": "TEXT_RAW",
+    "payloadPlaceholder": "TRANSMIT_DATA..."
+  },
+  "packetStatus": "/// PACKET_STATUS: READY FOR TRANSMISSION // LATENCY: 12ms // CADRE: GENERAL_INQUIRY",
+  "submitButtonText": "TRANSMIT ▷",
+  "recipientEmail": "mac.svc2016@gmail.com",
+  "coordinates": {
+    "title": "COORDINATES",
+    "subtitle": "/// HEADQUARTERS // SOUTH CAMPUS COMMAND",
+    "collegeName": "SRI VENKATESWARA COLLEGE",
+    "streetAddress": "BENITO JUAREZ ROAD, DHAULA KUAN",
+    "cityPin": "NEW DELHI, 110021",
+    "phone": "+91 9813774500",
+    "email": "MAC.SVC2016@GMAIL.COM",
+    "status": "[ STATUS: OPEN 09:00 - 17:00 IST ]",
+    "mapImage": "/uploads/images/tactical-map.png",
+    "googleMapsUrl": "https://maps.google.com/?q=Sri+Venkateswara+College+Benito+Juarez+Marg+New+Delhi",
+    "viewMapText": "[ VIEW GOOGLE MAP ↗ ]"
+  },
+  "sponsorshipDeckPdf": "/uploads/documents/mac-sponsorship-deck-2027.pdf",
+  "sponsorshipHeading": "PARTNERSHIP & SPONSORSHIP DOSSIER:",
+  "sponsorshipTitle": "MAC_OFFICIAL_SPONSORSHIP_DECK_2027.PDF",
+  "sponsorshipSize": "2.1 MB",
+  "formFeedback": {
+    "transmittingText": "/// TRANSMITTING PAYLOAD... ///",
+    "confirmedBtnText": "TRANSMISSION CONFIRMED ▷",
+    "successMessage": "[✓] PAYLOAD TRANSMITTED TO COMMAND CELL. STATUS 200 OK.",
+    "timeoutMessage": "[!] DIRECT API RELAY TIMED OUT. TRANSMIT DIRECTLY VIA EMAIL CLIENT:",
+    "mailtoButtonText": "[ ✉ TRANSMIT VIA DEFAULT MAIL CLIENT ]"
+  },
+  "externalChannelsTitle": "/// EXTERNAL TELEMETRY & CHANNELS",
+  "externalLinks": [
+    {
+      "label": "INSTAGRAM // @MAC.SVC",
+      "actionText": "[ RELAY_ACTIVE ↗ ]",
+      "url": "https://instagram.com/mac.svc",
+      "active": true
+    },
+    {
+      "label": "LINKEDIN // THE MARKETING CLUB SVC",
+      "actionText": "[ CONNECT ↗ ]",
+      "url": "https://linkedin.com",
+      "active": false
+    },
+    {
+      "label": "DIRECT EMAIL // MAC.SVC2016@GMAIL.COM",
+      "actionText": "[ TRANSMIT ↗ ]",
+      "url": "mailto:mac.svc2016@gmail.com",
+      "active": false
+    }
+  ]
+}

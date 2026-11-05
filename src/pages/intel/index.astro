@@ -1,0 +1,441 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import intelData from '../../content/pages/intel.json';
+import BrutalMedia from '../../components/ui/BrutalMedia.astro';
+import BlueprintDivider from '../../components/ui/BlueprintDivider.astro';
+
+const allIntel = await getCollection('intel');
+const sortedIntel = allIntel.sort((a, b) => a.data.order - b.data.order);
+const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelData;
+---
+
+<BaseLayout title="INTEL /// THE MARKETING CLUB (MAC)">
+  <!-- BREADCRUMB BAR -->
+  <div class="w-full bg-tactical-stone border-b-2 border-stark-black py-2 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+      <span class="font-mono text-xs sm:text-sm tracking-wider text-stark-black font-bold truncate">
+        {breadcrumb}
+      </span>
+      <span class="hidden md:inline-block font-mono text-xs bg-stark-black text-mac-yellow px-2 py-0.5 border border-stark-black shrink-0 ml-2">
+        {clearance}
+      </span>
+    </div>
+  </div>
+
+  <!-- SECTION 4.1 — MACZINE ANNUAL ISSUE HERO SPOTLIGHT -->
+  <section class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-12">
+    <div class="bg-mac-yellow border-4 border-stark-black shadow-[8px_8px_0px_#000000]">
+      <!-- Terminal Bar -->
+      <div class="h-12 bg-stark-black flex items-center justify-between px-4 sm:px-6 border-b-4 border-stark-black">
+        <span class="font-mono text-xs sm:text-sm font-bold text-mac-yellow flex items-center gap-2 truncate">
+          <span class="inline-block w-2.5 h-2.5 bg-mac-yellow animate-pulse"></span>
+          {maczine.terminalHeader}
+        </span>
+        <span class="font-mono text-xs text-pure-white hidden sm:flex items-center gap-2 shrink-0">
+          [ {maczine.issn} ]
+        </span>
+      </div>
+
+      <!-- Hero Grid -->
+      <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Left Column: Magazine Cover (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-center">
+          <div class="relative w-full border-4 border-stark-black shadow-[8px_8px_0px_#000000] bg-pure-white">
+            <!-- Tilted Floating Badge -->
+            <div class="absolute -top-3.5 -left-3.5 z-20 -rotate-3 bg-system-red text-pure-white font-mono text-xs font-bold uppercase px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000]">
+              {maczine.badge}
+            </div>
+            <!-- 3:4 Aspect Magazine Mockup -->
+            <div class="w-full aspect-[3/4] overflow-hidden bg-tactical-stone flex items-center justify-center">
+              <img
+                src={maczine.coverImage}
+                alt="MACZINE Annual Magazine Cover"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Bottom Caption Strip -->
+            <div class="bg-stark-black text-mac-yellow font-mono text-xs py-1.5 px-3 border-t-2 border-stark-black flex justify-between items-center font-bold">
+              <span>{maczine.figureCode}</span>
+              <span>[{maczine.releaseDate}]</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Dossier & CTAs (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col justify-between pt-2 lg:pt-0">
+          <div>
+            <div class="inline-block bg-pure-white text-stark-black font-mono text-xs font-bold px-3 py-1 border-2 border-stark-black mb-4 shadow-[2px_2px_0px_#000000]">
+              {maczine.curatorTag}
+            </div>
+            <h1 class="font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-stark-black leading-none mb-4">
+              {maczine.title}
+            </h1>
+            <p class="font-sans text-base sm:text-lg text-stark-black leading-relaxed mb-6 max-w-xl font-medium">
+              {maczine.description}
+            </p>
+            <!-- Issue Highlights -->
+            <div class="flex flex-col gap-2.5 mb-8">
+              {maczine.highlights.map((h: string) => (
+                <div class="bg-surface p-3 border-2 border-stark-black font-mono text-xs sm:text-sm text-stark-black font-bold">
+                  {h}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Side-by-Side Arcade Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href={maczine.pdfFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-stark-black text-mac-yellow font-mono text-sm font-bold px-6 py-3.5 border-4 border-stark-black shadow-[6px_6px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+            >
+              {maczine.readFullIssuePdfText || "[ READ FULL ISSUE PDF ↗ ]"}
+            </a>
+            <button
+              id="toggle-past-issues-btn"
+              type="button"
+              class="inline-flex items-center justify-center bg-pure-white text-stark-black font-mono text-sm font-bold px-6 py-3.5 border-4 border-stark-black shadow-[6px_6px_0px_#000000] hover:bg-tactical-stone hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+            >
+              {maczine.browsePastIssuesText || "[ BROWSE PAST ISSUES ]"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAST ISSUES ACCORDION DRAWER -->
+      <div id="past-issues-drawer" class="hidden border-t-4 border-stark-black bg-tactical-stone p-6 md:p-8">
+        <div class="flex items-center justify-between pb-3 mb-4 border-b-2 border-stark-black">
+          <span class="font-mono text-xs sm:text-sm font-bold uppercase text-stark-black">
+            {maczine.archivedVolumesHeader || "> ARCHIVED_VOLUMES // PAST MACZINE EDITIONS"}
+          </span>
+          <span class="font-mono text-xs text-on-surface-variant font-bold">{maczine.openAccessBadge || "[OPEN ACCESS]"}</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {maczine.archiveIssues.map((issue: any) => (
+            <div class="bg-pure-white border-2 border-stark-black p-4 shadow-[4px_4px_0px_#000000] flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-xs font-black bg-stark-black text-mac-yellow px-2 py-0.5 border border-stark-black">
+                    {issue.vol}
+                  </span>
+                  <span class="font-mono text-[11px] font-bold text-on-surface-variant">{issue.year}</span>
+                </div>
+                <h4 class="font-mono text-sm font-bold uppercase text-stark-black mb-1">{issue.theme}</h4>
+                <div class="font-mono text-[11px] text-on-surface-variant">{issue.pages}</div>
+              </div>
+              <a
+                href={issue.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-block text-center font-mono text-xs font-bold bg-mac-yellow text-stark-black py-2 px-3 border border-stark-black hover:bg-stark-black hover:text-mac-yellow transition-all uppercase"
+              >
+                {maczine.downloadArchivePdfText || "[ DOWNLOAD PDF ↗ ]"}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTOR RAIL 4.1 -> 4.2 -->
+  <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <BlueprintDivider tag="INTEL_DISPATCH_FEED" code="DISPATCH_SYS_04" accent="cyan" class="my-6" />
+  </div>
+
+  <!-- SECTION 4.2 — FILTERABLE EDITORIAL FEED & FEATURED ZINE CLIPPINGS -->
+  <section class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <!-- Header & Filter Bar -->
+    <div class="flex flex-col md:flex-row justify-between md:items-end border-b-4 border-stark-black pb-4 mb-8 gap-4">
+      <div>
+        <span class="font-mono text-xs text-on-surface-variant uppercase font-bold block mb-1">
+          {feedSection.tag}
+        </span>
+        <h2 class="font-black text-3xl md:text-4xl uppercase text-stark-black leading-none">
+          {feedSection.title}
+        </h2>
+      </div>
+
+      <!-- Controls: Search Input + Filter Tabs -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <!-- Live Search Box -->
+        <div class="relative">
+          <input
+            id="intel-search-input"
+            type="text"
+            placeholder={feedSection.searchPlaceholder || "SEARCH INTEL..."}
+            class="font-mono text-xs font-bold uppercase py-2 px-3 pr-8 border-2 border-stark-black bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] focus:outline-none focus:bg-mac-yellow placeholder:text-gray-500 w-full sm:w-48 transition-all"
+          />
+          <span class="absolute right-2 top-2 text-xs font-mono font-bold text-stark-black pointer-events-none">🔍</span>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 font-mono text-xs font-bold" id="intel-filter-buttons">
+          {feedSection.categories.map((cat: any, idx: number) => (
+            <button
+              type="button"
+              data-category={cat.id}
+              class={`intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all ${
+                idx === 0
+                  ? 'bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]'
+                  : 'bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-Column Featured Zine Clipping Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="intel-articles-grid">
+      {sortedIntel.map((item) => (
+        <article
+          class="intel-article-card bg-pure-white border-4 border-stark-black shadow-[6px_6px_0px_#000000] flex flex-col justify-between hover:shadow-[8px_8px_0px_#000000] transition-all group"
+          data-category={item.data.category}
+          data-title={item.data.title.toLowerCase()}
+          data-author={item.data.author.toLowerCase()}
+          data-excerpt={item.data.excerpt.toLowerCase()}
+        >
+          <div>
+            <div class="w-full aspect-video border-b-2 border-stark-black overflow-hidden bg-tactical-stone relative">
+              <img
+                src={item.data.coverImage}
+                alt={item.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {item.data.videoEmbedUrl && (
+                <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[10px] font-bold px-2 py-0.5 border border-stark-black flex items-center gap-1 shadow-[2px_2px_0px_#000000]">
+                  <span class="material-symbols-outlined text-[12px]">play_circle</span>
+                  <span>VIDEO</span>
+                </div>
+              )}
+            </div>
+
+            <div class="p-5">
+              <div class="flex justify-between items-center mb-3">
+                <span class={`font-mono text-xs font-bold px-2 py-0.5 border border-stark-black ${
+                  item.data.category === 'Research Report'
+                    ? 'bg-electric-cyan text-stark-black'
+                    : item.data.category === 'Case Study'
+                    ? 'bg-mac-yellow text-stark-black'
+                    : item.data.category === 'Podcast / Video'
+                    ? 'bg-stark-black text-mac-yellow'
+                    : 'bg-system-red text-white'
+                }`}>
+                  [{item.data.category.toUpperCase()}]
+                </span>
+                <span class="font-mono text-xs text-on-surface-variant font-bold">
+                  {item.data.readTime}
+                </span>
+              </div>
+
+              <h3 class="font-black text-lg text-stark-black leading-snug line-clamp-2 mb-3 group-hover:underline">
+                <a href={`/intel/${item.id}`}>
+                  {item.data.title}
+                </a>
+              </h3>
+
+              <p class="font-sans text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
+                {item.data.excerpt}
+              </p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5">
+            <div class="flex justify-between items-center pt-3 border-t-2 border-stark-black font-mono text-xs font-bold">
+              <span class="text-stark-black uppercase truncate pr-2">{item.data.author}</span>
+              <a
+                href={`/intel/${item.id}`}
+                class="bg-stark-black text-mac-yellow px-3 py-1 border border-stark-black hover:bg-mac-yellow hover:text-stark-black transition-all shrink-0"
+              >
+                {feedSection.readDispatchText || "[READ ->]"}
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- No Results Placeholder (Hidden by default) -->
+    <div id="no-intel-results" class="hidden p-8 sm:p-12 text-center border-4 border-stark-black bg-mac-yellow shadow-[6px_6px_0px_#000000] font-mono font-bold text-stark-black my-6">
+      <div class="font-display font-black text-2xl sm:text-3xl uppercase mb-2">/// ZERO DISPATCHES FOUND ///</div>
+      <div class="text-xs sm:text-sm uppercase mb-4 text-stark-black/90">NO CLASSIFIED RECORDS MATCH YOUR SEARCH TELEMETRY.</div>
+      <button
+        id="reset-intel-filter-btn"
+        type="button"
+        class="inline-block py-2.5 px-5 bg-stark-black text-mac-yellow border-2 border-stark-black text-xs font-bold uppercase shadow-[3px_3px_0px_#000000] hover:bg-pure-white hover:text-stark-black transition-all cursor-pointer"
+      >
+        [ RESET ALL FILTERS ]
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 4.3 — INDUSTRIAL ARCHIVE TIMETABLE -->
+  <section class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <!-- Subheader Bar -->
+    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
+      <div class="font-mono text-sm sm:text-base font-bold text-stark-black uppercase flex items-center gap-2">
+        <span class="material-symbols-outlined text-[20px] text-stark-black">folder_open</span>
+        <span>{archiveSection.title} [SHOWING ALL 6 DECLASSIFIED ARTICLES]</span>
+      </div>
+      <div class="font-mono text-xs text-on-surface-variant font-bold">
+        {archiveSection.status}
+      </div>
+    </div>
+
+    <!-- Table Frame -->
+    <div class="border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white w-full overflow-x-auto">
+      <div class="min-w-[760px]">
+        <!-- Table Header Row -->
+        <div class="bg-stark-black text-mac-yellow font-mono text-xs uppercase font-bold py-3 px-6 grid grid-cols-12 border-b-2 border-stark-black">
+          <div class="col-span-2">[ DATE ]</div>
+          <div class="col-span-2">[ CATEGORY ]</div>
+          <div class="col-span-5">[ ARCHIVE TITLE & BRIEF ]</div>
+          <div class="col-span-2">[ CADRE AUTHOR ]</div>
+          <div class="col-span-1 text-right">[ PROTOCOL ]</div>
+        </div>
+
+        <!-- Table Rows -->
+        {sortedIntel.map((item) => (
+          <a
+            href={`/intel/${item.id}`}
+            class="py-4 px-6 grid grid-cols-12 items-center border-b-2 border-stark-black font-mono text-xs sm:text-sm hover:bg-mac-yellow transition-colors cursor-pointer group block"
+          >
+            <div class="col-span-2 font-bold text-stark-black">{item.data.publishDate}</div>
+            <div class="col-span-2">
+              <span class={`px-2 py-0.5 border border-stark-black text-xs font-bold ${
+                item.data.category === 'Research Report'
+                  ? 'bg-electric-cyan text-stark-black'
+                  : item.data.category === 'Case Study'
+                  ? 'bg-stark-black text-white'
+                  : item.data.category === 'Podcast / Video'
+                  ? 'bg-mac-yellow text-stark-black'
+                  : 'bg-system-red text-white'
+              }`}>
+                [{item.data.category.toUpperCase()}]
+              </span>
+            </div>
+            <div class="col-span-5 font-black text-stark-black group-hover:underline truncate pr-4">
+              {item.data.title}
+            </div>
+            <div class="col-span-2 text-on-surface text-xs font-bold truncate">
+              {item.data.author}
+            </div>
+            <div class="col-span-1 text-right">
+              <span class="bg-stark-black text-pure-white px-2.5 py-1 text-xs font-bold border border-stark-black group-hover:bg-stark-black group-hover:text-mac-yellow">
+                [OPEN ↗]
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- CLIENT-SIDE SCRIPT: FILTERING & SEARCH & PAST ISSUES -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. PAST ISSUES ACCORDION TOGGLE
+    const pastBtn = document.getElementById('toggle-past-issues-btn');
+    const pastDrawer = document.getElementById('past-issues-drawer');
+    if (pastBtn && pastDrawer) {
+      pastBtn.addEventListener('click', () => {
+        const isHidden = pastDrawer.classList.contains('hidden');
+        if (isHidden) {
+          pastDrawer.classList.remove('hidden');
+          pastBtn.textContent = '[ CLOSE ARCHIVES - ]';
+        } else {
+          pastDrawer.classList.add('hidden');
+          pastBtn.textContent = '[ BROWSE PAST ISSUES ]';
+        }
+      });
+    }
+
+    // 2. CATEGORY FILTER & LIVE SEARCH
+    const filterBtns = document.querySelectorAll('.intel-filter-btn');
+    const searchInput = document.getElementById('intel-search-input');
+    const articles = document.querySelectorAll('.intel-article-card');
+    const noResults = document.getElementById('no-intel-results');
+
+    let currentCategory = 'ALL';
+    let currentSearch = '';
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      articles.forEach((card) => {
+        const cardCat = card.getAttribute('data-category');
+        const cardTitle = card.getAttribute('data-title') || '';
+        const cardAuthor = card.getAttribute('data-author') || '';
+        const cardExcerpt = card.getAttribute('data-excerpt') || '';
+
+        const matchesCategory = currentCategory === 'ALL' || cardCat === currentCategory;
+        const matchesSearch =
+          !currentSearch ||
+          cardTitle.includes(currentSearch) ||
+          cardAuthor.includes(currentSearch) ||
+          cardExcerpt.includes(currentSearch);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentCategory = btn.getAttribute('data-category') || 'ALL';
+
+        filterBtns.forEach((b) => {
+          b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow';
+        });
+        btn.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]';
+
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        applyFilters();
+      });
+    }
+
+    const resetBtn = document.getElementById('reset-intel-filter-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        currentCategory = 'ALL';
+        currentSearch = '';
+        if (searchInput) searchInput.value = '';
+
+        filterBtns.forEach((b, idx) => {
+          if (idx === 0) {
+            b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]';
+          } else {
+            b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow';
+          }
+        });
+
+        applyFilters();
+      });
+    }
+  });
+</script>

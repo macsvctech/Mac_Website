@@ -1,0 +1,357 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BrutalMedia from '../../components/ui/BrutalMedia.astro';
+import BrutalFileDownload from '../../components/ui/BrutalFileDownload.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('intel');
+  const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+  return sorted.map((entry, index) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      prev: index > 0 ? sorted[index - 1] : null,
+      next: index < sorted.length - 1 ? sorted[index + 1] : null,
+    },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={`${entry.data.title} /// MAC INTEL`}>
+  <!-- READING SCROLL INDICATOR BAR -->
+  <div class="w-full bg-tactical-stone border-b-2 border-stark-black sticky top-[80px] z-40">
+    <div
+      class="h-1.5 bg-mac-yellow border-r-2 border-stark-black transition-[width] duration-75"
+      id="intel-scroll-bar"
+      style="width: 0%;"
+    ></div>
+  </div>
+
+  <!-- TACTICAL UTILITY STRIP -->
+  <aside aria-label="Dispatch Telemetry Header" class="w-full bg-tactical-stone border-b-2 border-stark-black py-2.5 px-4 md:px-8 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+    <a
+      href="/intel"
+      class="inline-flex items-center gap-2 bg-pure-white hover:bg-mac-yellow text-stark-black px-3 py-1.5 border-2 border-stark-black shadow-[2px_2px_0px_#000000] font-mono font-bold tracking-wider active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
+    >
+      <span class="material-symbols-outlined text-xs leading-none">arrow_back</span>
+      <span>[&lt;- BACK TO INTEL STAND]</span>
+    </a>
+
+    <div class="flex items-center gap-3 font-mono text-stark-black uppercase font-bold tracking-wider flex-wrap">
+      <span 
+        class="hidden sm:inline bg-pure-white px-2 py-0.5 border border-stark-black copy-trigger cursor-copy hover:underline"
+        data-copy={entry.data.dossierId}
+        title="CLICK TO COPY SYS_REF ⧉"
+      >
+        SYS_REF: {entry.data.dossierId}
+      </span>
+      <span class="hidden md:inline text-on-surface-variant">///</span>
+      <span class="hidden md:inline bg-pure-white px-2 py-0.5 border border-stark-black">
+        PRINT_READY
+      </span>
+      <span class="text-on-surface-variant">///</span>
+      <span class="bg-mac-yellow px-2 py-0.5 border border-stark-black text-stark-black">
+        STATUS: DECLASSIFIED
+      </span>
+    </div>
+  </aside>
+
+  <!-- MAIN DOSSIER CANVAS WRAPPER -->
+  <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- DOSSIER HERO CONTAINER BLOCK -->
+    <header class="w-full bg-pure-white border-4 border-stark-black p-6 md:p-10 shadow-[8px_8px_0px_#000000] mb-8">
+      <!-- TOP METADATA ROW -->
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b-2 border-stark-black pb-4 mb-6">
+        <div class="flex items-center gap-2">
+          <span class={`font-mono text-xs font-bold px-3 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] ${
+            entry.data.category === 'Research Report'
+              ? 'bg-electric-cyan text-stark-black'
+              : entry.data.category === 'Case Study'
+              ? 'bg-mac-yellow text-stark-black'
+              : entry.data.category === 'Podcast / Video'
+              ? 'bg-stark-black text-mac-yellow'
+              : 'bg-system-red text-white'
+          }`}>
+            [{entry.data.category.toUpperCase()}]
+          </span>
+          {entry.data.urgency && (
+            <span class="bg-system-red text-white font-mono text-xs font-bold px-2 py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000] -rotate-2">
+              {entry.data.urgency}
+            </span>
+          )}
+        </div>
+        <div class="font-mono text-xs text-on-surface-variant font-bold tracking-wider uppercase">
+          PUBLISHED: {entry.data.publishDate} // CADRE: {entry.data.authorRole || entry.data.author} // {entry.data.readTime} {entry.data.refNumber ? `// REF: ${entry.data.refNumber}` : ''}
+        </div>
+      </div>
+
+      <!-- MAIN HEADLINE -->
+      <h1 class="font-black text-3xl sm:text-4xl md:text-5xl uppercase text-stark-black tracking-tight leading-tight mb-4">
+        {entry.data.title}
+      </h1>
+
+      <!-- DECK / ABSTRACT -->
+      <p class="font-sans text-base sm:text-lg text-on-surface-variant max-w-5xl mb-8 leading-relaxed">
+        {entry.data.excerpt}
+      </p>
+
+      <!-- HERO ILLUSTRATION / VIDEO CANVAS -->
+      <figure class="w-full border-4 border-stark-black bg-stark-black overflow-hidden relative shadow-[4px_4px_0px_#000000]">
+        {entry.data.videoEmbedUrl ? (
+          <div class="w-full aspect-video bg-stark-black">
+            <BrutalMedia
+              videoUrl={entry.data.videoEmbedUrl}
+              poster={entry.data.coverImage}
+              aspectRatio="16/9"
+              alt={entry.data.title}
+            />
+          </div>
+        ) : (
+          <img
+            src={entry.data.coverImage}
+            alt={entry.data.coverCaption || entry.data.title}
+            class="w-full h-[320px] md:h-[500px] object-cover filter contrast-125 block"
+          />
+        )}
+        <figcaption class="bg-stark-black text-mac-yellow border-t-2 border-stark-black py-2.5 px-4 flex flex-wrap items-center justify-between font-mono text-xs uppercase tracking-widest gap-2">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-xs text-mac-yellow">biotech</span>
+            {entry.data.coverCaption || `FIG_01 // ${entry.data.title}`}
+          </span>
+          <span 
+            class="text-pure-white font-mono text-[11px] bg-neutral-900 px-2 py-0.5 border border-blueprint-grid copy-trigger cursor-copy hover:text-mac-yellow"
+            data-copy={entry.data.dossierId}
+            title="CLICK TO COPY DOSSIER ID ⧉"
+          >
+            [{entry.data.dossierId}]
+          </span>
+        </figcaption>
+      </figure>
+    </header>
+
+    <!-- 2-COLUMN DOSSIER GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 items-start">
+      <!-- LEFT SIDEBAR: DOSSIER TELEMETRY & DISPATCH CONTROLS (4 COLS) -->
+      <div class="lg:col-span-4 lg:sticky lg:top-36 space-y-6">
+        <!-- CARD 1: AUTHOR DOSSIER & CADRE IDENTITY -->
+        <div class="border-4 border-stark-black bg-tactical-stone shadow-[6px_6px_0px_#000000]">
+          <!-- MODULE HEADER -->
+          <div class="bg-stark-black text-mac-yellow font-mono text-xs font-bold py-2.5 px-4 flex items-center justify-between border-b-2 border-stark-black">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-xs">folder_shared</span>
+              &gt; AUTHOR_DOSSIER
+            </span>
+            <span class="text-pure-white font-mono text-[10px] flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-electric-cyan inline-block"></span>
+              CADRE CERTIFIED
+            </span>
+          </div>
+
+          <div class="p-5 space-y-5">
+            <!-- AUTHOR ID CARD -->
+            <div class="bg-pure-white border-2 border-stark-black p-3.5 shadow-[2px_2px_0px_#000000]">
+              <div class="font-mono text-[11px] text-on-surface-variant uppercase font-bold">DISPATCH ORIGIN</div>
+              <div class="font-black text-lg uppercase text-stark-black leading-snug mt-1">{entry.data.author}</div>
+              <div class="font-mono text-xs text-[#705d00] font-bold mt-1.5 flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">verified</span>
+                {entry.data.authorRole || 'SRI VENKATESWARA COLLEGE, DU'}
+              </div>
+            </div>
+
+            <!-- EXECUTIVE TAKEAWAYS REGISTER -->
+            {entry.data.keyTakeaways && entry.data.keyTakeaways.length > 0 && (
+              <div class="space-y-2">
+                <div class="font-mono text-xs font-bold text-stark-black uppercase border-b-2 border-stark-black pb-1 flex items-center justify-between">
+                  <span>/// KEY TAKEAWAYS:</span>
+                  <span class="text-system-red">[CLASSIFIED]</span>
+                </div>
+                {entry.data.keyTakeaways.map((takeaway: string, idx: number) => (
+                  <div class="bg-pure-white border-2 border-stark-black p-3 font-mono text-xs leading-relaxed text-stark-black">
+                    <strong class="text-stark-black">0{idx + 1} //</strong> {takeaway}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <!-- TRANSMISSION ARCADE TRIGGER STACK -->
+            <div class="space-y-2.5 pt-2 border-t-2 border-stark-black">
+              <button
+                class="w-full bg-pure-white hover:bg-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+                id="copy-dispatch-btn"
+                type="button"
+              >
+                <span>[ 📋 COPY DISPATCH LINK ]</span>
+              </button>
+
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full bg-electric-cyan hover:bg-stark-black hover:text-electric-cyan text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+              >
+                <span>[ SHARE ON LINKEDIN ↗ ]</span>
+              </a>
+
+              {entry.data.attachmentFile && (
+                <a
+                  href={entry.data.attachmentFile}
+                  download
+                  class="w-full bg-mac-yellow hover:bg-stark-black hover:text-mac-yellow text-stark-black py-2.5 px-3 border-2 border-stark-black shadow-[4px_4px_0px_#000000] text-center font-mono text-xs font-bold hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
+                >
+                  <span>{entry.data.attachmentLabel || '[ 📄 DOWNLOAD DISPATCH PDF ]'}</span>
+                </a>
+              )}
+            </div>
+
+            <!-- METRIC MINI-BOX -->
+            <div class="border-2 border-stark-black bg-surface p-3 font-mono text-xs flex items-center justify-between">
+              <span class="text-on-surface-variant font-bold">READING VELOCITY:</span>
+              <span class="font-bold text-stark-black bg-pure-white px-2 py-0.5 border border-stark-black">
+                {entry.data.readingVelocity || '280 WPM'}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: DOSSIER AUDIT LOG -->
+        <div class="border-2 border-stark-black bg-pure-white p-4 shadow-[4px_4px_0px_#000000] space-y-2 font-mono text-xs">
+          <div class="flex items-center justify-between border-b border-stark-black pb-1.5 font-bold">
+            <span>/// SECURITY HASH</span>
+            <span class="text-[#006875] font-mono">SHA256:7B9A</span>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed">
+            Approved by Academic & Research Bureau, The Marketing Club, SVC. Distributed under Open Educational License.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT READING VESSEL (8 COLS) -->
+      <article class="lg:col-span-8 bg-pure-white border-4 border-stark-black p-6 sm:p-10 md:p-12 shadow-[8px_8px_0px_#000000] prose-brutalist">
+        <Content />
+
+        <!-- END OF DISPATCH ARCHIVAL STAMP -->
+        <div class="border-2 border-dashed border-stark-black p-5 bg-surface flex flex-wrap items-center justify-between font-mono text-xs sm:text-sm font-bold gap-3 mt-10">
+          <div class="flex items-center gap-2 text-stark-black">
+            <span class="material-symbols-outlined text-[#705d00]">terminal</span>
+            <span>/// END_OF_FILE // TRANSMISSION COMPLETE // STATUS: VERIFIED</span>
+          </div>
+          <span class="bg-stark-black text-mac-yellow px-3 py-1 border border-stark-black text-xs">
+            [ CLEARANCE LVL_04 ]
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <!-- "NEXT INTEL" SPLIT NAVIGATION DECK -->
+    <nav aria-label="Dispatch Navigation" class="w-full border-4 border-stark-black bg-pure-white shadow-[6px_6px_0px_#000000] my-8 grid grid-cols-1 md:grid-cols-2">
+      <!-- PREVIOUS DISPATCH -->
+      {prev ? (
+        <a
+          href={`/intel/${prev.id}`}
+          class="p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-mac-yellow transition-colors flex flex-col justify-between group cursor-pointer"
+        >
+          <div class="flex items-center gap-2 font-mono text-xs font-bold text-[#705d00] mb-2">
+            <span class="material-symbols-outlined text-xs">arrow_back</span>
+            <span>/// PREVIOUS DISPATCH</span>
+          </div>
+          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+            [&lt;- {prev.data.title}]
+          </div>
+          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+            {prev.data.dossierId} // {prev.data.category.toUpperCase()}
+          </div>
+        </a>
+      ) : (
+        <a
+          href="/intel"
+          class="p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-stark-black hover:bg-tactical-stone transition-colors flex flex-col justify-between group cursor-pointer"
+        >
+          <div class="flex items-center gap-2 font-mono text-xs font-bold text-on-surface-variant mb-2">
+            <span class="material-symbols-outlined text-xs">arrow_back</span>
+            <span>/// INTEL INDEX</span>
+          </div>
+          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+            [&lt;- RETURN TO DISPATCH REPOSITORY]
+          </div>
+          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+            ALL ACTIVE INTEL REPORTS
+          </div>
+        </a>
+      )}
+
+      <!-- NEXT DISPATCH -->
+      {next ? (
+        <a
+          href={`/intel/${next.id}`}
+          class="p-6 md:p-8 hover:bg-electric-cyan transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
+        >
+          <div class="flex items-center gap-2 font-mono text-xs font-bold text-[#006875] mb-2">
+            <span>NEXT DISPATCH ///</span>
+            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+          </div>
+          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+            [{next.data.title} -&gt;]
+          </div>
+          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+            {next.data.dossierId} // {next.data.category.toUpperCase()}
+          </div>
+        </a>
+      ) : (
+        <a
+          href="/intel"
+          class="p-6 md:p-8 hover:bg-tactical-stone transition-colors flex flex-col justify-between items-start md:items-end text-left md:text-right group cursor-pointer"
+        >
+          <div class="flex items-center gap-2 font-mono text-xs font-bold text-on-surface-variant mb-2">
+            <span>INTEL INDEX ///</span>
+            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+          </div>
+          <div class="font-black text-lg md:text-xl uppercase text-stark-black group-hover:underline">
+            [RETURN TO DISPATCH REPOSITORY -&gt;]
+          </div>
+          <div class="mt-4 font-mono text-xs text-on-surface-variant font-semibold">
+            ALL ACTIVE INTEL REPORTS
+          </div>
+        </a>
+      )}
+    </nav>
+  </main>
+</BaseLayout>
+
+<!-- CLIENT-SIDE SCRIPT: READING PROGRESS & COPY LINK -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. SCROLL PROGRESS
+    const scrollBar = document.getElementById('intel-scroll-bar');
+    if (scrollBar) {
+      window.addEventListener('scroll', () => {
+        const docElem = document.documentElement;
+        const totalHeight = docElem.scrollHeight - docElem.clientHeight;
+        if (totalHeight <= 0) return;
+        const progress = Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100));
+        scrollBar.style.width = progress + '%';
+      });
+    }
+
+    // 2. COPY LINK BUTTON
+    const copyBtn = document.getElementById('copy-dispatch-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          copyBtn.innerHTML = '<span>[ ✓ DISPATCH LINK COPIED ]</span>';
+          copyBtn.classList.add('bg-mac-yellow');
+          setTimeout(() => {
+            copyBtn.innerHTML = '<span>[ 📋 COPY DISPATCH LINK ]</span>';
+            copyBtn.classList.remove('bg-mac-yellow');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy', err);
+        }
+      });
+    }
+  });
+</script>

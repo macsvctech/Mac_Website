@@ -1,0 +1,102 @@
+---
+interface Props {
+  openLabel?: string;
+  closeLabel?: string;
+  id?: string;
+  defaultOpen?: boolean;
+  class?: string;
+  buttonClass?: string;
+  drawerClass?: string;
+}
+
+const {
+  openLabel = "[ READ FULL DOSSIER + ]",
+  closeLabel = "[ CLOSE DOSSIER - ]",
+  id,
+  defaultOpen = false,
+  class: className = "",
+  buttonClass = "",
+  drawerClass = "",
+} = Astro.props;
+
+const uid = id || "accordion-" + Math.random().toString(36).substring(2, 9);
+---
+
+<div class={`accordion-wrapper w-full flex flex-col items-start gap-4 ${className}`} data-accordion-id={uid}>
+  <!-- Interactive Arcade Toggle Trigger -->
+  <button
+    type="button"
+    id={`${uid}-btn`}
+    class={`accordion-trigger arcade-btn-sm font-mono text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2.5 border-2 border-stark-black shadow-brutal-sm cursor-pointer select-none transition-colors ${
+      defaultOpen 
+        ? "bg-stark-black text-mac-yellow hover:bg-mac-yellow hover:text-stark-black" 
+        : "bg-mac-yellow text-stark-black hover:bg-stark-black hover:text-mac-yellow"
+    } ${buttonClass}`}
+    aria-expanded={defaultOpen ? "true" : "false"}
+    aria-controls={`${uid}-drawer`}
+    data-open-label={openLabel}
+    data-close-label={closeLabel}
+  >
+    {defaultOpen ? closeLabel : openLabel}
+  </button>
+
+  <!-- Collapsible Content Drawer -->
+  <div
+    id={`${uid}-drawer`}
+    class={`accordion-drawer w-full border-2 border-stark-black bg-surface p-5 sm:p-6 shadow-brutal-sm transition-all duration-200 ${
+      defaultOpen ? "block" : "hidden"
+    } ${drawerClass}`}
+    role="region"
+  >
+    <div class="space-y-4">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    // Self-contained Accordion Drawer initializer
+    function initAccordions() {
+      const triggers = document.querySelectorAll('.accordion-trigger:not([data-bound])');
+      triggers.forEach(function(btn) {
+        btn.setAttribute('data-bound', 'true');
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const wrapper = btn.closest('.accordion-wrapper');
+          if (!wrapper) return;
+          const drawer = wrapper.querySelector('.accordion-drawer');
+          if (!drawer) return;
+
+          const isCurrentlyOpen = !drawer.classList.contains('hidden');
+          const openLabel = btn.getAttribute('data-open-label') || '[ READ FULL DOSSIER + ]';
+          const closeLabel = btn.getAttribute('data-close-label') || '[ CLOSE DOSSIER - ]';
+
+          if (isCurrentlyOpen) {
+            // Close the drawer
+            drawer.classList.add('hidden');
+            btn.textContent = openLabel;
+            btn.setAttribute('aria-expanded', 'false');
+            // Swap colors to Yellow button (idle state)
+            btn.classList.remove('bg-stark-black', 'text-mac-yellow');
+            btn.classList.add('bg-mac-yellow', 'text-stark-black');
+          } else {
+            // Open the drawer
+            drawer.classList.remove('hidden');
+            btn.textContent = closeLabel;
+            btn.setAttribute('aria-expanded', 'true');
+            // Swap colors to Stark Black button with Yellow text (active state)
+            btn.classList.remove('bg-mac-yellow', 'text-stark-black');
+            btn.classList.add('bg-stark-black', 'text-mac-yellow');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAccordions);
+    } else {
+      initAccordions();
+    }
+  })();
+</script>

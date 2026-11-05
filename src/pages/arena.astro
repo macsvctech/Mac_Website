@@ -1,0 +1,767 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrutalMedia from '../components/ui/BrutalMedia.astro';
+import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
+import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import arenaContent from '../content/pages/arena.json';
+import markopolis from '../content/events/01-markopolis.json';
+import zeal from '../content/events/02-zeal.json';
+import rotomac from '../content/events/03-rotomac.json';
+
+import g1 from '../content/gallery/01-bts-night-ops.json';
+import g2 from '../content/gallery/02-annual-assembly.json';
+import g3 from '../content/gallery/03-markopolis-war-room.json';
+import g4 from '../content/gallery/04-keynote-series.json';
+import g5 from '../content/gallery/05-rotomac-podium.json';
+import g6 from '../content/gallery/06-closing-ceremony.json';
+
+const events = [markopolis, zeal, rotomac];
+const gallery = [g1, g2, g3, g4, g5, g6];
+const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arenaContent;
+---
+
+<BaseLayout title="ARENA /// THE MARKETING CLUB (MAC)">
+  <!-- BREADCRUMB COMMAND STRIP -->
+  <section class="w-full bg-tactical-stone border-b-2 border-stark-black">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-2.5 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-stark-black font-bold uppercase truncate">
+        <span class="material-symbols-outlined text-[16px] text-stark-black">terminal</span>
+        <span>/// DIRECTORY: ROOT / {pageTitle}</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-3 font-mono text-xs text-on-surface-variant font-bold uppercase">
+        <span class="inline-block w-2 h-2 bg-system-red"></span>
+        <span>SYS_REF: {sysRef}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3.1: NEXT OPERATION RADAR (LIVE EVENT COMMAND BANNER) -->
+  <section class="w-full px-4 md:px-8 max-w-[1280px] mx-auto my-8">
+    <div class="border-4 border-stark-black bg-pure-white shadow-[8px_8px_0px_#000000]">
+      <!-- Terminal Header -->
+      <div class="h-12 bg-stark-black px-4 md:px-6 flex items-center justify-between border-b-4 border-stark-black">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-mac-yellow text-[20px]">radar</span>
+          <span class="font-mono text-xs sm:text-sm md:text-base font-bold text-mac-yellow uppercase tracking-wide">
+            {radar.headerTitle || "> NEXT_OPERATION_RADAR // LIVE STATUS"}
+          </span>
+        </div>
+        <div class="flex items-center">
+          {radar.isLive ? (
+            <span class="font-mono text-xs font-bold uppercase bg-system-red text-white px-3 py-1 border border-stark-black animate-pulse flex items-center gap-1.5 shadow-[2px_2px_0px_#000000]">
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+              {radar.statusBadge}
+            </span>
+          ) : (
+            <span class="font-mono text-xs font-bold uppercase bg-tactical-stone text-stark-black px-3 py-1 border border-stark-black shadow-[2px_2px_0px_#000000]">
+              {radar.standbyBadge || "[ STANDBY ]"}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <!-- Radar Body Grid -->
+      {radar.isLive ? (
+        <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-pure-white">
+          <!-- Information Module (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-start">
+            <div class="bg-electric-cyan text-stark-black font-mono text-xs font-bold px-2.5 py-1 border-2 border-stark-black uppercase shadow-[2px_2px_0px_#000000] mb-3 inline-block">
+              {radar.subBadge}
+            </div>
+            <h1 class="font-black text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-stark-black uppercase tracking-tight leading-tight mb-4">
+              {radar.eventTitle}
+            </h1>
+            <div class="font-mono text-xs sm:text-sm font-bold text-on-surface-variant flex flex-wrap gap-y-2 gap-x-3 items-center">
+              <span>{radar.dateLabel || "/// DATE: "}{radar.date}</span>
+              <span class="text-blueprint-grid">|</span>
+              <span>{radar.venueLabel || "/// VENUE: "}{radar.venue}</span>
+              <span class="text-blueprint-grid">|</span>
+              <span class="text-stark-black bg-mac-yellow px-1.5 py-0.5 border border-stark-black">
+                {radar.prizePoolLabel || "/// PRIZE POOL: "}{radar.prizePool}
+              </span>
+            </div>
+          </div>
+
+          <!-- Telemetry & Action Module (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <!-- Countdown Matrix -->
+            <div class="grid grid-cols-4 gap-2" id="radar-matrix" data-target-date={radar.targetDate}>
+              <div class="bg-stark-black text-mac-yellow border-2 border-stark-black p-3 text-center flex flex-col justify-center shadow-[2px_2px_0px_#000000]">
+                <span class="font-mono font-black text-2xl sm:text-[32px] leading-none" id="countdown-days">14</span>
+                <span class="font-mono text-[11px] text-surface-dim uppercase tracking-wider mt-1">{radar.countdownLabels?.days || "DAYS"}</span>
+              </div>
+              <div class="bg-stark-black text-mac-yellow border-2 border-stark-black p-3 text-center flex flex-col justify-center shadow-[2px_2px_0px_#000000]">
+                <span class="font-mono font-black text-2xl sm:text-[32px] leading-none" id="countdown-hours">08</span>
+                <span class="font-mono text-[11px] text-surface-dim uppercase tracking-wider mt-1">{radar.countdownLabels?.hours || "HRS"}</span>
+              </div>
+              <div class="bg-stark-black text-mac-yellow border-2 border-stark-black p-3 text-center flex flex-col justify-center shadow-[2px_2px_0px_#000000]">
+                <span class="font-mono font-black text-2xl sm:text-[32px] leading-none" id="countdown-mins">42</span>
+                <span class="font-mono text-[11px] text-surface-dim uppercase tracking-wider mt-1">{radar.countdownLabels?.mins || "MINS"}</span>
+              </div>
+              <div class="bg-stark-black text-mac-yellow border-2 border-stark-black p-3 text-center flex flex-col justify-center shadow-[2px_2px_0px_#000000]">
+                <span class="font-mono font-black text-2xl sm:text-[32px] leading-none" id="countdown-secs">19</span>
+                <span class="font-mono text-[11px] text-surface-dim uppercase tracking-wider mt-1">{radar.countdownLabels?.secs || "SECS"}</span>
+              </div>
+            </div>
+
+            <!-- Arcade CTA Button -->
+            <a
+              href={radar.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-block bg-mac-yellow text-stark-black font-mono font-bold text-base py-3 px-6 border-4 border-stark-black shadow-[6px_6px_0px_#000000] text-center hover:bg-stark-black hover:text-mac-yellow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000000] active:translate-x-1.5 active:translate-y-1.5 active:shadow-none transition-all uppercase"
+            >
+              {radar.registrationCtaText}
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div class="p-8 text-center bg-pure-white font-mono font-bold text-on-surface-variant uppercase text-sm">
+          {radar.standbyMessage}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CONNECTOR RAIL 3.1 -> 3.2 -->
+  <div class="w-full max-w-[1280px] mx-auto px-4 md:px-8">
+    <BlueprintDivider tag="FLAGSHIP_COMBAT_OPS" code="ARENA_OPS_02" accent="yellow" class="my-6" />
+  </div>
+
+  <!-- SECTION 3.2: THE BIG THREE FLAGSHIP EVENT DOSSIERS -->
+  <section class="w-full px-4 md:px-8 max-w-[1280px] mx-auto pb-16">
+    <!-- Section Sub-Header -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-stark-black text-[36px]">swords</span>
+        <h2 class="font-black text-3xl md:text-4xl text-stark-black uppercase tracking-tight leading-none">
+          {flagshipSection.title}
+        </h2>
+      </div>
+      <div class="bg-stark-black text-mac-yellow font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[3px_3px_0px_#000000] uppercase tracking-wider">
+        {flagshipSection.badge}
+      </div>
+    </div>
+
+    <!-- DOSSIER CARDS -->
+    {events.map((event) => (
+      <article class="border-4 border-stark-black bg-pure-white shadow-[8px_8px_0px_#000000] mb-12">
+        <!-- Dossier Header -->
+        <div class={`${event.headerBg} font-mono text-xs sm:text-sm font-bold px-4 md:px-6 py-2.5 border-b-4 border-stark-black flex flex-wrap justify-between items-center gap-2`}>
+          <span class="flex items-center gap-2">
+            <span class={`w-2 h-2 ${event.headerDotBg} inline-block`}></span>
+            {event.operationBadge}
+          </span>
+          <span class={event.headerStatusClass}>{event.statusBadge}</span>
+        </div>
+
+        <!-- Body Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          {event.imagePosition === 'left' ? (
+            <>
+              <!-- Visual Column Left -->
+              <div class="lg:col-span-6 lg:border-r-4 border-b-4 lg:border-b-0 border-stark-black relative overflow-hidden bg-stark-black flex items-center justify-center min-h-[340px]">
+                <img
+                  src={event.coverImage}
+                  alt={`${event.title} simulation and conclave visual`}
+                  class="w-full h-full object-cover block aspect-16/9 lg:aspect-auto"
+                />
+                <div class={`${event.stickerRotate} absolute bottom-4 left-4 ${event.stickerColor === 'red' ? 'bg-system-red text-white' : event.stickerColor === 'yellow' ? 'bg-mac-yellow text-stark-black' : 'bg-pure-white text-stark-black'} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
+                  {event.stickerText}
+                </div>
+              </div>
+
+              <!-- Detail Column Right -->
+              <div class="lg:col-span-6 p-6 md:p-8 flex flex-col justify-between bg-pure-white">
+                <div>
+                  <div class="flex items-baseline justify-between mb-1">
+                    <h3 class="font-black text-3xl md:text-4xl text-stark-black uppercase leading-none">
+                      {event.title}
+                    </h3>
+                    <span class={`font-mono text-xs font-bold px-2 py-0.5 ${event.cadenceBadgeColor === 'yellow' ? 'bg-mac-yellow' : event.cadenceBadgeColor === 'cyan' ? 'bg-electric-cyan' : 'bg-tactical-stone'} border border-stark-black text-stark-black uppercase`}>
+                      {event.cadence}
+                    </span>
+                  </div>
+                  <div class="font-mono text-xs text-[#705d00] font-bold uppercase mb-4 tracking-wide">
+                    {event.tagline}
+                  </div>
+                  <p class="font-sans text-base text-on-surface mb-6 leading-relaxed">
+                    {event.description}
+                  </p>
+                </div>
+                <div>
+                  <!-- Metrics Triple -->
+                  <div class="grid grid-cols-3 gap-3 mb-6">
+                    {event.stats.map((stat) => (
+                      <div class="bg-surface border-2 border-stark-black p-2.5 text-center font-mono shadow-[2px_2px_0px_#000000]">
+                        <div class="font-black text-xl md:text-2xl text-stark-black leading-none mb-1">{stat.value}</div>
+                        <div class="font-mono text-[11px] text-on-surface-variant font-bold uppercase">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <!-- Historical Edition Selector Squares -->
+                  <div class="pt-4 border-t-2 border-stark-black">
+                    <div class="flex items-center justify-between mb-2.5">
+                      <span class="font-mono text-xs font-bold text-stark-black uppercase flex items-center gap-1.5">
+                        <span class="w-2 h-2 bg-system-red inline-block"></span>
+                        <span>SELECT YEAR EDITION:</span>
+                      </span>
+                      <span class="font-mono text-[11px] text-on-surface-variant font-medium">
+                        [CLICK YEAR FOR POSTER]
+                      </span>
+                    </div>
+
+                    <!-- Row of Squares with Event Years -->
+                    <div class="flex flex-wrap items-center gap-2.5" role="tablist">
+                      {event.editions?.map((edition: any) => (
+                        <button
+                          type="button"
+                          class="edition-square-btn flex flex-col items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-pure-white hover:bg-mac-yellow text-stark-black border-2 border-stark-black shadow-[4px_4px_0px_#000000] hover:shadow-[6px_6px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer select-none font-mono group"
+                          data-event-id={event.id}
+                          data-year={edition.year}
+                          aria-expanded="false"
+                          title={`View ${event.title} ${edition.year} Edition Poster & Caption`}
+                        >
+                          <span class="font-black text-sm sm:text-base leading-none group-hover:scale-105 transition-transform">{edition.year}</span>
+                          <span class="text-[9px] font-bold text-on-surface-variant mt-0.5 uppercase tracking-wider">{edition.editionBadge || `'${edition.year.slice(-2)}`}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <!-- Detail Column Left -->
+              <div class="lg:col-span-6 p-6 md:p-8 flex flex-col justify-between bg-pure-white lg:border-r-4 border-b-4 lg:border-b-0 border-stark-black order-2 lg:order-1">
+                <div>
+                  <div class="flex items-baseline justify-between mb-1">
+                    <h3 class="font-black text-3xl md:text-4xl text-stark-black uppercase leading-none">
+                      {event.title}
+                    </h3>
+                    <span class={`font-mono text-xs font-bold px-2 py-0.5 ${event.cadenceBadgeColor === 'yellow' ? 'bg-mac-yellow' : event.cadenceBadgeColor === 'cyan' ? 'bg-electric-cyan' : 'bg-tactical-stone'} border border-stark-black text-stark-black uppercase`}>
+                      {event.cadence}
+                    </span>
+                  </div>
+                  <div class="font-mono text-xs text-[#705d00] font-bold uppercase mb-4 tracking-wide">
+                    {event.tagline}
+                  </div>
+                  <p class="font-sans text-base text-on-surface mb-6 leading-relaxed">
+                    {event.description}
+                  </p>
+                </div>
+                <div>
+                  <!-- Metrics Triple -->
+                  <div class="grid grid-cols-3 gap-3 mb-6">
+                    {event.stats.map((stat) => (
+                      <div class="bg-surface border-2 border-stark-black p-2.5 text-center font-mono shadow-[2px_2px_0px_#000000]">
+                        <div class="font-black text-xl md:text-2xl text-stark-black leading-none mb-1">{stat.value}</div>
+                        <div class="font-mono text-[11px] text-on-surface-variant font-bold uppercase">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <!-- Historical Edition Selector Squares -->
+                  <div class="pt-4 border-t-2 border-stark-black">
+                    <div class="flex items-center justify-between mb-2.5">
+                      <span class="font-mono text-xs font-bold text-stark-black uppercase flex items-center gap-1.5">
+                        <span class="w-2 h-2 bg-system-red inline-block"></span>
+                        <span>SELECT YEAR EDITION:</span>
+                      </span>
+                      <span class="font-mono text-[11px] text-on-surface-variant font-medium">
+                        [CLICK YEAR FOR POSTER]
+                      </span>
+                    </div>
+
+                    <!-- Row of Squares with Event Years -->
+                    <div class="flex flex-wrap items-center gap-2.5" role="tablist">
+                      {event.editions?.map((edition: any) => (
+                        <button
+                          type="button"
+                          class="edition-square-btn flex flex-col items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-pure-white hover:bg-mac-yellow text-stark-black border-2 border-stark-black shadow-[4px_4px_0px_#000000] hover:shadow-[6px_6px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer select-none font-mono group"
+                          data-event-id={event.id}
+                          data-year={edition.year}
+                          aria-expanded="false"
+                          title={`View ${event.title} ${edition.year} Edition Poster & Caption`}
+                        >
+                          <span class="font-black text-sm sm:text-base leading-none group-hover:scale-105 transition-transform">{edition.year}</span>
+                          <span class="text-[9px] font-bold text-on-surface-variant mt-0.5 uppercase tracking-wider">{edition.editionBadge || `'${edition.year.slice(-2)}`}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Visual Column Right -->
+              <div class="lg:col-span-6 relative overflow-hidden bg-stark-black flex items-center justify-center min-h-[340px] order-1 lg:order-2">
+                <img
+                  src={event.coverImage}
+                  alt={`${event.title} marketing festival crowd and stage`}
+                  class="w-full h-full object-cover block aspect-16/9 lg:aspect-auto"
+                />
+                <div class={`${event.stickerRotate} absolute bottom-4 right-4 ${event.stickerColor === 'red' ? 'bg-system-red text-white' : event.stickerColor === 'yellow' ? 'bg-mac-yellow text-stark-black' : 'bg-pure-white text-stark-black'} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
+                  {event.stickerText}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
+        <!-- EXPANDABLE YEAR EDITION POSTER & CAPTION DROPDOWN -->
+        <div id={`edition-drawer-${event.id}`} class="edition-drawer hidden border-t-4 border-stark-black bg-tactical-stone p-6 md:p-8">
+          <div class="max-w-5xl mx-auto">
+            {event.editions?.map((edition: any, edIdx: number) => (
+              <div id={`edition-panel-${event.id}-${edition.year}`} class={`edition-panel ${edIdx === 0 ? '' : 'hidden'} space-y-6`}>
+                <!-- Header bar -->
+                <div class="flex items-center justify-between pb-4 border-b-2 border-stark-black">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-mac-yellow text-[22px]">photo_library</span>
+                    <span class="font-mono text-xs sm:text-sm font-bold text-stark-black uppercase tracking-wide">
+                      &gt; OFFICIAL_POSTER_ARCHIVE // {event.title} {edition.year}
+                    </span>
+                  </div>
+                  <button 
+                    type="button" 
+                    class="edition-close-btn font-mono text-xs font-bold uppercase bg-pure-white hover:bg-system-red hover:text-pure-white text-stark-black px-2.5 py-1 border border-stark-black shadow-[2px_2px_0px_#000000] cursor-pointer active:translate-x-0.5 active:translate-y-0.5 transition-colors"
+                    data-event-id={event.id}
+                  >
+                    [ CLOSE POSTER X ]
+                  </button>
+                </div>
+
+                <!-- Poster & Caption Content Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-start">
+                  
+                  <!-- Left: Edition Poster (5 cols) -->
+                  <div class="md:col-span-5 lg:col-span-4 flex flex-col gap-2">
+                    <div class="border-4 border-stark-black bg-stark-black shadow-[6px_6px_0px_#000000] overflow-hidden relative group">
+                      <BrutalMedia
+                        src={edition.poster}
+                        alt={`${event.title} ${edition.year} Official Poster`}
+                        ratio="auto"
+                        border={false}
+                        class="w-full aspect-[3/4]"
+                        mediaClass="w-full aspect-[3/4] object-cover block grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+                      />
+                      <div class="absolute bottom-2 left-2 bg-stark-black text-mac-yellow font-mono text-[11px] font-bold px-2 py-0.5 border border-stark-black">
+                        FIG // {event.id.toUpperCase()}-{edition.year}
+                      </div>
+                    </div>
+                    <a
+                      href={edition.poster}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-full py-2 bg-pure-white border-2 border-stark-black text-stark-black font-mono text-xs font-bold uppercase text-center hover:bg-mac-yellow shadow-[2px_2px_0px_#000000] block transition-colors"
+                    >
+                      [ OPEN FULL RESOLUTION POSTER ↗ ]
+                    </a>
+                  </div>
+
+                  <!-- Right: Caption & Metadata Dossier (7 cols) -->
+                  <div class="md:col-span-7 lg:col-span-8 flex flex-col justify-between h-full space-y-4">
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-2">
+                        <span class="bg-mac-yellow text-stark-black font-mono text-xs font-black px-2 py-0.5 border border-stark-black">
+                          EDITION: {edition.year}
+                        </span>
+                        <span class="font-mono text-xs font-bold uppercase text-on-surface-variant">
+                          {edition.subtitle}
+                        </span>
+                      </div>
+                      
+                      <h4 class="font-display text-2xl sm:text-3xl font-black uppercase text-stark-black tracking-tight leading-none">
+                        {edition.title}
+                      </h4>
+
+                      <!-- Small Caption Box -->
+                      <div class="p-4 bg-pure-white border-2 border-stark-black shadow-[3px_3px_0px_#000000]">
+                        <p class="font-sans text-sm sm:text-base text-stark-black leading-relaxed font-medium">
+                          {edition.caption}
+                        </p>
+                      </div>
+
+                      <!-- Scale & Recognition Telemetry -->
+                      <div class="space-y-1.5 font-mono text-xs">
+                        <div class="bg-pure-white p-2.5 border border-stark-black flex flex-wrap justify-between items-center gap-2">
+                          <span class="font-bold text-stark-black">DELEGATION SCALE:</span>
+                          <span class="text-on-surface-variant font-bold">{edition.metrics}</span>
+                        </div>
+                        <div class="bg-pure-white p-2.5 border border-stark-black flex flex-wrap justify-between items-center gap-2">
+                          <span class="font-bold text-stark-black">PODIUM RECOGNITION:</span>
+                          <span class="text-system-red font-black">{edition.winner}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Year Quick-Switcher Strip Inside Drawer -->
+                    <div class="pt-4 border-t-2 border-stark-black flex items-center gap-2 flex-wrap">
+                      <span class="font-mono text-[11px] font-bold text-on-surface-variant uppercase">SWITCH EDITION:</span>
+                      {event.editions?.map((ed: any) => (
+                        <button
+                          type="button"
+                          class={`edition-switch-pill font-mono text-xs font-bold px-3 py-1 border border-stark-black cursor-pointer transition-all ${
+                            ed.year === edition.year 
+                              ? 'bg-stark-black text-mac-yellow shadow-[2px_2px_0px_#000000]' 
+                              : 'bg-pure-white text-stark-black hover:bg-mac-yellow shadow-[2px_2px_0px_#000000]'
+                          }`}
+                          data-event-id={event.id}
+                          data-year={ed.year}
+                        >
+                          {ed.year}
+                        </button>
+                      ))}
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <!-- CONNECTOR RAIL 3.2 -> 3.3 -->
+  <div class="w-full max-w-[1280px] mx-auto px-4 md:px-8">
+    <BlueprintDivider tag="EVIDENCE_WALL_ARCHIVE" code="ARENA_GALLERY_03" accent="cyan" class="my-6" />
+  </div>
+
+  <!-- SECTION 3.3: THE EVIDENCE WALL -->
+  <section class="w-full px-4 md:px-8 max-w-[1280px] mx-auto py-12 md:py-16">
+    <!-- Header Row -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+      <h2 class="font-black text-3xl md:text-4xl text-stark-black uppercase leading-none">
+        {evidenceWallSection.title}
+      </h2>
+      <div class="font-mono text-xs md:text-sm text-on-surface-variant font-bold uppercase">
+        {evidenceWallSection.tagline}
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="flex flex-wrap items-center gap-3 mb-10" id="evidence-filter-bar">
+      {evidenceWallSection.categories.map((cat, idx) => (
+        <button
+          type="button"
+          data-category={cat.id}
+          class={`evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 rounded-none border-2 border-stark-black transition-all ${idx === 0 ? 'bg-mac-yellow text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[2px] translate-y-[2px]' : 'bg-pure-white text-stark-black shadow-[4px_4px_0px_#000000] hover:bg-mac-yellow'}`}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Polaroid Evidence Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="evidence-grid">
+      {gallery.map((card, idx) => (
+        <div
+          class="evidence-card bg-pure-white border-2 border-stark-black shadow-[6px_6px_0px_#000000] p-3 pb-10 relative cursor-pointer hover:shadow-[8px_8px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+          data-category={card.category}
+          data-figure={card.figureCode}
+          data-title={card.title}
+          data-image={card.image}
+          data-caption={card.caption}
+          data-date={card.date}
+          data-badge={card.badge}
+        >
+          <span class="top-2 left-2 absolute bg-stark-black text-mac-yellow font-mono text-[11px] font-bold px-2 py-0.5 border border-stark-black z-10">
+            {card.badge}
+          </span>
+          <img
+            src={card.image}
+            alt={card.caption}
+            class="w-full aspect-square object-cover border-2 border-stark-black block grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+          />
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+            <span class="font-mono text-[13px] font-bold text-stark-black uppercase truncate">
+              {card.figureCode} // {card.title}
+            </span>
+            <span class="font-mono text-[12px] font-bold text-stark-black shrink-0 ml-2">[🔍]</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Pagination / Load More Button -->
+    <div class="flex justify-center w-full">
+      <button
+        id="load-more-btn"
+        class="w-full max-w-[400px] bg-pure-white text-stark-black border-4 border-stark-black shadow-[6px_6px_0px_#000000] hover:bg-mac-yellow font-mono font-bold text-sm sm:text-base py-3 text-center transition-all uppercase"
+        type="button"
+      >
+        {evidenceWallSection.loadMoreText}
+      </button>
+    </div>
+  </section>
+
+  <!-- BRUTALIST LIGHTBOX MODAL -->
+  <div id="arena-lightbox" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-none hidden items-center justify-center p-4 md:p-8" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="border-4 border-stark-black bg-pure-white shadow-[12px_12px_0px_#000000] max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+      <!-- Modal Header -->
+      <div class="h-12 bg-stark-black px-4 flex items-center justify-between text-mac-yellow font-mono font-bold text-xs sm:text-sm border-b-4 border-stark-black shrink-0">
+        <span id="modal-figure-title" class="truncate uppercase">&gt; FIG_VIEWER // SPECIMEN</span>
+        <button id="modal-close-btn" class="text-white hover:text-mac-yellow font-mono font-bold text-xs uppercase px-2 py-1 border border-white hover:border-mac-yellow transition-all" type="button">
+          [X] CLOSE (ESC)
+        </button>
+      </div>
+      <!-- Modal Body -->
+      <div class="p-4 md:p-6 overflow-y-auto bg-surface">
+        <div class="border-2 border-stark-black bg-stark-black mb-4 overflow-hidden max-h-[60vh] flex items-center justify-center">
+          <img id="modal-image" src="" alt="Specimen view" class="w-full h-auto max-h-[60vh] object-contain block" />
+        </div>
+        <div class="bg-pure-white p-4 border-2 border-stark-black shadow-[3px_3px_0px_#000000] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span id="modal-badge" class="bg-stark-black text-mac-yellow font-mono text-[10px] font-bold px-2 py-0.5 border border-stark-black uppercase">[BTS]</span>
+              <span id="modal-date" class="font-mono text-xs text-on-surface-variant font-bold uppercase">OCT 2026</span>
+            </div>
+            <p id="modal-caption" class="font-sans text-sm text-stark-black leading-snug">
+              Candid nocturnal campaign planning session under campus floodlights.
+            </p>
+          </div>
+          <a
+            id="modal-download-link"
+            href="#"
+            download
+            class="shrink-0 bg-mac-yellow text-stark-black font-mono text-xs font-bold px-3 py-2 border-2 border-stark-black shadow-[2px_2px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow transition-all uppercase text-center"
+          >
+            [DOWNLOAD SPECIMEN]
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- CLIENT-SIDE SCRIPT: COUNTDOWN, DRAWER ACCORDIONS, FILTERS, LIGHTBOX -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. LIVE COUNTDOWN CLOCK
+    const matrixEl = document.getElementById('radar-matrix');
+    const dayEl = document.getElementById('countdown-days');
+    const hrEl = document.getElementById('countdown-hours');
+    const minEl = document.getElementById('countdown-mins');
+    const secEl = document.getElementById('countdown-secs');
+
+    if (matrixEl && dayEl && hrEl && minEl && secEl) {
+      const targetDateStr = matrixEl.getAttribute('data-target-date') || '2027-03-15T09:00:00';
+      const targetTime = new Date(targetDateStr).getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetTime - now;
+
+        if (diff <= 0) {
+          dayEl.textContent = '00';
+          hrEl.textContent = '00';
+          minEl.textContent = '00';
+          secEl.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        dayEl.textContent = String(days).padStart(2, '0');
+        hrEl.textContent = String(hours).padStart(2, '0');
+        minEl.textContent = String(minutes).padStart(2, '0');
+        secEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    // 2. EXPANDABLE EVENT YEAR EDITION POSTER & CAPTION DROPDOWNS
+    const editionBtns = document.querySelectorAll('.edition-square-btn, .edition-switch-pill');
+    const closeBtns = document.querySelectorAll('.edition-close-btn');
+
+    editionBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const eventId = btn.getAttribute('data-event-id');
+        const year = btn.getAttribute('data-year');
+        if (!eventId || !year) return;
+
+        const drawer = document.getElementById(`edition-drawer-${eventId}`);
+        const targetPanel = document.getElementById(`edition-panel-${eventId}-${year}`);
+        if (!drawer || !targetPanel) return;
+
+        const isCurrentlyOpenWithThisYear = !drawer.classList.contains('hidden') && !targetPanel.classList.contains('hidden');
+
+        // If clicking the active square button that is already open, toggle it closed
+        if (isCurrentlyOpenWithThisYear && btn.classList.contains('edition-square-btn')) {
+          drawer.classList.add('hidden');
+          targetPanel.classList.add('hidden');
+          btn.classList.remove('bg-mac-yellow', 'shadow-inner');
+          btn.classList.add('bg-pure-white');
+          btn.setAttribute('aria-expanded', 'false');
+          return;
+        }
+
+        // Open the drawer
+        drawer.classList.remove('hidden');
+
+        // Hide all sibling edition panels in this drawer
+        const allPanels = drawer.querySelectorAll('.edition-panel');
+        allPanels.forEach((p) => p.classList.add('hidden'));
+
+        // Show the selected edition panel
+        targetPanel.classList.remove('hidden');
+
+        // Update active style on all square buttons for this event
+        const allSquareBtns = document.querySelectorAll(`.edition-square-btn[data-event-id="${eventId}"]`);
+        allSquareBtns.forEach((b) => {
+          if (b.getAttribute('data-year') === year) {
+            b.classList.remove('bg-pure-white');
+            b.classList.add('bg-mac-yellow', 'shadow-inner');
+            b.setAttribute('aria-expanded', 'true');
+          } else {
+            b.classList.remove('bg-mac-yellow', 'shadow-inner');
+            b.classList.add('bg-pure-white');
+            b.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Update active style on all pill switcher buttons in the drawer
+        const allPillBtns = drawer.querySelectorAll('.edition-switch-pill');
+        allPillBtns.forEach((p) => {
+          if (p.getAttribute('data-year') === year) {
+            p.classList.remove('bg-pure-white', 'text-stark-black');
+            p.classList.add('bg-stark-black', 'text-mac-yellow');
+          } else {
+            p.classList.remove('bg-stark-black', 'text-mac-yellow');
+            p.classList.add('bg-pure-white', 'text-stark-black');
+          }
+        });
+
+        // Smooth scroll into view
+        drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+    closeBtns.forEach((cBtn) => {
+      cBtn.addEventListener('click', () => {
+        const eventId = cBtn.getAttribute('data-event-id');
+        if (!eventId) return;
+        const drawer = document.getElementById(`edition-drawer-${eventId}`);
+        if (drawer) {
+          drawer.classList.add('hidden');
+          const allSquareBtns = document.querySelectorAll(`.edition-square-btn[data-event-id="${eventId}"]`);
+          allSquareBtns.forEach((b) => {
+            b.classList.remove('bg-mac-yellow', 'shadow-inner');
+            b.classList.add('bg-pure-white');
+            b.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    });
+
+    // 3. EVIDENCE WALL FILTERING
+    const filterBtns = document.querySelectorAll('.evidence-filter-btn');
+    const cards = document.querySelectorAll('.evidence-card');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-category');
+
+        // Update button active styles
+        filterBtns.forEach((b) => {
+          b.className = 'evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 rounded-none border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[4px_4px_0px_#000000] hover:bg-mac-yellow';
+        });
+        btn.className = 'evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 rounded-none border-2 border-stark-black transition-all bg-mac-yellow text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[2px] translate-y-[2px]';
+
+        // Filter cards
+        cards.forEach((card) => {
+          const cardCat = card.getAttribute('data-category');
+          if (cat === 'ALL' || cardCat === cat) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 4. BRUTALIST LIGHTBOX MODAL
+    const lightbox = document.getElementById('arena-lightbox');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-figure-title');
+    const modalBadge = document.getElementById('modal-badge');
+    const modalDate = document.getElementById('modal-date');
+    const modalCaption = document.getElementById('modal-caption');
+    const modalDownloadLink = document.getElementById('modal-download-link');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    function openModal(card) {
+      if (!lightbox) return;
+      const img = card.getAttribute('data-image');
+      const figure = card.getAttribute('data-figure');
+      const title = card.getAttribute('data-title');
+      const caption = card.getAttribute('data-caption');
+      const date = card.getAttribute('data-date');
+      const badge = card.getAttribute('data-badge');
+
+      if (modalImage) modalImage.src = img || '';
+      if (modalTitle) modalTitle.textContent = `> ${figure} // ${title}`;
+      if (modalBadge) modalBadge.textContent = badge || '';
+      if (modalDate) modalDate.textContent = date || '';
+      if (modalCaption) modalCaption.textContent = caption || '';
+      if (modalDownloadLink) {
+        modalDownloadLink.href = img || '#';
+        modalDownloadLink.setAttribute('download', `${figure}_${title}.jpg`);
+      }
+
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!lightbox) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener('click', () => openModal(card));
+    });
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeModal();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // 5. LOAD MORE FEEDBACK
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        loadMoreBtn.textContent = '/// ALL 24 ARCHIVAL SPECIMENS LOADED ///';
+        loadMoreBtn.classList.remove('hover:bg-mac-yellow');
+        loadMoreBtn.classList.add('bg-tactical-stone', 'cursor-default');
+      });
+    }
+  });
+</script>

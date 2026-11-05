@@ -1,0 +1,66 @@
+{
+  "breadcrumb": "/// DIRECTORY: ROOT / 04_INTEL // RESEARCH REPORTS, MACZINE & EDITORIAL",
+  "clearance": "CLEARANCE: LVL_04 GRANTED",
+  "maczine": {
+    "terminalHeader": "> ANNUAL_PUBLICATION // MACZINE OFFICIAL RELEASE",
+    "issn": "ISSN: 2516-659X // PRINT + DIGITAL",
+    "badge": "NEW ISSUE OUT NOW",
+    "curatorTag": "/// CURATED BY TECHNICAL & RESEARCH DEPT",
+    "title": "MACZINE: THE ANNUAL MARKETING ANTHOLOGY",
+    "description": "60+ pages of deep-dive consumer behavior teardowns, D2C brand case studies, satirical ad critiques, and exclusive interviews curated by the students of MAC SVC.",
+    "coverImage": "/uploads/images/intel/maczine-cover.jpg",
+    "pdfFile": "/uploads/documents/maczine-issue-09.pdf",
+    "figureCode": "FIG_09 // MACZINE VOL. 09",
+    "releaseDate": "DEC 2026",
+    "readFullIssuePdfText": "[ READ FULL ISSUE PDF ↗ ]",
+    "browsePastIssuesText": "[ BROWSE PAST ISSUES ]",
+    "archivedVolumesHeader": "> ARCHIVED_VOLUMES // PAST MACZINE EDITIONS",
+    "openAccessBadge": "[OPEN ACCESS]",
+    "downloadArchivePdfText": "[ DOWNLOAD PDF ↗ ]",
+    "highlights": [
+      "/// 01 — THE MONOPOLY PLAYBOOK: How quick-commerce conquered Indian metros.",
+      "/// 02 — THE ALGORITHMIC EYE: Attention harvesting & surveillance capitalism in 2027.",
+      "/// 03 — GUERRILLA SCRAPBOOK: Street marketing tear-sheets and zero-budget campaigns."
+    ],
+    "archiveIssues": [
+      {
+        "vol": "VOL. 08",
+        "year": "2025",
+        "theme": "The Synthetic Economy",
+        "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
+        "pages": "56 PGS"
+      },
+      {
+        "vol": "VOL. 07",
+        "year": "2024",
+        "theme": "Attention Asymmetry",
+        "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
+        "pages": "52 PGS"
+      },
+      {
+        "vol": "VOL. 06",
+        "year": "2023",
+        "theme": "Subversive Branding",
+        "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
+        "pages": "48 PGS"
+      }
+    ]
+  },
+  "feedSection": {
+    "tag": "// FIELD_INTEL_INDEX",
+    "title": "INTEL DISPATCHES",
+    "searchPlaceholder": "SEARCH INTEL...",
+    "readDispatchText": "[ READ DISPATCH ↗ ]",
+    "categories": [
+      { "id": "ALL", "label": "[ ALL INTEL ]" },
+      { "id": "Research Report", "label": "[ RESEARCH REPORTS ]" },
+      { "id": "Blog", "label": "[ BLOGS ]" },
+      { "id": "Case Study", "label": "[ CASE STUDIES ]" },
+      { "id": "Podcast / Video", "label": "[ PODCAST / VIDEO ]" }
+    ]
+  },
+  "archiveSection": {
+    "title": "/// COMPLETE_ARCHIVE_INDEX",
+    "status": "[STATUS: REPOSITORY SYNCHRONIZED]"
+  }
+}

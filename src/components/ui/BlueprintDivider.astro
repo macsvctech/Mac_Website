@@ -1,0 +1,37 @@
+---
+interface Props {
+  tag?: string;
+  code?: string;
+  accent?: 'yellow' | 'cyan' | 'red' | 'black';
+  class?: string;
+}
+
+const { 
+  tag = "SECTION_DELIMITER", 
+  code = "SYS_GRID_01", 
+  accent = "yellow",
+  class: className = ""
+} = Astro.props;
+
+const dotColor = 
+  accent === 'yellow' ? 'bg-mac-yellow' : 
+  accent === 'cyan' ? 'bg-electric-cyan' : 
+  accent === 'red' ? 'bg-system-red' : 'bg-stark-black';
+---
+
+<div class={`w-full my-8 sm:my-10 flex items-center gap-2 sm:gap-3 select-none ${className}`} aria-hidden="true">
+  <!-- Left Registration Crosshair -->
+  <span class="font-mono text-sm sm:text-base font-black text-stark-black leading-none">+</span>
+  <div class="h-[2px] bg-stark-black flex-1"></div>
+  
+  <!-- Center Metadata Badge -->
+  <div class="border-2 border-stark-black bg-pure-white px-2.5 sm:px-3 py-1 font-mono text-[10px] sm:text-xs font-bold text-stark-black flex items-center gap-2 shadow-[2px_2px_0px_#000000] shrink-0">
+    <span class={`w-2 h-2 ${dotColor} inline-block border border-stark-black shrink-0`}></span>
+    <span class="uppercase tracking-wider">/// {tag}</span>
+    <span class="text-on-surface-variant font-medium hidden sm:inline">[{code}]</span>
+  </div>
+  
+  <!-- Right Rail & Crosshair -->
+  <div class="h-[2px] bg-stark-black flex-1"></div>
+  <span class="font-mono text-sm sm:text-base font-black text-stark-black leading-none">+</span>
+</div>

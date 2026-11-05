@@ -1,0 +1,19 @@
+{
+  "breadcrumb": "DIRECTORY: ROOT / BLUEPRINT / DECLASSIFIED_EXIT_LOGS // ARCHIVES",
+  "securityTier": "[CLEARANCE: LEVEL 1 DECLASSIFIED]",
+  "header": {
+    "terminalTag": "> DECLASSIFIED_EXIT_LOGS // ARCHIVE VAULT",
+    "title": "THE ALUMNI EXIT DOSSIERS",
+    "badge": "/// HISTORICAL COHORTS [2022-2026]",
+    "description": "Unfiltered declassified exit logs, strategic doctrine, and post-tenure reflections authored by past presidents, secretaries, and wing directors of The Marketing Club (MAC), Sri Venkateswara College."
+  },
+  "stats": [
+    { "label": "ARCHIVED DOSSIERS", "value": "06 DECLASSIFIED" },
+    { "label": "TENURE SPECTRUM", "value": "2022 — 2026" },
+    { "label": "ALUMNI PIPELINE", "value": "IIMs // FMCG // TECH" }
+  ],
+  "dossierOpenText": "[ READ FULL DOSSIER + ]",
+  "dossierCloseText": "[ CLOSE DOSSIER - ]",
+  "linkedinText": "[ LINKEDIN ↗ ]",
+  "backToBlueprintText": "[ <- BACK TO BLUEPRINT ]"
+}
