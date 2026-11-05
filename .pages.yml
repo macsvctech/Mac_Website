@@ -730,13 +730,13 @@ content:
     filename: "{primary}.json"
     view:
       primary: name
-      fields:
+      fields: [name, role, badgeId]
+      sort: order
+    fields:
       - name: enabled
         label: "Visible on Website? (Toggle ON/OFF)"
         type: boolean
-        default: true [name, role, badgeId]
-      sort: order
-    fields:
+        default: true
       - name: order
         label: Display Order Index
         type: number
@@ -938,13 +938,13 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields:
+      fields: [title, code, statusBadge]
+      sort: order
+    fields:
       - name: enabled
         label: "Visible on Website? (Toggle ON/OFF)"
         type: boolean
-        default: true [title, code, statusBadge]
-      sort: order
-    fields:
+        default: true
       - name: id
         label: Operation Slug / Key
         type: string
@@ -1053,13 +1053,13 @@ content:
     filename: "{primary}.json"
     view:
       primary: title
-      fields:
+      fields: [figureCode, title, category]
+      sort: order
+    fields:
       - name: enabled
         label: "Visible on Website? (Toggle ON/OFF)"
         type: boolean
-        default: true [figureCode, title, category]
-      sort: order
-    fields:
+        default: true
       - name: figureCode
         label: Archival Figure Stamp (e.g. FIG_01)
         type: string
@@ -1209,13 +1209,13 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields:
+      fields: [title, category, publishDate, author]
+      sort: order
+    fields:
       - name: enabled
         label: "Publish on Website? (Toggle ON/OFF)"
         type: boolean
-        default: true [title, category, publishDate, author]
-      sort: order
-    fields:
+        default: true
       - name: title
         label: Dossier Headline
         type: string
