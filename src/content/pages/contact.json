@@ -1,4 +1,7 @@
 {
+  "terminalEnabled": true,
+  "sponsorshipEnabled": false,
+  "externalChannelsEnabled": true,
   "breadcrumb": "/// DIRECTORY: ROOT / 06_CONTACT //",
   "encryptionBadge": "[ ENCRYPTION: SHA256 // TERMINAL ONLINE ]",
   "terminalHeader": "> SYSTEM_COMMUNICATION",
@@ -23,6 +26,7 @@
   "formEndpoint": "https://formspree.io/f/xaeezddr",
   "recipientEmail": "mac.svc2016@gmail.com",
   "coordinates": {
+    "enabled": true,
     "title": "COORDINATES",
     "subtitle": "/// HEADQUARTERS // SOUTH CAMPUS COMMAND",
     "collegeName": "SRI VENKATESWARA COLLEGE",
@@ -30,12 +34,12 @@
     "cityPin": "NEW DELHI, 110021",
     "phone": "+91 9813774500",
     "email": "MAC.SVC2016@GMAIL.COM",
-    "status": "[ STATUS: OPEN 09:00 - 17:00 IST ]",
+    "status": "STANDBY // OFF-HOURS",
     "mapImage": "/uploads/images/tactical-map.png",
     "googleMapsUrl": "https://maps.google.com/?q=Sri+Venkateswara+College+Benito+Juarez+Marg+New+Delhi",
-    "viewMapText": "[ VIEW GOOGLE MAP ↗ ]",
-    "enabled": true
+    "viewMapText": "[ VIEW GOOGLE MAP ↗ ]"
   },
+  "sponsorshipDeckPdfEnabled": false,
   "sponsorshipHeading": "PARTNERSHIP & SPONSORSHIP DOSSIER:",
   "sponsorshipTitle": "MAC_OFFICIAL_SPONSORSHIP_DECK_2027.PDF",
   "sponsorshipSize": "2.1 MB",
@@ -66,9 +70,5 @@
       "url": "mailto:mac.svc2016@gmail.com",
       "active": false
     }
-  ],
-  "terminalEnabled": true,
-  "sponsorshipEnabled": true,
-  "externalChannelsEnabled": true,
-  "sponsorshipDeckPdfEnabled": true
+  ]
 }
