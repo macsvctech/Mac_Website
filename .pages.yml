@@ -1,8 +1,8 @@
 media:
   - name: images
-    label: 🖼️ Image Assets (Uploads to public/media/images)
-    input: public/media/images
-    output: /media/images
+    label: "🖼️ Image Assets (Uploads to public/uploads/images)"
+    input: public/uploads/images
+    output: /uploads/images
     categories:
       - image
     extensions:
@@ -14,9 +14,9 @@ media:
       - svg
       - gif
   - name: videos
-    label: 🎬 Video Assets (Uploads to public/media/videos)
-    input: public/media/videos
-    output: /media/videos
+    label: "🎬 Video Assets (Uploads to public/uploads/videos)"
+    input: public/uploads/videos
+    output: /uploads/videos
     categories:
       - video
     extensions:
@@ -24,9 +24,9 @@ media:
       - webm
       - mov
   - name: documents
-    label: 📄 Documents & PDFs (Uploads to public/media/documents)
-    input: public/media/documents
-    output: /media/documents
+    label: "📄 Documents & PDFs (Uploads to public/uploads/documents)"
+    input: public/uploads/documents
+    output: /uploads/documents
     categories:
       - document
       - compressed
