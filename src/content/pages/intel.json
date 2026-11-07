@@ -4,11 +4,12 @@
   "legacyArchive": {
     "enabled": true,
     "badge": "/// ARCHIVE_INDEX",
-    "text": "For older publications & historic dossiers, visit",
+    "text": "For older publications & historic dossiers, visit the old site",
     "linkLabel": "Publications | Macsvc",
     "url": "https://macsite5.wixsite.com/macsvc/publications"
   },
   "maczine": {
+    "enabled": true,
     "terminalHeader": "> ANNUAL_PUBLICATION // MACZINE OFFICIAL RELEASE",
     "issn": "ISSN: 2516-659X // PRINT + DIGITAL",
     "badge": "NEW ISSUE OUT NOW",
@@ -19,11 +20,6 @@
     "pdfFile": "/uploads/documents/maczine-issue-09.pdf",
     "figureCode": "FIG_09 // MACZINE VOL. 09",
     "releaseDate": "DEC 2026",
-    "readFullIssuePdfText": "[ READ FULL ISSUE PDF ↗ ]",
-    "browsePastIssuesText": "[ BROWSE PAST ISSUES ]",
-    "archivedVolumesHeader": "> ARCHIVED_VOLUMES // PAST MACZINE EDITIONS",
-    "openAccessBadge": "[OPEN ACCESS]",
-    "downloadArchivePdfText": "[ DOWNLOAD PDF ↗ ]",
     "highlights": [
       "/// 01 — THE MONOPOLY PLAYBOOK: How quick-commerce conquered Indian metros.",
       "/// 02 — THE ALGORITHMIC EYE: Attention harvesting & surveillance capitalism in 2027.",
@@ -51,14 +47,12 @@
         "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
         "pages": "48 PGS"
       }
-    ],
-    "enabled": true
+    ]
   },
   "feedSection": {
+    "enabled": true,
     "tag": "// FIELD_INTEL_INDEX",
     "title": "INTEL DISPATCHES",
-    "searchPlaceholder": "SEARCH INTEL...",
-    "readDispatchText": "[ READ DISPATCH ↗ ]",
     "categories": [
       {
         "id": "ALL",
@@ -80,12 +74,6 @@
         "id": "Podcast / Video",
         "label": "[ PODCAST / VIDEO ]"
       }
-    ],
-    "enabled": true
-  },
-  "archiveSection": {
-    "title": "/// COMPLETE_ARCHIVE_INDEX",
-    "status": "[STATUS: REPOSITORY SYNCHRONIZED]",
-    "enabled": true
+    ]
   }
 }
