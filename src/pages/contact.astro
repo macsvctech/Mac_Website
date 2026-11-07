@@ -97,6 +97,7 @@ const {
                 class="w-full bg-pure-white border-2 border-stark-black p-3.5 font-mono text-xs sm:text-sm text-stark-black placeholder:text-gray-400 focus:outline-none focus:bg-surface focus:border-4 focus:shadow-[4px_4px_0px_#000000] transition-all"
                 id="terminal-name"
                 name="name"
+                data-sfx-focus="scan"
                 placeholder={fields.identifierPlaceholder}
                 required
                 type="text"
@@ -113,6 +114,7 @@ const {
                 class="w-full bg-pure-white border-2 border-stark-black p-3.5 font-mono text-xs sm:text-sm text-stark-black placeholder:text-gray-400 focus:outline-none focus:bg-surface focus:border-4 focus:shadow-[4px_4px_0px_#000000] transition-all"
                 id="terminal-email"
                 name="email"
+                data-sfx-focus="scan"
                 placeholder={fields.networkPlaceholder}
                 required
                 type="email"
@@ -129,6 +131,7 @@ const {
                 class="w-full bg-pure-white border-2 border-stark-black p-3.5 font-mono text-xs sm:text-sm text-stark-black placeholder:text-gray-400 focus:outline-none focus:bg-surface focus:border-4 focus:shadow-[4px_4px_0px_#000000] transition-all"
                 id="terminal-subject"
                 name="subject"
+                data-sfx-focus="scan"
                 placeholder={fields.protocolPlaceholder}
                 required
                 type="text"
@@ -145,6 +148,7 @@ const {
                 class="w-full bg-pure-white border-2 border-stark-black p-3.5 font-mono text-xs sm:text-sm text-stark-black placeholder:text-gray-400 focus:outline-none h-32 resize-none focus:bg-surface focus:border-4 focus:shadow-[4px_4px_0px_#000000] transition-all"
                 id="terminal-message"
                 name="message"
+                data-sfx-focus="scan"
                 placeholder={fields.payloadPlaceholder}
                 required
                 rows="4"
@@ -168,6 +172,7 @@ const {
             class="w-full h-14 sm:h-16 bg-mac-yellow border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] flex items-center justify-center font-black text-lg sm:text-xl md:text-2xl uppercase text-stark-black hover:bg-stark-black hover:text-mac-yellow active:translate-x-[4px] active:translate-y-[4px] sm:active:translate-x-[6px] sm:active:translate-y-[6px] active:shadow-none transition-all cursor-pointer tracking-wider"
             id="transmit-btn"
             type="submit"
+            data-sfx="transmit"
           >
             {submitButtonText}
           </button>
@@ -730,6 +735,7 @@ const {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (window.macSFX) window.macSFX.transmit();
 
       // Honeypot spam defense
       const honeyField = form.elements['_honey'];

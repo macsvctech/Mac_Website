@@ -13,9 +13,9 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-07 21:49:40 IST` |
-| **Git Snapshot / Commit** | `c3d9ba8` (`main` branch, commit #31) |
-| **Last Commit Directive** | `feat(contact): wire Formspree endpoint xaeezddr via AJAX with progressive fallback` |
+| **Last Synchronized** | `2026-11-08 01:00:01 IST` |
+| **Git Snapshot / Commit** | `1ae7e5d` (`main` branch, commit #32) |
+| **Last Commit Directive** | `feat(intel): add legacy publications callout strip below header with full design tokens` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
@@ -28,6 +28,7 @@
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `1ae7e5d` | `2026-11-08 01:00:01 IST` | feat(intel): add legacy publications callout strip below header with full design tokens | `MAC SVC` |
 | `c3d9ba8` | `2026-11-07 21:49:40 IST` | feat(contact): wire Formspree endpoint xaeezddr via AJAX with progressive fallback | `MAC SVC` |
 | `539005f` | `2026-11-07 21:35:02 IST` | chore: cleanup duplicate root files and add _stitch_reference/ to .gitignore | `MAC SVC` |
 | `7998215` | `2026-11-07 21:14:02 IST` | chore: remove legacy _stitch_reference sketchbook weight (10+ MB) | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `0e3a527` | `2026-11-07 20:42:47 IST` | chore(docs): sync telemetry snapshot with commit 4ce8502 | `MAC SVC` |
 | `4ce8502` | `2026-11-07 20:17:11 IST` | docs: add ultra-detailed README, pre-commit synchronizer, and auto-update rules | `MAC SVC` |
 | `1adb7eb` | `2026-11-07 20:16:43 IST` | feat(cms): add comprehensive operator guardrails, tooltips, select constraints, and non-technical operator manual | `MAC SVC` |
-| `c0dcb88` | `2026-11-06 05:11:10 IST` | fix(cms): fix view.fields syntax in collections to resolve Pages CMS crash | `Anshuman <macsvctech>` |
 <!-- LOG_END -->
 
 ---
@@ -245,6 +245,8 @@ MAC_1/
     │   │   └── [slug].astro          # Page: Dynamic Dossier Reader & PDF Downloader
     │   ├── roster.astro              # Page: Command Hierarchy & Recruitment Roll
     │   └── testimonials.astro        # Page: Alumni Presidents & Exit Logs Vault
+    ├── scripts/
+    │   └── sfx.js                    # Native Web Audio synthesizer & tactile controller
     ├── styles/
     │   └── global.css                # Global brutalist resets & font imports
     └── utils/
@@ -551,6 +553,46 @@ Update `settings.navigation` in `src/content/settings/global.json` so the new pa
 
 #### Step 6: Verify Static Build
 Execute `npm run build` and ensure all static routes compile cleanly with zero errors.
+
+---
+
+
+## 🔊 6. Brutalist Tactile & Sound Effects (SFX) Architecture
+
+The website features an immersive, zero-dependency **Brutalist Tactile & Sound Effects (SFX)** system. It operates purely on the browser's native **Web Audio API** and **Navigator Vibration API** with **zero external audio files (`.mp3` / `.wav`)** and **zero third-party embeds**.
+
+```
+       +--------------------------------------------------------+
+       |   NATIVE WEB AUDIO TACTILE SYNTHESIZER (sfx.js)        |
+       +--------------------------------------------------------+
+       |  • ZERO external audio files or network requests       |
+       |  • Master gain locked to ~15% (dry, subtle, mechanical)|
+       |  • Micro 8ms haptic vibration on supported devices     |
+       |  • Auto-unlocks on first user pointerdown/click/keydown|
+       |  • LocalStorage persistence (`mac_sfx_enabled`)        |
+       |  • Header & drawer toggle chip (`SFX ON` / `SFX OFF`)  |
+       +--------------------------------------------------------+
+```
+
+### 1. Synthesized Acoustic Signatures (Master Gain ~15%):
+1. **`tick`:** Whisper-quiet 5ms micro-tick (2400Hz → 1400Hz sine burst with 5ms exponential decay). Triggered on hover over navigation links, buttons, conveyor belt sponsor stamps, and industrial archive timetable rows.
+2. **`scaleTick(index)`:** 5-step ascending pitch tick (`300Hz`, `340Hz`, `380Hz`, `420Hz`, `460Hz`). Triggered on mouseenter across the 5 Impact Stat "Receipts" cells on the Home page.
+3. **`thock`:** Crisp, low-mid 25ms mechanical keycap thock (sine/triangle pitch drop from `180Hz` to `60Hz` + 8ms haptic). Triggered on clicking primary/secondary brutalist buttons, MACzine download buttons, and tilted Hero stickers.
+4. **`snap`:** Crisp 20ms cardstock folder snap / slide-projector clack (dual component: 860Hz snap impulse + 150Hz→45Hz wooden thud + 8ms haptic). Triggered on switching the 4 Blueprint Filing Cabinet tabs, Roster department tabs, Arena Evidence Wall filter chips, and clicking `[READ FULL DOSSIER +]`.
+5. **`scan`:** Super-subtle 30ms terminal blip (880Hz sine at 10% volume). Triggered on hovering over Core ID card mock barcode strips and focusing into `> SYSTEM_COMMUNICATION` input fields.
+6. **`transmit`:** Clean, subtle 3-pulse tactical radar / walkie-talkie confirmation beep (620Hz, 760Hz, 940Hz pulses + 10ms haptic). Triggered on submitting the Contact terminal form, clicking the Recruitment Caution-Tape banner, and filtering Roster clearance candidate wings.
+
+### 2. Header & Mobile Drawer SFX Toggle Chip:
+* **Position:** Located directly beside the Primary CTA button in the master header and inside the mobile navigation drawer.
+* **Brutalist Specification:** JetBrains Mono uppercase, 0px border-radius, 2px solid `#000000` border, tight padding.
+* **State `SFX ON` (Default):** Solid `#F0C903` (MAC Yellow) indicator square, `bg-pure-white text-stark-black`, hard `2px` contrast shadow (`shadow-[2px_2px_0px_#000000]`).
+* **State `SFX OFF`:** Hollow indicator square, `bg-tactical-stone text-[#777060]`, no shadow (`shadow-none`).
+* **Persistence:** Stored in `localStorage` under `mac_sfx_enabled` (defaults to `"true"`).
+* **Feedback:** Instant UI synchronization across all open viewports, playing a confirmation `thock` when turned ON.
+
+### 3. CMS Safety & Zero Hardcoding:
+* The tactile SFX engine runs entirely in the layout frame (`src/scripts/sfx.js` and `src/layouts/BaseLayout.astro`) using automatic event delegation and clean `data-sfx` attributes.
+* **Zero changes to `.pages.yml`** and **zero alterations to Markdown/JSON content files**, ensuring total compatibility with Pages CMS operators.
 
 ---
 

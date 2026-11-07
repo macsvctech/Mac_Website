@@ -93,7 +93,8 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
       <!-- 1. TOP CAUTION-TAPE RECRUITMENT BANNER (Conditioned on recruitmentBanner.enabled) -->
       {settings.recruitmentBanner.enabled && (
         <a 
-          href={settings.recruitmentBanner.link} 
+          href={settings.recruitmentBanner.link}
+          data-sfx="transmit" 
           class="block w-full bg-mac-yellow border-b-2 border-stark-black py-2 px-4 text-center select-none hover:bg-stark-black hover:text-mac-yellow transition-colors group cursor-pointer"
         >
           <div class="font-mono font-bold uppercase text-xs md:text-sm tracking-wider text-stark-black group-hover:text-mac-yellow truncate text-center">
@@ -144,6 +145,19 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
 
           <!-- Far Right: Arcade CTA & Mobile Toggle Button -->
           <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+            <!-- Brutalist Tactile SFX ON/OFF Toggle Button -->
+            <button
+              id="mac-sfx-toggle-btn"
+              type="button"
+              class="mac-sfx-toggle inline-flex items-center gap-1.5 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider border-2 border-stark-black px-2 sm:px-2.5 py-1.5 bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow hover:text-stark-black transition-none cursor-pointer select-none"
+              aria-label="Toggle Sound Effects (SFX)"
+              aria-pressed="true"
+              title="TOGGLE TACTILE AUDIO & SFX [DEFAULT: ON]"
+            >
+              <span class="sfx-status-dot w-2 h-2 bg-mac-yellow border border-stark-black shrink-0"></span>
+              <span class="sfx-status-text">SFX ON</span>
+            </button>
+
             <!-- Desktop Arcade CTA Button -->
             <a
               href={headerCta.link}
@@ -179,6 +193,23 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
         id="mobile-nav-drawer" 
         class="hidden md:hidden w-full bg-tactical-stone border-b-4 border-stark-black shadow-brutal divide-y-2 divide-stark-black max-h-[calc(100vh-4.5rem)] overflow-y-auto"
       >
+        <!-- Mobile SFX Control Strip -->
+        <div class="p-3.5 sm:p-4 bg-tactical-stone flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider">
+          <span class="text-stark-black flex items-center gap-1.5">
+            <span class="w-2 h-2 bg-mac-yellow inline-block border border-stark-black"></span>
+            TACTILE SFX [AUDIO]
+          </span>
+          <button
+            id="mobile-sfx-toggle-btn"
+            type="button"
+            class="mac-sfx-toggle inline-flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-wider border-2 border-stark-black px-2.5 py-1 bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow transition-none cursor-pointer select-none"
+            aria-label="Toggle Sound Effects (SFX)"
+            aria-pressed="true"
+          >
+            <span class="sfx-status-dot w-2 h-2 bg-mac-yellow border border-stark-black shrink-0"></span>
+            <span class="sfx-status-text">SFX ON</span>
+          </button>
+        </div>
         {navLinks.map((item, idx) => (
           <a
             href={item.href}
@@ -380,5 +411,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
         });
       })();
     </script>
+    <!-- Brutalist Tactile & Web Audio Synthesizer Controller -->
+    <script src="../scripts/sfx.js"></script>
   </body>
 </html>

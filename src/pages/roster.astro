@@ -77,7 +77,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
               <!-- Center punched hole -->
               <div class="w-8 h-2 bg-tactical-stone border border-stark-black shrink-0"></div>
               <!-- Mock barcode -->
-              <div class="flex items-center gap-[2px] h-5 py-0.5 shrink-0" aria-hidden="true">
+              <div class="barcode-strip flex items-center gap-[2px] h-5 py-0.5 shrink-0 cursor-crosshair" aria-hidden="true" data-sfx-hover="scan" title="/// BARCODE_SCAN // 880HZ">
                 <span class="w-[2px] h-full bg-pure-white"></span>
                 <span class="w-[1px] h-full bg-pure-white"></span>
                 <span class="w-[3px] h-full bg-pure-white"></span>
@@ -344,6 +344,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
           <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 font-mono" id="terminal-wing-filters">
             <span class="text-xs text-tactical-stone uppercase font-bold mr-1">{resultsData.filterWingLabel || "FILTER WING:"}</span>
             <button
+              data-sfx="transmit"
               class="terminal-filter-chip active text-xs font-bold uppercase px-2 sm:px-2.5 py-1 bg-mac-yellow text-stark-black border border-mac-yellow cursor-pointer"
               data-wing="ALL"
               type="button"
@@ -352,6 +353,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             </button>
             {(wings || []).filter((w) => w.enabled !== false).map((w) => (
               <button
+                data-sfx="transmit"
                 class="terminal-filter-chip text-xs font-bold uppercase px-2 sm:px-2.5 py-1 bg-[#343024] text-pure-white border border-outline hover:border-mac-yellow cursor-pointer transition-colors"
                 data-wing={w.id}
                 type="button"

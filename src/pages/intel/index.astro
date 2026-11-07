@@ -329,7 +329,8 @@ const { breadcrumb, clearance, legacyArchive, maczine, feedSection, archiveSecti
         {sortedIntel.map((item) => (
           <a
             href={`/intel/${item.id}`}
-            class="py-4 px-6 grid grid-cols-12 items-center border-b-2 border-stark-black font-mono text-xs sm:text-sm hover:bg-mac-yellow transition-colors cursor-pointer group block"
+            data-sfx-hover="tick"
+            class="industrial-row py-4 px-6 grid grid-cols-12 items-center border-b-2 border-stark-black font-mono text-xs sm:text-sm hover:bg-mac-yellow transition-colors cursor-pointer group block"
           >
             <div class="col-span-2 font-bold text-stark-black">{item.data.publishDate}</div>
             <div class="col-span-2">

@@ -126,6 +126,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
           {architecture.tabs.map((tab, idx) => (
             <button
               type="button"
+              data-sfx="snap"
               class={`arch-tab-btn min-h-[46px] h-auto py-2.5 px-2 flex items-center justify-center font-mono text-[11px] sm:text-xs md:text-sm font-bold uppercase border-r-2 border-b-2 md:border-b-0 border-stark-black transition-colors cursor-pointer select-none ${
                 idx === 0 
                   ? "bg-mac-yellow text-stark-black shadow-inner" 
@@ -547,6 +548,7 @@ const { breadcrumb, manifesto, architecture, plaques, wings, exitLogs } = bluepr
                 <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
                   <button
                     type="button"
+                    data-sfx="snap"
                     class={`font-mono text-xs sm:text-sm font-bold uppercase px-3.5 sm:px-4 py-2 border-2 border-stark-black shadow-[4px_4px_0px_#000000] cursor-pointer select-none transition-colors dossier-toggle-btn ${
                       person.defaultOpen
                         ? "bg-stark-black text-mac-yellow hover:bg-mac-yellow hover:text-stark-black"

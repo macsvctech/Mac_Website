@@ -101,7 +101,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           </div>
 
           <!-- Overlapping Top-Right Quote Sticker -->
-          <div class="absolute -top-3 right-2 sm:-top-4 sm:-right-4 z-20 rotate-2 sm:rotate-3 max-w-[210px] sm:max-w-[260px] bg-pure-white border-2 border-stark-black p-2.5 sm:p-3 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] select-none">
+          <div data-sfx="thock" role="button" tabindex="0" title="CLICK FOR TACTILE SNAP" class="absolute -top-3 right-2 sm:-top-4 sm:-right-4 z-20 rotate-2 sm:rotate-3 max-w-[210px] sm:max-w-[260px] bg-pure-white border-2 border-stark-black p-2.5 sm:p-3 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] select-none sticker-interactive">
             <p class="font-mono text-xs sm:text-[13px] font-bold text-stark-black leading-tight">
               {hero.quoteSticker}
             </p>
@@ -111,7 +111,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           </div>
 
           <!-- Overlapping Bottom-Center Stat Sticker -->
-          <div class="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2 z-20 -rotate-[3deg] sm:-rotate-[4deg] bg-system-red border-2 border-stark-black px-4 sm:px-6 py-1.5 sm:py-2 shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] select-none max-w-[90%]">
+          <div data-sfx="thock" role="button" tabindex="0" title="CLICK FOR TACTILE SNAP" class="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2 z-20 -rotate-[3deg] sm:-rotate-[4deg] bg-system-red border-2 border-stark-black px-4 sm:px-6 py-1.5 sm:py-2 shadow-[4px_4px_0px_#000000] sm:shadow-[6px_6px_0px_#000000] select-none max-w-[90%] sticker-interactive">
             <span class="font-display font-extrabold text-base sm:text-2xl text-pure-white tracking-tight uppercase whitespace-nowrap">
               {hero.statSticker}
             </span>
@@ -141,8 +141,10 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
       <!-- 5-Cell Collapsed Border Data Table Grid with Flat Hover-Swap -->
       <div class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-stark-black bg-pure-white">
-        {receipts.metrics.filter((m) => m.enabled !== false).map((metric) => (
+        {receipts.metrics.filter((m) => m.enabled !== false).map((metric, idx) => (
           <div
+            data-sfx="scaleTick"
+            data-scale-index={idx}
             class={`receipt-cell p-4 sm:p-6 lg:p-7 flex flex-col justify-between transition-colors cursor-pointer group ${
               metric.defaultActive
                 ? "bg-mac-yellow text-stark-black hover:bg-stark-black hover:text-mac-yellow"
@@ -367,6 +369,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           {sponsors.items.filter((s) => s.enabled !== false).map((sponsor) => (
             <a
               href={sponsor.websiteUrl || "#"}
+              data-sfx-hover="tick"
               target={sponsor.websiteUrl ? "_blank" : undefined}
               rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
               class={`flex flex-col items-center justify-center p-3.5 sm:p-6 min-h-[100px] sm:min-h-[120px] transition-all text-center group cursor-pointer ${
