@@ -13,9 +13,9 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-08 01:15:06 IST` |
-| **Git Snapshot / Commit** | `7fa4ea7` (`main` branch, commit #36) |
-| **Last Commit Directive** | `chore(docs): sync telemetry after rebase` |
+| **Last Synchronized** | `2026-11-08 01:15:17 IST` |
+| **Git Snapshot / Commit** | `a865ca4` (`main` branch, commit #37) |
+| **Last Commit Directive** | `fix(intel): add defensive fallback for archiveSection and register in .pages.yml` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
@@ -28,6 +28,7 @@
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `a865ca4` | `2026-11-08 01:15:17 IST` | fix(intel): add defensive fallback for archiveSection and register in .pages.yml | `MAC SVC` |
 | `7fa4ea7` | `2026-11-08 01:15:06 IST` | chore(docs): sync telemetry after rebase | `MAC SVC` |
 | `fb289c0` | `2026-11-08 01:05:18 IST` | chore(docs): sync README telemetry | `MAC SVC` |
 | `e33656d` | `2026-11-08 01:00:20 IST` | feat(sfx): implement native brutalist Web Audio tactile SFX system and top-bar toggle | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `c3d9ba8` | `2026-11-07 21:49:40 IST` | feat(contact): wire Formspree endpoint xaeezddr via AJAX with progressive fallback | `MAC SVC` |
 | `539005f` | `2026-11-07 21:35:02 IST` | chore: cleanup duplicate root files and add _stitch_reference/ to .gitignore | `MAC SVC` |
 | `7998215` | `2026-11-07 21:14:02 IST` | chore: remove legacy _stitch_reference sketchbook weight (10+ MB) | `MAC SVC` |
-| `58ce543` | `2026-11-07 21:05:57 IST` | update: site content and assets (07-11-2026 20:42:46.89) | `MAC SVC` |
 <!-- LOG_END -->
 
 ---
