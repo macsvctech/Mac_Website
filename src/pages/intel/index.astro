@@ -7,7 +7,7 @@ import BlueprintDivider from '../../components/ui/BlueprintDivider.astro';
 
 const allIntel = await getCollection('intel');
 const sortedIntel = allIntel.filter((i) => i.data.enabled !== false).sort((a, b) => a.data.order - b.data.order);
-const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelData;
+const { breadcrumb, clearance, legacyArchive, maczine, feedSection, archiveSection } = intelData;
 ---
 
 <BaseLayout title="INTEL /// THE MARKETING CLUB (MAC)">
@@ -23,8 +23,33 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
     </div>
   </div>
 
+  <!-- LEGACY ARCHIVE ANNOUNCEMENT STRIP -->
+  {legacyArchive?.enabled !== false && (
+    <div class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mt-4 sm:mt-6">
+      <div class="bg-pure-white border-2 border-stark-black shadow-[4px_4px_0px_#000000] p-3 sm:py-2.5 sm:px-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <span class="inline-block bg-electric-cyan text-stark-black font-mono text-[10px] sm:text-xs font-bold px-2 py-0.5 border border-stark-black shrink-0 shadow-[2px_2px_0px_#000000] uppercase select-none">
+            {legacyArchive.badge || "/// ARCHIVE_INDEX"}
+          </span>
+          <span class="font-mono text-xs sm:text-sm font-bold text-stark-black uppercase tracking-wide">
+            {legacyArchive.text || "For older publications, visit"}
+          </span>
+        </div>
+        <a
+          href={legacyArchive.url || "https://macsite5.wixsite.com/macsvc/publications"}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 font-mono text-xs sm:text-sm font-bold bg-mac-yellow text-stark-black border-2 border-stark-black px-3.5 py-1.5 shadow-[2px_2px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all shrink-0 cursor-pointer"
+        >
+          <span>{legacyArchive.linkLabel || "Publications | Macsvc"}</span>
+          <span class="material-symbols-outlined text-[15px]">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  )}
+
   <!-- SECTION 4.1 — MACZINE ANNUAL ISSUE HERO SPOTLIGHT -->
-  <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mt-6 sm:mt-8 mb-8 sm:mb-12">
+  <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mt-5 sm:mt-6 mb-8 sm:mb-12">
     <div class="bg-mac-yellow border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000]">
       <!-- Terminal Bar -->
       <div class="min-h-12 h-auto py-2.5 sm:py-0 bg-stark-black flex items-center justify-between px-3.5 sm:px-6 border-b-4 border-stark-black gap-2">

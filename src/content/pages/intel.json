@@ -1,6 +1,13 @@
 {
   "breadcrumb": "/// DIRECTORY: ROOT / 04_INTEL // RESEARCH REPORTS, MACZINE & EDITORIAL",
   "clearance": "CLEARANCE: LVL_04 GRANTED",
+  "legacyArchive": {
+    "enabled": true,
+    "badge": "/// ARCHIVE_INDEX",
+    "text": "For older publications & historic dossiers, visit",
+    "linkLabel": "Publications | Macsvc",
+    "url": "https://macsite5.wixsite.com/macsvc/publications"
+  },
   "maczine": {
     "terminalHeader": "> ANNUAL_PUBLICATION // MACZINE OFFICIAL RELEASE",
     "issn": "ISSN: 2516-659X // PRINT + DIGITAL",

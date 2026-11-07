@@ -1205,6 +1205,31 @@ content:
       - name: clearance
         label: Security Clearance Badge
         type: string
+      - name: legacyArchive
+        label: "External Legacy Archive Banner"
+        type: object
+        fields:
+          - name: enabled
+            label: "Show Legacy Archive Callout Strip?"
+            type: boolean
+            default: true
+            description: "Toggle ON to display the external archive callout banner on the Intel page. Toggle OFF to hide it without deleting data."
+          - name: badge
+            label: "Badge Tag"
+            type: string
+            default: "/// ARCHIVE_INDEX"
+          - name: text
+            label: "Banner Notice Text"
+            type: string
+            default: "For older publications & historic dossiers, visit"
+          - name: linkLabel
+            label: "Button Link Label"
+            type: string
+            default: "Publications | Macsvc"
+          - name: url
+            label: "Destination External URL"
+            type: string
+            default: "https://macsite5.wixsite.com/macsvc/publications"
       - name: maczine
         label: MACzine Annual Anthology Spotlight
         type: object
