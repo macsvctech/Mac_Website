@@ -44,7 +44,7 @@ const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arena
         <div class="flex items-center shrink-0">
           {radar.isLive ? (
             <span class="font-mono text-[10px] sm:text-xs font-bold uppercase bg-system-red text-white px-2.5 sm:px-3 py-1 border border-stark-black animate-pulse flex items-center gap-1.5 shadow-[2px_2px_0px_#000000]">
-              <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+              <span class="w-1.5 h-1.5 bg-white inline-block"></span>
               {radar.statusBadge}
             </span>
           ) : (
@@ -137,10 +137,7 @@ const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arena
         {flagshipSection.badge}
       </div>
     </div>
-      <div class="bg-stark-black text-mac-yellow font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[3px_3px_0px_#000000] uppercase tracking-wider">
-        {flagshipSection.badge}
-      </div>
-    </div>
+
 
     <!-- DOSSIER CARDS -->
     {events.map((event) => (
@@ -448,7 +445,7 @@ const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arena
         <button
           type="button"
           data-category={cat.id}
-          class={`evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-none border-2 border-stark-black transition-all ${idx === 0 ? 'bg-mac-yellow text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[2px] translate-y-[2px]' : 'bg-pure-white text-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] hover:bg-mac-yellow'}`}
+          class={`evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-3 sm:px-4 py-1.5 sm:py-2 border-2 border-stark-black transition-all ${idx === 0 ? 'bg-mac-yellow text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[2px] translate-y-[2px]' : 'bg-pure-white text-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] hover:bg-mac-yellow'}`}
         >
           {cat.label}
         </button>
@@ -672,9 +669,11 @@ const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arena
 
         // Update button active styles
         filterBtns.forEach((b) => {
-          b.className = 'evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 rounded-none border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[4px_4px_0px_#000000] hover:bg-mac-yellow';
+          b.classList.remove('bg-mac-yellow', 'shadow-[2px_2px_0px_#000000]', 'translate-x-[2px]', 'translate-y-[2px]');
+          b.classList.add('bg-pure-white', 'shadow-[3px_3px_0px_#000000]', 'sm:shadow-[4px_4px_0px_#000000]', 'hover:bg-mac-yellow');
         });
-        btn.className = 'evidence-filter-btn font-mono text-xs sm:text-sm font-bold uppercase px-4 py-2 rounded-none border-2 border-stark-black transition-all bg-mac-yellow text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[2px] translate-y-[2px]';
+        btn.classList.remove('bg-pure-white', 'shadow-[3px_3px_0px_#000000]', 'sm:shadow-[4px_4px_0px_#000000]', 'hover:bg-mac-yellow');
+        btn.classList.add('bg-mac-yellow', 'shadow-[2px_2px_0px_#000000]', 'translate-x-[2px]', 'translate-y-[2px]');
 
         // Filter cards
         cards.forEach((card) => {
@@ -707,7 +706,10 @@ const { pageTitle, sysRef, radar, flagshipSection, evidenceWallSection } = arena
       const date = card.getAttribute('data-date');
       const badge = card.getAttribute('data-badge');
 
-      if (modalImage) modalImage.src = img || '';
+      if (modalImage) {
+        modalImage.src = img || '';
+        modalImage.alt = caption || title || 'Specimen view';
+      }
       if (modalTitle) modalTitle.textContent = `> ${figure} // ${title}`;
       if (modalBadge) modalBadge.textContent = badge || '';
       if (modalDate) modalDate.textContent = date || '';

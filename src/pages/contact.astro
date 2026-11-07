@@ -692,10 +692,11 @@ const {
                 <span>{sponsorshipHeading || "PARTNERSHIP & SPONSORSHIP DOSSIER:"}</span>
               </div>
               <BrutalFileDownload
-                title={sponsorshipTitle || 'MAC_OFFICIAL_SPONSORSHIP_DECK_2027.PDF'}
+                fileLabel={sponsorshipTitle || 'MAC_OFFICIAL_SPONSORSHIP_DECK_2027.PDF'}
                 fileUrl={sponsorshipDeckPdf}
                 fileSize={sponsorshipSize || '2.1 MB'}
-                fileFormat="PDF"
+                fileType="PDF"
+                variant="bar"
               />
             </div>
           )}

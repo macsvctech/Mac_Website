@@ -25,7 +25,7 @@ const settings = defineCollection({
       text: z.string(),
       link: z.string(),
     }),
-  }),
+  }).passthrough(),
 });
 
 const pages = defineCollection({

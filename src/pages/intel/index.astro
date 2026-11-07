@@ -404,9 +404,11 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
         currentCategory = btn.getAttribute('data-category') || 'ALL';
 
         filterBtns.forEach((b) => {
-          b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow';
+          b.classList.remove('bg-electric-cyan', 'translate-x-[1px]', 'translate-y-[1px]');
+          b.classList.add('bg-pure-white', 'hover:bg-mac-yellow');
         });
-        btn.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]';
+        btn.classList.remove('bg-pure-white', 'hover:bg-mac-yellow');
+        btn.classList.add('bg-electric-cyan', 'translate-x-[1px]', 'translate-y-[1px]');
 
         applyFilters();
       });
@@ -428,9 +430,11 @@ const { breadcrumb, clearance, maczine, feedSection, archiveSection } = intelDat
 
         filterBtns.forEach((b, idx) => {
           if (idx === 0) {
-            b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-electric-cyan text-stark-black shadow-[2px_2px_0px_#000000] translate-x-[1px] translate-y-[1px]';
+            b.classList.remove('bg-pure-white', 'hover:bg-mac-yellow');
+            b.classList.add('bg-electric-cyan', 'translate-x-[1px]', 'translate-y-[1px]');
           } else {
-            b.className = 'intel-filter-btn px-3 py-2 border-2 border-stark-black transition-all bg-pure-white text-stark-black shadow-[2px_2px_0px_#000000] hover:bg-mac-yellow';
+            b.classList.remove('bg-electric-cyan', 'translate-x-[1px]', 'translate-y-[1px]');
+            b.classList.add('bg-pure-white', 'hover:bg-mac-yellow');
           }
         });
 
