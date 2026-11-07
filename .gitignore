@@ -34,3 +34,4 @@ scratch/
 push-to-github.bat
 
 .vercel
+_stitch_reference/
