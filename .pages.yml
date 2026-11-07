@@ -83,6 +83,11 @@ content:
         options:
           media: images
         description: Browser tab icon (.ico, .png, or .svg). Recommended square 32x32 or 64x64.
+      - name: brochurePdfEnabled
+        label: "Enable Brochure PDF Download Button?"
+        type: boolean
+        default: false
+        description: "Toggle ON to show the society brochure PDF download button in the footer. Toggle OFF to hide it completely when no PDF is uploaded."
       - name: brochurePdfUrl
         label: Society Brochure PDF File
         type: file
@@ -400,6 +405,11 @@ content:
               - name: videoUrl
                 label: Department Teaser Video (.mp4 / YouTube)
                 type: string
+              - name: documentEnabled
+                label: "Enable Department Syllabus/Deck PDF?"
+                type: boolean
+                default: false
+                description: "Toggle ON when a syllabus or case deck PDF is available for this department. Toggle OFF when not uploaded."
               - name: documentUrl
                 label: Department Syllabus / Overview PDF
                 type: file
@@ -499,6 +509,11 @@ content:
               - name: videoUrl
                 label: Video Teaser (.mp4 / YouTube)
                 type: string
+              - name: rulebookPdfEnabled
+                label: "Enable Flagship Rulebook PDF Download?"
+                type: boolean
+                default: true
+                description: "Toggle ON to show the downloadable rulebook PDF button. Toggle OFF to hide it completely."
               - name: rulebookPdfUrl
                 label: Downloadable Rulebook PDF
                 type: file
@@ -547,6 +562,11 @@ content:
                   - name: highlighted
                     label: Highlighted Card?
                     type: boolean
+                  - name: pdfEnabled
+                    label: "Enable Direct Whitepaper PDF Download?"
+                    type: boolean
+                    default: false
+                    description: "Toggle ON to provide a direct PDF download link for this article. Toggle OFF if online read only."
                   - name: pdfUrl
                     label: Direct PDF Whitepaper (Optional)
                     type: file
@@ -621,6 +641,11 @@ content:
           - name: mediaSubCaption
             label: Archival Coordinates
             type: string
+          - name: constitutionPdfEnabled
+            label: "Enable Society Constitution PDF Download?"
+            type: boolean
+            default: true
+            description: "Toggle ON to display the Constitution PDF download bar. Toggle OFF to hide it without leaving empty space."
           - name: constitutionPdfUrl
             label: Official Society Constitution PDF
             type: file
@@ -804,6 +829,11 @@ content:
                 label: Core Skill Badges
                 type: string
                 list: true
+              - name: sampleWorkEnabled
+                label: "Enable Case Deck / Sample Work PDF Download?"
+                type: boolean
+                default: false
+                description: "Toggle ON to show sample work PDF download. Toggle OFF when no file is uploaded."
               - name: sampleWorkUrl
                 label: Department Case Deck / Syllabus PDF
                 type: file
@@ -1010,6 +1040,11 @@ content:
           - name: teaserVideoUrl
             label: Teaser Trailer Video (.mp4 / YouTube)
             type: string
+          - name: rulebookPdfEnabled
+            label: "Enable Live Event Rulebook PDF Download?"
+            type: boolean
+            default: false
+            description: "Toggle ON to provide the simulation rulebook PDF. Toggle OFF when registrations are pending or no rulebook is released."
           - name: rulebookPdfUrl
             label: Official Simulation Rulebook PDF
             type: file
@@ -1343,6 +1378,11 @@ content:
             options:
               media: images
             description: High-contrast landscape image (16:9 ratio, e.g. 1920x1080). Use compressed .webp or .jpg under 2.5MB.
+          - name: pdfFileEnabled
+            label: "Enable Magazine PDF Issue Download?"
+            type: boolean
+            default: true
+            description: "Toggle ON to show the [READ FULL ISSUE PDF] button. Toggle OFF to hide it completely."
           - name: pdfFile
             label: Complete Magazine Digital Edition PDF
             type: file
@@ -1368,6 +1408,11 @@ content:
                 type: string
               - name: theme
                 type: string
+              - name: pdfEnabled
+                label: "Enable Archive PDF Download?"
+                type: boolean
+                default: true
+                description: "Toggle ON to show the download button for this archived volume. Toggle OFF if unavailable."
               - name: pdfUrl
                 label: Archive PDF Edition
                 type: file
@@ -1491,6 +1536,11 @@ content:
       - name: videoEmbedUrl
         label: Video Breakdown / Podcast Link (.mp4 / YouTube)
         type: string
+      - name: attachmentEnabled
+        label: "Enable PDF Attachment Download Button?"
+        type: boolean
+        default: true
+        description: "Toggle ON to display the download button at the bottom of the article. Toggle OFF to hide it completely."
       - name: attachmentFile
         label: Downloadable Whitepaper PDF / Slide Deck
         type: file
@@ -1529,6 +1579,11 @@ content:
       - name: academicYear
         label: Academic Operational Session
         type: string
+      - name: councilPdfEnabled
+        label: "Enable Council Dossier PDF Download?"
+        type: boolean
+        default: false
+        description: "Toggle ON to offer the sealed executive council dossier PDF. Toggle OFF when unpublished."
       - name: councilPdfUrl
         label: Official Council Dossier PDF
         type: file
@@ -1742,6 +1797,11 @@ content:
       - name: filterWingLabel
         label: Filter Wing Toolbar Label
         type: string
+      - name: officialPdfEnabled
+        label: "Enable Official Signed Results PDF Download?"
+        type: boolean
+        default: true
+        description: "Toggle ON to display the official signed results PDF download button. Toggle OFF to hide it completely."
       - name: officialResultPdf
         label: Official Sealed PDF Roll
         type: file
@@ -1912,6 +1972,11 @@ content:
           - name: viewMapText
             label: Google Maps Button Label
             type: string
+      - name: sponsorshipDeckPdfEnabled
+        label: "Enable Corporate Sponsorship Deck PDF Download?"
+        type: boolean
+        default: true
+        description: "Toggle ON to show the corporate pitch deck PDF download block. Toggle OFF when no deck is uploaded."
       - name: sponsorshipDeckPdf
         label: Corporate Sponsorship Deck PDF
         type: file

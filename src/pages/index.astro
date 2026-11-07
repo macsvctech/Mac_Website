@@ -482,13 +482,14 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
               </span>
             </div>
 
-            {flagship.rulebookPdfUrl && (
+            {flagship.rulebookPdfEnabled !== false && flagship.rulebookPdfUrl && flagship.rulebookPdfUrl.trim().length > 0 && flagship.rulebookPdfUrl.trim() !== '#' && (
               <div class="pt-4 border-t-2 border-stark-black mt-4">
                 <BrutalFileDownload
                   fileUrl={flagship.rulebookPdfUrl}
                   fileLabel={flagship.rulebookPdfLabel || "DOWNLOAD RULEBOOK [PDF]"}
                   fileType="PDF"
                   variant="bar"
+                  enabled={flagship.rulebookPdfEnabled}
                 />
               </div>
             )}

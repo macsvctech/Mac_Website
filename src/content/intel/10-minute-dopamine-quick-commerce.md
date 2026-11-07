@@ -13,6 +13,7 @@ excerpt: "Dark stores, relentless dark-night delivery fleets, and the cognitive 
 coverImage: "/uploads/images/intel/quick-commerce.jpg"
 coverCaption: "FIG_03 // NOCTURNAL LOGISTICS NODES IN URBAN METROS"
 attachmentFile: "/uploads/documents/quick-commerce-teardown.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD FIELD REPORT ]"
 featured: true
 readingVelocity: "260 WPM"

@@ -196,7 +196,7 @@ const { Content } = await render(entry);
                 <span>[ SHARE ON LINKEDIN ↗ ]</span>
               </a>
 
-              {entry.data.attachmentFile && (
+              {entry.data.attachmentEnabled !== false && entry.data.attachmentFile && entry.data.attachmentFile.trim().length > 0 && entry.data.attachmentFile.trim() !== '#' && (
                 <a
                   href={entry.data.attachmentFile}
                   download

@@ -84,7 +84,8 @@
         "image": null,
         "videoUrl": null,
         "documentUrl": null,
-        "enabled": true
+        "enabled": true,
+        "documentEnabled": false
       },
       {
         "code": "DEP_02",
@@ -98,7 +99,8 @@
         "image": null,
         "videoUrl": null,
         "documentUrl": null,
-        "enabled": true
+        "enabled": true,
+        "documentEnabled": false
       },
       {
         "code": "DEP_03",
@@ -112,7 +114,8 @@
         "image": null,
         "videoUrl": null,
         "documentUrl": null,
-        "enabled": true
+        "enabled": true,
+        "documentEnabled": false
       },
       {
         "code": "SUB_DEP_4A",
@@ -126,7 +129,8 @@
         "image": null,
         "videoUrl": null,
         "documentUrl": null,
-        "enabled": true
+        "enabled": true,
+        "documentEnabled": false
       },
       {
         "code": "SUB_DEP_4B",
@@ -140,7 +144,8 @@
         "image": null,
         "videoUrl": null,
         "documentUrl": null,
-        "enabled": true
+        "enabled": true,
+        "documentEnabled": false
       }
     ],
     "enabled": true
@@ -208,7 +213,8 @@
       "image": null,
       "videoUrl": null,
       "rulebookPdfUrl": "/uploads/documents/markopolis-rulebook.pdf",
-      "rulebookPdfLabel": "DOWNLOAD RULEBOOK [PDF]"
+      "rulebookPdfLabel": "DOWNLOAD RULEBOOK [PDF]",
+      "rulebookPdfEnabled": true
     },
     "intel": {
       "headerTitle": "> LATEST_INTEL_DISPATCH",
@@ -222,7 +228,8 @@
           "link": "/intel",
           "highlighted": true,
           "pdfUrl": null,
-          "enabled": true
+          "enabled": true,
+          "pdfEnabled": false
         },
         {
           "tag": "[BRAND STRATEGY] // CASE_STUDY_88",
@@ -231,7 +238,8 @@
           "link": "/intel",
           "highlighted": false,
           "pdfUrl": null,
-          "enabled": true
+          "enabled": true,
+          "pdfEnabled": false
         }
       ],
       "footerTotal": "ARCHIVE TOTAL: 52 DISPATCHES",

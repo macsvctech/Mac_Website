@@ -13,6 +13,7 @@ excerpt: "Transforming the world's most boring, commoditized staple—tap water�
 coverImage: "/uploads/images/arena/markopolis.jpg"
 coverCaption: "FIG_05 // COUNTER-CULTURE COMMODITY BRANDING"
 attachmentFile: "/uploads/documents/challenger-brands-case-study.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD CASE STUDY ]"
 featured: false
 readingVelocity: "320 WPM"

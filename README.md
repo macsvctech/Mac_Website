@@ -13,9 +13,9 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-08 01:38:00 IST` |
-| **Git Snapshot / Commit** | `07d08d6` (`main` branch, commit #40) |
-| **Last Commit Directive** | `chore(docs): sync telemetry snapshot for commit 11e3ae6` |
+| **Last Synchronized** | `2026-11-08 01:55:30 IST` |
+| **Git Snapshot / Commit** | `60fcbd7` (`main` branch, commit #41) |
+| **Last Commit Directive** | `chore(docs): sync telemetry for commit 07d08d6` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
@@ -28,6 +28,7 @@
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `60fcbd7` | `2026-11-08 01:55:30 IST` | chore(docs): sync telemetry for commit 07d08d6 | `MAC SVC` |
 | `07d08d6` | `2026-11-08 01:38:00 IST` | chore(docs): sync telemetry snapshot for commit 11e3ae6 | `MAC SVC` |
 | `11e3ae6` | `2026-11-08 01:37:19 IST` | fix(arch): comprehensive zero-dependency defensive fallbacks across all pages and complete .pages.yml schema alignment | `MAC SVC` |
 | `bfbed75` | `2026-11-08 01:37:04 IST` | chore(docs): sync telemetry for commit a865ca4 | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `7fa4ea7` | `2026-11-08 01:15:06 IST` | chore(docs): sync telemetry after rebase | `MAC SVC` |
 | `fb289c0` | `2026-11-08 01:05:18 IST` | chore(docs): sync README telemetry | `MAC SVC` |
 | `e33656d` | `2026-11-08 01:00:20 IST` | feat(sfx): implement native brutalist Web Audio tactile SFX system and top-bar toggle | `MAC SVC` |
-| `1ae7e5d` | `2026-11-08 01:00:01 IST` | feat(intel): add legacy publications callout strip below header with full design tokens | `MAC SVC` |
 <!-- LOG_END -->
 
 ---

@@ -82,13 +82,14 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
             </div>
 
             <!-- Optional Constitution PDF Download Bar -->
-            {manifesto.constitutionPdfUrl && (
+            {manifesto.constitutionPdfEnabled !== false && manifesto.constitutionPdfUrl && manifesto.constitutionPdfUrl.trim().length > 0 && manifesto.constitutionPdfUrl.trim() !== '#' && (
               <div class="pt-2">
                 <BrutalFileDownload
                   fileUrl={manifesto.constitutionPdfUrl}
                   fileLabel={manifesto.constitutionPdfLabel || "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]"}
                   fileType="PDF"
                   variant="bar"
+                  enabled={manifesto.constitutionPdfEnabled}
                 />
               </div>
             )}
@@ -483,12 +484,13 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
                 <p class="font-sans text-xs sm:text-base text-on-surface-variant">
                   {div.description}
                 </p>
-                {div.sampleWorkUrl && (
+                {div.sampleWorkEnabled !== false && div.sampleWorkUrl && div.sampleWorkUrl.trim().length > 0 && div.sampleWorkUrl.trim() !== '#' && (
                   <div class="pt-2">
                     <BrutalFileDownload
                       fileUrl={div.sampleWorkUrl}
                       fileLabel="SAMPLE WORK REPORT"
                       fileType="PDF"
+                      enabled={div.sampleWorkEnabled}
                     />
                   </div>
                 )}

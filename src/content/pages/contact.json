@@ -69,5 +69,6 @@
   ],
   "terminalEnabled": true,
   "sponsorshipEnabled": true,
-  "externalChannelsEnabled": true
+  "externalChannelsEnabled": true,
+  "sponsorshipDeckPdfEnabled": true
 }

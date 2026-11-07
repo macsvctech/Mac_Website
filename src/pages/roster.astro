@@ -411,7 +411,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
             <span class="animate-pulse">●</span>
             <span>{statusBanner}</span>
           </div>
-          {officialResultPdf && (
+          {resultsData.officialPdfEnabled !== false && officialResultPdf && officialResultPdf.trim().length > 0 && officialResultPdf.trim() !== '#' && (
             <a
               class="text-pure-white underline hover:text-mac-yellow"
               href={officialResultPdf}

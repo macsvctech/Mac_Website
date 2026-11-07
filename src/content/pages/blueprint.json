@@ -19,7 +19,8 @@
     "clearanceStamp": "[ARCHIVAL_CLEARANCE]",
     "constitutionPdfUrl": "/uploads/documents/mac-society-constitution.pdf",
     "constitutionPdfLabel": "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]",
-    "enabled": true
+    "enabled": true,
+    "constitutionPdfEnabled": true
   },
   "architecture": {
     "title": "CORE ARCHITECTURE",
@@ -172,7 +173,8 @@
           "[ON-GROUND EXECUTION]"
         ],
         "sampleWorkUrl": null,
-        "enabled": true
+        "enabled": true,
+        "sampleWorkEnabled": false
       },
       {
         "deptTag": "DEPT_02 /// CAPITAL_B2B",
@@ -185,7 +187,8 @@
           "[LIVE PROJECTS]"
         ],
         "sampleWorkUrl": null,
-        "enabled": true
+        "enabled": true,
+        "sampleWorkEnabled": false
       },
       {
         "deptTag": "DEPT_03 /// HYPE_ENGINE",
@@ -198,7 +201,8 @@
           "[PR & OUTREACH]"
         ],
         "sampleWorkUrl": null,
-        "enabled": true
+        "enabled": true,
+        "sampleWorkEnabled": false
       },
       {
         "deptTag": "DEPT_04 /// INTEL_RESEARCH",
@@ -211,7 +215,8 @@
           "[WEB & DESIGN]"
         ],
         "sampleWorkUrl": null,
-        "enabled": true
+        "enabled": true,
+        "sampleWorkEnabled": false
       }
     ],
     "enabled": true

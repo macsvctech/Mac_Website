@@ -14,6 +14,7 @@ coverImage: "/uploads/images/arena/rotomac.jpg"
 coverCaption: "FIG_06 // BOOTSTRAPPED PHYSICAL STUNTS & GUERRILLA STENCILS"
 videoEmbedUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 attachmentFile: "/uploads/documents/rotomac-cadre-handbook.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD GUERRILLA CHEATSHEET ]"
 featured: false
 readingVelocity: "250 WPM"

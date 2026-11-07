@@ -13,6 +13,7 @@ excerpt: "Dissecting how insurgent consumer brands leverage cultural arbitrage, 
 coverImage: "/uploads/images/intel/challenger-brands.jpg"
 coverCaption: "FIG_02 // ASYMMETRIC WARFARE IN CONSUMER FMCG"
 attachmentFile: "/uploads/documents/challenger-brands-case-study.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD CASE DOSSIER ]"
 featured: true
 readingVelocity: "310 WPM"

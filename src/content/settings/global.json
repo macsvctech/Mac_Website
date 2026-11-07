@@ -80,5 +80,8 @@
     ],
     "copyright": "© 2026-27 THE MARKETING CLUB, SVC.\nALL RIGHTS RESERVED.",
     "statusBadge": "[ALL RELAYS SECURED // STATUS: LIVE]"
-  }
+  },
+  "brochurePdfEnabled": false,
+  "brochurePdfUrl": null,
+  "brochureLabel": "SOCIETY BROCHURE [PDF]"
 }

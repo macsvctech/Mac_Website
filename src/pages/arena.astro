@@ -110,6 +110,16 @@ const categories = evidenceWallSection.categories || [];
             </div>
 
             <!-- Arcade CTA Button -->
+            {radar.rulebookPdfEnabled === true && radar.rulebookPdfUrl && radar.rulebookPdfUrl.trim().length > 0 && radar.rulebookPdfUrl.trim() !== '#' && (
+              <div class="mb-3">
+                <BrutalFileDownload
+                  fileUrl={radar.rulebookPdfUrl}
+                  fileLabel="OFFICIAL SIMULATION RULEBOOK [PDF]"
+                  fileType="PDF"
+                  enabled={radar.rulebookPdfEnabled}
+                />
+              </div>
+            )}
             <a
               href={radar.registrationUrl}
               target="_blank"

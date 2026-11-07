@@ -13,6 +13,7 @@ excerpt: "As generative answers bypass traditional blue links, consumer search b
 coverImage: "/uploads/images/intel/ai-search-dossier-hero.jpg"
 coverCaption: "FIG_01 // THE EVOLUTION OF AI SEARCH & CYBERNETIC INTENT"
 attachmentFile: "/uploads/documents/ai-search-report-2026.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD DISPATCH PDF ]"
 featured: true
 readingVelocity: "280 WPM"

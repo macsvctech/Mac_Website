@@ -6,6 +6,7 @@ interface Props {
   fileSize?: string;
   class?: string;
   variant?: "button" | "bar";
+  enabled?: boolean;
 }
 
 const {
@@ -15,10 +16,11 @@ const {
   fileSize,
   class: className = "",
   variant = "button",
+  enabled = true,
 } = Astro.props;
 
-// Guardrail: if fileUrl is empty or missing, render nothing.
-const hasFile = typeof fileUrl === "string" && fileUrl.trim().length > 0;
+// Guardrail: if disabled, empty, null, undefined, or placeholder '#', render nothing (zero empty space).
+const hasFile = enabled !== false && typeof fileUrl === "string" && fileUrl.trim().length > 0 && fileUrl.trim() !== "#";
 
 const iconMap: Record<string, string> = {
   PDF: "picture_as_pdf",

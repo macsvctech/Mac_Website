@@ -31,23 +31,27 @@
         "year": "2025",
         "theme": "The Synthetic Economy",
         "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
-        "pages": "56 PGS"
+        "pages": "56 PGS",
+        "pdfEnabled": true
       },
       {
         "vol": "VOL. 07",
         "year": "2024",
         "theme": "Attention Asymmetry",
         "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
-        "pages": "52 PGS"
+        "pages": "52 PGS",
+        "pdfEnabled": true
       },
       {
         "vol": "VOL. 06",
         "year": "2023",
         "theme": "Subversive Branding",
         "pdfUrl": "/uploads/documents/maczine-issue-09.pdf",
-        "pages": "48 PGS"
+        "pages": "48 PGS",
+        "pdfEnabled": true
       }
-    ]
+    ],
+    "pdfFileEnabled": true
   },
   "feedSection": {
     "enabled": true,

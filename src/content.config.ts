@@ -63,6 +63,7 @@ const intel = defineCollection({
     videoEmbedUrl: z.string().optional(),
     attachmentFile: z.string().optional(),
     attachmentLabel: z.string().optional(),
+    attachmentEnabled: z.boolean().default(true).optional(),
     featured: z.boolean().default(false),
     enabled: z.boolean().default(true),
     keyTakeaways: z.array(z.string()).optional(),

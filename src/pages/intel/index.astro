@@ -127,6 +127,7 @@ const feedCategories = feedSection.categories || [];
 
           <!-- Side-by-Side Arcade Action Buttons -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            {maczine.pdfFileEnabled !== false && maczine.pdfFile && maczine.pdfFile.trim().length > 0 && maczine.pdfFile.trim() !== '#' && (
             <a
               href={maczine.pdfFile}
               target="_blank"
@@ -135,6 +136,7 @@ const feedCategories = feedSection.categories || [];
             >
               {maczine.readFullIssuePdfText || "[ READ FULL ISSUE PDF ↗ ]"}
             </a>
+            )}
             <button
               id="toggle-past-issues-btn"
               type="button"
@@ -167,6 +169,7 @@ const feedCategories = feedSection.categories || [];
                 <h4 class="font-mono text-xs sm:text-sm font-bold uppercase text-stark-black mb-1">{issue.theme}</h4>
                 <div class="font-mono text-[11px] text-on-surface-variant">{issue.pages}</div>
               </div>
+              {issue.pdfEnabled !== false && issue.pdfUrl && issue.pdfUrl.trim().length > 0 && issue.pdfUrl.trim() !== '#' && (
               <a
                 href={issue.pdfUrl}
                 target="_blank"
@@ -175,6 +178,7 @@ const feedCategories = feedSection.categories || [];
               >
                 {maczine.downloadArchivePdfText || "[ DOWNLOAD PDF ↗ ]"}
               </a>
+              )}
             </div>
           ))}
         </div>

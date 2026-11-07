@@ -13,6 +13,7 @@ excerpt: "Eye-tracking telemetry, biometric galvanic skin response data, and mic
 coverImage: "/uploads/images/blueprint/cohort.jpg"
 coverCaption: "FIG_04 // BIOMETRIC ATTENTION MAPPING IN PHYSICAL RETAIL"
 attachmentFile: "/uploads/documents/ai-search-report-2026.pdf"
+attachmentEnabled: true
 attachmentLabel: "[ 📄 DOWNLOAD RESEARCH REPORT ]"
 featured: false
 readingVelocity: "270 WPM"
