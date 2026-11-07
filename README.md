@@ -13,21 +13,22 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-07 21:14:02 IST` |
-| **Git Snapshot / Commit** | `7998215` (`main` branch, commit #29) |
-| **Last Commit Directive** | `chore: remove legacy _stitch_reference sketchbook weight (10+ MB)` |
+| **Last Synchronized** | `2026-11-07 21:35:02 IST` |
+| **Git Snapshot / Commit** | `539005f` (`main` branch, commit #30) |
+| **Last Commit Directive** | `chore: cleanup duplicate root files and add _stitch_reference/ to .gitignore` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
 | **Static Build Routes** | **14 Compiled HTML Pages** (9 Core Topologies + 5 Dynamic Slugs) |
 | **Decoupled Data Store** | **3** Flagship Events • **6** Intel Dossiers • **6** Exit Dossiers • **6** Evidence Specimens |
-| **Form Relay Architecture**| `FormSubmit AJAX` (Zero-Backend Serverless Relay + Honeypot) |
+| **Form Relay Architecture**| `Formspree AJAX` (Serverless Endpoint Relay + Honeypot + Fallback) |
 <!-- TELEMETRY_END -->
 
 ### 📜 Rolling Directives & Change Ledger
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `539005f` | `2026-11-07 21:35:02 IST` | chore: cleanup duplicate root files and add _stitch_reference/ to .gitignore | `MAC SVC` |
 | `7998215` | `2026-11-07 21:14:02 IST` | chore: remove legacy _stitch_reference sketchbook weight (10+ MB) | `MAC SVC` |
 | `58ce543` | `2026-11-07 21:05:57 IST` | update: site content and assets (07-11-2026 20:42:46.89) | `MAC SVC` |
 | `0e3a527` | `2026-11-07 20:42:47 IST` | chore(docs): sync telemetry snapshot with commit 4ce8502 | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `1adb7eb` | `2026-11-07 20:16:43 IST` | feat(cms): add comprehensive operator guardrails, tooltips, select constraints, and non-technical operator manual | `MAC SVC` |
 | `c0dcb88` | `2026-11-06 05:11:10 IST` | fix(cms): fix view.fields syntax in collections to resolve Pages CMS crash | `Anshuman <macsvctech>` |
 | `1f9a2ae` | `2026-11-06 05:07:00 IST` | revert: remove dark mode and restore original theme and header | `Anshuman <macsvctech>` |
-| `0807bb4` | `2026-11-06 04:55:00 IST` | feat(cms): add visibility toggles across all sections, collections, and repeated listing items | `Anshuman <macsvctech>` |
 <!-- LOG_END -->
 
 ---
@@ -139,7 +139,7 @@ The MAC website is built with an **Anti-AI Industrial Neo-Brutalist** design lan
 * **Styling:** [Tailwind CSS v3.4.19](https://tailwindcss.com/) with `@astrojs/tailwind`. Configured with custom brutalist tokens and strict zero-radius constraints.
 * **Content Collections:** Astro's built-in `astro:content` with Zod schema validation (`src/content.config.ts`).
 * **Headless CMS:** [Pages CMS](https://pagescms.org/) backed by GitHub repository commits via `.pages.yml`. Allows non-technical operators to edit all content with zero coding.
-* **Form Handling:** Serverless AJAX relay via [FormSubmit](https://formsubmit.co/) with hidden honeypot spam protection and automatic mailto fallback.
+* **Form Handling:** Serverless AJAX relay via [Formspree](https://formspree.io/) (`https://formspree.io/f/xaeezddr`) with hidden honeypot spam protection and automatic mailto fallback.
 * **Hosting & CI/CD:** [Vercel](https://vercel.com/) with automated GitHub webhook deployments (live in ~45 seconds) and 2-second instant rollback.
 * **Local Git Tooling:** MinGit portable git engine with 1-click sync automation via `push-to-github.bat`.
 
@@ -621,7 +621,7 @@ If an operator uploads a broken file or makes a critical error:
 ## 🔒 10. Serverless Form Relay Architecture
 
 The inquiry terminal on `/contact` is engineered to be **100% serverless** with zero backend database costs:
-* **Endpoint:** `https://formsubmit.co/ajax/mac.svc2016@gmail.com`
+* **Endpoint:** `https://formspree.io/f/xaeezddr` (Decoupled in `src/content/pages/contact.json` & `.pages.yml`)
 * **Spam Protection:** Hidden honeypot field (`<input type="text" name="_honey" style="display:none" />`). Automated bots that fill this field are silently dropped.
 * **AJAX Feedback:** Dynamic UI state updates from `[ TRANSMITTING... ]` to `[ ✓ TRANSMISSION RECEIVED ]`.
 * **Offline / Error Fallback:** Automatic `mailto:` mail client launcher fallback if the user is offline or the endpoint fails, ensuring no prospective lead or sponsor communication is ever lost.

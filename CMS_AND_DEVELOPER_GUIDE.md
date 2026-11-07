@@ -456,7 +456,7 @@ Complete!
 
 The contact form on `/contact` is engineered to be **100% serverless** with zero hosting database costs:
 
-1. **Endpoint:** `https://formsubmit.co/ajax/mac.svc2016@gmail.com`.
+1. **Endpoint:** `https://formspree.io/f/xaeezddr` (Formspree AJAX Relay).
 2. **Honeypot Protection:**
    ```html
    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />

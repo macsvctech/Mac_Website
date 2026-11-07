@@ -109,7 +109,7 @@ const telemetryBlock = `<!-- TELEMETRY_START -->
 | **Headless CMS Engine** | \`Pages CMS\` via \`.pages.yml\` (13 Content Sections, 3 Media Vaults) |
 | **Static Build Routes** | **14 Compiled HTML Pages** (9 Core Topologies + 5 Dynamic Slugs) |
 | **Decoupled Data Store** | **${eventCount}** Flagship Events • **${articleCount}** Intel Dossiers • **${testimonialCount}** Exit Dossiers • **${galleryCount}** Evidence Specimens |
-| **Form Relay Architecture**| \`FormSubmit AJAX\` (Zero-Backend Serverless Relay + Honeypot) |
+| **Form Relay Architecture**| \`Formspree AJAX\` (Serverless Endpoint Relay + Honeypot + Fallback) |
 <!-- TELEMETRY_END -->`;
 
 if (readme.includes('<!-- TELEMETRY_START -->') && readme.includes('<!-- TELEMETRY_END -->')) {

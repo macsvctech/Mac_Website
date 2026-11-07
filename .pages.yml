@@ -1723,9 +1723,15 @@ content:
       - name: submitButtonText
         label: Action Button Text
         type: string
-      - name: recipientEmail
-        label: Target Submission Email (FormSubmit Endpoint)
+      - name: formEndpoint
+        label: "Formspree API Endpoint URL"
         type: string
+        default: "https://formspree.io/f/xaeezddr"
+        description: "Official Formspree form submission endpoint (e.g. https://formspree.io/f/xaeezddr)."
+      - name: recipientEmail
+        label: "Target Backup Email (Mailto Fallback)"
+        type: string
+        description: "Direct email address for fallback communication if the relay is unreachable."
       - name: coordinates
         label: Physical Base Coordinates
         type: object

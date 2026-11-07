@@ -20,6 +20,7 @@
   },
   "packetStatus": "/// PACKET_STATUS: READY FOR TRANSMISSION // LATENCY: 12ms // CADRE: GENERAL_INQUIRY",
   "submitButtonText": "TRANSMIT ▷",
+  "formEndpoint": "https://formspree.io/f/xaeezddr",
   "recipientEmail": "mac.svc2016@gmail.com",
   "coordinates": {
     "title": "COORDINATES",
