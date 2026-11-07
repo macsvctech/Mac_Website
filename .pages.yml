@@ -1318,6 +1318,23 @@ content:
                 type: string
               - name: label
                 type: string
+      - name: archiveSection
+        label: Industrial Timetable Archive Section Settings
+        type: object
+        fields:
+          - name: enabled
+            label: Show Complete Archive Timetable?
+            type: boolean
+            default: true
+            description: Toggle ON to display the timetable archive at the bottom of Intel. Toggle OFF to hide it without deleting data.
+          - name: title
+            label: Archive Section Title
+            type: string
+            default: "/// COMPLETE_ARCHIVE_INDEX"
+          - name: status
+            label: Archive Status Badge
+            type: string
+            default: "[STATUS: REPOSITORY SYNCHRONIZED]"
   - name: intel_articles
     label: "📰 Intel: Research Reports, Blogs, Case Studies & PDFs"
     type: collection

@@ -7,7 +7,12 @@ import BlueprintDivider from '../../components/ui/BlueprintDivider.astro';
 
 const allIntel = await getCollection('intel');
 const sortedIntel = allIntel.filter((i) => i.data.enabled !== false).sort((a, b) => a.data.order - b.data.order);
-const { breadcrumb, clearance, legacyArchive, maczine, feedSection, archiveSection } = intelData;
+const { breadcrumb, clearance, legacyArchive, maczine, feedSection } = intelData;
+const archiveSection = intelData.archiveSection || {
+  enabled: true,
+  title: "/// COMPLETE_ARCHIVE_INDEX",
+  status: "[STATUS: REPOSITORY SYNCHRONIZED]"
+};
 ---
 
 <BaseLayout title="INTEL /// THE MARKETING CLUB (MAC)">

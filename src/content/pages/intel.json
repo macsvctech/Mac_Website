@@ -75,5 +75,10 @@
         "label": "[ PODCAST / VIDEO ]"
       }
     ]
+  },
+  "archiveSection": {
+    "enabled": true,
+    "title": "/// COMPLETE_ARCHIVE_INDEX",
+    "status": "[STATUS: REPOSITORY SYNCHRONIZED]"
   }
 }
