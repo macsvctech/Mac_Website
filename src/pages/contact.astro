@@ -4,25 +4,66 @@ import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
 import contactContent from '../content/pages/contact.json';
 
 const {
-  breadcrumb,
-  encryptionBadge,
-  terminalHeader,
-  formTitle,
-  openProtocolBadge,
-  fields,
-  packetStatus,
-  submitButtonText,
+  breadcrumb = "CORE ROUTE // CONTACT_GATEWAY",
+  encryptionBadge = "256-BIT ENCRYPTED // PUBLIC RELAY",
+  terminalHeader = "COMMAND DISPATCH RELAY",
+  formTitle = "TRANSMIT QUERY TO COMMAND",
+  openProtocolBadge = "OPEN PROTOCOL // ALL TIERS",
+  fields: rawFields,
+  packetStatus = "PACKET STATUS: READY",
+  submitButtonText = "TRANSMIT PAYLOAD >",
   formEndpoint = "https://formspree.io/f/xaeezddr",
-  recipientEmail,
-  coordinates,
-  sponsorshipDeckPdf,
-  sponsorshipHeading,
-  sponsorshipTitle,
-  sponsorshipSize,
-  formFeedback,
-  externalChannelsTitle,
-  externalLinks,
-} = contactContent;
+  recipientEmail = "themarketingclub.svc@gmail.com",
+  coordinates: rawCoordinates,
+  sponsorshipDeckPdf = "/uploads/documents/mac-sponsorship-deck.pdf",
+  sponsorshipHeading = "COLLABORATION & SPONSORSHIPS",
+  sponsorshipTitle = "PARTNER WITH THE COLLECTIVE",
+  sponsorshipSize = "OFFICIAL PITCH DECK [PDF]",
+  formFeedback: rawFormFeedback,
+  externalChannelsTitle = "EXTERNAL CHANNELS",
+  externalLinks = [],
+  terminalEnabled = true,
+  sponsorshipEnabled = true,
+  externalChannelsEnabled = true
+} = contactContent || {};
+
+const fields = rawFields || {
+  identifierLabel: "01 // IDENTIFIER (NAME)",
+  identifierType: "[STRING]",
+  identifierPlaceholder: "e.g. Alex Mercer",
+  networkLabel: "02 // NETWORK (EMAIL)",
+  networkType: "[ADDR_V4]",
+  networkPlaceholder: "e.g. alex@enterprise.com",
+  protocolLabel: "03 // PROTOCOL (ORGANIZATION / ROLE)",
+  protocolType: "[ENTITY]",
+  protocolPlaceholder: "e.g. VP Marketing @ Acme Corp",
+  payloadLabel: "04 // PAYLOAD (TRANSMISSION / PROPOSAL)",
+  payloadType: "[TEXT_STREAM]",
+  payloadPlaceholder: "Detail proposal or request specs..."
+};
+
+const coordinates = rawCoordinates || {
+  enabled: true,
+  title: "HQ COORDINATES",
+  subtitle: "DELHI UNIVERSITY SOUTH CAMPUS",
+  collegeName: "SRI VENKATESWARA COLLEGE",
+  streetAddress: "BENITO JUAREZ ROAD, DHAULA KUAN",
+  cityPin: "NEW DELHI, DELHI 110021",
+  phone: "+91 99999 99999",
+  email: "themarketingclub.svc@gmail.com",
+  status: "STATION OPERATIONAL // ADMISSIONS OPEN",
+  mapImage: "/uploads/images/contact-map.webp",
+  googleMapsUrl: "https://maps.google.com/?q=Sri+Venkateswara+College+New+Delhi",
+  viewMapText: "VIEW ON GOOGLE SATELLITE [↗]"
+};
+
+const formFeedback = rawFormFeedback || {
+  transmittingText: "/// TRANSMITTING PAYLOAD... ///",
+  confirmedBtnText: "TRANSMISSION CONFIRMED ▷",
+  successMessage: "[✓] PAYLOAD TRANSMITTED TO COMMAND CELL. STATUS 200 OK.",
+  timeoutMessage: "[!] DIRECT API RELAY TIMED OUT. TRANSMIT DIRECTLY VIA EMAIL CLIENT:",
+  mailtoButtonText: "[ ✉ TRANSMIT VIA DEFAULT MAIL CLIENT ]"
+};
 ---
 
 <BaseLayout title="CONTACT /// THE MARKETING CLUB (MAC)">
@@ -695,7 +736,7 @@ const {
           </div>
 
           <!-- CORPORATE SPONSORSHIP DECK DOWNLOAD -->
-          {sponsorshipDeckPdf && (
+          {sponsorshipEnabled !== false && sponsorshipDeckPdf && (
             <div class="pt-4 border-t-2 border-stark-black">
               <div class="font-mono text-xs font-bold uppercase text-stark-black mb-2 flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[16px]">file_present</span>

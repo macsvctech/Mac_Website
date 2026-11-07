@@ -7,12 +7,23 @@ import BlueprintDivider from '../../components/ui/BlueprintDivider.astro';
 
 const allIntel = await getCollection('intel');
 const sortedIntel = allIntel.filter((i) => i.data.enabled !== false).sort((a, b) => a.data.order - b.data.order);
-const { breadcrumb, clearance, legacyArchive, maczine, feedSection } = intelData;
+const {
+  breadcrumb = "INTEL DISPATCHES // RESEARCH CELL",
+  clearance = "CLEARANCE: DECLASSIFIED // ALL CADRES",
+  legacyArchive = {},
+  maczine = {},
+  feedSection = {}
+} = intelData || {};
+
 const archiveSection = intelData.archiveSection || {
   enabled: true,
   title: "/// COMPLETE_ARCHIVE_INDEX",
   status: "[STATUS: REPOSITORY SYNCHRONIZED]"
 };
+
+const maczineHighlights = maczine.highlights || [];
+const maczineArchiveIssues = maczine.archiveIssues || [];
+const feedCategories = feedSection.categories || [];
 ---
 
 <BaseLayout title="INTEL /// THE MARKETING CLUB (MAC)">
@@ -106,7 +117,7 @@ const archiveSection = intelData.archiveSection || {
             </p>
             <!-- Issue Highlights -->
             <div class="flex flex-col gap-2 sm:gap-2.5 mb-6 sm:mb-8">
-              {maczine.highlights.map((h: string) => (
+              {maczineHighlights.map((h: string) => (
                 <div class="bg-surface p-2.5 sm:p-3 border-2 border-stark-black font-mono text-xs sm:text-sm text-stark-black font-bold">
                   {h}
                 </div>
@@ -144,7 +155,7 @@ const archiveSection = intelData.archiveSection || {
           <span class="font-mono text-xs text-on-surface-variant font-bold">{maczine.openAccessBadge || "[OPEN ACCESS]"}</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
-          {maczine.archiveIssues.map((issue: any) => (
+          {maczineArchiveIssues.map((issue: any) => (
             <div class="bg-pure-white border-2 border-stark-black p-3.5 sm:p-4 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between mb-2">
@@ -204,7 +215,7 @@ const archiveSection = intelData.archiveSection || {
 
         <!-- Filter Tabs -->
         <div class="flex flex-wrap gap-1.5 sm:gap-2 font-mono text-xs font-bold" id="intel-filter-buttons">
-          {feedSection.categories.map((cat: any, idx: number) => (
+          {feedCategories.map((cat: any, idx: number) => (
             <button
               type="button"
               data-category={cat.id}

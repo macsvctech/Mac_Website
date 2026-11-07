@@ -91,9 +91,9 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
     <!-- STICKY MASTER HEADER (Ceiling Banner + Navigation + Mobile Drawer) -->
     <header class="sticky top-0 left-0 right-0 z-50 w-full bg-surface">
       <!-- 1. TOP CAUTION-TAPE RECRUITMENT BANNER (Conditioned on recruitmentBanner.enabled) -->
-      {settings.recruitmentBanner.enabled && (
+      {settings.recruitmentBanner?.enabled && (
         <a 
-          href={settings.recruitmentBanner.link}
+          href={settings.recruitmentBanner?.link || "/roster"}
           data-sfx="transmit" 
           class="block w-full bg-mac-yellow border-b-2 border-stark-black py-2 px-4 text-center select-none hover:bg-stark-black hover:text-mac-yellow transition-colors group cursor-pointer"
         >

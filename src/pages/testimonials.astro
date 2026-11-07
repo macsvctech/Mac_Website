@@ -9,15 +9,30 @@ const allTestimonials = await getCollection('testimonials');
 const sortedTestimonials = allTestimonials.filter(t => t.data.enabled !== false).sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
 
 const { 
-  breadcrumb, 
-  securityTier, 
-  header, 
-  stats, 
+  breadcrumb = "ALUMNI DOSSIERS // FIELD EVIDENCE", 
+  securityTier = "CLEARANCE: ALL CADRES // ARCHIVE LEVEL 04", 
+  header: rawHeader, 
+  stats: rawStats, 
   dossierOpenText = "[ READ FULL DOSSIER + ]", 
   dossierCloseText = "[ CLOSE DOSSIER - ]", 
   linkedinText = "[ LINKEDIN ↗ ]", 
-  backToBlueprintText = "[ <- BACK TO BLUEPRINT ]" 
-} = testimonialsPageData;
+  backToBlueprintText = "[ <- BACK TO BLUEPRINT ]",
+  statsEnabled = true
+} = testimonialsPageData || {};
+
+const header = rawHeader || {
+  enabled: true,
+  terminalTag: "CLEARANCE LEVEL-4 // ARCHIVED CADRE TRANSMISSIONS",
+  badge: "VERIFIED ALUMNI DOSSIERS",
+  title: "CADRE TRANSMISSIONS: DECLASSIFIED FIELD REPORTS",
+  description: "Read unredacted dispatches and career trajectory evaluations from former Directors, Department Leads, and Senior Operatives who completed deployments with The Marketing Club (MAC)."
+};
+
+const stats = rawStats || [
+  { label: "DECLASSIFIED RECORDS", value: "06 ARCHIVED" },
+  { label: "VERIFICATION CADENCE", value: "ANNUAL HARVEST" },
+  { label: "ALUMNI PLACEMENT RATE", value: "100% TIER-1 ORG" }
+];
 ---
 
 <BaseLayout title="TESTIMONIALS /// THE MARKETING CLUB (MAC)">
@@ -48,6 +63,7 @@ const {
   <!-- MAIN TESTIMONIALS CONTENT CONTAINER -->
   <div class="max-w-[1280px] w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8 sm:space-y-12">
     
+    {header.enabled !== false && (
     <!-- 2. HERO SPOTLIGHT TERMINAL BANNER -->
     <header class="w-full border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white relative">
       <!-- Blueprint Technical Corner Registration Crosshairs (Desktop Only) -->
@@ -87,6 +103,7 @@ const {
         </div>
       </div>
 
+      {statsEnabled !== false && Array.isArray(stats) && stats.length > 0 && (
       <!-- Telemetry Metrics Triple Strip -->
       <div class="grid grid-cols-1 sm:grid-cols-3 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-stark-black bg-tactical-stone font-mono text-xs font-bold">
         {stats.map((item: any) => (
@@ -96,7 +113,9 @@ const {
           </div>
         ))}
       </div>
+      )}
     </header>
+    )}
 
     <!-- CONNECTOR RAIL -->
     <BlueprintDivider tag="DECLASSIFIED_DOSSIER_RECORDS" code="ALUMNI_ARCHIVE_01" accent="yellow" class="my-6 sm:my-8" />

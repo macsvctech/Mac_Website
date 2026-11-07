@@ -5,7 +5,23 @@ import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
 import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
 import homeContent from '../content/pages/home.json';
 
-const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
+const {
+  hero = {},
+  receipts = {},
+  machinery = {},
+  sponsors = {},
+  freshPress = {}
+} = homeContent || {};
+
+const flagship = (freshPress && freshPress.flagship) || {};
+const intelFeed = (freshPress && freshPress.intel) || {};
+
+const rawDepts = machinery.departments || [];
+const dept0 = rawDepts[0] || { name: "GROWTH & OUTREACH", description: "", tag: "", meta: "" };
+const dept1 = rawDepts[1] || { name: "SOCIAL MEDIA & PR", description: "", tag: "", meta: "" };
+const dept2 = rawDepts[2] || { name: "EVENTS & LOGISTICS", description: "", tag: "", meta: "" };
+const dept3 = rawDepts[3] || { code: "SUB_DEP_4A", name: "TECHNICAL & RESEARCH", description: "", tag: "" };
+const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", description: "", tag: "" };
 ---
 
 <BaseLayout>
@@ -141,7 +157,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
       <!-- 5-Cell Collapsed Border Data Table Grid with Flat Hover-Swap -->
       <div class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-stark-black bg-pure-white">
-        {receipts.metrics.filter((m) => m.enabled !== false).map((metric, idx) => (
+        {(receipts.metrics || []).filter((m) => m.enabled !== false).map((metric, idx) => (
           <div
             data-sfx="scaleTick"
             data-scale-index={idx}
@@ -211,18 +227,18 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
               <span class="font-mono text-xs sm:text-sm font-bold text-stark-black uppercase tracking-wider">DEP_01</span>
             </div>
             <h3 class="font-display text-[22px] sm:text-[28px] lg:text-[32px] leading-tight font-extrabold uppercase text-stark-black mb-2 sm:mb-3">
-              {machinery.departments[0].name}
+              {dept0.name}
             </h3>
             <p class="font-sans text-on-surface text-sm sm:text-base lg:text-[17px] leading-relaxed max-w-2xl font-medium">
-              {machinery.departments[0].description}
+              {dept0.description}
             </p>
           </div>
           <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t-2 border-stark-black flex items-center justify-between">
             <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs">
-              {machinery.departments[0].tag}
+              {dept0.tag}
             </span>
             <span class="font-mono text-[11px] sm:text-xs font-bold text-stark-black">
-              {machinery.departments[0].meta}
+              {dept0.meta}
             </span>
           </div>
         </a>
@@ -240,18 +256,18 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
               <span class="font-mono text-xs sm:text-sm font-bold text-pure-white uppercase tracking-wider">DEP_02</span>
             </div>
             <h3 class="font-display text-[22px] sm:text-[28px] lg:text-[32px] leading-tight font-extrabold uppercase text-pure-white mb-2 sm:mb-3">
-              {machinery.departments[1].name}
+              {dept1.name}
             </h3>
             <p class="font-sans text-pure-white/95 text-sm sm:text-base leading-relaxed font-medium">
-              {machinery.departments[1].description}
+              {dept1.description}
             </p>
           </div>
           <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t-2 border-pure-white flex items-center justify-between">
             <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs">
-              {machinery.departments[1].tag}
+              {dept1.tag}
             </span>
             <span class="font-mono text-[11px] sm:text-xs font-bold text-pure-white">
-              {machinery.departments[1].meta}
+              {dept1.meta}
             </span>
           </div>
         </a>
@@ -269,18 +285,18 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
               <span class="font-mono text-xs sm:text-sm font-bold text-stark-black uppercase tracking-wider">DEP_03</span>
             </div>
             <h3 class="font-display text-[22px] sm:text-[28px] lg:text-[32px] leading-tight font-extrabold uppercase text-stark-black mb-2 sm:mb-3">
-              {machinery.departments[2].name}
+              {dept2.name}
             </h3>
             <p class="font-sans text-stark-black text-sm sm:text-base leading-relaxed font-medium">
-              {machinery.departments[2].description}
+              {dept2.description}
             </p>
           </div>
           <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t-2 border-stark-black flex items-center justify-between">
             <span class="font-mono font-bold uppercase text-stark-black bg-tactical-stone border-2 border-stark-black px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs">
-              {machinery.departments[2].tag}
+              {dept2.tag}
             </span>
             <span class="font-mono text-[11px] sm:text-xs font-bold text-stark-black">
-              {machinery.departments[2].meta}
+              {dept2.meta}
             </span>
           </div>
         </a>
@@ -299,19 +315,19 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
                   <span class="material-symbols-outlined text-stark-black text-[20px] sm:text-[24px]">terminal</span>
                 </div>
                 <span class="font-mono text-xs font-bold text-on-surface-variant uppercase">
-                  {machinery.departments[3].code}
+                  {dept3.code}
                 </span>
               </div>
               <h3 class="font-display text-xl sm:text-2xl lg:text-[28px] leading-tight font-extrabold uppercase text-stark-black mb-2 sm:mb-3">
-                {machinery.departments[3].name}
+                {dept3.name}
               </h3>
               <p class="font-sans text-on-surface text-sm sm:text-[15px] leading-relaxed">
-                {machinery.departments[3].description}
+                {dept3.description}
               </p>
             </div>
             <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t-2 border-stark-black flex items-center justify-between">
               <span class="font-mono font-bold uppercase text-stark-black bg-mac-yellow border-2 border-stark-black px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs">
-                {machinery.departments[3].tag}
+                {dept3.tag}
               </span>
             </div>
           </a>
@@ -327,19 +343,19 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
                   <span class="material-symbols-outlined text-stark-black text-[20px] sm:text-[24px]">palette</span>
                 </div>
                 <span class="font-mono text-xs font-bold text-on-surface-variant uppercase">
-                  {machinery.departments[4].code}
+                  {dept4.code}
                 </span>
               </div>
               <h3 class="font-display text-xl sm:text-2xl lg:text-[28px] leading-tight font-extrabold uppercase text-stark-black mb-2 sm:mb-3">
-                {machinery.departments[4].name}
+                {dept4.name}
               </h3>
               <p class="font-sans text-on-surface text-sm sm:text-[15px] leading-relaxed">
-                {machinery.departments[4].description}
+                {dept4.description}
               </p>
             </div>
             <div class="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t-2 border-stark-black flex items-center justify-between">
               <span class="font-mono font-bold uppercase text-stark-black bg-pure-white border-2 border-stark-black px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs">
-                {machinery.departments[4].tag}
+                {dept4.tag}
               </span>
             </div>
           </a>
@@ -366,7 +382,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
 
         <!-- 6 Freight-Stamp Cells Grid with Flat Hover Snapping -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 flex-1 divide-y-2 sm:divide-y-0 divide-x-2 divide-stark-black">
-          {sponsors.items.filter((s) => s.enabled !== false).map((sponsor) => (
+          {(sponsors.items || []).filter((s) => s.enabled !== false).map((sponsor) => (
             <a
               href={sponsor.websiteUrl || "#"}
               data-sfx-hover="tick"
@@ -415,7 +431,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           <!-- 48px Top Header Bar -->
           <div class="h-10 sm:h-12 bg-stark-black px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black select-none">
             <span class="font-mono text-xs sm:text-sm font-bold text-mac-yellow uppercase truncate">
-              {freshPress.flagship.headerTitle}
+              {flagship.headerTitle}
             </span>
             <div class="flex items-center gap-1.5 shrink-0">
               <span class="w-2.5 h-2.5 bg-pure-white"></span>
@@ -426,7 +442,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           <!-- Poster Box Content Area -->
           <div class="p-4 sm:p-6 lg:p-8 flex flex-col justify-between flex-1">
             <a 
-              href={freshPress.flagship.ctaLink} 
+              href={flagship.ctaLink} 
               class="aspect-video w-full bg-stark-black border-2 border-stark-black p-4 sm:p-6 flex flex-col justify-between relative overflow-hidden mb-5 sm:mb-6 group cursor-pointer block"
             >
               <!-- Background Technical Lines -->
@@ -437,40 +453,40 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
               
               <div class="flex justify-between items-start z-10 gap-2">
                 <span class="bg-mac-yellow text-stark-black font-mono text-[10px] sm:text-xs font-bold px-2 py-0.5 border border-stark-black truncate">
-                  {freshPress.flagship.simulationBadge}
+                  {flagship.simulationBadge}
                 </span>
                 <span class="text-mac-yellow font-mono text-[10px] sm:text-xs font-bold shrink-0">
-                  {freshPress.flagship.subBadge}
+                  {flagship.subBadge}
                 </span>
               </div>
 
               <div class="z-10 mt-auto">
                 <h4 class="font-display text-[20px] sm:text-[28px] lg:text-[34px] leading-tight font-black uppercase text-pure-white tracking-tight group-hover:text-mac-yellow transition-colors">
-                  {freshPress.flagship.title}
+                  {flagship.title}
                 </h4>
                 <div class="font-mono text-[11px] sm:text-sm font-bold uppercase text-mac-yellow mt-1.5 sm:mt-2">
-                  {freshPress.flagship.subtitle}
+                  {flagship.subtitle}
                 </div>
               </div>
             </a>
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
               <a
-                href={freshPress.flagship.ctaLink}
+                href={flagship.ctaLink}
                 class="inline-flex items-center justify-center font-mono text-xs sm:text-sm uppercase font-bold bg-mac-yellow text-stark-black border-2 border-stark-black px-5 sm:px-6 py-3 sm:py-3.5 shadow-[4px_4px_0px_#000000] hover:bg-stark-black hover:text-mac-yellow transition-none cursor-pointer text-center"
               >
-                {freshPress.flagship.ctaText}
+                {flagship.ctaText}
               </a>
               <span class="font-mono text-xs text-on-surface-variant font-bold">
-                {freshPress.flagship.status}
+                {flagship.status}
               </span>
             </div>
 
-            {freshPress.flagship.rulebookPdfUrl && (
+            {flagship.rulebookPdfUrl && (
               <div class="pt-4 border-t-2 border-stark-black mt-4">
                 <BrutalFileDownload
-                  fileUrl={freshPress.flagship.rulebookPdfUrl}
-                  fileLabel={freshPress.flagship.rulebookPdfLabel || "DOWNLOAD RULEBOOK [PDF]"}
+                  fileUrl={flagship.rulebookPdfUrl}
+                  fileLabel={flagship.rulebookPdfLabel || "DOWNLOAD RULEBOOK [PDF]"}
                   fileType="PDF"
                   variant="bar"
                 />
@@ -484,16 +500,16 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           <!-- 48px Top Header Bar -->
           <div class="h-10 sm:h-12 bg-stark-black px-3.5 sm:px-4 flex items-center justify-between border-b-2 border-stark-black select-none">
             <span class="font-mono text-xs sm:text-sm font-bold text-mac-yellow uppercase truncate">
-              {freshPress.intel.headerTitle}
+              {intelFeed.headerTitle}
             </span>
             <span class="font-mono text-[11px] sm:text-xs text-pure-white uppercase font-bold shrink-0 ml-2">
-              {freshPress.intel.feedLabel}
+              {intelFeed.feedLabel}
             </span>
           </div>
 
           <!-- Stacked Newspaper-Clipping Rows -->
           <div class="flex flex-col flex-1 divide-y-2 divide-stark-black">
-            {freshPress.intel.articles.filter((a) => a.enabled !== false).map((article) => (
+            {(intelFeed.articles || []).filter((a) => a.enabled !== false).map((article) => (
               <div
                 class={`p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 flex-1 transition-colors ${
                   article.highlighted 
@@ -524,7 +540,7 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
                       : "bg-pure-white text-stark-black border-2 border-stark-black hover:bg-stark-black hover:text-mac-yellow"
                   }`}
                 >
-                  {freshPress.intel.readArticleText || "[READ ↗]"}
+                  {intelFeed.readArticleText || "[READ ↗]"}
                 </a>
               </div>
             ))}
@@ -533,19 +549,20 @@ const { hero, receipts, machinery, sponsors, freshPress } = homeContent;
           <!-- Terminal Footer Bar -->
           <div class="p-3.5 sm:p-4 bg-tactical-stone border-t-2 border-stark-black flex items-center justify-between select-none">
             <span class="font-mono text-xs font-bold text-stark-black">
-              {freshPress.intel.footerTotal}
+              {intelFeed.footerTotal}
             </span>
             <a
-              href={freshPress.intel.footerLink}
+              href={intelFeed.footerLink}
               class="font-mono text-xs font-bold uppercase text-stark-black underline hover:bg-stark-black hover:text-pure-white px-1"
             >
-              {freshPress.intel.footerLinkText}
+              {intelFeed.footerLinkText}
             </a>
           </div>
         </div>
 
       </div>
     </section>
+    )}
 
   </div>
 </BaseLayout>

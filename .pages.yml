@@ -317,6 +317,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: Enabled?
+                type: boolean
+                default: true
               - name: id
                 label: Metric Key
                 type: string
@@ -352,6 +356,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: Enabled?
+                type: boolean
+                default: true
               - name: code
                 label: Dept Code
                 type: string
@@ -497,6 +505,10 @@ content:
                 options:
                   media: documents
                 description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
+              - name: rulebookPdfLabel
+                label: Rulebook Download Button Label
+                type: string
+                default: "DOWNLOAD RULEBOOK [PDF]"
           - name: intel
             label: Featured Research Dispatches
             type: object
@@ -507,11 +519,19 @@ content:
               - name: feedLabel
                 label: Feed Label
                 type: string
+              - name: readArticleText
+                label: Read Article Link Text
+                type: string
+                default: "[READ ↗]"
               - name: articles
                 label: Featured Articles
                 type: object
                 list: true
                 fields:
+                  - name: enabled
+                    label: Enabled?
+                    type: boolean
+                    default: true
                   - name: tag
                     label: Category Tag
                     type: string
@@ -607,6 +627,14 @@ content:
             options:
               media: documents
             description: Downloadable PDF document. Please keep file size under 15MB for fast visitor download.
+          - name: constitutionPdfLabel
+            label: Constitution Button Label
+            type: string
+            default: "DOWNLOAD SOCIETY CHARTER & CONSTITUTION [PDF]"
+          - name: clearanceStamp
+            label: Archival Clearance Stamp
+            type: string
+            default: "[ARCHIVAL_CLEARANCE]"
       - name: architecture
         label: 4 Declassified Architectural Pillars
         type: object
@@ -652,6 +680,34 @@ content:
               - name: founded
                 label: Foundation Tag
                 type: string
+              - name: focus
+                label: Focus Area (Tab 2)
+                type: string
+              - name: status
+                label: Readiness Status (Tab 2)
+                type: string
+              - name: outputLines
+                label: Output Metric Lines (Tab 2)
+                type: string
+                list: true
+              - name: methodology
+                label: Methodology (Tab 3)
+                type: string
+              - name: cadence
+                label: Cadence (Tab 3)
+                type: string
+              - name: ethos
+                label: Core Ethos (Tab 4)
+                type: string
+              - name: mandate
+                label: Strategic Mandate (Tab 4)
+                type: string
+              - name: boxHeading
+                label: Tactical Box Heading
+                type: string
+              - name: boxSub
+                label: Tactical Box Subtitle
+                type: string
               - name: accent
                 label: Tab Color Accent
                 type: select
@@ -670,10 +726,14 @@ content:
                     type: string
                   - name: text
                     type: text
-      - name: visionMission
-        label: Vision & Mission Parameters
+      - name: plaques
+        label: Vision & Mission Blueprint Plaques
         type: object
         fields:
+          - name: enabled
+            label: Show Vision & Mission Section?
+            type: boolean
+            default: true
           - name: vision
             label: Vision Statement
             type: object
@@ -722,6 +782,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: Enabled?
+                type: boolean
+                default: true
               - name: deptTag
                 type: string
               - name: colorScheme
@@ -848,6 +912,10 @@ content:
         label: Header Spotlight Terminal
         type: object
         fields:
+          - name: enabled
+            label: Show Testimonials Header?
+            type: boolean
+            default: true
           - name: terminalTag
             type: string
           - name: title
@@ -1048,6 +1116,18 @@ content:
             - cyan
             - red
             - white
+      - name: headerBg
+        label: Dossier Header Background & Text Tokens
+        type: string
+        default: "bg-stark-black text-primary-container"
+      - name: headerDotBg
+        label: Header Dot Indicator Color Class
+        type: string
+        default: "bg-primary-container"
+      - name: headerStatusClass
+        label: Header Status Text Color Class
+        type: string
+        default: "text-pure-white"
       - name: imagePosition
         label: Image Orientation
         type: select
@@ -1486,6 +1566,10 @@ content:
         label: Command Header
         type: object
         fields:
+          - name: enabled
+            label: Show Command Hierarchy Section?
+            type: boolean
+            default: true
           - name: tier
             type: string
           - name: council
@@ -1543,6 +1627,10 @@ content:
         type: object
         list: true
         fields:
+          - name: enabled
+            label: Enabled?
+            type: boolean
+            default: true
           - name: id
             label: Dept ID (dept-1, dept-2, dept-3, dept-4)
             type: string
@@ -1671,6 +1759,10 @@ content:
         type: object
         list: true
         fields:
+          - name: enabled
+            label: Wing Visible?
+            type: boolean
+            default: true
           - name: id
             type: string
           - name: code
@@ -1686,6 +1778,10 @@ content:
             type: object
             list: true
             fields:
+              - name: enabled
+                label: Candidate Cleared?
+                type: boolean
+                default: true
               - name: id
                 label: Rank Index (e.g. 01)
                 type: string

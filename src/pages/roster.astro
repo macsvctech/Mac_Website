@@ -5,7 +5,15 @@ import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
 import teamData from '../content/roster/team.json';
 import resultsData from '../content/roster/results.json';
 
-const { academicYear, councilPdfUrl, breadcrumb, cadreStatus, station, sectionCommand, coreCommand, departments } = teamData;
+const { academicYear, councilPdfUrl, breadcrumb, cadreStatus, station, coreCommand, departments } = teamData;
+const sectionCommand = teamData.sectionCommand || {
+  enabled: true,
+  tier: "TIER_01 // STRATEGIC DIRECTION",
+  council: "EXECUTIVE COUNCIL",
+  title: "CORE COMMAND HIERARCHY",
+  clearance: "CLEARANCE: EXECUTIVE",
+  officerCount: "5 ACTIVE OFFICERS"
+};
 const { session, isPublished, totalCleared, headerTitle, statusBanner, officialResultPdf, officialPdfSize, wings } = resultsData;
 ---
 
