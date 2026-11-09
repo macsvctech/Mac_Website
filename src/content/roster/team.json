@@ -112,14 +112,6 @@
           "tenure": "2ND YEAR // ECON",
           "portrait": "/uploads/images/roster/pooja.jpg",
           "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "frfd",
-          "name": "dqwd",
-          "roleType": "dqw",
-          "roleColor": "text-[#705d00]",
-          "tenure": "wd"
         }
       ],
       "directoryTable": [
