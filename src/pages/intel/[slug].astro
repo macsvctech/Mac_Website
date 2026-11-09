@@ -154,12 +154,25 @@ const getIntelCategoryBadgeClass = (category?: string) => {
 
           <div class="p-3.5 sm:p-5 space-y-4 sm:space-y-5">
             <!-- AUTHOR ID CARD -->
-            <div class="bg-pure-white border-2 border-stark-black p-3 sm:p-3.5 shadow-[2px_2px_0px_#000000]">
-              <div class="font-mono text-[10px] sm:text-[11px] text-on-surface-variant uppercase font-bold">DISPATCH ORIGIN</div>
-              <div class="font-black text-base sm:text-lg uppercase text-stark-black leading-snug mt-1 break-words">{entry.data.author}</div>
-              <div class="font-mono text-xs text-[#705d00] font-bold mt-1.5 flex items-center gap-1 break-words">
-                <span class="material-symbols-outlined text-xs shrink-0">verified</span>
-                <span>{entry.data.authorRole || 'SRI VENKATESWARA COLLEGE, DU'}</span>
+            <div class="bg-pure-white border-2 border-stark-black p-3 sm:p-3.5 shadow-[2px_2px_0px_#000000] flex items-center gap-3">
+              {entry.data.authorAvatar && entry.data.authorAvatar.trim().length > 0 ? (
+                <img
+                  src={entry.data.authorAvatar}
+                  alt={entry.data.author}
+                  class="w-12 h-12 object-cover border-2 border-stark-black shrink-0"
+                />
+              ) : (
+                <div class="w-12 h-12 bg-mac-yellow border-2 border-stark-black flex items-center justify-center font-display font-black text-lg text-stark-black shrink-0 shadow-[2px_2px_0px_#000000] select-none">
+                  {(entry.data.author || 'MAC').split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                </div>
+              )}
+              <div class="min-w-0 flex-1">
+                <div class="font-mono text-[10px] sm:text-[11px] text-on-surface-variant uppercase font-bold">DISPATCH ORIGIN</div>
+                <div class="font-black text-base sm:text-lg uppercase text-stark-black leading-snug mt-0.5 break-words">{entry.data.author}</div>
+                <div class="font-mono text-xs text-[#705d00] font-bold mt-1 flex items-center gap-1 break-words">
+                  <span class="material-symbols-outlined text-xs shrink-0">verified</span>
+                  <span class="truncate">{entry.data.authorRole || 'SRI VENKATESWARA COLLEGE, DU'}</span>
+                </div>
               </div>
             </div>
 
