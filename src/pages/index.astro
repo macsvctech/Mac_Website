@@ -27,6 +27,7 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
 <BaseLayout>
   <div class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 py-5 sm:py-10 flex flex-col">
     
+    {hero.enabled !== false && (
     <!-- =========================================================================
          SECTION 1.1 — HERO SPLIT CONTAINER
          ========================================================================= -->
@@ -136,9 +137,12 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
 
       </div>
     </section>
+    )}
 
-    <!-- SECTION CONNECTOR RAIL -->
-    <BlueprintDivider tag="IMPACT_RECEIPTS // VERIFIED_METRICS" code="TEL_01.2" accent="yellow" />
+    {receipts.enabled !== false && (
+      <>
+        <!-- SECTION CONNECTOR RAIL -->
+        <BlueprintDivider tag="IMPACT_RECEIPTS // VERIFIED_METRICS" code="TEL_01.2" accent="yellow" />
 
     <!-- =========================================================================
          SECTION 1.2 — "THE RECEIPTS" (5-CELL IMPACT COUNTER STRIP)
@@ -190,9 +194,13 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
         ))}
       </div>
     </section>
+      </>
+    )}
 
-    <!-- SECTION CONNECTOR RAIL -->
-    <BlueprintDivider tag="DEPARTMENTAL_UNITS // 4_DIVISIONS" code="TEL_01.3" accent="cyan" />
+    {machinery.enabled !== false && (
+      <>
+        <!-- SECTION CONNECTOR RAIL -->
+        <BlueprintDivider tag="DEPARTMENTAL_UNITS // 4_DIVISIONS" code="TEL_01.3" accent="cyan" />
 
     <!-- =========================================================================
          SECTION 1.3 — "THE MACHINERY" (DEPARTMENTS BENTO GRID)
@@ -364,9 +372,13 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
 
       </div>
     </section>
+      </>
+    )}
 
-    <!-- SECTION CONNECTOR RAIL -->
-    <BlueprintDivider tag="CORPORATE_SYNDICATE // PAST_PARTNERS" code="TEL_01.4" accent="black" />
+    {sponsors.enabled !== false && (
+      <>
+        <!-- SECTION CONNECTOR RAIL -->
+        <BlueprintDivider tag="CORPORATE_SYNDICATE // PAST_PARTNERS" code="TEL_01.4" accent="black" />
 
     <!-- =========================================================================
          SECTION 1.4 — "BACKED BY GIANTS" (SPONSOR CONVEYOR BELT)
@@ -407,9 +419,13 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
         </div>
       </div>
     </section>
+      </>
+    )}
 
-    <!-- SECTION CONNECTOR RAIL -->
-    <BlueprintDivider tag="DEPLOYMENT_STREAM // LIVE_FEEDS" code="TEL_01.5" accent="red" />
+    {freshPress.enabled !== false && (
+      <>
+        <!-- SECTION CONNECTOR RAIL -->
+        <BlueprintDivider tag="DEPLOYMENT_STREAM // LIVE_FEEDS" code="TEL_01.5" accent="red" />
 
     <!-- =========================================================================
          SECTION 1.5 — "FRESH OFF THE PRESS" (2-COLUMN TEASER SPLIT)
@@ -563,6 +579,7 @@ const dept4 = rawDepts[4] || { code: "SUB_DEP_4B", name: "CREATIVE STUDIO", desc
 
       </div>
     </section>
+      </>
     )}
 
   </div>

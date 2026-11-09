@@ -13,9 +13,9 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-09 17:20:02 IST` |
-| **Git Snapshot / Commit** | `9d90c9d` (`main` branch, commit #53) |
-| **Last Commit Directive** | `fix(roster): bind recruitment results board visibility to isPublished CMS toggle` |
+| **Last Synchronized** | `2026-11-09 17:20:56 IST` |
+| **Git Snapshot / Commit** | `03b9baf` (`main` branch, commit #54) |
+| **Last Commit Directive** | `feat(ui): remove black and white grayscale overlays from all photos` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
@@ -28,6 +28,7 @@
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `03b9baf` | `2026-11-09 17:20:56 IST` | feat(ui): remove black and white grayscale overlays from all photos | `MAC SVC` |
 | `9d90c9d` | `2026-11-09 17:20:02 IST` | fix(roster): bind recruitment results board visibility to isPublished CMS toggle | `MAC SVC` |
 | `3a44176` | `2026-11-09 17:06:04 IST` | Update src/content/roster/results.json (via Pages CMS) | `macsvctech` |
 | `5c6b4a7` | `2026-11-09 16:32:46 IST` | chore(docs): sync telemetry for commit d064410 | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `d064410` | `2026-11-09 16:30:45 IST` | update: site content and assets (09-11-2026 16:28:24.09) | `MAC SVC` |
 | `acfc359` | `2026-11-09 16:28:25 IST` | chore(docs): sync telemetry snapshot for commit 9f5509c | `MAC SVC` |
 | `9f5509c` | `2026-11-08 01:55:40 IST` | feat(cms): add independent PDF upload toggles and zero-empty-space guards across all sections | `MAC SVC` |
-| `60fcbd7` | `2026-11-08 01:55:30 IST` | chore(docs): sync telemetry for commit 07d08d6 | `MAC SVC` |
 <!-- LOG_END -->
 
 ---
