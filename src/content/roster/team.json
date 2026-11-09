@@ -64,6 +64,95 @@
   "departments": [
     {
       "enabled": true,
+      "id": "dept-4",
+      "num": "04",
+      "tabLabel": "[ 04 // TECHNICAL & RESEARCH ]",
+      "name": "TECHNICAL & RESEARCH SQUADRON",
+      "tagline": "MACZINE ANTHOLOGY // WEB ARTIFACTS // DATA-DRIVEN STRATEGY REPORTS",
+      "enrolledCount": "OPERATORS ENROLLED: 14 ACTIVE",
+      "coordinators": [
+        {
+          "enabled": true,
+          "id": "DIR-04",
+          "name": "SAMARTH GOEL",
+          "roleType": "/// DEPT HEAD",
+          "roleColor": "text-system-red",
+          "tenure": "3RD YEAR // STATS",
+          "linkedin": "https://linkedin.com"
+        },
+        {
+          "enabled": true,
+          "id": "COORD-11",
+          "name": "ANANYA KULKARNI",
+          "roleType": "/// SR COORDINATOR",
+          "roleColor": "text-[#705d00]",
+          "tenure": "3RD YEAR // MATH",
+          "linkedin": "https://linkedin.com"
+        },
+        {
+          "enabled": true,
+          "id": "COORD-12",
+          "name": "PARTH KOHLI",
+          "roleType": "/// SR COORDINATOR",
+          "roleColor": "text-[#705d00]",
+          "tenure": "2ND YEAR // COMMERCE",
+          "linkedin": "https://linkedin.com"
+        },
+        {
+          "enabled": true,
+          "id": "COORD-13",
+          "name": "MEGHNA DUTTA",
+          "roleType": "/// JR COORDINATOR",
+          "roleColor": "text-[#705d00]",
+          "tenure": "2ND YEAR // ECON",
+          "linkedin": "https://linkedin.com"
+        }
+      ],
+      "directoryTable": [
+        {
+          "enabled": true,
+          "name": "HARSHIT SAXENA",
+          "academic": "2ND YEAR // B.COM (H)",
+          "specialization": "[EDITORIAL ZINE REVIEW]",
+          "status": "DEPLOYED",
+          "statusClass": "text-system-red"
+        },
+        {
+          "enabled": true,
+          "name": "AASTHA SETH",
+          "academic": "2ND YEAR // ECONOMICS",
+          "specialization": "[QUANTITATIVE SURVEYS]",
+          "status": "DEPLOYED",
+          "statusClass": "text-system-red"
+        },
+        {
+          "enabled": true,
+          "name": "KUSHAGRA RAJ",
+          "academic": "1ST YEAR // STATISTICS",
+          "specialization": "[WEB ENGINE & CODE]",
+          "status": "DEPLOYED",
+          "statusClass": "text-system-red"
+        },
+        {
+          "enabled": true,
+          "name": "LAVANYA HEGDE",
+          "academic": "1ST YEAR // B.A. PROGRAMME",
+          "specialization": "[MARKET INTELLIGENCE]",
+          "status": "STANDBY",
+          "statusClass": "text-system-blue"
+        },
+        {
+          "enabled": true,
+          "name": "TEJAS MANI",
+          "academic": "1ST YEAR // MATHEMATICS",
+          "specialization": "[ARCHIVAL DATA SYSTEMS]",
+          "status": "STANDBY",
+          "statusClass": "text-system-blue"
+        }
+      ]
+    },
+    {
+      "enabled": true,
       "id": "dept-1",
       "num": "01",
       "tabLabel": "[ 01 // EVENTS & LOGISTICS ]",
@@ -151,7 +240,8 @@
           "name": "PRIYA CHOPRA",
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
-          "tenure": "3RD YEAR // ECON",
+          "tenure": "3RD YEAR // BCOM(H)",
+          "portrait": "/uploads/images/1000172831.webp",
           "linkedin": "https://linkedin.com"
         },
         {
@@ -236,29 +326,12 @@
       "coordinators": [
         {
           "enabled": true,
-          "id": "DIR-03",
-          "name": "ISHA KAPOOR",
-          "roleType": "/// DEPT HEAD",
-          "roleColor": "text-system-red",
-          "tenure": "3RD YEAR // ENG (H)",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "COORD-08",
-          "name": "DHRUV MENON",
-          "roleType": "/// SR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "3RD YEAR // COMMERCE",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
           "id": "COORD-09",
-          "name": "KRITI TANEJA",
+          "name": "ANSH GABA",
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
+          "portrait": "/uploads/images/1000172835.webp",
           "linkedin": "https://linkedin.com"
         },
         {
@@ -309,95 +382,6 @@
           "name": "ANVI BHATNAGAR",
           "academic": "1ST YEAR // MATHEMATICS",
           "specialization": "[PRESS RELEASES & PR]",
-          "status": "STANDBY",
-          "statusClass": "text-system-blue"
-        }
-      ]
-    },
-    {
-      "enabled": true,
-      "id": "dept-4",
-      "num": "04",
-      "tabLabel": "[ 04 // TECHNICAL & RESEARCH ]",
-      "name": "TECHNICAL & RESEARCH SQUADRON",
-      "tagline": "MACZINE ANTHOLOGY // WEB ARTIFACTS // DATA-DRIVEN STRATEGY REPORTS",
-      "enrolledCount": "OPERATORS ENROLLED: 14 ACTIVE",
-      "coordinators": [
-        {
-          "enabled": true,
-          "id": "DIR-04",
-          "name": "SAMARTH GOEL",
-          "roleType": "/// DEPT HEAD",
-          "roleColor": "text-system-red",
-          "tenure": "3RD YEAR // STATS",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "COORD-11",
-          "name": "ANANYA KULKARNI",
-          "roleType": "/// SR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "3RD YEAR // MATH",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "COORD-12",
-          "name": "PARTH KOHLI",
-          "roleType": "/// SR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "2ND YEAR // COMMERCE",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "COORD-13",
-          "name": "MEGHNA DUTTA",
-          "roleType": "/// JR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "2ND YEAR // ECON",
-          "linkedin": "https://linkedin.com"
-        }
-      ],
-      "directoryTable": [
-        {
-          "enabled": true,
-          "name": "HARSHIT SAXENA",
-          "academic": "2ND YEAR // B.COM (H)",
-          "specialization": "[EDITORIAL ZINE REVIEW]",
-          "status": "DEPLOYED",
-          "statusClass": "text-system-red"
-        },
-        {
-          "enabled": true,
-          "name": "AASTHA SETH",
-          "academic": "2ND YEAR // ECONOMICS",
-          "specialization": "[QUANTITATIVE SURVEYS]",
-          "status": "DEPLOYED",
-          "statusClass": "text-system-red"
-        },
-        {
-          "enabled": true,
-          "name": "KUSHAGRA RAJ",
-          "academic": "1ST YEAR // STATISTICS",
-          "specialization": "[WEB ENGINE & CODE]",
-          "status": "DEPLOYED",
-          "statusClass": "text-system-red"
-        },
-        {
-          "enabled": true,
-          "name": "LAVANYA HEGDE",
-          "academic": "1ST YEAR // B.A. PROGRAMME",
-          "specialization": "[MARKET INTELLIGENCE]",
-          "status": "STANDBY",
-          "statusClass": "text-system-blue"
-        },
-        {
-          "enabled": true,
-          "name": "TEJAS MANI",
-          "academic": "1ST YEAR // MATHEMATICS",
-          "specialization": "[ARCHIVAL DATA SYSTEMS]",
           "status": "STANDBY",
           "statusClass": "text-system-blue"
         }
