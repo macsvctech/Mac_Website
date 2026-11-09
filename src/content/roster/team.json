@@ -28,7 +28,6 @@
       "idCode": "ID // MAC-CORE-01",
       "name": "AARAV CHHABRA",
       "role": "/// PRESIDENT & CHIEF STRATEGIST",
-      "portraitImage": null,
       "authBadge": "SVC // AUTH",
       "tenure": "3RD YEAR // COMMERCE",
       "wing": "STRATEGY & RELAYS",
@@ -41,7 +40,6 @@
       "idCode": "ID // MAC-CORE-02",
       "name": "RITESH JAISWAL",
       "role": "/// VICE-PRESIDENT & CAMPAIGNS",
-      "portraitImage": null,
       "authBadge": "SVC // AUTH",
       "tenure": "3RD YEAR // ECONOMICS",
       "wing": "BRAND & SPONSORSHIPS",
@@ -54,7 +52,7 @@
       "idCode": "ID // MAC-CORE-03",
       "name": "CHAITANYA AGGARWAL",
       "role": "/// GENERAL SECRETARY",
-      "portraitImage": null,
+      "portraitImage": "/uploads/images/1000172848.webp",
       "authBadge": "SVC // AUTH",
       "tenure": "2ND YEAR // B.COM (H)",
       "wing": "OPERATIONS & LOGISTICS",
@@ -80,7 +78,6 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // MATH",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -90,7 +87,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -100,7 +96,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -110,7 +105,6 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -173,7 +167,6 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ECON",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -183,7 +176,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // B.COM",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -193,7 +185,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -203,7 +194,6 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -266,7 +256,6 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ENG (H)",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -276,7 +265,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -286,7 +274,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -296,7 +283,6 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // MATH",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -359,7 +345,6 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // STATS",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -369,7 +354,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // MATH",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -379,7 +363,6 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -389,7 +372,6 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
-          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
