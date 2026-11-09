@@ -303,7 +303,7 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
                       <td class="py-2 sm:py-2.5 px-3 sm:px-4 font-bold border-r border-stark-black text-stark-black whitespace-nowrap">{row.name}</td>
                       <td class="py-2 sm:py-2.5 px-3 sm:px-4 border-r border-stark-black text-on-surface whitespace-nowrap">{row.academic}</td>
                       <td class="py-2 sm:py-2.5 px-3 sm:px-4 border-r border-stark-black text-stark-black">{row.specialization}</td>
-                      <td class={`py-2 sm:py-2.5 px-3 sm:px-4 text-right font-bold whitespace-nowrap ${row.statusClass}`}>{row.status}</td>
+                      <td class={`py-2 sm:py-2.5 px-3 sm:px-4 text-right font-bold whitespace-nowrap ${row.statusClass || (row.status === "DEPLOYED" ? "text-system-red" : row.status === "STANDBY" ? "text-on-surface-variant" : "text-stark-black")}`}>{row.status}</td>
                     </tr>
                   ))}
                 </tbody>

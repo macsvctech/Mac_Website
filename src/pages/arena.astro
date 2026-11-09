@@ -23,6 +23,25 @@ const {
 const validEvents = (events || []).filter((e) => e.enabled !== false);
 const validGallery = (gallery || []).filter((g) => g.enabled !== false);
 const categories = evidenceWallSection.categories || [];
+const getCadenceBadgeColor = (color?: string) => {
+  if (color === "yellow") return "bg-mac-yellow text-stark-black";
+  if (color === "cyan") return "bg-electric-cyan text-stark-black";
+  if (color === "red") return "bg-system-red text-white";
+  if (color === "white") return "bg-pure-white text-stark-black";
+  if (color === "stone") return "bg-tactical-stone text-stark-black";
+  if (color && color.startsWith("bg-")) return color;
+  return "bg-tactical-stone text-stark-black";
+};
+
+const getStickerColorClass = (color?: string) => {
+  if (color === "red") return "bg-system-red text-white";
+  if (color === "yellow") return "bg-mac-yellow text-stark-black";
+  if (color === "cyan") return "bg-electric-cyan text-stark-black";
+  if (color === "stone") return "bg-tactical-stone text-stark-black";
+  if (color === "white") return "bg-pure-white text-stark-black";
+  if (color && color.startsWith("bg-")) return color;
+  return "bg-pure-white text-stark-black";
+};
 ---
 
 <BaseLayout title="ARENA /// THE MARKETING CLUB (MAC)">
@@ -160,7 +179,7 @@ const categories = evidenceWallSection.categories || [];
 
 
     <!-- DOSSIER CARDS -->
-    {events.map((event) => (
+    {validEvents.map((event) => (
       <article class="border-4 border-stark-black bg-pure-white shadow-[8px_8px_0px_#000000] mb-12">
         <!-- Dossier Header -->
         <div class={`${event.headerBg || "bg-stark-black text-primary-container"} font-mono text-xs sm:text-sm font-bold px-4 md:px-6 py-2.5 border-b-4 border-stark-black flex flex-wrap justify-between items-center gap-2`}>
@@ -182,7 +201,7 @@ const categories = evidenceWallSection.categories || [];
                   alt={`${event.title} simulation and conclave visual`}
                   class="w-full h-full object-cover block aspect-16/9 lg:aspect-auto"
                 />
-                <div class={`${event.stickerRotate} absolute bottom-4 left-4 ${event.stickerColor === 'red' ? 'bg-system-red text-white' : event.stickerColor === 'yellow' ? 'bg-mac-yellow text-stark-black' : 'bg-pure-white text-stark-black'} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
+                <div class={`${event.stickerRotate} absolute bottom-4 left-4 ${getStickerColorClass(event.stickerColor)} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
                   {event.stickerText}
                 </div>
               </div>
@@ -194,7 +213,7 @@ const categories = evidenceWallSection.categories || [];
                     <h3 class="font-black text-2xl sm:text-3xl md:text-4xl text-stark-black uppercase leading-none">
                       {event.title}
                     </h3>
-                    <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 ${event.cadenceBadgeColor === 'yellow' ? 'bg-mac-yellow' : event.cadenceBadgeColor === 'cyan' ? 'bg-electric-cyan' : 'bg-tactical-stone'} border border-stark-black text-stark-black uppercase`}>
+                    <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 ${getCadenceBadgeColor(event.cadenceBadgeColor)} border border-stark-black uppercase`}>
                       {event.cadence}
                     </span>
                   </div>
@@ -257,7 +276,7 @@ const categories = evidenceWallSection.categories || [];
                     <h3 class="font-black text-2xl sm:text-3xl md:text-4xl text-stark-black uppercase leading-none">
                       {event.title}
                     </h3>
-                    <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 ${event.cadenceBadgeColor === 'yellow' ? 'bg-mac-yellow' : event.cadenceBadgeColor === 'cyan' ? 'bg-electric-cyan' : 'bg-tactical-stone'} border border-stark-black text-stark-black uppercase`}>
+                    <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 ${getCadenceBadgeColor(event.cadenceBadgeColor)} border border-stark-black uppercase`}>
                       {event.cadence}
                     </span>
                   </div>
@@ -318,7 +337,7 @@ const categories = evidenceWallSection.categories || [];
                   alt={`${event.title} marketing festival crowd and stage`}
                   class="w-full h-full object-cover block aspect-16/9 lg:aspect-auto"
                 />
-                <div class={`${event.stickerRotate} absolute bottom-4 right-4 ${event.stickerColor === 'red' ? 'bg-system-red text-white' : event.stickerColor === 'yellow' ? 'bg-mac-yellow text-stark-black' : 'bg-pure-white text-stark-black'} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
+                <div class={`${event.stickerRotate} absolute bottom-4 right-4 ${getStickerColorClass(event.stickerColor)} font-mono text-xs font-bold px-3 py-1.5 border-2 border-stark-black shadow-[4px_4px_0px_#000000] uppercase tracking-wider`}>
                   {event.stickerText}
                 </div>
               </div>

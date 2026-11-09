@@ -48,7 +48,7 @@ const intel = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/intel' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(["Research Report", "Blog", "Case Study", "Podcast / Video"]),
+    category: z.string(),
     publishDate: z.string(),
     readTime: z.string(),
     author: z.string(),

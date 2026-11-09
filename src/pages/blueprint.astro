@@ -468,7 +468,9 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
             div.colorScheme === "yellow" ? "bg-mac-yellow text-stark-black" :
             div.colorScheme === "cyan" ? "bg-electric-cyan text-stark-black" :
             div.colorScheme === "red" ? "bg-system-red text-pure-white" :
-            "bg-pure-white text-stark-black";
+            div.colorScheme === "stone" ? "bg-tactical-stone text-stark-black" :
+            div.colorScheme === "white" ? "bg-pure-white text-stark-black" :
+            (div.colorScheme && div.colorScheme.startsWith("bg-") ? div.colorScheme : "bg-pure-white text-stark-black");
 
           return (
             <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-start md:items-center hover:bg-surface-container-low transition-colors">

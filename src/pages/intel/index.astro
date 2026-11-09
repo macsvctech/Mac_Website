@@ -24,6 +24,15 @@ const archiveSection = intelData.archiveSection || {
 const maczineHighlights = maczine.highlights || [];
 const maczineArchiveIssues = maczine.archiveIssues || [];
 const feedCategories = feedSection.categories || [];
+const getIntelCategoryBadgeClass = (category?: string) => {
+  if (!category) return "bg-system-red text-white";
+  const norm = category.trim().toLowerCase();
+  if (norm === "research report") return "bg-electric-cyan text-stark-black";
+  if (norm === "case study") return "bg-mac-yellow text-stark-black";
+  if (norm === "podcast / video" || norm === "podcast" || norm === "video") return "bg-stark-black text-mac-yellow";
+  if (norm === "blog") return "bg-tactical-stone text-stark-black";
+  return "bg-system-red text-white";
+};
 ---
 
 <BaseLayout title="INTEL /// THE MARKETING CLUB (MAC)">
@@ -263,16 +272,8 @@ const feedCategories = feedSection.categories || [];
 
             <div class="p-4 sm:p-5">
               <div class="flex justify-between items-center mb-3">
-                <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 border border-stark-black ${
-                  item.data.category === 'Research Report'
-                    ? 'bg-electric-cyan text-stark-black'
-                    : item.data.category === 'Case Study'
-                    ? 'bg-mac-yellow text-stark-black'
-                    : item.data.category === 'Podcast / Video'
-                    ? 'bg-stark-black text-mac-yellow'
-                    : 'bg-system-red text-white'
-                }`}>
-                  [{item.data.category.toUpperCase()}]
+                <span class={`font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 border border-stark-black ${getIntelCategoryBadgeClass(item.data.category)}`}>
+                  [{(item.data.category || "INTEL").toUpperCase()}]
                 </span>
                 <span class="font-mono text-[11px] sm:text-xs text-on-surface-variant font-bold">
                   {item.data.readTime}
@@ -354,16 +355,8 @@ const feedCategories = feedSection.categories || [];
           >
             <div class="col-span-2 font-bold text-stark-black">{item.data.publishDate}</div>
             <div class="col-span-2">
-              <span class={`px-2 py-0.5 border border-stark-black text-xs font-bold ${
-                item.data.category === 'Research Report'
-                  ? 'bg-electric-cyan text-stark-black'
-                  : item.data.category === 'Case Study'
-                  ? 'bg-stark-black text-white'
-                  : item.data.category === 'Podcast / Video'
-                  ? 'bg-mac-yellow text-stark-black'
-                  : 'bg-system-red text-white'
-              }`}>
-                [{item.data.category.toUpperCase()}]
+              <span class={`px-2 py-0.5 border border-stark-black text-xs font-bold ${getIntelCategoryBadgeClass(item.data.category)}`}>
+                [{(item.data.category || "INTEL").toUpperCase()}]
               </span>
             </div>
             <div class="col-span-5 font-black text-stark-black group-hover:underline truncate pr-4">

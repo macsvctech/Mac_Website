@@ -208,14 +208,8 @@ content:
             type: text
           - name: statusBadge
             label: Relays Status Stamp Badge
-            type: select
-            options:
-              values:
-                - TELEMETRY ONLINE // ALL SYSTEMS GO
-                - RECRUITMENT OPERATIONS LIVE
-                - ANNUAL CONCLAVE IN SESSION
-                - ARCHIVE MODE // SEMESTER BREAK
-            description: Status indicator badge shown in the footer terminal bar.
+            type: string
+            description: "Status indicator badge shown in the footer terminal bar. Accepts any custom text. Common presets: [ALL RELAYS SECURED // STATUS: LIVE] | TELEMETRY ONLINE // ALL SYSTEMS GO | RECRUITMENT OPERATIONS LIVE | ANNUAL CONCLAVE IN SESSION | ARCHIVE MODE // SEMESTER BREAK."
   - name: home_page
     label: "🏠 Home Page: Hero Photo/Video, Metrics, Wings & Sponsors"
     type: file
@@ -376,14 +370,8 @@ content:
                 type: string
               - name: color
                 label: Border Accent Color
-                type: select
-                options:
-                  values:
-                    - cyan
-                    - red
-                    - yellow
-                    - white
-                    - stone
+                type: string
+                description: "Border accent color or CSS token (e.g. cyan, red, yellow, white, stone, or any custom color name)."
               - name: cols
                 label: Column Width (4 or 8)
                 type: number
@@ -493,13 +481,8 @@ content:
                 type: string
               - name: status
                 label: Status Stamp
-                type: select
-                options:
-                  values:
-                    - REGISTRATIONS OPEN
-                    - FLAGSHIP OPERATION
-                    - MISSION ACTIVE
-                    - CONCLUDED / ARCHIVED
+                type: string
+                description: "Status indicator stamp. Accepts any custom text. Common presets: REGISTRATIONS OPEN | FLAGSHIP OPERATION | MISSION ACTIVE | CONCLUDED / ARCHIVED."
               - name: image
                 label: Promo Graphic / Key Artwork
                 type: image
@@ -620,12 +603,8 @@ content:
             type: string
           - name: status
             label: Readiness Status
-            type: select
-            options:
-              values:
-                - ARCHIVED DIRECTIVE // RATIFIED
-                - FOUNDATIONAL CHARTER
-                - DECLASSIFIED PROTOCOL
+            type: string
+            description: "Readiness status stamp. Accepts any custom text. Common presets: STATUS: COMBAT_READY | ARCHIVED DIRECTIVE // RATIFIED | FOUNDATIONAL CHARTER | DECLASSIFIED PROTOCOL."
           - name: mediaImage
             label: Collective Photograph
             type: image
@@ -735,13 +714,8 @@ content:
                 type: string
               - name: accent
                 label: Tab Color Accent
-                type: select
-                options:
-                  values:
-                    - red
-                    - blue
-                    - yellow
-                    - white
+                type: string
+                description: "Tab accent color token (e.g. red, blue, yellow, white, or any custom color token)."
               - name: items
                 label: Bullet Principles
                 type: object
@@ -814,13 +788,9 @@ content:
               - name: deptTag
                 type: string
               - name: colorScheme
-                type: select
-                options:
-                  values:
-                    - yellow
-                    - cyan
-                    - red
-                    - white
+                label: Division Accent Color Scheme
+                type: string
+                description: "Division accent color scheme (e.g. yellow, cyan, red, white, stone, or custom color token)."
               - name: name
                 type: string
               - name: description
@@ -1004,14 +974,8 @@ content:
             type: string
           - name: statusBadge
             label: Live Status Stamp
-            type: select
-            options:
-              values:
-                - "STATUS: ACTIVE BROADCAST"
-                - "STATUS: REGISTRATION OPEN"
-                - "STATUS: BRIEFING COMMENCED"
-                - "STATUS: SIMULATION COMPLETE"
-                - "STATUS: STANDBY // NEXT TARGET PENDING"
+            type: string
+            description: "Live status indicator stamp. Accepts any custom text. Common presets: [ ● REGISTRATION OPEN ] | STATUS: ACTIVE BROADCAST | STATUS: BRIEFING COMMENCED | STATUS: SIMULATION COMPLETE | STATUS: STANDBY // NEXT TARGET PENDING."
           - name: date
             label: Event Month & Year
             type: string
@@ -1126,15 +1090,8 @@ content:
         type: string
       - name: statusBadge
         label: Active Status Stamp
-        type: select
-        options:
-          values:
-            - ACTIVE / REGISTRATIONS OPEN
-            - UPCOMING // ANNOUNCED
-            - ANNUAL FLAGSHIP
-            - MISSION CONCLUDED
-            - ARCHIVED
-        description: Operational status tag badge rendered on the event dossier.
+        type: string
+        description: "Operational status tag badge rendered on the event dossier. Accepts any custom text. Common presets: [STATUS: ACTIVE_CYCLE] | [EDITION: ZEAL '26] | [CADRE: JUNIORS ONLY] | ACTIVE / REGISTRATIONS OPEN | UPCOMING // ANNOUNCED | ANNUAL FLAGSHIP | MISSION CONCLUDED."
       - name: title
         label: Event Title
         type: string
@@ -1144,13 +1101,8 @@ content:
         type: string
       - name: cadenceBadgeColor
         label: Badge Color Accent
-        type: select
-        options:
-          values:
-            - yellow
-            - cyan
-            - red
-            - white
+        type: string
+        description: "Badge color accent (e.g. yellow, cyan, red, white, stone, or any custom color token)."
       - name: headerBg
         label: Dossier Header Background & Text Tokens
         type: string
@@ -1165,11 +1117,9 @@ content:
         default: "text-pure-white"
       - name: imagePosition
         label: Image Orientation
-        type: select
-        options:
-          values:
-            - left
-            - right
+        type: string
+        default: left
+        description: "Image orientation layout: left or right (defaults to left)."
       - name: tagline
         label: Strategic Tagline
         type: string
@@ -1187,14 +1137,8 @@ content:
         type: string
       - name: stickerColor
         label: Stamp Color
-        type: select
-        options:
-          values:
-            - yellow
-            - red
-            - cyan
-            - stone
-            - white
+        type: string
+        description: "Floating stamp callout color (e.g. yellow, red, cyan, stone, white, or any custom color token)."
       - name: stickerRotate
         label: CSS Rotation Class (e.g. -rotate-3)
         type: string
@@ -1269,15 +1213,8 @@ content:
         required: true
       - name: category
         label: Filter Category
-        type: select
-        options:
-          values:
-            - ALL
-            - MARKOPOLIS
-            - ZEAL
-            - SPEAKERS
-            - BTS
-        description: Filter tag matching the Evidence Wall live category buttons.
+        type: string
+        description: "Filter tag matching the Evidence Wall live category buttons (e.g. ALL, MARKOPOLIS, ZEAL, SPEAKERS, BTS, or any custom category)."
       - name: badge
         label: Visual Category Pill
         type: string
@@ -1286,11 +1223,9 @@ content:
         type: string
       - name: mediaType
         label: Media Asset Format
-        type: select
-        options:
-          values:
-            - image
-            - video
+        type: string
+        default: image
+        description: "Media format: image or video (defaults to image)."
       - name: image
         label: Photograph File
         type: image
@@ -1486,13 +1421,8 @@ content:
         required: true
       - name: category
         label: Content Classification
-        type: select
-        options:
-          values:
-            - Research Report
-            - Blog
-            - Case Study
-            - Podcast / Video
+        type: string
+        description: "Content classification tag. Accepts any custom category. Common presets: Research Report | Blog | Case Study | Podcast / Video."
       - name: publishDate
         label: Release Date (e.g. NOV 2026)
         type: string
@@ -1759,14 +1689,8 @@ content:
                 type: string
               - name: status
                 label: Protocol Status
-                type: select
-                options:
-                  values:
-                    - OPERATIONAL
-                    - DEPLOYED
-                    - STANDBY
-                    - ALUMNI CADRE
-                description: Operational readiness status code.
+                type: string
+                description: "Operational readiness status code. Accepts any custom status. Common presets: DEPLOYED | OPERATIONAL | STANDBY | ALUMNI CADRE."
               - name: statusClass
                 label: Status Color Class
                 type: string
@@ -1954,12 +1878,9 @@ content:
           - name: email
             type: string
           - name: status
-            type: select
-            options:
-              values:
-                - TRANSMITTER ONLINE
-                - CAMPUS STATION ACTIVE
-                - STANDBY // OFF-HOURS
+            label: Station Status
+            type: string
+            description: "Headquarters live status indicator. Accepts any custom text. Common presets: [ STATUS: OPEN 09:00 - 17:00 IST ] | TRANSMITTER ONLINE | CAMPUS STATION ACTIVE | STANDBY // OFF-HOURS."
           - name: mapImage
             label: Tactical Map Blueprint Image
             type: image
