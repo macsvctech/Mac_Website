@@ -109,12 +109,26 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
 
             <!-- Photo Container -->
             <div class="p-3.5 sm:p-5 bg-surface flex flex-col items-center">
-              <div class="w-full aspect-square border-2 border-stark-black bg-stark-black relative overflow-hidden">
-                <img
-                  src={officer.portraitImage}
-                  alt={`${officer.name} - ${officer.role}`}
-                  class="w-full h-full object-cover"
-                />
+              <div class="w-full aspect-square border-2 border-stark-black bg-tactical-stone relative overflow-hidden flex flex-col items-center justify-center select-none">
+                {officer.portraitImage ? (
+                  <img
+                    src={officer.portraitImage}
+                    alt={`${officer.name} - ${officer.role}`}
+                    class="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div class="w-full h-full bg-tactical-stone flex flex-col items-center justify-center p-4 text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 border-2 border-stark-black bg-mac-yellow flex items-center justify-center shadow-[4px_4px_0px_#000000] mb-2 font-display text-2xl sm:text-3xl font-black text-stark-black">
+                      {(officer.name || 'MAC').split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                    </div>
+                    <span class="font-mono text-[11px] font-black uppercase text-stark-black tracking-wider">
+                      /// CADRE_OFFICER ///
+                    </span>
+                    <span class="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5 font-bold">
+                      {officer.idCode}
+                    </span>
+                  </div>
+                )}
                 <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 border border-mac-yellow uppercase">
                   {officer.authBadge}
                 </div>
@@ -254,12 +268,23 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
                 {(dept.coordinators || []).filter((c) => c.enabled !== false).map((coord) => (
                   <div class="paper-lift border-2 border-stark-black bg-surface p-3.5 sm:p-4 flex flex-col gap-2.5 sm:gap-3 shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000]">
-                    <div class="w-full aspect-[4/3] bg-tactical-stone border border-stark-black overflow-hidden relative">
-                      <img
-                        src={coord.portrait}
-                        alt={coord.name}
-                        class="w-full h-full object-cover"
-                      />
+                    <div class="w-full aspect-[4/3] bg-tactical-stone border border-stark-black overflow-hidden relative flex items-center justify-center">
+                      {coord.portrait ? (
+                        <img
+                          src={coord.portrait}
+                          alt={coord.name}
+                          class="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div class="w-full h-full bg-tactical-stone flex flex-col items-center justify-center p-2 text-center select-none">
+                          <span class="font-mono text-sm sm:text-base font-black text-stark-black bg-mac-yellow border border-stark-black px-2 py-0.5 shadow-[2px_2px_0px_#000000] mb-1">
+                            {(coord.name || 'MAC').split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                          </span>
+                          <span class="font-mono text-[9px] font-bold text-on-surface-variant uppercase truncate max-w-full">
+                            OPERATOR // {coord.id}
+                          </span>
+                        </div>
+                      )}
                       <span class="absolute top-1 left-1 bg-stark-black text-pure-white text-[10px] font-mono px-1">
                         {coord.id}
                       </span>
