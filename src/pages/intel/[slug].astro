@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
 const getIntelCategoryBadgeClass = (category?: string) => {
-  if (!category) return "bg-system-red text-white";
+  if (!category || typeof category !== "string") return "bg-system-red text-white";
   const norm = category.trim().toLowerCase();
   if (norm === "research report") return "bg-electric-cyan text-stark-black";
   if (norm === "case study") return "bg-mac-yellow text-stark-black";

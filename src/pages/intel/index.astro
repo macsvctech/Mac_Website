@@ -25,7 +25,7 @@ const maczineHighlights = maczine.highlights || [];
 const maczineArchiveIssues = maczine.archiveIssues || [];
 const feedCategories = feedSection.categories || [];
 const getIntelCategoryBadgeClass = (category?: string) => {
-  if (!category) return "bg-system-red text-white";
+  if (!category || typeof category !== "string") return "bg-system-red text-white";
   const norm = category.trim().toLowerCase();
   if (norm === "research report") return "bg-electric-cyan text-stark-black";
   if (norm === "case study") return "bg-mac-yellow text-stark-black";
@@ -73,6 +73,7 @@ const getIntelCategoryBadgeClass = (category?: string) => {
     </div>
   )}
 
+  {maczine?.enabled !== false && (
   <!-- SECTION 4.1 — MACZINE ANNUAL ISSUE HERO SPOTLIGHT -->
   <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mt-5 sm:mt-6 mb-8 sm:mb-12">
     <div class="bg-mac-yellow border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000]">
@@ -194,7 +195,10 @@ const getIntelCategoryBadgeClass = (category?: string) => {
       </div>
     </div>
   </section>
+  )}
 
+  {feedSection?.enabled !== false && (
+    <>
   <!-- CONNECTOR RAIL 4.1 -> 4.2 -->
   <div class="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
     <BlueprintDivider tag="INTEL_DISPATCH_FEED" code="DISPATCH_SYS_04" accent="cyan" class="my-6" />
@@ -320,14 +324,17 @@ const getIntelCategoryBadgeClass = (category?: string) => {
       </button>
     </div>
   </section>
+    </>
+  )}
 
+  {archiveSection?.enabled !== false && (
   <!-- SECTION 4.3 — INDUSTRIAL ARCHIVE TIMETABLE -->
   <section class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 mb-10 sm:mb-16">
     <!-- Subheader Bar -->
     <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3 sm:mb-4 gap-2">
       <div class="font-mono text-xs sm:text-base font-bold text-stark-black uppercase flex items-center gap-2 truncate">
         <span class="material-symbols-outlined text-[18px] sm:text-[20px] text-stark-black shrink-0">folder_open</span>
-        <span class="truncate">{archiveSection.title} [SHOWING ALL 6 DECLASSIFIED ARTICLES]</span>
+        <span class="truncate">{archiveSection.title} [SHOWING ALL {sortedIntel.length} DECLASSIFIED ARTICLES]</span>
       </div>
       <div class="font-mono text-xs text-on-surface-variant font-bold shrink-0">
         {archiveSection.status}
@@ -375,6 +382,7 @@ const getIntelCategoryBadgeClass = (category?: string) => {
       </div>
     </div>
   </section>
+  )}
 </BaseLayout>
 
 <!-- CLIENT-SIDE SCRIPT: FILTERING & SEARCH & PAST ISSUES -->
