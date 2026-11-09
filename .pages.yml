@@ -1660,11 +1660,11 @@ content:
                 label: Academic Major & Standing
                 type: string
               - name: portrait
-                label: Coordinator Portrait (Square 1:1)
+                label: Coordinator Portrait (Landscape 4:3)
                 type: image
                 options:
                   media: images
-                description: Square 1:1 ratio headshot (e.g. 600x600). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
+                description: Landscape 4:3 ratio photo (e.g. 800x600 or 640x480). Crisp face crop on neutral background. Recommended .webp or .jpg under 1MB.
               - name: linkedin
                 label: LinkedIn Profile URL
                 type: string
