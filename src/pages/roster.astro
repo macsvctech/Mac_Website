@@ -15,6 +15,7 @@ const sectionCommand = teamData.sectionCommand || {
   officerCount: "5 ACTIVE OFFICERS"
 };
 const { session, isPublished, totalCleared, headerTitle, statusBanner, officialResultPdf, officialPdfSize, wings } = resultsData;
+const isResultsPublished = isPublished === true || isPublished === 'true';
 ---
 
 <BaseLayout title="ROSTER /// THE MARKETING CLUB (MAC)">
@@ -314,7 +315,9 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
       </div>
     </section>
 
-    <!-- CONNECTOR RAIL 5.2 -> 5.3 -->
+    <!-- CONNECTOR RAIL 5.2 -> 5.3 & CLEARANCE TERMINAL BOARD (Controlled by isPublished) -->
+    {isResultsPublished && (
+      <>
     <BlueprintDivider tag="RECRUITMENT_CLEARANCE_TERMINAL" code="RESULTS_CLEARANCE_06" accent="cyan" class="my-2" />
 
     <!-- ========================================================================= -->
@@ -423,7 +426,9 @@ const { session, isPublished, totalCleared, headerTitle, statusBanner, officialR
         </div>
       </div>
     </section>
-  </div>
+        </>
+    )}
+</div>
 </BaseLayout>
 
 <!-- CLIENT-SIDE SCRIPT: DEPARTMENT TABS, TERMINAL SEARCH, WING FILTERS -->

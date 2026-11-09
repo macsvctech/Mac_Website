@@ -1706,6 +1706,8 @@ content:
       - name: isPublished
         label: Publish Clearance Board Live?
         type: boolean
+        default: false
+        description: "Toggle ON to publish the recruitment clearance board and results terminal on the Roster page. Toggle OFF to hide it completely."
       - name: totalCleared
         label: Total Inducted Operatives
         type: number
