@@ -28,6 +28,12 @@ const {
   externalChannelsEnabled = true
 } = contactContent || {};
 
+const isTerminalEnabled = terminalEnabled !== false;
+const isCoordinatesEnabled = coordinates.enabled !== false;
+const isExternalChannelsEnabled = externalChannelsEnabled !== false;
+const isSponsorshipEnabled = sponsorshipEnabled !== false;
+const isRightColumnVisible = isCoordinatesEnabled || isExternalChannelsEnabled || isSponsorshipEnabled;
+
 const fields = rawFields || {
   identifierLabel: "01 // IDENTIFIER (NAME)",
   identifierType: "[STRING]",
@@ -83,8 +89,9 @@ const formFeedback = rawFormFeedback || {
   <!-- MAIN VIEWPORT CONTAINER: 2-COLUMN ASYMMETRIC COMMAND GRID -->
   <main class="w-full max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-      <!-- LEFT COLUMN (6 COLUMNS) — SYSTEM COMMUNICATION TERMINAL -->
-      <section class="lg:col-span-6 flex flex-col bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] relative">
+      <!-- LEFT COLUMN — SYSTEM COMMUNICATION TERMINAL -->
+      {isTerminalEnabled && (
+        <section class={`${isRightColumnVisible ? 'lg:col-span-6' : 'lg:col-span-12 max-w-4xl mx-auto w-full'} flex flex-col bg-pure-white border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] relative`}>
         <!-- Terminal Title Bar -->
         <header class="min-h-12 h-auto py-2.5 px-4 sm:px-6 flex items-center justify-between border-b-4 border-stark-black select-none gap-2">
           <div class="flex items-center gap-2 min-w-0 truncate">
@@ -219,10 +226,14 @@ const formFeedback = rawFormFeedback || {
             {submitButtonText}
           </button>
         </form>
-      </section>
+        </section>
+      )}
 
-      <!-- RIGHT COLUMN (6 COLUMNS) — COORDINATES & TELEMETRY CARD -->
-      <section class="lg:col-span-6 flex flex-col border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white">
+      <!-- RIGHT COLUMN — COORDINATES & TELEMETRY CARD -->
+      {isRightColumnVisible && (
+        <section class={`${isTerminalEnabled ? 'lg:col-span-6' : 'lg:col-span-12 max-w-4xl mx-auto w-full'} flex flex-col border-4 border-stark-black shadow-[4px_4px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white`}>
+        {isCoordinatesEnabled && (
+          <>
         <!-- TOP BLOCK: HEADQUARTERS DOSSIER (YELLOW #F0C903) -->
         <div class="bg-mac-yellow p-4 sm:p-6 md:p-8 relative overflow-hidden border-b-4 border-stark-black">
           <!-- Subtle Oversized Watermark -->
@@ -708,8 +719,13 @@ const formFeedback = rawFormFeedback || {
           </div>
         </div>
 
+          </>
+        )}
+
+        {(isExternalChannelsEnabled || isSponsorshipEnabled) && (
         <!-- BOTTOM BLOCK: EXTERNAL TELEMETRY & CHANNELS -->
-        <div class="p-4 sm:p-6 bg-pure-white flex flex-col gap-4 sm:gap-5">
+        <div class={`p-4 sm:p-6 bg-pure-white flex flex-col gap-4 sm:gap-5 ${isCoordinatesEnabled ? 'border-t-4 border-stark-black' : ''}`}>
+          {isExternalChannelsEnabled && (
           <div>
             <div class="font-mono text-xs font-bold uppercase text-stark-black mb-3 select-none">
               {externalChannelsTitle}
@@ -735,9 +751,10 @@ const formFeedback = rawFormFeedback || {
               ))}
             </div>
           </div>
+          )}
 
           <!-- CORPORATE SPONSORSHIP DECK DOWNLOAD -->
-          {sponsorshipEnabled !== false && sponsorshipDeckPdfEnabled !== false && sponsorshipDeckPdf && sponsorshipDeckPdf.trim().length > 0 && sponsorshipDeckPdf.trim() !== '#' && (
+          {isSponsorshipEnabled && sponsorshipDeckPdfEnabled !== false && sponsorshipDeckPdf && sponsorshipDeckPdf.trim().length > 0 && sponsorshipDeckPdf.trim() !== '#' && (
             <div class="pt-4 border-t-2 border-stark-black">
               <div class="font-mono text-xs font-bold uppercase text-stark-black mb-2 flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[16px]">file_present</span>
@@ -754,7 +771,9 @@ const formFeedback = rawFormFeedback || {
             </div>
           )}
         </div>
+        )}
       </section>
+      )}
     </div>
   </main>
 </BaseLayout>
