@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrutalMedia from '../components/ui/BrutalMedia.astro';
 import BlueprintDivider from '../components/ui/BlueprintDivider.astro';
+import BrutalFileDownload from '../components/ui/BrutalFileDownload.astro';
 import teamData from '../content/roster/team.json';
 import resultsData from '../content/roster/results.json';
 
@@ -44,6 +45,7 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
     <!-- ========================================================================= -->
     <!-- SECTION 5.1 — CORE COMMAND BACKSTAGE ID BADGES (PRESIDENTIAL TRIO)         -->
     <!-- ========================================================================= -->
+    {sectionCommand.enabled !== false && (
     <section class="flex flex-col gap-6 sm:gap-8 w-full">
       <!-- Section Headline -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 border-b-4 border-stark-black">
@@ -67,6 +69,14 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
           <span class="font-mono text-[11px] sm:text-xs font-bold uppercase bg-stark-black text-pure-white px-2.5 sm:px-3 py-1 sm:py-1.5 border-2 border-stark-black">
             {sectionCommand.officerCount}
           </span>
+          {teamData.councilPdfEnabled !== false && councilPdfUrl && councilPdfUrl.trim().length > 0 && councilPdfUrl.trim() !== '#' && (
+            <BrutalFileDownload
+              fileUrl={councilPdfUrl}
+              fileLabel="COUNCIL DOSSIER [PDF]"
+              fileType="PDF"
+              enabled={teamData.councilPdfEnabled}
+            />
+          )}
         </div>
       </div>
 
@@ -168,9 +178,8 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
         ))}
       </div>
     </section>
-
-    <!-- CONNECTOR RAIL 5.1 -> 5.2 -->
     <BlueprintDivider tag="SQUADRON_ARCHITECTURE" code="CADRE_ROSTER_05" accent="yellow" class="my-2" />
+    )}
 
     <!-- ========================================================================= -->
     <!-- SECTION 5.2 — DEPARTMENT OPERATOR SWITCHBOARD                             -->

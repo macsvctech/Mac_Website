@@ -16,7 +16,8 @@
     "standbyMessage": "/// RADAR STANDBY // NO ACTIVE RADAR PINGS DETECTED ///",
     "enabled": true,
     "rulebookPdfUrl": null,
-    "rulebookPdfEnabled": false
+    "rulebookPdfEnabled": false,
+    "teaserVideoUrl": ""
   },
   "flagshipSection": {
     "title": "FLAGSHIP OPERATIONS",

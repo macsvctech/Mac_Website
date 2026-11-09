@@ -181,7 +181,7 @@ const stats = rawStats || [
                   person.data.defaultOpen ? "block" : "hidden"
                 }`}
               >
-                {person.data.fullLetter.map((para: string) => (
+                {(person.data.fullLetter || []).map((para: string) => (
                   <p>{para}</p>
                 ))}
               </div>

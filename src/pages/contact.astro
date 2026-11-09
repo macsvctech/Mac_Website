@@ -28,12 +28,6 @@ const {
   externalChannelsEnabled = true
 } = contactContent || {};
 
-const isTerminalEnabled = terminalEnabled !== false;
-const isCoordinatesEnabled = coordinates.enabled !== false;
-const isExternalChannelsEnabled = externalChannelsEnabled !== false;
-const isSponsorshipEnabled = sponsorshipEnabled !== false;
-const isRightColumnVisible = isCoordinatesEnabled || isExternalChannelsEnabled || isSponsorshipEnabled;
-
 const fields = rawFields || {
   identifierLabel: "01 // IDENTIFIER (NAME)",
   identifierType: "[STRING]",
@@ -71,6 +65,12 @@ const formFeedback = rawFormFeedback || {
   timeoutMessage: "[!] DIRECT API RELAY TIMED OUT. TRANSMIT DIRECTLY VIA EMAIL CLIENT:",
   mailtoButtonText: "[ ✉ TRANSMIT VIA DEFAULT MAIL CLIENT ]"
 };
+
+const isTerminalEnabled = terminalEnabled !== false;
+const isCoordinatesEnabled = coordinates.enabled !== false;
+const isExternalChannelsEnabled = externalChannelsEnabled !== false;
+const isSponsorshipEnabled = sponsorshipEnabled !== false;
+const isRightColumnVisible = isCoordinatesEnabled || isExternalChannelsEnabled || isSponsorshipEnabled;
 ---
 
 <BaseLayout title="CONTACT /// THE MARKETING CLUB (MAC)">

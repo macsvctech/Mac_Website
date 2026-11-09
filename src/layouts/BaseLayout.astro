@@ -275,7 +275,7 @@ const isContactActive = pathname === headerCta.link || pathname.startsWith(heade
               <span>{footer.telPrefix}<button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.phone} title="CLICK TO COPY PHONE">{settings.phone}</button></span> 
               <span>{footer.mailPrefix}<button type="button" class="underline hover:text-mac-yellow copy-trigger transition-colors" data-copy={settings.email} title="CLICK TO COPY EMAIL">{settings.email}</button></span>
             </div>
-            {settings.brochurePdfEnabled === true && settings.brochurePdfUrl && settings.brochurePdfUrl.trim().length > 0 && settings.brochurePdfUrl.trim() !== '#' && (
+            {settings.brochurePdfEnabled !== false && settings.brochurePdfUrl && typeof settings.brochurePdfUrl === 'string' && settings.brochurePdfUrl.trim().length > 0 && settings.brochurePdfUrl.trim() !== '#' && (
               <div class="pt-2">
                 <BrutalFileDownload
                   fileUrl={settings.brochurePdfUrl}
