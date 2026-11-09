@@ -90,22 +90,7 @@
           "linkedin": "https://linkedin.com"
         },
         {
-          "enabled": true,
-          "id": "COORD-03",
-          "name": "DEVANSH GUPTA",
-          "roleType": "/// SR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "2ND YEAR // STATS",
-          "linkedin": "https://linkedin.com"
-        },
-        {
-          "enabled": true,
-          "id": "COORD-04",
-          "name": "POOJA VENKATESH",
-          "roleType": "/// JR COORDINATOR",
-          "roleColor": "text-[#705d00]",
-          "tenure": "2ND YEAR // ECON",
-          "linkedin": "https://linkedin.com"
+          "enabled": true
         }
       ],
       "directoryTable": [
