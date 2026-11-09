@@ -13,9 +13,9 @@
 | Metric / Parameter | Live Telemetry Specification |
 | :--- | :--- |
 | **System Status** | `OPERATIONAL // 100% STATIC ZERO-JS CORE` |
-| **Last Synchronized** | `2026-11-09 17:23:18 IST` |
-| **Git Snapshot / Commit** | `9f6403d` (`main` branch, commit #58) |
-| **Last Commit Directive** | `chore(docs): sync telemetry for commit b4e063d` |
+| **Last Synchronized** | `2026-11-09 17:24:23 IST` |
+| **Git Snapshot / Commit** | `5bebd5d` (`main` branch, commit #60) |
+| **Last Commit Directive** | `fix(intel): add category type checks and section toggles` |
 | **Engine Framework** | `Astro v5.4.2` (Islands Static Architecture) |
 | **Styling Tokens** | `Tailwind CSS v3.4.19` (Anti-AI Brutalist 0px Radius) |
 | **Headless CMS Engine** | `Pages CMS` via `.pages.yml` (13 Content Sections, 3 Media Vaults) |
@@ -28,6 +28,7 @@
 <!-- LOG_START -->
 | Commit | Timestamp (IST) | Directive / Message | Committer |
 | :--- | :--- | :--- | :--- |
+| `5bebd5d` | `2026-11-09 17:24:23 IST` | fix(intel): add category type checks and section toggles | `MAC SVC` |
 | `9f6403d` | `2026-11-09 17:23:18 IST` | chore(docs): sync telemetry for commit b4e063d | `MAC SVC` |
 | `b4e063d` | `2026-11-09 17:22:30 IST` | fix(arena): add safety checks and enabled guards for sections | `MAC SVC` |
 | `954b343` | `2026-11-09 17:22:19 IST` | fix(blueprint): guard sub-elements and sections with enabled checks | `MAC SVC` |
@@ -35,7 +36,6 @@
 | `03b9baf` | `2026-11-09 17:20:56 IST` | feat(ui): remove black and white grayscale overlays from all photos | `MAC SVC` |
 | `9d90c9d` | `2026-11-09 17:20:02 IST` | fix(roster): bind recruitment results board visibility to isPublished CMS toggle | `MAC SVC` |
 | `3a44176` | `2026-11-09 17:06:04 IST` | Update src/content/roster/results.json (via Pages CMS) | `macsvctech` |
-| `5c6b4a7` | `2026-11-09 16:32:46 IST` | chore(docs): sync telemetry for commit d064410 | `MAC SVC` |
 <!-- LOG_END -->
 
 ---
