@@ -11,7 +11,10 @@ const sortedTestimonials = allTestimonials.filter(t => t.data.enabled !== false)
 const testimonials = sortedTestimonials.slice(0, 2).map((t) => t.data);
 
 const {
-  breadcrumb = "CORE ROUTE // BLUEPRINT",
+  breadcrumb = {
+    directory: "/// DIRECTORY: ROOT / 02_BLUEPRINT // DECLASSIFIED CLUB MANUAL",
+    securityTier: "SECURITY_TIER: 01 • ARCHIVAL_SEAL_INTACT"
+  },
   manifesto = {},
   architecture = {},
   wings = {},
@@ -63,6 +66,7 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
   <!-- MAIN BLUEPRINT CONTENT CONTAINER -->
   <div class="max-w-[1280px] w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-10 sm:space-y-16">
     
+    {manifesto.enabled !== false && (
     <!-- 2. SECTION 2.1 — THE CLUB MANIFESTO (2-COLUMN SPLIT FRAME) -->
     <section class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] sm:shadow-[8px_8px_0px_#000000] bg-pure-white">
       <div class="grid grid-cols-1 lg:grid-cols-12">
@@ -135,7 +139,10 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
         </div>
       </div>
     </section>
+    )}
 
+    {architecture.enabled !== false && (
+      <>
     <!-- CONNECTOR RAIL 2.1 -> 2.2 -->
     <BlueprintDivider tag="STRUCTURAL_ARCHITECTURE" code="SYS_ARCH_02" accent="yellow" class="my-4 sm:my-6" />
 
@@ -381,7 +388,11 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
         </div>
       </div>
     </section>
+      </>
+    )}
 
+    {plaques.enabled !== false && (
+      <>
     <!-- CONNECTOR RAIL 2.2 -> 2.3 -->
     <BlueprintDivider tag="CHARTER_DOCTRINE" code="PLAQUE_SYS_03" accent="cyan" class="my-4 sm:my-6" />
 
@@ -447,7 +458,11 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
         </div>
       </div>
     </section>
+      </>
+    )}
 
+    {wings.enabled !== false && (
+      <>
     <!-- CONNECTOR RAIL 2.3 -> 2.4 -->
     <BlueprintDivider tag="DEPARTMENT_REGISTRY" code="WINGS_SPEC_04" accent="red" class="my-4 sm:my-6" />
 
@@ -463,7 +478,7 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
       </div>
 
       <div class="w-full border-4 border-stark-black shadow-[6px_6px_0px_#000000] bg-pure-white divide-y-2 divide-stark-black">
-        {(wings.divisions || []).map((div) => {
+        {(wings.divisions || []).filter((div) => div.enabled !== false).map((div) => {
           const badgeBg = 
             div.colorScheme === "yellow" ? "bg-mac-yellow text-stark-black" :
             div.colorScheme === "cyan" ? "bg-electric-cyan text-stark-black" :
@@ -498,7 +513,7 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
                 )}
               </div>
               <div class="md:col-span-4 flex flex-wrap gap-1.5 sm:gap-2 justify-start md:justify-end">
-                {div.skills.map((skill) => (
+                {(div.skills || []).map((skill) => (
                   <span class="font-mono text-[11px] sm:text-xs font-bold uppercase bg-pure-white text-stark-black px-2 py-0.5 sm:py-1 border-2 border-stark-black shadow-[2px_2px_0px_#000000]">
                     {skill}
                   </span>
@@ -509,7 +524,11 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
         })}
       </div>
     </section>
+      </>
+    )}
 
+    {exitLogs.enabled !== false && (
+      <>
     <!-- CONNECTOR RAIL 2.4 -> 2.5 -->
     <BlueprintDivider tag="LEADERSHIP_ARCHIVES" code="EXIT_LOGS_05" accent="black" class="my-4 sm:my-6" />
 
@@ -572,7 +591,7 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
                     person.defaultOpen ? "block" : "hidden"
                   }`}
                 >
-                  {person.fullLetter.map((para: string) => (
+                  {(person.fullLetter || []).map((para: string) => (
                     <p>{para}</p>
                   ))}
                 </div>
@@ -624,6 +643,8 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
         </a>
       </div>
     </section>
+      </>
+    )}
 
   </div>
 
