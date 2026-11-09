@@ -28,7 +28,7 @@
       "idCode": "ID // MAC-CORE-01",
       "name": "AARAV CHHABRA",
       "role": "/// PRESIDENT & CHIEF STRATEGIST",
-      "portraitImage": "/uploads/images/roster/aarav.jpg",
+      "portraitImage": null,
       "authBadge": "SVC // AUTH",
       "tenure": "3RD YEAR // COMMERCE",
       "wing": "STRATEGY & RELAYS",
@@ -41,7 +41,7 @@
       "idCode": "ID // MAC-CORE-02",
       "name": "RITESH JAISWAL",
       "role": "/// VICE-PRESIDENT & CAMPAIGNS",
-      "portraitImage": "/uploads/images/roster/ritesh.jpg",
+      "portraitImage": null,
       "authBadge": "SVC // AUTH",
       "tenure": "3RD YEAR // ECONOMICS",
       "wing": "BRAND & SPONSORSHIPS",
@@ -54,7 +54,7 @@
       "idCode": "ID // MAC-CORE-03",
       "name": "CHAITANYA AGGARWAL",
       "role": "/// GENERAL SECRETARY",
-      "portraitImage": "/uploads/images/roster/chaitanya.jpg",
+      "portraitImage": null,
       "authBadge": "SVC // AUTH",
       "tenure": "2ND YEAR // B.COM (H)",
       "wing": "OPERATIONS & LOGISTICS",
@@ -80,7 +80,7 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // MATH",
-          "portrait": "/uploads/images/roster/sneha.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -90,7 +90,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
-          "portrait": "/uploads/images/roster/kabir.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -100,7 +100,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": "/uploads/images/roster/devansh.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -110,7 +110,7 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
-          "portrait": "/uploads/images/roster/pooja.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -173,7 +173,7 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ECON",
-          "portrait": "/uploads/images/blueprint/devanshu.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -183,7 +183,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // B.COM",
-          "portrait": "/uploads/images/blueprint/govind.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -193,7 +193,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": "/uploads/images/roster/kabir.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -203,7 +203,7 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
-          "portrait": "/uploads/images/roster/pooja.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -266,7 +266,7 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // ENG (H)",
-          "portrait": "/uploads/images/roster/sneha.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -276,7 +276,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // COMMERCE",
-          "portrait": "/uploads/images/roster/devansh.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -286,7 +286,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // STATS",
-          "portrait": "/uploads/images/roster/pooja.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -296,7 +296,7 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // MATH",
-          "portrait": "/uploads/images/roster/aarav.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],
@@ -359,7 +359,7 @@
           "roleType": "/// DEPT HEAD",
           "roleColor": "text-system-red",
           "tenure": "3RD YEAR // STATS",
-          "portrait": "/uploads/images/roster/chaitanya.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -369,7 +369,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "3RD YEAR // MATH",
-          "portrait": "/uploads/images/roster/sneha.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -379,7 +379,7 @@
           "roleType": "/// SR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // COMMERCE",
-          "portrait": "/uploads/images/roster/ritesh.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         },
         {
@@ -389,7 +389,7 @@
           "roleType": "/// JR COORDINATOR",
           "roleColor": "text-[#705d00]",
           "tenure": "2ND YEAR // ECON",
-          "portrait": "/uploads/images/roster/pooja.jpg",
+          "portrait": null,
           "linkedin": "https://linkedin.com"
         }
       ],

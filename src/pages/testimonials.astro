@@ -128,16 +128,32 @@ const stats = rawStats || [
             
             <!-- Left Portrait & Identifier -->
             <div class="md:col-span-3">
-              <div class="relative border-2 border-stark-black bg-stark-black shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden max-w-[260px] sm:max-w-none mx-auto md:mx-0">
-                <BrutalMedia
-                  src={person.data.portraitImage}
-                  videoUrl={person.data.videoTestimonialUrl}
-                  alt={`${person.data.name} ${person.data.role}`}
-                  ratio="1/1"
-                  border={false}
-                  class="w-full h-full"
-                  mediaClass="w-full h-full object-cover transition-all duration-300"
-                />
+              <div class="relative border-2 border-stark-black bg-tactical-stone shadow-[3px_3px_0px_#000000] sm:shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden max-w-[260px] sm:max-w-none mx-auto md:mx-0 flex flex-col items-center justify-center select-none">
+                {person.data.portraitImage || person.data.videoTestimonialUrl ? (
+                  <BrutalMedia
+                    src={person.data.portraitImage}
+                    videoUrl={person.data.videoTestimonialUrl}
+                    alt={`${person.data.name} ${person.data.role}`}
+                    ratio="1/1"
+                    border={false}
+                    class="w-full h-full"
+                    mediaClass="w-full h-full object-cover transition-all duration-300"
+                  />
+                ) : (
+                  <div class="w-full h-full bg-tactical-stone p-6 flex flex-col items-center justify-center text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-mac-yellow border-2 border-stark-black flex items-center justify-center mb-3 shadow-[4px_4px_0px_#000000]">
+                      <span class="font-display font-black text-2xl sm:text-3xl text-stark-black">
+                        {(person.data.name || 'MAC').split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                      </span>
+                    </div>
+                    <div class="font-mono text-xs font-black uppercase tracking-wider text-stark-black">
+                      /// CADRE_ALUMNI ///
+                    </div>
+                    <div class="font-mono text-[10px] text-on-surface-variant font-bold uppercase mt-1">
+                      {person.data.role}
+                    </div>
+                  </div>
+                )}
                 <div 
                   class="absolute bottom-2 left-2 bg-stark-black text-pure-white font-mono text-xs font-bold px-2 py-0.5 border border-pure-white z-10 copy-trigger cursor-copy hover:underline"
                   data-copy={person.data.badgeId}

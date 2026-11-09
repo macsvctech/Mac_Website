@@ -10,7 +10,7 @@ dossierId: "MAC-INTEL-2026-040"
 refNumber: "DU/SVC/MAC/2026-R07"
 urgency: "ROUTINE"
 excerpt: "Eye-tracking telemetry, biometric galvanic skin response data, and micro-influencer haul psychology in youth apparel retail ecosystems."
-coverImage: "/uploads/images/blueprint/cohort.jpg"
+coverImage: "/uploads/images/intel/challenger-brands.jpg"
 coverCaption: "FIG_04 // BIOMETRIC ATTENTION MAPPING IN PHYSICAL RETAIL"
 attachmentFile: "/uploads/documents/ai-search-report-2026.pdf"
 attachmentEnabled: true

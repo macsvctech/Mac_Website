@@ -550,16 +550,32 @@ const plaques = blueprintContent.plaques || blueprintContent.visionMission || {
               
               <!-- Left Portrait -->
               <div class="md:col-span-3">
-                <div class="relative border-2 border-stark-black bg-stark-black shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden max-w-[240px] sm:max-w-none">
-                  <BrutalMedia
-                    src={person.portraitImage}
-                    videoUrl={person.videoTestimonialUrl}
-                    alt={`${person.name} ${person.role}`}
-                    ratio="1/1"
-                    border={false}
-                    class="w-full h-full"
-                    mediaClass="w-full h-full object-cover"
-                  />
+                <div class="relative border-2 border-stark-black bg-tactical-stone shadow-[4px_4px_0px_#000000] aspect-square overflow-hidden max-w-[240px] sm:max-w-none flex flex-col items-center justify-center select-none">
+                  {person.portraitImage || person.videoTestimonialUrl ? (
+                    <BrutalMedia
+                      src={person.portraitImage}
+                      videoUrl={person.videoTestimonialUrl}
+                      alt={`${person.name} ${person.role}`}
+                      ratio="1/1"
+                      border={false}
+                      class="w-full h-full"
+                      mediaClass="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-tactical-stone p-6 flex flex-col items-center justify-center text-center">
+                      <div class="w-16 h-16 bg-mac-yellow border-2 border-stark-black flex items-center justify-center mb-3 shadow-[4px_4px_0px_#000000]">
+                        <span class="font-display font-black text-2xl text-stark-black">
+                          {(person.name || 'MAC').split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                        </span>
+                      </div>
+                      <div class="font-mono text-xs font-black uppercase tracking-wider text-stark-black">
+                        /// CADRE_ALUMNI ///
+                      </div>
+                      <div class="font-mono text-[10px] text-on-surface-variant font-bold uppercase mt-1">
+                        {person.role}
+                      </div>
+                    </div>
+                  )}
                   <div class="absolute bottom-2 left-2 bg-stark-black text-pure-white font-mono text-[11px] sm:text-xs font-bold px-2 py-0.5 border border-pure-white z-10">
                     {person.badgeId}
                   </div>
