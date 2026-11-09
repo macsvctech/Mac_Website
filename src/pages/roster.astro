@@ -103,7 +103,7 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
                 <img
                   src={officer.portraitImage}
                   alt={`${officer.name} - ${officer.role}`}
-                  class="w-full h-full object-cover grayscale contrast-125"
+                  class="w-full h-full object-cover"
                 />
                 <div class="absolute bottom-2 right-2 bg-stark-black text-mac-yellow font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 border border-mac-yellow uppercase">
                   {officer.authBadge}
@@ -249,7 +249,7 @@ const isResultsPublished = isPublished === true || isPublished === 'true';
                       <img
                         src={coord.portrait}
                         alt={coord.name}
-                        class="w-full h-full object-cover grayscale"
+                        class="w-full h-full object-cover"
                       />
                       <span class="absolute top-1 left-1 bg-stark-black text-pure-white text-[10px] font-mono px-1">
                         {coord.id}
